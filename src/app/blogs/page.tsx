@@ -5,8 +5,13 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { BlogCard } from '@/components/blog/BlogCard';
+import { BlogFilter } from '@/components/blog/BlogFilter';
 import { Pagination } from '@/components/blog/Pagination';
-import { fetchWpBlogPosts, WP_CATEGORIES } from '@/lib/wp-posts';
+import {
+  fetchWpBlogPosts,
+  fetchWpPostsByCategorySlugs,
+  WP_CATEGORIES,
+} from '@/lib/wp-posts';
 
 export const metadata = {
   title: 'Insightful Blogs - Kothari Group',
@@ -18,31 +23,42 @@ export const revalidate = 600;
 
 const POSTS_PER_PAGE = 9;
 
-async function BlogsContent({ page }: { page: number }) {
-  const { posts, total, totalPages } = await fetchWpBlogPosts(
-    page,
-    POSTS_PER_PAGE,
-    WP_CATEGORIES.blogs
-  );
+type DivisionFilter = 'pipe' | 'irrigation' | null;
 
-  const from = total === 0 ? 0 : (page - 1) * POSTS_PER_PAGE + 1;
-  const to = Math.min(page * POSTS_PER_PAGE, total);
+const DIVISION_CATEGORY_SLUGS: Record<'pipe' | 'irrigation', string[]> = {
+  pipe: ['agri-pipes-fittings', 'plumbing-pipes-fittings'],
+  irrigation: ['mirco-irrigation-system'],
+};
+
+async function BlogsContent({ page, division }: { page: number; division: DivisionFilter }) {
+  let posts: Awaited<ReturnType<typeof fetchWpBlogPosts>>['posts'];
+  let total = 0;
+  let totalPages = 1;
+  let safePage = page;
+
+  if (division === 'pipe' || division === 'irrigation') {
+    const all = await fetchWpPostsByCategorySlugs(
+      DIVISION_CATEGORY_SLUGS[division],
+      100
+    );
+    total = all.length;
+    totalPages = Math.max(1, Math.ceil(total / POSTS_PER_PAGE));
+    const currentPage = Math.min(Math.max(1, page), totalPages);
+    safePage = currentPage;
+    posts = all.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+  } else {
+    const res = await fetchWpBlogPosts(page, POSTS_PER_PAGE, WP_CATEGORIES.blogs);
+    posts = res.posts;
+    total = res.total;
+    totalPages = res.totalPages;
+    safePage = page;
+  }
+
+  const from = total === 0 ? 0 : (safePage - 1) * POSTS_PER_PAGE + 1;
+  const to = Math.min(safePage * POSTS_PER_PAGE, total);
 
   return (
     <>
-      {/* <div className="flex items-center justify-between gap-6 pb-6 border-b border-slate-300">
-        <p className="text-xs sm:text-sm text-slate-600 font-normal">
-          {total > 0 ? (
-            <>
-              Showing <span className="font-semibold text-[#1575B3]">{from}–{to}</span> of{' '}
-              <span className="font-semibold text-slate-900">{total}</span> articles
-            </>
-          ) : (
-            'No articles yet'
-          )}
-        </p>
-      </div> */}
-
       {posts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post, i) => (
@@ -63,16 +79,24 @@ async function BlogsContent({ page }: { page: number }) {
 
       {posts.length > 0 && (
         <div className="pt-12 flex flex-col items-center gap-4">
-          <Pagination page={page} totalPages={totalPages} />
+          <Pagination page={safePage} totalPages={totalPages} division={division} />
         </div>
       )}
     </>
   );
 }
 
-export default async function BlogsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+export default async function BlogsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string; division?: string }>;
+}) {
   const params = await searchParams;
   const page = Math.max(1, parseInt(params.page ?? '1', 10) || 1);
+  const division: DivisionFilter =
+    params.division === 'pipe' || params.division === 'irrigation'
+      ? params.division
+      : null;
 
   return (
     <AppShell>
@@ -139,9 +163,10 @@ export default async function BlogsPage({ searchParams }: { searchParams: Promis
         {/* Blog Grid */}
         <section className="w-full bg-white py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <BlogFilter division={division} />
             <Suspense
               fallback={
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                   {Array.from({ length: 6 }).map((_, i) => (
                     <div key={i} className="border border-slate-200/90 bg-white shadow-sm overflow-hidden">
                       <div className="aspect-[16/10] bg-slate-200 animate-pulse" />
@@ -156,7 +181,7 @@ export default async function BlogsPage({ searchParams }: { searchParams: Promis
               }
             >
               <div className="space-y-10">
-                <BlogsContent page={page} />
+                <BlogsContent page={page} division={division} />
               </div>
             </Suspense>
           </div>

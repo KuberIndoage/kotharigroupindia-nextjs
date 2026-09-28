@@ -152,16 +152,32 @@ export const NEWS_CATEGORY_LABELS: Record<string, string> = {
   updates: 'Updates',
 };
 
+// Shared fetch options — ISR-friendly by default (Data Cache 600s) so SSG/ISR
+// pages stay fast; `fresh` bypasses every cache layer so live endpoints always
+// reflect the latest WordPress content.
+type WpFetchOptions = { fresh?: boolean };
+
+function wpFetchInit(opts?: WpFetchOptions): RequestInit {
+  return opts?.fresh
+    ? { cache: 'no-store', headers: { 'User-Agent': 'Mozilla/5.0' } }
+    : { next: { revalidate: 600 }, headers: { 'User-Agent': 'Mozilla/5.0' } };
+}
+
+// Cache-busting query param (fresh only) so CDN-cached WP REST responses are skipped too.
+function wpFreshParam(opts?: WpFetchOptions): string {
+  return opts?.fresh ? `&cb=${Date.now()}` : '';
+}
+
 // Resolve WP category slugs → numeric IDs via /wp/v2/categories.
 // Returns only the IDs that exist — fail-soft so the page falls back to static data.
-export const fetchWpCategoryIds = cache(async (slugs: readonly string[] | string[]): Promise<number[]> => {
+async function fetchWpCategoryIdsImpl(
+  slugs: readonly string[] | string[],
+  opts?: WpFetchOptions
+): Promise<number[]> {
   if (!slugs.length) return [];
-  const url = `${WP_API}/wp/v2/categories?slug=${slugs.map((s) => encodeURIComponent(s)).join(',')}&per_page=100&_fields=id,slug`;
+  const url = `${WP_API}/wp/v2/categories?slug=${slugs.map((s) => encodeURIComponent(s)).join(',')}&per_page=100&_fields=id,slug${wpFreshParam(opts)}`;
   try {
-    const res = await fetchWithTimeout(url, {
-      next: { revalidate: 600 },
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-    });
+    const res = await fetchWithTimeout(url, wpFetchInit(opts));
     if (!res.ok) return [];
     const data = await res.json();
     if (!Array.isArray(data)) return [];
@@ -174,7 +190,11 @@ export const fetchWpCategoryIds = cache(async (slugs: readonly string[] | string
     console.error('[wp-posts] Failed to fetch categories:', url);
     return [];
   }
-});
+}
+
+export const fetchWpCategoryIds = cache(
+  (slugs: readonly string[] | string[]): Promise<number[]> => fetchWpCategoryIdsImpl(slugs)
+);
 
 // Fetch news posts across the Events / Announcements / Updates categories.
 // Returns a flat, date-desc list (each post carries its category name + slug).
@@ -185,34 +205,45 @@ export const fetchWpNewsPosts = cache(async (perCategory = 100): Promise<WpBlogP
 
 // Fetch recent posts across a set of category slugs, merged date-desc.
 // Returns [] on failure — callers fall back to static data.
-export const fetchWpPostsByCategorySlugs = cache(
-  async (slugs: readonly string[] | string[], perCategory = 3): Promise<WpBlogPost[]> => {
-    const ids = await fetchWpCategoryIds(slugs);
-    if (!ids.length) return [];
-    try {
-      const settled = await Promise.allSettled(
-        ids.map((id) =>
-          fetchWithTimeout(
-            `${WP_API}/wp/v2/posts?categories=${id}&per_page=${perCategory}&orderby=date&order=desc&_embed`,
-            {
-              next: { revalidate: 600 },
-              headers: { 'User-Agent': 'Mozilla/5.0' },
-            }
-          ).then(async (res) => {
-            if (!res.ok) return [];
-            const data = await res.json();
-            return (Array.isArray(data) ? data : []).map(mapPost) as WpBlogPost[];
-          })
-        )
-      );
-      const posts = settled.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
-      return posts.sort((a, b) => b.id - a.id);
-    } catch {
-      console.error('[wp-posts] Failed to fetch posts by category slugs:', slugs.join(','));
-      return [];
-    }
+async function fetchWpPostsByCategorySlugsImpl(
+  slugs: readonly string[] | string[],
+  perCategory = 3,
+  opts?: WpFetchOptions
+): Promise<WpBlogPost[]> {
+  const ids = opts?.fresh ? await fetchWpCategoryIdsImpl(slugs, opts) : await fetchWpCategoryIds(slugs);
+  if (!ids.length) return [];
+  try {
+    const settled = await Promise.allSettled(
+      ids.map((id) =>
+        fetchWithTimeout(
+          `${WP_API}/wp/v2/posts?categories=${id}&per_page=${perCategory}&orderby=date&order=desc&_embed${wpFreshParam(opts)}`,
+          wpFetchInit(opts)
+        ).then(async (res) => {
+          if (!res.ok) return [];
+          const data = await res.json();
+          return (Array.isArray(data) ? data : []).map(mapPost) as WpBlogPost[];
+        })
+      )
+    );
+    const posts = settled.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
+    return posts.sort((a, b) => b.id - a.id);
+  } catch {
+    console.error('[wp-posts] Failed to fetch posts by category slugs:', slugs.join(','));
+    return [];
   }
+}
+
+export const fetchWpPostsByCategorySlugs = cache(
+  (slugs: readonly string[] | string[], perCategory = 3): Promise<WpBlogPost[]> =>
+    fetchWpPostsByCategorySlugsImpl(slugs, perCategory)
 );
+
+// Uncached variant for live endpoints (division-news) so WordPress edits
+// (category changes, posts added/removed) show immediately.
+export const fetchWpPostsByCategorySlugsFresh = (
+  slugs: readonly string[] | string[],
+  perCategory = 3
+): Promise<WpBlogPost[]> => fetchWpPostsByCategorySlugsImpl(slugs, perCategory, { fresh: true });
 
 // Fetch a single post by slug (full content included).
 // Returns null on failure instead of throwing.
@@ -262,7 +293,7 @@ export const fetchWpHomeNews = cache(
     const empty = { blogs: [] as WpBlogPost[], events: [] as WpBlogPost[] };
     try {
       const [blogsRes, eventIds] = await Promise.all([
-        fetchWpBlogPosts(1, 3, WP_CATEGORIES.blogs).catch(() => null),
+        fetchWpBlogPosts(1, 100, WP_CATEGORIES.blogs).catch(() => null),
         fetchWpCategoryIds(['events']).catch(() => [] as number[]),
       ]);
       const blogs = blogsRes?.posts ?? [];

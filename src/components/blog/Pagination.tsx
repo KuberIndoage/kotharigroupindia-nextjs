@@ -6,6 +6,7 @@ interface PaginationProps {
   page: number;
   totalPages: number;
   basePath?: string;
+  division?: 'pipe' | 'irrigation' | null;
 }
 
 function buildPageList(current: number, total: number): (number | '…')[] {
@@ -22,8 +23,11 @@ function buildPageList(current: number, total: number): (number | '…')[] {
   return pages;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ page, totalPages, basePath = '/blogs' }) => {
+export const Pagination: React.FC<PaginationProps> = ({ page, totalPages, basePath = '/blogs', division = null }) => {
   if (totalPages <= 1) return null;
+
+  const buildHref = (p: number) =>
+    division ? `${basePath}?division=${division}&page=${p}` : `${basePath}?page=${p}`;
 
   const pageList = buildPageList(page, totalPages);
 
@@ -37,8 +41,9 @@ export const Pagination: React.FC<PaginationProps> = ({ page, totalPages, basePa
   return (
     <nav aria-label="Blog pagination" className="flex items-center justify-center gap-2 flex-wrap">
       {page > 1 ? (
-        <Link
-          href={`${basePath}?page=${page - 1}`}
+<Link
+            href={buildHref(page - 1)}
+            scroll={false}
           aria-label="Previous page"
           className="h-10 px-3 flex items-center justify-center gap-1 text-sm font-mono border border-slate-200 bg-white text-slate-600 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-200"
         >
@@ -54,7 +59,7 @@ export const Pagination: React.FC<PaginationProps> = ({ page, totalPages, basePa
 
       {pageList.map((p, i) =>
         typeof p === 'number' ? (
-          <Link key={i} href={`${basePath}?page=${p}`} className={linkClasses(p === page)}>
+          <Link key={i} href={buildHref(p)} scroll={false} className={linkClasses(p === page)}>
             {p}
           </Link>
         ) : (
@@ -66,7 +71,8 @@ export const Pagination: React.FC<PaginationProps> = ({ page, totalPages, basePa
 
       {page < totalPages ? (
         <Link
-          href={`${basePath}?page=${page + 1}`}
+          href={buildHref(page + 1)}
+          scroll={false}
           aria-label="Next page"
           className="h-10 px-3 flex items-center justify-center gap-1 text-sm font-mono border border-slate-200 bg-white text-slate-600 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-200"
         >

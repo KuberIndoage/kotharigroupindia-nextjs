@@ -2,8 +2,113 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowUpRight, Clock } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from './Reveal';
+
+// Pointer-based swipe detection (touch + mouse). Works reliably on mobile,
+// pauses auto-slide during the gesture, and suppresses the link click that
+// would otherwise fire after a swipe. NOTE: must NOT use setPointerCapture —
+// capture retargets the click event to the capture element, which swallows
+// inner <Link> clicks (blog/article cards would no longer open).
+//
+// IMPORTANT: inside an AnimatePresence slider Chrome sometimes fails to
+// synthesize a native `click` for the anchor, so navigation never happens.
+// To be immune to that, a CLEAN TAP (delta <= 6) on any <a href> inside the
+// slider calls `onTap(href)` directly (router.push) instead of waiting for
+// the native click. Native clicks still work when they DO fire.
+function useSwipeController(
+  onSwipe: (dir: 1 | -1) => void,
+  onPauseChange: (paused: boolean) => void,
+  onTap?: (href: string) => void
+) {
+  const startX = React.useRef<number | null>(null);
+  const didDrag = React.useRef(false);
+  const onTapRef = React.useRef(onTap);
+  onTapRef.current = onTap;
+
+  const handlePointerMove = React.useCallback((_e: PointerEvent) => {
+    // Movement is observed here but NOT flagged as a drag — only an actual
+    // swipe (delta > threshold in pointerup) marks didDrag, otherwise tiny
+    // finger jitter on a tap would swallow the card's link click.
+  }, []);
+
+  const handlePointerCancel = React.useCallback(() => {
+    startX.current = null;
+    onPauseChange(false);
+    window.removeEventListener('pointermove', handlePointerMove);
+    window.removeEventListener('pointerup', handlePointerEnd);
+    window.removeEventListener('pointercancel', handlePointerCancel);
+  }, []);
+
+  const handlePointerEnd = React.useCallback(
+    (e: PointerEvent) => {
+      if (startX.current === null) return;
+      const delta = e.clientX - startX.current;
+      startX.current = null;
+      onPauseChange(false);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerEnd);
+      window.removeEventListener('pointercancel', handlePointerCancel);
+
+      if (Math.abs(delta) > 50) {
+        didDrag.current = true;
+        onSwipe(delta < 0 ? 1 : -1);
+      } else {
+        didDrag.current = false;
+        if (Math.abs(delta) <= 6) {
+          const nearest = (e.target as Element | null)?.closest?.(
+            'a[href]'
+          ) as HTMLAnchorElement | null;
+          const href = nearest?.getAttribute('href');
+          if (href) onTapRef.current?.(href);
+        }
+      }
+    },
+    [onSwipe, onPauseChange]
+  );
+
+  const handlePointerDown = React.useCallback(
+    (e: React.PointerEvent) => {
+      startX.current = e.clientX;
+      didDrag.current = false;
+      onPauseChange(true);
+      window.addEventListener('pointermove', handlePointerMove);
+      window.addEventListener('pointerup', handlePointerEnd);
+      window.addEventListener('pointercancel', handlePointerCancel);
+    },
+    [onPauseChange, handlePointerMove, handlePointerEnd, handlePointerCancel]
+  );
+
+  const handleStageClick = React.useCallback((e: React.MouseEvent) => {
+    if (didDrag.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      didDrag.current = false;
+    }
+  }, []);
+
+  return {
+    onPointerDown: handlePointerDown,
+    onStageClick: handleStageClick,
+  };
+}
+
+const slideVariants = {
+  enter: (dir: number) => ({
+    x: dir > 0 ? '100%' : '-100%',
+    opacity: 0,
+  }),
+  center: {
+    x: '0%',
+    opacity: 1,
+  },
+  exit: (dir: number) => ({
+    x: dir < 0 ? '100%' : '-100%',
+    opacity: 0,
+  }),
+};
 
 export interface HomeNewsCard {
   key: string;
@@ -89,10 +194,10 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
     },
   ];
 
-  function NewsCard({ item, idx }: { item: HomeNewsCard; idx: number }) {
+  function NewsCard({ item, idx, navigate }: { item: HomeNewsCard; idx: number; navigate: (href: string) => void }) {
     return (
       <Reveal key={item.key} delay={(idx % 3) * 90} className="h-full">
-        <Link href={item.href} className="block h-full">
+        <Link href={item.href} className="block h-full" draggable={false} onClick={(e) => { e.preventDefault(); navigate(item.href); }}>
           <article className="group relative bg-white border border-slate-200/90 flex flex-col justify-between h-full shadow-sm hover:shadow-xl hover:border-[#1575B3] transition-all duration-500 overflow-hidden">
 
             {/* Image Header - full image, not cropped */}
@@ -101,6 +206,7 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
                 src={item.image}
                 alt={item.title}
                 referrerPolicy="no-referrer"
+                draggable={false}
                 onError={(e) => {
                   const target = e.target as HTMLElement;
                   target.style.opacity = '0.3';
@@ -157,6 +263,124 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
     blogPosts = FALLBACK_BLOGS,
     newsItems = FALLBACK_NEWS,
   }) => {
+    const router = useRouter();
+    const lastNavAt = React.useRef(0);
+    // Navigate to a card's href exactly once per interaction — guards against
+    // double navigation when both the native click and the tap fallback fire.
+    const navigate = React.useCallback(
+      (href: string) => {
+        const now = Date.now();
+        if (now - lastNavAt.current > 250) {
+          lastNavAt.current = now;
+          router.push(href);
+        }
+      },
+      [router]
+    );
+
+    // Blog slider state (auto-slide + drag/swipe pattern).
+    const [blogItemsPerPage, setBlogItemsPerPage] = React.useState(3);
+    const [blogCurrentPage, setBlogCurrentPage] = React.useState(0);
+    const [blogDirection, setBlogDirection] = React.useState(1);
+    const [blogPaused, setBlogPaused] = React.useState(false);
+
+    // News slider state (same pattern).
+    const [newsItemsPerPage, setNewsItemsPerPage] = React.useState(3);
+    const [newsCurrentPage, setNewsCurrentPage] = React.useState(0);
+    const [newsDirection, setNewsDirection] = React.useState(1);
+    const [newsPaused, setNewsPaused] = React.useState(false);
+
+    React.useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth < 768) {
+          setBlogItemsPerPage(1);
+          setNewsItemsPerPage(1);
+        } else if (window.innerWidth < 1024) {
+          setBlogItemsPerPage(2);
+          setNewsItemsPerPage(2);
+        } else {
+          setBlogItemsPerPage(3);
+          setNewsItemsPerPage(3);
+        }
+      };
+
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const blogTotalPages = Math.max(1, Math.ceil(blogPosts.length / blogItemsPerPage));
+    const blogSafePage = blogCurrentPage % blogTotalPages;
+
+    const handleBlogNext = React.useCallback(() => {
+      setBlogDirection(1);
+      setBlogCurrentPage((prev) => (prev + 1) % blogTotalPages);
+    }, [blogTotalPages]);
+
+    const handleBlogPrev = React.useCallback(() => {
+      setBlogDirection(-1);
+      setBlogCurrentPage(
+        (prev) => (prev - 1 + blogTotalPages) % blogTotalPages
+      );
+    }, [blogTotalPages]);
+
+    React.useEffect(() => {
+      if (blogPaused || blogTotalPages <= 1) return;
+
+      const autoSlideTimer = setInterval(() => {
+        handleBlogNext();
+      }, 4000);
+
+      return () => clearInterval(autoSlideTimer);
+    }, [blogPaused, blogTotalPages, handleBlogNext]);
+
+    const visibleBlogPosts = blogPosts.slice(
+      blogSafePage * blogItemsPerPage,
+      blogSafePage * blogItemsPerPage + blogItemsPerPage
+    );
+
+    const blogSwipe = useSwipeController(
+      (dir: 1 | -1) => (dir === 1 ? handleBlogNext() : handleBlogPrev()),
+      setBlogPaused,
+      navigate
+    );
+
+    const newsTotalPages = Math.max(1, Math.ceil(newsItems.length / newsItemsPerPage));
+    const newsSafePage = newsCurrentPage % newsTotalPages;
+
+    const handleNewsNext = React.useCallback(() => {
+      setNewsDirection(1);
+      setNewsCurrentPage((prev) => (prev + 1) % newsTotalPages);
+    }, [newsTotalPages]);
+
+    const handleNewsPrev = React.useCallback(() => {
+      setNewsDirection(-1);
+      setNewsCurrentPage(
+        (prev) => (prev - 1 + newsTotalPages) % newsTotalPages
+      );
+    }, [newsTotalPages]);
+
+    React.useEffect(() => {
+      if (newsPaused || newsTotalPages <= 1) return;
+
+      const autoSlideTimer = setInterval(() => {
+        handleNewsNext();
+      }, 4000);
+
+      return () => clearInterval(autoSlideTimer);
+    }, [newsPaused, newsTotalPages, handleNewsNext]);
+
+    const visibleNewsItems = newsItems.slice(
+      newsSafePage * newsItemsPerPage,
+      newsSafePage * newsItemsPerPage + newsItemsPerPage
+    );
+
+    const newsSwipe = useSwipeController(
+      (dir: 1 | -1) => (dir === 1 ? handleNewsNext() : handleNewsPrev()),
+      setNewsPaused,
+      navigate
+    );
+
     return (
     <div className="w-full text-slate-900">
 
@@ -176,14 +400,64 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
             </p>
           </div>
 
-          {/* Blogs Grid */}
-          <Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {blogPosts.map((item, idx) => (
-                <NewsCard key={item.key} item={item} idx={idx} />
-              ))}
+          {/* Blogs Slider / Grid */}
+          {blogPosts.length > blogItemsPerPage ? (
+            <div className="relative w-full py-6 px-1 touch-pan-y overflow-hidden" onClick={blogSwipe.onStageClick}>
+              <AnimatePresence initial={false} custom={blogDirection} mode="wait">
+                <motion.div
+                  key={blogSafePage}
+                  custom={blogDirection}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                  onPointerDown={blogSwipe.onPointerDown}
+                  className="w-full cursor-grab active:cursor-grabbing select-none touch-pan-y"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {visibleBlogPosts.map((item, idx) => (
+                      <div
+                        key={item.key}
+                        onMouseEnter={() => setBlogPaused(true)}
+                        onMouseLeave={() => setBlogPaused(false)}
+                        className="h-full"
+                      >
+                        <NewsCard item={item} idx={idx} navigate={navigate} />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Dash Indicators */}
+              <div className="flex items-center justify-center gap-3 pt-8">
+                {Array.from({ length: blogTotalPages }).map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setBlogDirection(idx > blogSafePage ? 1 : -1);
+                      setBlogCurrentPage(idx);
+                    }}
+                    className={`h-1 transition-all duration-500 ${
+                      idx === blogSafePage
+                        ? 'w-12 bg-[#1575B3]'
+                        : 'w-4 bg-slate-300 hover:bg-slate-400'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
-          </Reveal>
+          ) : (
+            <Reveal>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {blogPosts.map((item, idx) => (
+                  <NewsCard key={item.key} item={item} idx={idx} navigate={navigate} />
+                ))}
+              </div>
+            </Reveal>
+          )}
 
         </div>
       </section>
@@ -204,14 +478,64 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
             </p>
           </div>
 
-          {/* News Cards Grid — same as Blogs */}
-          <Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {newsItems.map((item, idx) => (
-                <NewsCard key={item.key} item={item} idx={idx} />
-              ))}
+          {/* News and Article Slider / Grid */}
+          {newsItems.length > newsItemsPerPage ? (
+            <div className="relative w-full py-6 px-1 touch-pan-y overflow-hidden" onClick={newsSwipe.onStageClick}>
+              <AnimatePresence initial={false} custom={newsDirection} mode="wait">
+                <motion.div
+                  key={newsSafePage}
+                  custom={newsDirection}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                  onPointerDown={newsSwipe.onPointerDown}
+                  className="w-full cursor-grab active:cursor-grabbing select-none touch-pan-y"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {visibleNewsItems.map((item, idx) => (
+                      <div
+                        key={item.key}
+                        onMouseEnter={() => setNewsPaused(true)}
+                        onMouseLeave={() => setNewsPaused(false)}
+                        className="h-full"
+                      >
+                        <NewsCard item={item} idx={idx} navigate={navigate} />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Dash Indicators */}
+              <div className="flex items-center justify-center gap-3 pt-8">
+                {Array.from({ length: newsTotalPages }).map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setNewsDirection(idx > newsSafePage ? 1 : -1);
+                      setNewsCurrentPage(idx);
+                    }}
+                    className={`h-1 transition-all duration-500 ${
+                      idx === newsSafePage
+                        ? 'w-12 bg-[#1575B3]'
+                        : 'w-4 bg-slate-300 hover:bg-slate-400'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
-          </Reveal>
+          ) : (
+            <Reveal>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {newsItems.map((item, idx) => (
+                  <NewsCard key={item.key} item={item} idx={idx} navigate={navigate} />
+                ))}
+              </div>
+            </Reveal>
+          )}
 
         </div>
       </section>

@@ -23,10 +23,11 @@ function PipeDivisionContent() {
     newsItems?: DivisionNewsCard[];
     blogPosts?: DivisionNewsCard[];
   }>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let alive = true;
-    fetch('/api/division-news?theme=blue')
+    fetch('/api/division-news?theme=blue', { cache: 'no-store' })
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (!alive || !data) return;
@@ -35,7 +36,10 @@ function PipeDivisionContent() {
           blogPosts: data.blogs?.length ? data.blogs : undefined,
         });
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        if (alive) setLoading(false);
+      });
     return () => {
       alive = false;
     };
@@ -398,7 +402,7 @@ const FEATURE_PRODUCTS = [
       {/* <WhyKothariGroup /> */}
       {/* <Impact /> */}
       <KnowledgeCentre itemData={items} />
-      <NewsDivision newsItems={cards.newsItems} blogPosts={cards.blogPosts} />
+      <NewsDivision newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
       <Footer footerData={footerData}/>
     </>
   );

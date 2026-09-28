@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
-  fetchWpPostsByCategorySlugs,
+  fetchWpPostsByCategorySlugsFresh,
   mapWpPostsToDivisionCards,
 } from '@/lib/wp-posts';
 
-export const revalidate = 600;
+export const dynamic = 'force-dynamic';
 
 // Category slugs per division theme:
 //   green (irrigation) → mirco-irrigation-system + agri-pipes-fittings
 //   blue  (pipe)       → plumbing-pipes-fittings
 const BLOG_CATEGORY_SLUGS: Record<string, string[]> = {
-  green: ['mirco-irrigation-system', 'agri-pipes-fittings'],
-  blue: ['plumbing-pipes-fittings'],
+  green: ['mirco-irrigation-system'],
+  blue: ['agri-pipes-fittings', 'plumbing-pipes-fittings'],
 };
 
 // Live division news + blogs for client pages (division homepages).
@@ -20,8 +20,8 @@ export async function GET(request: NextRequest) {
   const theme = request.nextUrl.searchParams.get('theme') === 'green' ? 'green' : 'blue';
   try {
     const [blogPosts, eventPosts] = await Promise.all([
-      fetchWpPostsByCategorySlugs(BLOG_CATEGORY_SLUGS[theme], 3),
-      fetchWpPostsByCategorySlugs(['events'], 3),
+      fetchWpPostsByCategorySlugsFresh(BLOG_CATEGORY_SLUGS[theme], 100),
+      fetchWpPostsByCategorySlugsFresh(['events'], 3),
     ]);
     return NextResponse.json({
       blogs: mapWpPostsToDivisionCards(blogPosts, '/blogs'),
