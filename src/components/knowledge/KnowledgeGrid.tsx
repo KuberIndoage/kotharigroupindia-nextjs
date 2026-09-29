@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import { BookOpen } from 'lucide-react';
 import { KnowledgeCard } from '@/components/knowledge/KnowledgeCard';
+import { KnowledgeRequestModal } from '@/components/knowledge/KnowledgeRequestModal';
 import { allKnowledgeItems } from '@/lib/knowledge-centre';
+import type { KnowledgeItem } from '@/lib/knowledge-centre';
 
 type DivisionTab = 'all' | 'pipe' | 'irrigation';
 
@@ -15,6 +17,7 @@ const TABS: { key: DivisionTab; label: string }[] = [
 
 export const KnowledgeGrid: React.FC = () => {
   const [active, setActive] = useState<DivisionTab>('all');
+  const [requestItem, setRequestItem] = useState<KnowledgeItem | null>(null);
 
   const filtered =
     active === 'all'
@@ -50,7 +53,12 @@ export const KnowledgeGrid: React.FC = () => {
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {filtered.map((item, i) => (
-            <KnowledgeCard key={item.title} item={item} index={i} />
+            <KnowledgeCard
+              key={item.title}
+              item={item}
+              index={i}
+              onRequest={setRequestItem}
+            />
           ))}
         </div>
       ) : (
@@ -65,6 +73,11 @@ export const KnowledgeGrid: React.FC = () => {
           </p>
         </div>
       )}
+
+      <KnowledgeRequestModal
+        item={requestItem}
+        onClose={() => setRequestItem(null)}
+      />
     </div>
   );
 };

@@ -198,7 +198,7 @@ const resourcesMegaMenu = {
     {
       title: 'News',
       url: '/press-release',
-      image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.pexels.com/photos/23833967/pexels-photo-23833967.jpeg',
     },
   
     {
@@ -211,6 +211,11 @@ const resourcesMegaMenu = {
       url: '/quality-policy',
       image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=600&q=80',
     },
+    {
+      title: 'Knowledge Centre',
+      url: '/knowledge-section',
+      image: 'https://images.pexels.com/photos/6806672/pexels-photo-6806672.jpeg',
+    }
   ],
 };
 
@@ -354,6 +359,15 @@ const [aboutOpen, setAboutOpen] = useState(false);
   const router = useRouter();
   const defaultDivisionInterest = division === 'pipe-division' ? 'Pipe Division' : 'Irrigation Division';
 
+  const requirements = [
+    'Product Enquiry',
+    'Quotation',
+    'Dealer / Distributor Enquiry',
+    'Project Requirement',
+    'After-Sales Support',
+    'Other'
+  ];
+
   // Divisions menu shows Home plus the OTHER division:
   // on irrigation pages → Home + Pipe, on pipe pages → Home + Irrigation.
   const visibleDivisions = [
@@ -425,7 +439,8 @@ const [aboutOpen, setAboutOpen] = useState(false);
     email: '',
     phone: '',
     division: defaultDivisionInterest,
-    message: '',
+    requirement: 'Product Enquiry',
+    otherRequirement: '',
   });
 
 
@@ -555,7 +570,8 @@ const handleSegmentClick = (segIdx: number) => {
           email: '',
           phone: '',
           division: defaultDivisionInterest,
-          message: '',
+          requirement: 'Product Enquiry',
+          otherRequirement: '',
         });
       }, 2500);
     } catch (err) {
@@ -820,7 +836,7 @@ const handleSegmentClick = (segIdx: number) => {
   <Link href={isIrrigation ? '/irrigation-applications' : '/pipe-applications'} className={navItemStyle}>
                 Applications
               </Link>
-    <Link href={'/successstories'} className={navItemStyle}>
+    <Link href={isIrrigation ? '/successstories?division=irrigation' : '/successstories?division=pipe'} className={navItemStyle}>
                 Success Stories
               </Link>
       {/* Resources Mega Menu */}
@@ -1543,16 +1559,33 @@ const handleSegmentClick = (segIdx: number) => {
 
                   <div>
                     <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
-                      Message / Requirement
+                      Requirement
                     </label>
-                    <textarea
-                      rows={3}
-                      placeholder="Specify product requirements, location, or general query..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition resize-none`}
-                    />
+                    <select
+                      value={formData.requirement}
+                      onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
+                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                    >
+                      {requirements.map((req) => (
+                        <option key={req} value={req}>{req}</option>
+                      ))}
+                    </select>
                   </div>
+
+                  {formData.requirement === 'Other' && (
+                    <div>
+                      <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
+                        Other Requirement
+                      </label>
+                      <textarea
+                        rows={4}
+                        placeholder="Please specify your requirement..."
+                        value={formData.otherRequirement}
+                        onChange={(e) => setFormData({ ...formData, otherRequirement: e.target.value })}
+                        className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition resize-none`}
+                      />
+                    </div>
+                  )}
 
                   <button
                     type="submit"

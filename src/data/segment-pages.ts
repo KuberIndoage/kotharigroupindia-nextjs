@@ -307,7 +307,7 @@ export const segmentPageContent: Record<string, SegmentPageContent> = {
       },
     ],
   },
-  'sprinkler-irrigration-system': {
+  'sprinkler-irrigation-system': {
     slug: 'sprinkler-irrigration-system',
     overview: [
       'For larger, open fields where drip irrigation isn’t practical, sprinkler irrigation delivers the uniform overhead coverage that closely spaced field crops need. Our sprinkler range includes the ISI-certified Metal Sprinkler for full-circle impact irrigation, along with HDPE sprinkler pipes (QCPE) featuring quick-coupling connections for fast setup across large fields, and complete sprinkler sets that pair our brass nozzle sprinklers with durable HDPE piping.',

@@ -12,6 +12,15 @@ const interests = [
   'Irrigation Division'
 ];
 
+const requirements = [
+  'Product Enquiry',
+  'Quotation',
+  'Dealer / Distributor Enquiry',
+  'Project Requirement',
+  'After-Sales Support',
+  'Other'
+];
+
 export const ContactUsForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -21,7 +30,8 @@ export const ContactUsForm: React.FC = () => {
     email: '',
     phone: '',
     interest: interests[0],
-    message: '',
+    requirement: requirements[0],
+    otherRequirement: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -48,7 +58,8 @@ export const ContactUsForm: React.FC = () => {
           email: '',
           phone: '',
           interest: interests[0],
-          message: '',
+          requirement: requirements[0],
+          otherRequirement: '',
         });
       }, 6000);
     } catch (err) {
@@ -150,15 +161,30 @@ export const ContactUsForm: React.FC = () => {
       </div>
 
       <div>
-        <label className={labelClass}>Message / Requirement</label>
-        <textarea
-          rows={7}
-          placeholder="Tell us about your requirement..."
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className={`${fieldClass} resize-none`}
-        />
+        <label className={labelClass}>Requirement</label>
+        <select
+          value={formData.requirement}
+          onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
+          className={fieldClass}
+        >
+          {requirements.map((req) => (
+            <option key={req} value={req}>{req}</option>
+          ))}
+        </select>
       </div>
+
+      {formData.requirement === 'Other' && (
+        <div>
+          <label className={labelClass}>Other Requirement</label>
+          <textarea
+            rows={4}
+            placeholder="Please specify your requirement..."
+            value={formData.otherRequirement}
+            onChange={(e) => setFormData({ ...formData, otherRequirement: e.target.value })}
+            className={`${fieldClass} resize-none`}
+          />
+        </div>
+      )}
 
       <button
         type="submit"

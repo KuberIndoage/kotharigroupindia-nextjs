@@ -5,9 +5,9 @@ import { Home2Footer } from '@/components/Home2Footer';
 import { KnowledgeGrid } from '@/components/knowledge/KnowledgeGrid';
 
 export const metadata = {
-  title: 'Knowledge Centre - Kothari Group',
+  title: 'Knowledge Section on Pipes & Irrigation - Kothari Group',
   description:
-    'Technical documentation, engineering guidelines, and field manuals for Kothari pipe and irrigation systems. Crop cultivation guides for banana, chilli, onion and more.',
+    'Explore Kothari Group India’s Knowledge Section for expert insights on plumbing pipes, agri‐fittings & micro-irrigation systems. Learn best practices & product tech.',
 };
 
 // fully static server component

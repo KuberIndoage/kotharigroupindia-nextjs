@@ -5,8 +5,13 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { BlogCard } from '@/components/blog/BlogCard';
+import { BlogFilter } from '@/components/blog/BlogFilter';
 import { Pagination } from '@/components/blog/Pagination';
-import { fetchWpBlogPosts, WP_CATEGORIES } from '@/lib/wp-posts';
+import {
+  fetchWpBlogPosts,
+  fetchWpPostsByCategorySlugs,
+  WP_CATEGORIES,
+} from '@/lib/wp-posts';
 
 export const metadata = {
   title: 'Success Stories of Farmers & Dealers - Kothari Group',
@@ -18,8 +23,36 @@ export const revalidate = 600;
 
 const POSTS_PER_PAGE = 9;
 
-async function SuccessStoriesContent({ page }: { page: number }) {
-  const { posts, total, totalPages } = await fetchWpBlogPosts(page, POSTS_PER_PAGE, WP_CATEGORIES.successStory);
+type DivisionFilter = 'pipe' | 'irrigation' | null;
+
+const DIVISION_CATEGORY_SLUGS: Record<'pipe' | 'irrigation', string[]> = {
+  pipe: ['pipe-success-story'],
+  irrigation: ['irrigation-success-story'],
+};
+
+async function SuccessStoriesContent({ page, division }: { page: number; division: DivisionFilter }) {
+  let posts: Awaited<ReturnType<typeof fetchWpBlogPosts>>['posts'];
+  let total = 0;
+  let totalPages = 1;
+  let safePage = page;
+
+  if (division === 'pipe' || division === 'irrigation') {
+    const all = await fetchWpPostsByCategorySlugs(
+      DIVISION_CATEGORY_SLUGS[division],
+      100
+    );
+    total = all.length;
+    totalPages = Math.max(1, Math.ceil(total / POSTS_PER_PAGE));
+    const currentPage = Math.min(Math.max(1, page), totalPages);
+    safePage = currentPage;
+    posts = all.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+  } else {
+    const res = await fetchWpBlogPosts(page, POSTS_PER_PAGE, WP_CATEGORIES.successStory);
+    posts = res.posts;
+    total = res.total;
+    totalPages = res.totalPages;
+    safePage = page;
+  }
 
   return (
     <>
@@ -43,16 +76,24 @@ async function SuccessStoriesContent({ page }: { page: number }) {
 
       {posts.length > 0 && (
         <div className="pt-12 flex flex-col items-center gap-4">
-            <Pagination page={page} totalPages={totalPages} basePath="/successstories" />
+            <Pagination page={safePage} totalPages={totalPages} basePath="/successstories" division={division} />
         </div>
       )}
     </>
   );
 }
 
-export default async function SuccessStoriesPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+export default async function SuccessStoriesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string; division?: string }>;
+}) {
   const params = await searchParams;
   const page = Math.max(1, parseInt(params.page ?? '1', 10) || 1);
+  const division: DivisionFilter =
+    params.division === 'pipe' || params.division === 'irrigation'
+      ? params.division
+      : null;
 
   return (
     <AppShell>
@@ -91,6 +132,7 @@ export default async function SuccessStoriesPage({ searchParams }: { searchParam
         {/* Stories Grid */}
         <section className="w-full bg-white py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <BlogFilter division={division} basePath="/successstories" />
             <Suspense
               fallback={
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -108,7 +150,7 @@ export default async function SuccessStoriesPage({ searchParams }: { searchParam
               }
             >
               <div className="space-y-10">
-                <SuccessStoriesContent page={page} />
+                <SuccessStoriesContent page={page} division={division} />
               </div>
             </Suspense>
           </div>

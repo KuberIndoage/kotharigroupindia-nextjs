@@ -568,8 +568,8 @@ export const IrrigationproductsMegaMenu = {
     },
     
       {
-      name: 'Sprinkler Irrigration system',
-      slug: 'sprinkler-irrigration-system',
+      name: 'Sprinkler Irrigation system',
+      slug: 'sprinkler-irrigation-system',
       desc: 'Complete sprinkler irrigation solutions with sprinklers, pipes, connectors, rainguns and accessories.',
       categories: [
         {

@@ -54,7 +54,7 @@ const DEFAULT_SOCIAL_GROUPS = [
  const irrigationProductSegments = [
 {label:'Drip Irrigation System',target:"/products/drip-irrigation-system"},
 {label:'Automation System',target:"/products/automation-system"},
-{label:'Sprinkler Irrigration system',target:"/products/sprinkler-irrigration-system"},
+{label:'Sprinkler Irrigation system',target:"/products/sprinkler-irrigation-system"},
 {label:'Filters & Injectors',target:"/products/filters-and-injectors"},
 {label:'Micro & Mini Sprinklers',target:"/products/micro-and-mini-sprinklers"},
 {label:'Turnkey Projects',target:"/products/turnkey-projects"}

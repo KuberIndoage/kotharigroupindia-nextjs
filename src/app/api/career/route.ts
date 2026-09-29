@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import {
   createTransporter,
+  sendMailWithFallback,
   escapeHtml,
   verifyRecaptchaToken,
   NOT_CONFIGURED,
@@ -118,7 +119,7 @@ export async function POST(req: Request) {
 
   const transporter = createTransporter();
   if (!transporter) {
-    console.error('[career] Email is not configured (GMAIL_USER + OAuth2 or GMAIL_APP_PASSWORD missing).');
+    console.error('[career] Email is not configured (GMAIL_USER + GMAIL_APP_PASSWORD missing).');
     return NextResponse.json(NOT_CONFIGURED, { status: 500 });
   }
 
@@ -166,7 +167,7 @@ export async function POST(req: Request) {
   `;
 
   try {
-    await transporter.sendMail({
+    await sendMailWithFallback({
       from: `"Kothari Group" <${from}>`,
       to,
       replyTo: `"${name.replace(/"/g, '')}" <${email}>`,

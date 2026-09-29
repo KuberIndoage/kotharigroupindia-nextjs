@@ -18,6 +18,7 @@ import {
   ArrowUp
 } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 import {
   RECAPTCHA_SITE_KEY,
@@ -27,7 +28,8 @@ import {
 const sections = [
   // { id: 'why-kothari', label: 'About Kothari Group' },
   { id: 'sustainability', label: 'Sustainability' },
-  { id: 'career', label: 'Career' }
+  { id: 'career', label: 'Career' },
+  {id:"GST",label:'GST Details'}
 ];
 
 const aboutUsItems = [
@@ -73,6 +75,15 @@ const divisions = [
   },
 ];
 
+const requirements = [
+  'Product Enquiry',
+  'Quotation',
+  'Dealer / Distributor Enquiry',
+  'Project Requirement',
+  'After-Sales Support',
+  'Other'
+];
+
 const scrollToId = (id: string) => {
   if (id === 'home') {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -90,6 +101,11 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
   const [heroRevealed, setHeroRevealed] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const pathname = usePathname();
+  const visibleSections = sections.filter(
+    (item) => item.id !== 'GST' || pathname === '/contact-us'
+  );
+
   const solidHeader = solid || isScrolled || mobileOpen;
   
   // Popup Modal State
@@ -102,7 +118,8 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
     email: '',
     phone: '',
     division: 'Irrigation Division',
-    message: ''
+    requirement: 'Product Enquiry',
+    otherRequirement: '',
   });
 
 
@@ -219,7 +236,8 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
           email: '',
           phone: '',
           division: 'Irrigation Division',
-          message: ''
+          requirement: 'Product Enquiry',
+          otherRequirement: '',
         });
       }, 2500);
     } catch (err) {
@@ -331,7 +349,7 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
               </div>
 
               {/* Remaining Sections */}
-              {sections.map((item) => (
+              {visibleSections.map((item) => (
                 <Link
                   key={item.id}
                   href={item.id}
@@ -476,7 +494,7 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
               </div>
 
               {/* Mobile Sections */}
-              {sections.map((item) => (
+              {visibleSections.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNav(item.id)}
@@ -689,16 +707,33 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
 
                   <div>
                     <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
-                      Message / Requirement
+                      Requirement
                     </label>
-                    <textarea
-                      rows={3}
-                      placeholder="Specify product requirements, location, or general query..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none focus:border-[#1575B3] focus:bg-white transition resize-none"
-                    />
+                    <select
+                      value={formData.requirement}
+                      onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
+                      className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] focus:outline-none focus:border-[#1575B3] focus:bg-white transition"
+                    >
+                      {requirements.map((req) => (
+                        <option key={req} value={req}>{req}</option>
+                      ))}
+                    </select>
                   </div>
+
+                  {formData.requirement === 'Other' && (
+                    <div>
+                      <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
+                        Other Requirement
+                      </label>
+                      <textarea
+                        rows={4}
+                        placeholder="Please specify your requirement..."
+                        value={formData.otherRequirement}
+                        onChange={(e) => setFormData({ ...formData, otherRequirement: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none focus:border-[#1575B3] focus:bg-white transition resize-none"
+                      />
+                    </div>
+                  )}
 
                   <button
                     type="submit"

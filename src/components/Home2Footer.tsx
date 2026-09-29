@@ -39,7 +39,7 @@ const supportLinks = [
   { label: 'Download', target: '/Download' },
   { label: 'Quality Policy', target: '/quality-policy' },
   { label: 'Become Dealer', target: 'become-dealer' },
-  // { label: 'FAQs', target: 'home2-footer' },
+  { label: 'Knowledge Centre', target: '/knowledge-section' },
   { label: 'Contact Us', target: 'contact-us' }
 ];
 

@@ -9,37 +9,27 @@ export function escapeHtml(input: string): string {
     .replace(/'/g, '&#39;');
 }
 
-// Google Cloud Console (OAuth2) when GMAIL_CLIENT_ID is set,
-// otherwise Gmail SMTP with an App Password (GMAIL_APP_PASSWORD).
-// Returns null when email is not configured.
+// Gmail SMTP using an App Password (GMAIL_APP_PASSWORD) — the only supported
+// transport. Returns null when email is not configured.
 export function createTransporter() {
   const user = process.env.GMAIL_USER || '';
-  if (!user) return null;
-
-  if (process.env.GMAIL_CLIENT_ID) {
-    const { GMAIL_CLIENT_SECRET = '', GMAIL_REFRESH_TOKEN = '' } =
-      process.env;
-    if (!GMAIL_CLIENT_SECRET || !GMAIL_REFRESH_TOKEN) return null;
-    return nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        type: 'OAuth2',
-        user,
-        clientId: process.env.GMAIL_CLIENT_ID,
-        clientSecret: GMAIL_CLIENT_SECRET,
-        refreshToken: GMAIL_REFRESH_TOKEN,
-      },
-    });
-  }
-
   const pass = process.env.GMAIL_APP_PASSWORD || '';
-  if (!pass) return null;
+  if (!user || !pass) return null;
   return nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: { user, pass },
   });
+}
+
+// Send a mail through the Gmail App-Password transport. Throws on failure.
+export async function sendMailWithFallback(
+  mailOptions: Parameters<import('nodemailer').Transporter['sendMail']>[0]
+): Promise<void> {
+  const transporter = createTransporter();
+  if (!transporter) throw new Error('Email is not configured.');
+  await transporter.sendMail(mailOptions);
 }
 
 export const NOT_CONFIGURED = {

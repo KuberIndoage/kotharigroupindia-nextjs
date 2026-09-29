@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import {
   createTransporter,
+  sendMailWithFallback,
   escapeHtml,
   verifyRecaptchaToken,
   NOT_CONFIGURED,
@@ -9,7 +10,7 @@ import {
 export const runtime = 'nodejs';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MAX_LEN = { fullName: 100, email: 160, phone: 30, message: 5000 } as const;
+const MAX_LEN = { fullName: 100, email: 160, phone: 30, requirement: 100, otherRequirement: 500 } as const;
 
 // Route to the divisional inbox based on the division interest.
 // Pipe Division → pipe inbox, anything else → irrigation inbox.
@@ -41,7 +42,8 @@ export async function POST(req: Request) {
   const email = String(data.email ?? '').trim();
   const phone = String(data.phone ?? '').trim();
   const division = String(data.division ?? '').trim();
-  const message = String(data.message ?? '').trim();
+  const requirement = String(data.requirement ?? '').trim();
+  const otherRequirement = String(data.otherRequirement ?? '').trim();
 
   if (!fullName || !phone) {
     return NextResponse.json(
@@ -59,7 +61,8 @@ export async function POST(req: Request) {
     fullName.length > MAX_LEN.fullName ||
     email.length > MAX_LEN.email ||
     phone.length > MAX_LEN.phone ||
-    message.length > MAX_LEN.message
+    requirement.length > MAX_LEN.requirement ||
+    otherRequirement.length > MAX_LEN.otherRequirement
   ) {
     return NextResponse.json(
       { ok: false, error: 'One or more fields are too long.' },
@@ -78,7 +81,7 @@ export async function POST(req: Request) {
 
   const transporter = createTransporter();
   if (!transporter) {
-    console.error('[get-in-touch] Email is not configured (GMAIL_USER + OAuth2 or GMAIL_APP_PASSWORD missing).');
+    console.error('[get-in-touch] Email is not configured (GMAIL_USER + GMAIL_APP_PASSWORD missing).');
     return NextResponse.json(NOT_CONFIGURED, { status: 500 });
   }
 
@@ -95,8 +98,7 @@ export async function POST(req: Request) {
     `Email: ${email || '-'}`,
     `Phone: ${phone}`,
     `Division Interest: ${division || '-'}`,
-    '',
-    message || '(no message)',
+    `Requirement: ${requirement}${requirement === 'Other' && otherRequirement ? ` - ${otherRequirement}` : ''}`,
   ].join('\n');
   const html = `
     <h2>New get-in-touch enquiry</h2>
@@ -105,12 +107,12 @@ export async function POST(req: Request) {
       <tr><td><strong>Email</strong></td><td>${escapeHtml(email || '-')}</td></tr>
       <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
       <tr><td><strong>Division Interest</strong></td><td>${escapeHtml(division || '-')}</td></tr>
+      <tr><td><strong>Requirement</strong></td><td>${escapeHtml(requirement)}${requirement === 'Other' && otherRequirement ? ` &mdash; <em>${escapeHtml(otherRequirement)}</em>` : ''}</td></tr>
     </table>
-    <p>${escapeHtml(message || '(no message)').replace(/\n/g, '<br />')}</p>
   `;
 
   try {
-    await transporter.sendMail({
+    await sendMailWithFallback({
       from: `"Kothari Group" <${from}>`,
       to,
       replyTo: email

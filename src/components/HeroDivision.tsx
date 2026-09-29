@@ -1,6 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 
 const ArrowIcon = () => (
   <svg 
@@ -26,6 +28,7 @@ const stats = [
 export const HeroDivision = ({heroData}: {heroData: any}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardVideoRef = useRef<HTMLVideoElement>(null);
+  const isIrrigationDivision = heroData.cardTitle.includes('Irrigation');
 
   return (
     <div className="relative w-full h-[100dvh] bg-black text-white font-sans overflow-hidden">
@@ -49,10 +52,24 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      {/* Primary Content Container - Grid layout strictly divides screen into [Center Space] and [Bottom Dock] */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full pt-20 pb-6 sm:pb-8 grid grid-rows-[1fr_auto] gap-6">
-        
-        {/* TOP/MIDDLE SECTION: Row 1 takes 1fr (all remaining space) & centers content */}
+      {/* Primary Content Container - Grid layout strictly divides screen into [Breadcrumb] [Center Space] and [Bottom Dock] */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full pt-20 pb-6 sm:pb-8 grid grid-rows-[auto_1fr_auto] gap-6">
+
+        {/* Row 1: Breadcrumb */}
+        <nav
+          aria-label="Breadcrumb"
+          className="pt-10 w-full flex items-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-white/60 overflow-x-auto whitespace-nowrap shrink-0"
+        >
+          <Link href="/" className="hover:text-white transition-colors">
+            Home
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+          <span className="text-white">
+            {isIrrigationDivision ? 'Irrigation Division' : 'Pipe Division'}
+          </span>
+        </nav>
+
+        {/* TOP/MIDDLE SECTION: Row 2 takes 1fr (all remaining space) & centers content */}
         <div className="w-full flex items-center justify-center">
           <div className="w-full flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-0">
             

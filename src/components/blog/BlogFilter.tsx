@@ -3,14 +3,20 @@ import Link from 'next/link';
 
 export type DivisionFilter = 'pipe' | 'irrigation' | null;
 
-const TABS: { key: 'all' | 'pipe' | 'irrigation'; label: string; href: string }[] = [
-  { key: 'all', label: 'All', href: '/blogs' },
-  { key: 'pipe', label: 'Pipe Division', href: '/blogs?division=pipe' },
-  { key: 'irrigation', label: 'Irrigation Division', href: '/blogs?division=irrigation' },
+const TABS: { key: 'all' | 'pipe' | 'irrigation'; label: string }[] = [
+  { key: 'all', label: 'All' },
+  { key: 'pipe', label: 'Pipe Division' },
+  { key: 'irrigation', label: 'Irrigation Division' },
 ];
 
-export const BlogFilter: React.FC<{ division: DivisionFilter }> = ({ division }) => {
+export const BlogFilter: React.FC<{
+  division: DivisionFilter;
+  basePath?: string;
+}> = ({ division, basePath = '/blogs' }) => {
   const active: 'all' | 'pipe' | 'irrigation' = division ?? 'all';
+
+  const buildHref = (key: 'all' | 'pipe' | 'irrigation') =>
+    basePath + (key === 'all' ? '' : `?division=${key}`);
 
   return (
     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-300">
@@ -24,7 +30,7 @@ export const BlogFilter: React.FC<{ division: DivisionFilter }> = ({ division })
         {TABS.map((tab) => (
           <Link
             key={tab.key}
-            href={tab.href}
+            href={buildHref(tab.key)}
             scroll={false}
             className={`shrink-0 px-4 py-2 text-xs font-mono font-semibold tracking-wider uppercase border transition-all duration-200 ${
               active === tab.key
