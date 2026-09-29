@@ -74,6 +74,196 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
     ],
     division: 'irrigation',
   },
+  {
+    title: 'Papaya Guides',
+    description:
+      'Expert Papaya cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+    image: 'https://images.pexels.com/photos/34111554/pexels-photo-34111554.jpeg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-robin-ramos-3194014-6419249.jpg`,
+      },
+    ],
+    division: 'irrigation',
+  },
+  {
+    title: 'Ginger Guides',
+    description:
+      'Expert ginger cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-daniel-dan-47825192-7543128.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5312_K-I-CROP-GINGER-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5437_K-I-CROP-GINGER-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Orange Guides',
+    description:
+      'Expert orange cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-tianyun-xia-297240639-31246322.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5314_K-I-CROP-ORANGE-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5440_K-I-CROP-ORANGE-HINDI.pdf`,
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Turmeric Guides',
+    description:
+      'Expert turmeric cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-jonathan-cordova-r-2637981-36075348.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5313_K-I-CROP-TURMERIC-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5441_K-I-CROP-TURMERIC-HINDI.pdf`,
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Capsicum Guides',
+    description:'Expert capsicum cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-nc-farm-bureau-mark-2893635.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5316_K-I-CROP-CAPSICUM-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5444_K-I-CROP-CAPSICUM-HINDI.pdf`,
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Potato Guides',
+    description:'Expert potato cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-pixabay-144248.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5317_K-I-CROP-POTATO-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5439_K-I-CROP-POTATO-HINDI.pdf`,
+      },
+    ],
+    division: 'irrigation',
+  },
+ 
+   {
+    title: 'Watermelon Guides',
+    description:'Expert watermelon cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-ffatmaozel-18476615.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5318_K-I-CROP-WATERMELON-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5443_K-I-CROP-WATERMELON-HINDI.pdf`,
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Pomegranate Guides',
+    description:'Expert pomegranate cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-tanmay-tiwari-112079824-20349779.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5319_K-I-CROP-POMEGRANATE-ENGLISH.pdf`,
+        
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Cotton Guides',
+    description:'Expert cotton cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fiber quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-marcelo-solis-2036093-4264828.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5320_K-I-CROP-COTTON-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5450_K-I-CROP-COTTON-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Muskmelon Guides',
+    description:'Expert muskmelon cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-eunice-medina-2151780593-31848991.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5321_K-I-CROP-MUSKMELON-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5442_K-I-CROP-MUSKMELON-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Soybean Guides',
+    description:'Expert Soybean cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-somesh-singh-322854-36063252.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5322_K-I-CROP-SOYBEAN-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5446_K-I-CROP-SOYBEAN-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Pigeon-Pea Guides',
+    description:'Expert Pigeon-Pea cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-dilara-988605972-32188885.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5323_K-I-CROP-PIGEON-PEA-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5445_K-I-CROP-PIGEON-PEA-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Sweet-Lemon Guides',
+    description:'Expert Sweet-Lemon cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-nati-87264186-16776923.jpg',
+    lang: [
+      {
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5305_K-I-CROP-SWEET-LEMON-ENGLISH.pdf`,
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5451_K-I-CROP-SWEET-LEMON-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Cumin Guides',
+    description:'Expert Cumin cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and seed quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-victoria-bowers-148548814-10487762.jpg',
+    lang: [
+      {
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5449_K-I-CROP-CUMIN-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
+   {
+    title: 'Fennel Guides',
+    description:'Expert fennel cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-planka-32800700.jpg',
+    lang: [
+      {
+        Hindi: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5448_K-I-CROP-FENNEL-HINDI.pdf`,
+
+      },
+    ],
+    division: 'irrigation',
+  },
 ];
 
 export const pipeKnowledgeItems: KnowledgeItem[] = [
