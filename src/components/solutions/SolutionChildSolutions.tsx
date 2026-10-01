@@ -64,15 +64,15 @@ export const SolutionChildSolutions: React.FC<{
                   href={rel.link}
                   className={`group relative bg-white border border-slate-200/90 flex flex-col h-full shadow-sm hover:shadow-xl ${accentHoverBorder} transition-all duration-500 overflow-hidden`}
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200">
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200 bg-white">
                     <img
                       src={rel.image}
                       alt={rel.title}
                       referrerPolicy="no-referrer"
                       loading="lazy"
-                      className="w-full h-full object-contain p-4 opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+                      className="w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-60 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-50 pointer-events-none" />
                   </div>
                   <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
                     <div className="space-y-3">

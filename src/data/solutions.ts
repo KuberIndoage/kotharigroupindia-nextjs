@@ -1542,7 +1542,7 @@ export const solutionsData: Solution[] = [
     h1: 'Precision Irrigation',
     tagline: 'Deliver the right amount of water, exactly where your crop needs it.',
     overview: [
-      ' As a leading drip irrigation manufacturer in India, Kothari Group designs complete drip irrigation systems and micro drip irrigation systems for farms of every scale. Our irrigation system solutions combine durable driplines, drip irrigation filters, and drip irrigation fittings to deliver water directly to the root zone reducing waste while improving yield. Whether you need a simple drip watering system for a small plot or a fully automated irrigation system for commercial farmland, our micro irrigation range is built to perform.'
+      'Precision irrigation gives every crop the right amount of water and nutrients, at the right place and time. As a leading irrigation manufacturer in India, Kothari Group brings drip, sprinkler, water-saving and fertigation systems together, so each stage from filtration to application protects the next. From a small plot to commercial farmland, our driplines, sprinklers, filters, valves, injectors and automation controllers are built for Indian water and field conditions.'
      
     ],
     pillars: [

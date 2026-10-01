@@ -18,13 +18,13 @@ export const AwardCard: React.FC<{ award: Award }> = ({ award }) => {
             const target = e.target as HTMLElement;
             target.style.opacity = '0.3';
           }}
-          className="block w-full h-52 sm:h-56 object-cover object-top"
+          className="block w-full h-40 sm:h-48 object-cover object-top"
         />
       </div>
 
       <div className="p-6 flex-1 flex flex-col justify-between gap-5">
         <div className="space-y-3">
-          <div className="flex items-center gap-3 text-sm font-mono tracking-widest text-slate-600 uppercase font-semibold">
+          <div className="flex items-center gap-3 text-sm font-mono tracking-widest text-[#1575B3] uppercase font-semibold">
             <span>{award.year}</span>
           </div>
 
