@@ -17,6 +17,8 @@ import {
 import type { DivisionApplications } from '@/data/applications';
 
 function ApplicationsContent({ data, isPipe }: { data: DivisionApplications; isPipe: boolean }) {
+  const basePath = isPipe ? '/pipe-applications' : '/irrigation-applications';
+
   return (
     <div className="text-left">
       {/* Hero */}
@@ -89,15 +91,28 @@ function ApplicationsContent({ data, isPipe }: { data: DivisionApplications; isP
                     }`}
                   >
                     {group.items.map((item) => (
-                      <ApplicationCard key={item.title} item={item} theme={isPipe ? 'blue' : 'green'} />
+                      <ApplicationCard
+                        key={item.title}
+                        item={item}
+                        theme={isPipe ? 'blue' : 'green'}
+                        basePath={basePath}
+                      />
                     ))}
                   </div>
                   <div className="md:hidden">
-                    <ApplicationSlider items={group.items} theme={isPipe ? 'blue' : 'green'} />
+                    <ApplicationSlider
+                      items={group.items}
+                      theme={isPipe ? 'blue' : 'green'}
+                      basePath={basePath}
+                    />
                   </div>
                 </>
               ) : (
-                <ApplicationSlider items={group.items} theme={isPipe ? 'blue' : 'green'} />
+                <ApplicationSlider
+                  items={group.items}
+                  theme={isPipe ? 'blue' : 'green'}
+                  basePath={basePath}
+                />
               )}
             </div>
           </section>

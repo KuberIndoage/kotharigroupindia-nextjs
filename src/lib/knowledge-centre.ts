@@ -25,7 +25,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
   {
     title: 'Chilli Guides',
     description:
-      'Expert chilli cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+      'Expert chilli cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
     image: 'https://images.pexels.com/photos/34111554/pexels-photo-34111554.jpeg',
     lang: [
       {
@@ -38,7 +38,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
   {
     title: 'Onion Guides',
     description:
-      'Expert onion cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and bulb quality.',
+      'Expert onion cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
     image: 'https://images.pexels.com/photos/7129153/pexels-photo-7129153.jpeg',
     lang: [
       {
@@ -64,7 +64,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
   {
     title: 'Sugarcane Guides',
     description:
-      'Expert Sugarcane cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+      'Expert Sugarcane cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and cane quality.',
     image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-carbellsarfo-33740520.jpg',
     lang: [
       {
@@ -75,13 +75,13 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
     division: 'irrigation',
   },
   {
-    title: 'Papaya Guides',
+    title: 'Papaya Guide',
     description:
       'Expert Papaya cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
-    image: 'https://images.pexels.com/photos/34111554/pexels-photo-34111554.jpeg',
+    image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-robin-ramos-3194014-6419249.jpg',
     lang: [
       {
-        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-robin-ramos-3194014-6419249.jpg`,
+        English: `https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/KCD_5311_K-I-CROP-PAPAYA-ENGLISH.pdf`,
       },
     ],
     division: 'irrigation',
@@ -150,7 +150,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
     ],
     division: 'irrigation',
   },
- 
+   
    {
     title: 'Watermelon Guides',
     description:'Expert watermelon cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
@@ -164,7 +164,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
     division: 'irrigation',
   },
    {
-    title: 'Pomegranate Guides',
+    title: 'Pomegranate Guide',
     description:'Expert pomegranate cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
     image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-tanmay-tiwari-112079824-20349779.jpg',
     lang: [
@@ -203,7 +203,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
   },
    {
     title: 'Soybean Guides',
-    description:'Expert Soybean cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
+    description:'Expert Soybean cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and seeds quality.',
     image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-somesh-singh-322854-36063252.jpg',
     lang: [
       {
@@ -241,8 +241,8 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
     division: 'irrigation',
   },
    {
-    title: 'Cumin Guides',
-    description:'Expert Cumin cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and seed quality.',
+    title: 'Cumin Guide',
+    description:'Expert Cumin cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and seeds quality.',
     image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-victoria-bowers-148548814-10487762.jpg',
     lang: [
       {
@@ -253,7 +253,7 @@ export const irrigationKnowledgeItems: KnowledgeItem[] = [
     division: 'irrigation',
   },
    {
-    title: 'Fennel Guides',
+    title: 'Fennel Guide',
     description:'Expert fennel cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and vegetable quality.',
     image: 'https://admin.kotharigroupindia.com/wp-content/uploads/2026/09/pexels-planka-32800700.jpg',
     lang: [

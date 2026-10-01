@@ -6,13 +6,18 @@ import { SolutionPillars } from './SolutionPillars';
 import { SolutionWhyChoose } from './SolutionWhyChoose';
 import { SolutionApplications } from './SolutionApplications';
 import { SolutionRelatedProducts } from './SolutionRelatedProducts';
+import { SolutionChildSolutions } from './SolutionChildSolutions';
 
 export const SolutionPageTemplate: React.FC<{ solution: Solution; theme?: 'blue' | 'green' }> = ({ solution, theme = 'blue' }) => {
   return (
     <>
       <SolutionHero solution={solution} />
       <SolutionOverview overview={solution.overview} />
+      {solution.childSolutions && (
+        <SolutionChildSolutions solutions={solution.childSolutions} theme={theme} />
+      )}
       <SolutionPillars pillars={solution.pillars} theme={theme} />
+      
       <SolutionWhyChoose points={solution.whyChoose} theme={theme} />
       <SolutionApplications applications={solution.applications} theme={theme} />
       <SolutionRelatedProducts products={solution.relatedProducts} theme={theme} />

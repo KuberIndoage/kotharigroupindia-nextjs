@@ -6,12 +6,42 @@ export interface SolutionPillar {
   text: string;
 }
 
+export interface SolutionFaq {
+  question: string;
+  answer: string;
+}
+
+export interface SolutionChildSolution {
+  slug: string;
+  link: string;
+  icon: string;
+  title: string;
+  text: string;
+  image: string;
+  metaTitle: string;
+  metaDescription: string;
+  h1: string;
+  tagline: string;
+  overview: string[];
+  pillars: SolutionPillar[];
+  whyChoose: string[];
+  applications: string[];
+  relatedProducts: SolutionRelatedProduct[];
+  faqs: SolutionFaq[];
+}
+
 export interface SolutionRelatedProduct {
   name: string;
   slug: string;
   categorySlug: string;
   image: string;
   shortDescription: string;
+}
+
+export interface SolutionChildSolutions {
+  heading: string;
+  description: string;
+  items: SolutionChildSolution[];
 }
 
 export interface Solution {
@@ -25,6 +55,7 @@ export interface Solution {
   tagline: string;
   overview: string[];
   pillars: SolutionPillar[];
+  childSolutions?: SolutionChildSolutions;
   whyChoose: string[];
   applications: string[];
   relatedProducts: SolutionRelatedProduct[];
@@ -1536,6 +1567,446 @@ export const solutionsData: Solution[] = [
         text: 'Compatible with dosing pumps & injectors for nutrient delivery',
       },
     ],
+    childSolutions: {
+      heading: 'Our Precision Irrigation Solutions',
+      description: 'Four solutions that work together as one complete system.',
+      items: [
+        {
+          slug: 'precision-drip-irrigation',
+          link: '/solutions/precision-irrigation/precision-drip-irrigation',
+          icon: 'Droplets',
+          title: 'Precision Drip Irrigation',
+          text: 'Driplines, drippers and fittings that deliver water straight to the roots.',
+          image: `https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80`,
+          metaTitle: 'Precision Drip Irrigation System | Kothari Group',
+          metaDescription:
+            'Precision drip irrigation systems with driplines, drippers, polytube and fittings for uniform root-zone watering on fields, slopes and greenhouses.',
+          h1: 'Precision Drip Irrigation',
+          tagline: 'Water every plant at its roots, not the soil around it.',
+          overview: [
+            'Precision drip irrigation delivers water directly to each plant\u2019s root zone through driplines and emitters, cutting evaporation and runoff while keeping soil moisture steady. Kothari\u2019s drip irrigation system range covers flat fields, slopes, subsurface installations and short-duration crops. Israeli technology and IS 13488 certification support uniform, clog-resistant performance.',
+          ],
+          pillars: [
+            {
+              icon: 'Droplets',
+              label: 'Uniform Flow',
+              text: 'Consistent emitter output gives every plant an equal share.',
+            },
+            {
+              icon: 'Gauge',
+              label: 'Slope-Ready',
+              text: 'Pressure-compensated options hold flow on slopes and long runs.',
+            },
+            {
+              icon: 'ShieldCheck',
+              label: 'Clog Resistance',
+              text: 'Clog-resistant emitter design keeps lines running season after season.',
+            },
+            {
+              icon: 'Sun',
+              label: 'Long Field Life',
+              text: 'UV-stabilised materials built for Indian sun.',
+            },
+          ],
+          whyChoose: [
+            'Non-pressure-compensated, pressure-compensated and thin wall options in one range',
+            'Anti-siphon and no-drain designs for subsurface and greenhouse use',
+            'Compatible with filters, valves, injectors and controllers',
+            'Scalable from small landholdings to large commercial farms',
+            'Backed by 35+ years of agri-piping manufacturing expertise',
+          ],
+          applications: [
+            'Sugarcane & Cotton',
+            'Vegetables',
+            'Banana & Pomegranate',
+            'Orchards & Vineyards',
+            'Greenhouses & Nurseries',
+          ],
+          relatedProducts: [
+            {
+              name: 'Dripline K-Gol NPC',
+              slug: 'dripline-k-gol-npc',
+              categorySlug: 'drip-line',
+              image: `${ADMIN}/2025/04/DRIPLINE-K-GOL-NPC.webp`,
+              shortDescription:
+                'Our Dripline K-Gol NPC is built to deliver dependable, cost-effective drip irrigation for flat, level fields where consistent, straightforward water delivery matters more than pressure compensation.',
+            },
+            {
+              name: 'Thin Wall Dripline K-Super',
+              slug: 'thin-wall-dripline-k-super',
+              categorySlug: 'thinwall-drip-line',
+              image: `${ADMIN}/2025/04/DRIPLINE-K-SUPER.webp`,
+              shortDescription:
+                'Our Thin Wall Dripline K-Super is designed for growers running short-duration crops that need reliable, season-length irrigation without the higher cost of thicker driplines.',
+            },
+            {
+              name: 'Turbo Dripper',
+              slug: 'turbo-dripper',
+              categorySlug: 'emitters-drippers',
+              image: `${ADMIN}/2025/04/TURBO-DRIPPER-1.webp`,
+              shortDescription:
+                'Advanced Israeli technology, special-grade LLDPE, UV resistance, and smooth flow ensure durable, efficient, and reliable drip irrigation performance.',
+            },
+            {
+              name: 'Turbo Dripper',
+              slug: 'turbo-dripper',
+              categorySlug: 'emitters-drippers',
+              image: `${ADMIN}/2025/04/TURBO-DRIPPER-1.webp`,
+              shortDescription:
+                'Advanced Israeli technology, special-grade LLDPE, UV resistance, and smooth flow ensure durable, efficient, and reliable drip irrigation performance.',
+            },
+          ],
+          faqs: [
+            {
+              question: 'What is a drip irrigation system and how does it work?',
+              answer:
+                'Filtered water flows through pipes to driplines or drippers, which release it slowly at each plant\u2019s root zone.',
+            },
+            {
+              question: 'Which drip irrigation system is best for sloped land?',
+              answer:
+                'Pressure-compensated driplines hold uniform flow despite elevation changes, so they suit slopes and long runs.',
+            },
+            {
+              question: 'What filtration does a drip irrigation system need?',
+              answer:
+                'Most driplines and drippers need about 130-micron filtration to prevent clogging.',
+            },
+            {
+              question: 'Can drip irrigation work without a pump?',
+              answer:
+                'Yes. A gravity drip kit uses elevation alone, which suits areas with limited power.',
+            },
+          ],
+        },
+        {
+          slug: 'precision-sprinkler-irrigation',
+          link: '/solutions/precision-irrigation/precision-sprinkler-irrigation',
+          icon: 'CloudRainWind',
+          title: 'Precision Sprinkler Irrigation',
+          text: 'Sprinklers, rainguns and quick-coupling pipes for even overhead coverage.',
+          image: `https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80`,
+          metaTitle: 'Precision Sprinkler Irrigation System | Kothari Group',
+          metaDescription:
+            'Precision sprinkler irrigation systems with metal sprinklers, rainguns, HDPE sprinkler pipes and micro sprinklers for uniform crop coverage.',
+          h1: 'Precision Sprinkler Irrigation',
+          tagline: 'Even, rain-like coverage for every acre.',
+          overview: [
+            'A sprinkler irrigation system applies water as controlled rainfall, covering closely spaced field crops, orchards, nurseries and lawns evenly. Kothari\u2019s range includes metal sprinklers for full-circle coverage, HDPE quick-coupling pipes for fast setup, rainguns for wide areas, micro and mini sprinklers for orchards and nurseries, and pop-up heads for turf.',
+          ],
+          pillars: [
+            {
+              icon: 'Radar',
+              label: 'Even Coverage',
+              text: 'Full-circle spray without blind spots.',
+            },
+            {
+              icon: 'Zap',
+              label: 'Fast Setup',
+              text: 'Quick-coupling pipes make laying and shifting easy.',
+            },
+            {
+              icon: 'Expand',
+              label: 'Flexible Scale',
+              text: 'From micro sprinklers to rainguns for large areas.',
+            },
+            {
+              icon: 'CloudRainWind',
+              label: 'Crop Protection',
+              text: 'Fine-mist options for cooling and frost protection.',
+            },
+          ],
+          whyChoose: [
+            'Full range from micro sprinklers to rainguns',
+            'Quick-coupling HDPE pipes for portable field layouts',
+            'Suits closely spaced crops that drip lines can\u2019t cover well',
+            'Fine-mist sprayers for orchard and greenhouse cooling',
+            'Pop-up heads and rotors for lawns and turf',
+            'Backed by 35+ years of agri-piping manufacturing expertise',
+          ],
+          applications: [
+            'Field Crops',
+            'Plantations',
+            'Orchards & Nurseries',
+            'Fodder & Lawns',
+            'Greenhouses',
+          ],
+          relatedProducts: [
+            {
+              name: 'Mini Sprinkler',
+              slug: 'mini-sprinkler',
+              categorySlug: 'mini-sprinklers-and-assemblies',
+              image: `${ADMIN}/2025/04/MINI-SPRINKLER.png`,
+              shortDescription:
+                'Adjustable mini sprinklers delivering uniform, flexible, weather-resistant irrigation.',
+            },
+            {
+              name: 'Sprinklers Pipes (QCPE)',
+              slug: 'sprinklers-pipes-qcpe',
+              categorySlug: 'hdpe-sprinkler-pipes-qcpe',
+              image: `${ADMIN}/2025/07/QCPE-Spinklar-pipe.webp`,
+              shortDescription:
+                'High-quality HDPE clamps offer smooth flow, UV resistance, lightweight handling, and flexible installation for durable outdoor applications.',
+            },
+            {
+              name: 'K-Mic Micro Sprinkler',
+              slug: 'k-mic-micro-sprinkler',
+              categorySlug: 'micro-sprinklers-and-assemblies',
+              image: `${ADMIN}/2025/10/K-Mic-Micro-Sprinkler.webp`,
+              shortDescription:
+                'High-pressure bayonet nozzle delivers fine mist spray, adjustable discharge rates, and reliable crop protection across varying operating conditions.',
+            },
+            {
+              name: 'K-Mic Micro Sprinkler',
+              slug: 'k-mic-micro-sprinkler',
+              categorySlug: 'micro-sprinklers-and-assemblies',
+              image: `${ADMIN}/2025/10/K-Mic-Micro-Sprinkler.webp`,
+              shortDescription:
+                'High-pressure bayonet nozzle delivers fine mist spray, adjustable discharge rates, and reliable crop protection across varying operating conditions.',
+            },
+          ],
+          faqs: [
+            {
+              question: 'What is sprinkler irrigation and where is it used?',
+              answer:
+                'It sprays water over the crop like rainfall and suits closely spaced field crops, orchards, nurseries and landscapes.',
+            },
+            {
+              question: 'Sprinkler vs drip irrigation: which is better?',
+              answer:
+                'Drip suits row crops and precise root-zone watering, while sprinklers suit closely spaced crops that need wide overhead coverage.',
+            },
+            {
+              question: 'What pressure does a sprinkler system need?',
+              answer:
+                'Metal and mini sprinklers typically run at 2 to 4 kg/cm\u00b2, and micro sprinklers at 1 to 3 kg/cm\u00b2.',
+            },
+            {
+              question: 'Can sprinklers protect crops from frost?',
+              answer:
+                'Yes. Fine-mist micro sprinklers are used for frost protection and overhead cooling in orchards and greenhouses.',
+            },
+          ],
+        },
+        {
+          slug: 'water-saving-irrigation',
+          link: '/solutions/precision-irrigation/water-saving-irrigation',
+          icon: 'Filter',
+          title: 'Water-Saving Irrigation',
+          text: 'Filters, pressure valves, meters and controllers that protect every drop.',
+          image: `https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80`,
+          metaTitle: 'Water-Saving Irrigation Systems for Farms | Kothari Group',
+          metaDescription:
+            'Water-saving irrigation with filters, pressure valves, water meters and controllers that cut clogging, waste and pipeline damage.',
+          h1: 'Water-Saving Irrigation',
+          tagline: 'Protect every drop from source to root.',
+          overview: [
+            'Water savings depend on what surrounds the emitter: clean water, stable pressure, protected pipelines and measured volumes. Kothari\u2019s drip irrigation filters stop the clogging that causes uneven watering. Pressure and relief valves prevent bursts and surges, water meters track usage, and controllers schedule irrigation by time or volume. It is water management for agriculture built into the system itself.',
+          ],
+          pillars: [
+            {
+              icon: 'Filter',
+              label: 'Clean Water',
+              text: 'Filtration removes sand and organic debris before it reaches emitters.',
+            },
+            {
+              icon: 'Gauge',
+              label: 'Stable Pressure',
+              text: 'Valves regulate flow and protect pipelines from surges.',
+            },
+            {
+              icon: 'Layers',
+              label: 'Measured Use',
+              text: 'Meters track exactly how much water each cycle uses.',
+            },
+            {
+              icon: 'Cpu',
+              label: 'Scheduled Control',
+              text: 'Controllers replace guesswork with timed or volume-based irrigation.',
+            },
+          ],
+          whyChoose: [
+            'Complete filter range: hydrocyclone, sand, screen and disc',
+            'Valves for pressure reduction, sustaining, relief and air release',
+            'Auto-backwash and flush options to cut manual cleaning',
+            'Water meters and controllers for measured irrigation',
+            'Compatible with any drip or sprinkler layout',
+            'Backed by 35+ years of agri-piping manufacturing expertise',
+          ],
+          applications: [
+            'Well & Borewell Water',
+            'River & Pond Water',
+            'Large Drip Systems',
+            'Sloped Farms',
+            'Commercial Farms',
+          ],
+          relatedProducts: [
+            {
+              name: 'Hydrocyclone Filter',
+              slug: 'hydrocyclone-filter',
+              categorySlug: 'filters',
+              image: `${ADMIN}/2025/10/Hydrocyclone-Filter.webp`,
+              shortDescription:
+                'Hydrodynamic filter providing efficient particle separation and extended filtration.',
+            },
+            {
+              name: 'Hydrocyclone Filter',
+              slug: 'hydrocyclone-filter',
+              categorySlug: 'filters',
+              image: `${ADMIN}/2025/10/Hydrocyclone-Filter.webp`,
+              shortDescription:
+                'Hydrodynamic filter providing efficient particle separation and extended filtration.',
+            },
+            {
+              name: 'Dosing Pump',
+              slug: 'dozing-pump',
+              categorySlug: 'dosing-pumps-and-fertilizer-injectors',
+              image: `${ADMIN}/2025/10/DOZING-PUMP.webp`,
+              shortDescription:
+                'Adjustable fertilizer injector delivering precise, efficient nutrient application.',
+            },
+            {
+              name: 'PP Header Assembly',
+              slug: 'pp-header-assembly',
+              categorySlug: 'dosing-pumps-and-fertilizer-injectors',
+              image: `${ADMIN}/2025/04/PP-Header-Assembly.webp`,
+              shortDescription: 'Reliable Assembly for Filtration Systems.',
+            },
+          ],
+          faqs: [
+            {
+              question: 'How can irrigation water be saved on a farm?',
+              answer:
+                'Use drip or sprinkler systems, keep them clean with filtration, control pressure with valves, and schedule by time or volume with a controller.',
+            },
+            {
+              question: 'Why is filtration important in drip irrigation?',
+              answer:
+                'Sand and organic matter clog drippers and cause uneven watering, so filters protect both yield and equipment.',
+            },
+            {
+              question: 'Which filter suits well water with sand?',
+              answer:
+                'Install a hydrocyclone filter first to remove heavy sand, followed by a screen or disc filter.',
+            },
+            {
+              question: 'How is water hammer prevented in irrigation pipelines?',
+              answer:
+                'Air cum vacuum relief valves, pressure valves and quick relief valves absorb surges and protect pipes.',
+            },
+          ],
+        },
+        {
+          slug: 'automated-fertigation',
+          link: '/solutions/precision-irrigation/automated-fertigation',
+          icon: 'FlaskConical',
+          title: 'Automated Fertigation',
+          text: 'Injectors, dosing pumps and controllers for precise nutrient delivery.',
+          image: `https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80`,
+          metaTitle: 'Automated Fertigation Systems for Drip Irrigation | Kothari Group',
+          metaDescription:
+            'Automated fertigation systems with Venturi injectors, dosing pumps and IoT machines for precise nutrient delivery through drip irrigation.',
+          h1: 'Automated Fertigation',
+          tagline: 'The right nutrients, in every irrigation cycle.',
+          overview: [
+            'Fertigation applies fertilizer through the irrigation system, so nutrients reach the root zone with every cycle. Kothari\u2019s automated irrigation system range starts with power-free Venturi injectors for smaller setups. Dosing pumps handle larger systems, and the Nutrijet IoT machine adds real-time EC and pH control, giving growers consistent nutrition with less fertilizer waste.',
+          ],
+          pillars: [
+            {
+              icon: 'FlaskConical',
+              label: 'Precise Dosing',
+              text: 'Fertilizer is metered into the line, not spread by hand.',
+            },
+            {
+              icon: 'Sprout',
+              label: 'Root-Zone Nutrition',
+              text: 'Nutrients arrive with the water, exactly where roots feed.',
+            },
+            {
+              icon: 'Cpu',
+              label: 'Automation Ready',
+              text: 'Controllers schedule dosing by time, quantity or EC and pH.',
+            },
+            {
+              icon: 'Expand',
+              label: 'Scalable',
+              text: 'From Venturi injectors to IoT fertigation machines.',
+            },
+          ],
+          whyChoose: [
+            'Venturi injectors, dosing pumps and IoT machines in one range',
+            'Real-time EC and pH control on Nutrijet',
+            'Remote monitoring and automated reports on IoT models',
+            'Manifolds and headers for clean fertigation layouts',
+            'Reduces fertilizer waste versus manual application',
+            'Backed by 35+ years of agri-piping manufacturing expertise',
+          ],
+          applications: [
+            'Vegetables',
+            'Orchards',
+            'Vineyards',
+            'Nurseries',
+            'Greenhouses',
+          ],
+          relatedProducts: [
+            {
+              name: 'Nutrijet Fertigation Machines',
+              slug: 'nutrijet-fertigation-machines',
+              categorySlug: 'fertigation-machines',
+              image: `${ADMIN}/2025/10/NUTRIJET.webp`,
+              shortDescription:
+                'IoT-enabled fertigation system delivering precise, automated nutrient management.',
+            },
+            {
+              name: 'Nutrijet Fertigation Machines',
+              slug: 'nutrijet-fertigation-machines',
+              categorySlug: 'fertigation-machines',
+              image: `${ADMIN}/2025/10/NUTRIJET.webp`,
+              shortDescription:
+                'IoT-enabled fertigation system delivering precise, automated nutrient management.',
+            },
+            {
+              name: 'Nutrijet Fertigation Machines',
+              slug: 'nutrijet-fertigation-machines',
+              categorySlug: 'fertigation-machines',
+              image: `${ADMIN}/2025/10/NUTRIJET.webp`,
+              shortDescription:
+                'IoT-enabled fertigation system delivering precise, automated nutrient management.',
+            },
+            {
+              name: 'GSI (Galcon Smart Irrigation) Controller',
+              slug: 'gsi-galcon-smart-irrigation-controller',
+              categorySlug: 'controllers',
+              image: `${ADMIN}/2025/04/GSI-Galcon-Smart-Irrigation.webp`,
+              shortDescription:
+                'Compact IoT controller enabling remote, customizable irrigation and fertigation.',
+            },
+          ],
+          faqs: [
+            {
+              question: 'What is fertigation and how does it work?',
+              answer:
+                'Fertigation injects fertilizer into irrigation water so nutrients reach the root zone with every irrigation.',
+            },
+            {
+              question: 'Venturi injector vs dosing pump: which one to choose?',
+              answer:
+                'A Venturi injector is power-free and suits smaller systems, while a dosing pump gives higher injection rates for larger setups.',
+            },
+            {
+              question: 'Can fertigation be automated?',
+              answer:
+                'Yes. Controllers and the Nutrijet machine schedule dosing by time, quantity, proportion, or EC and pH.',
+            },
+            {
+              question: 'Is filtration needed with fertigation?',
+              answer:
+                'Yes. About 130-micron filtration protects drippers from clogging when fertilizer is injected.',
+            },
+          ],
+        },
+      ],
+    },
     whyChoose: [
       'UV-stabilized drip lines built for long field life under Indian sun',
       'Compatible with filters, valves, and automation controllers for a complete system',
@@ -2224,4 +2695,15 @@ export const solutionsData: Solution[] = [
 
 export function getSolutionBySlug(slug: string): Solution | undefined {
   return solutionsData.find((s) => s.slug === slug);
+}
+
+export function getChildSolutions(parentSlug: string): SolutionChildSolution[] {
+  return getSolutionBySlug(parentSlug)?.childSolutions?.items ?? [];
+}
+
+export function getChildSolutionBySlug(
+  parentSlug: string,
+  childSlug: string
+): SolutionChildSolution | undefined {
+  return getChildSolutions(parentSlug).find((c) => c.slug === childSlug);
 }

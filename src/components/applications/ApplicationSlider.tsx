@@ -5,9 +5,19 @@ import Link from 'next/link';
 import { motion, AnimatePresence, type PanInfo } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import type { ApplicationItem } from '@/data/applications';
+import { getApplicationDetailHref } from '@/data/applications';
 
-function ApplicationCard({ item, theme = 'blue' }: { item: ApplicationItem; theme?: 'blue' | 'green' }) {
+function ApplicationCard({
+  item,
+  theme = 'blue',
+  basePath,
+}: {
+  item: ApplicationItem;
+  theme?: 'blue' | 'green';
+  basePath?: string;
+}) {
   const isGreen = theme === 'green';
+  const detailHref = basePath ? getApplicationDetailHref(basePath, item) : undefined;
   return (
     <div className={`group relative h-full flex flex-col ${isGreen ? 'bg-[#F2FAF4]' : 'bg-white'} border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden`}>
       {/* Image */}
@@ -24,7 +34,14 @@ function ApplicationCard({ item, theme = 'blue' }: { item: ApplicationItem; them
       {/* Content */}
       <div className="flex flex-col flex-1 p-7 sm:p-8">
         <h3 className="text-xl sm:text-2xl font-serif font-light uppercase tracking-tight text-slate-900 m-0 leading-snug">
-          {item.title}
+          {detailHref ? (
+            <Link href={detailHref} className="inline-flex items-start gap-2 hover:opacity-70 transition-opacity">
+              <span>{item.title}</span>
+              <ArrowUpRight className="w-5 h-5 mt-1 shrink-0" />
+            </Link>
+          ) : (
+            item.title
+          )}
         </h3>
         <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-4 mb-6">
           {item.description}
@@ -57,9 +74,14 @@ export { ApplicationCard };
 interface ApplicationSliderProps {
   items: ApplicationItem[];
   theme?: 'blue' | 'green';
+  basePath?: string;
 }
 
-export const ApplicationSlider: React.FC<ApplicationSliderProps> = ({ items, theme = 'blue' }) => {
+export const ApplicationSlider: React.FC<ApplicationSliderProps> = ({
+  items,
+  theme = 'blue',
+  basePath,
+}) => {
   const isGreen = theme === 'green';
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(0);
@@ -160,7 +182,7 @@ export const ApplicationSlider: React.FC<ApplicationSliderProps> = ({ items, the
                   onMouseLeave={() => setIsPaused(false)}
                   className="h-full"
                 >
-                  <ApplicationCard item={item} theme={theme} />
+                  <ApplicationCard item={item} theme={theme} basePath={basePath} />
                 </div>
               ))}
             </div>

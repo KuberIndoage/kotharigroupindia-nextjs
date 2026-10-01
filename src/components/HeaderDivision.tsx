@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import { Menu, X, ChevronDown, ChevronRight, Phone, Mail, MapPin, Send, ArrowRight, Factory, Sprout, Users, Award, Building2, ArrowUp, Home } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, ChevronLeft, Phone, Mail, MapPin, Send, ArrowRight, Factory, Sprout, Users, Award, Building2, ArrowUp, Home } from 'lucide-react';
 import Link from 'next/link';
 import Script from 'next/script';
 import { useRouter } from 'next/navigation';
@@ -10,6 +10,7 @@ import {
   getRecaptchaToken,
 } from '@/lib/recaptcha-client';
 import { pipeSolutionsMegaMenu, irrigationSolutionsMegaMenu } from '@/data/products';
+import { getChildSolutions } from '@/data/solutions';
 import { normalizeSlug } from '@/lib/slug';
 
 // Mega Menu Data Configurations
@@ -286,6 +287,8 @@ const scrollToId = (id: string) => {
   if (el) el.scrollIntoView({ behavior: 'smooth' });
 };
 
+const solutionSlugOf = (url: string) => (url || '').split('/').filter(Boolean).pop() || '';
+
 interface HeaderDivisionProps {
   productsMegaMenu?: any;
   solutionsMegaMenu?: any;
@@ -354,10 +357,20 @@ export const HeaderDivison: React.FC<HeaderDivisionProps> = ({ productsMegaMenu 
 const [activeProductCategory, setActiveProductCategory] = useState(0);
 const [openSegment, setOpenSegment] = useState<number | null>(null);
 const [aboutOpen, setAboutOpen] = useState(false);
+  const [activeSolutionIdx, setActiveSolutionIdx] = useState(0);
+  const [solutionChildView, setSolutionChildView] = useState<string | null>(null);
   const division = solutionsMegaMenu.headline.includes('Irrigation') ? 'irrigation-division' : 'pipe-division';
   const isIrrigation = division === 'irrigation-division';
   const router = useRouter();
   const defaultDivisionInterest = division === 'pipe-division' ? 'Pipe Division' : 'Irrigation Division';
+
+  // Child solutions per mega menu solution, keyed by solution slug.
+  const menuItems = solutionsMegaMenu?.items || [];
+  const solutionChildrenBySlug = new Map<string, any[]>();
+  for (const it of menuItems) {
+    const sSlug = solutionSlugOf(it?.url || '');
+    if (sSlug) solutionChildrenBySlug.set(sSlug, getChildSolutions(sSlug));
+  }
 
   const requirements = [
     'Product Enquiry',
@@ -465,6 +478,10 @@ const handleMouseEnter = (menuKey: string) => {
     setActiveProductCategory(0);
     setOpenSegment(null);
   }
+  if (menuKey === 'solutions') {
+    setActiveSolutionIdx(0);
+    setSolutionChildView(null);
+  }
 };
 const handleSegmentClick = (segIdx: number) => {
   if (openSegment === segIdx) {
@@ -474,6 +491,15 @@ const handleSegmentClick = (segIdx: number) => {
     setActiveProductSegment(segIdx);
     setActiveProductCategory(0);
   }
+};
+const handleSolutionSelect = (idx: number, item: any) => {
+  setActiveSolutionIdx(idx);
+  const slug = solutionSlugOf(item?.url || '');
+  const children = solutionChildrenBySlug.get(slug) || [];
+  setSolutionChildView(children.length ? slug : null);
+};
+const handleSolutionBack = () => {
+  setSolutionChildView(null);
 };
   const handleMouseLeave = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -580,6 +606,13 @@ const handleSegmentClick = (segIdx: number) => {
       setFormSending(false);
     }
   };
+
+  const activeChildSlug = solutionChildView;
+  const activeChildItems = activeChildSlug ? solutionChildrenBySlug.get(activeChildSlug) || [] : [];
+  const showChildView = !!activeChildSlug && activeChildItems.length > 0;
+  const activeSolutionItem = menuItems.find(
+    (it: any) => solutionSlugOf(it?.url || '') === activeChildSlug
+  );
 
   const isSolid = solid || isScrolled || mobileOpen;
   const navItemStyle = `px-3 py-2 text-[16px] font-medium transition-all duration-200 flex items-center gap-1 ${
@@ -802,28 +835,91 @@ const handleSegmentClick = (segIdx: number) => {
           </div>
         </div>
 
-        {/* Right Column - 2 in a row Grid */}
+        {/* Right Column - Solutions list with child view */}
         <div className="col-span-7 grid grid-cols-2 gap-6">
-          {solutionsMegaMenu.items.map((item: any, idx: number) => (
-            <Link
-              key={idx}
-              href={item.url}
-              onClick={handleNavClick}
-              className="group flex flex-col space-y-2.5"
-            >
-              <div className="overflow-hidden aspect-[16/9] bg-slate-100">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                />
+          {showChildView ? (
+            <div className="col-span-2 space-y-6">
+              <div className="flex items-center justify-between border-b border-[#E2EBF3] pb-3">
+                <button
+                  onClick={handleSolutionBack}
+                  className={`inline-flex items-center gap-2 text-[11px] font-mono tracking-[0.25em] uppercase ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575B3]'} hover:opacity-70 transition-opacity`}
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  Back
+                </button>
+                {activeSolutionItem && (
+                  <Link
+                    href={activeSolutionItem.url}
+                    onClick={handleNavClick}
+                    className={`text-sm font-semibold ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575B3]'} inline-flex items-center gap-1.5 hover:opacity-70 transition-opacity`}
+                  >
+                    {activeSolutionItem.title}
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                )}
               </div>
-              <div className={`flex items-center gap-1.5 text-sm font-medium text-[#111111] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} transition-colors`}>
-                <span>{item.title}</span>
-                <ChevronRight className={`w-4 h-4 text-[#5F6B7A] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} group-hover:translate-x-0.5 transition-all`} />
+              <div className="grid grid-cols-2 gap-6 max-h-[440px] overflow-y-auto pr-2 custom-scrollbar">
+                {activeChildItems.map((c: any, idx: number) => (
+                  <Link
+                    key={c.slug || idx}
+                    href={c.link || `/${c.slug}`}
+                    onClick={handleNavClick}
+                    className="group flex flex-col space-y-2.5"
+                  >
+                    <div className="overflow-hidden aspect-[16/9] bg-slate-100">
+                      <img
+                        src={c.image}
+                        alt={c.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                    </div>
+                    <div className={`flex items-center gap-1.5 text-sm font-medium text-[#111111] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} transition-colors`}>
+                      <span>{c.title}</span>
+                      {/* <ChevronRight className={`w-4 h-4 text-[#5F6B7A] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} group-hover:translate-x-0.5 transition-all`} /> */}
+                    </div>
+                  </Link>
+                ))}
               </div>
-            </Link>
-          ))}
+            </div>
+          ) : (
+            solutionsMegaMenu.items.map((item: any, idx: number) => {
+              const sSlug = solutionSlugOf(item?.url || '');
+              const children = solutionChildrenBySlug.get(sSlug) || [];
+              const hasChildren = children.length > 0;
+              return (
+                <Link
+                  key={idx}
+                  href={item.url}
+                  onMouseEnter={() => setActiveSolutionIdx(idx)}
+                  onClick={(e) => {
+                    if (hasChildren) {
+                      e.preventDefault();
+                      handleSolutionSelect(idx, item);
+                    } else {
+                      handleNavClick();
+                    }
+                  }}
+                  className="group flex flex-col space-y-2.5 relative"
+                >
+                  <div className="overflow-hidden aspect-[16/9] bg-slate-100">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  </div>
+                  <div className={`flex items-center justify-between text-sm font-medium text-[#111111] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} transition-colors`}>
+                    <span>{item.title}</span>
+                    {hasChildren && (<ChevronRight className={`w-4 h-4 text-[#5F6B7A] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} ${hasChildren ? 'group-hover:translate-x-0.5' : 'group-hover:translate-x-0.5'} transition-all`} />
+                    )}
+                  </div>
+                  {/* {hasChildren && (
+                    <span className={`text-[10px] font-mono tracking-[0.25em] uppercase ${isIrrigation ? 'text-[#1E8E3E]/70' : 'text-[#1575B3]/70'}`}>View Sub-Solutions</span>
+                  )} */}
+                </Link>
+              );
+            })
+          )}
         </div>
       </div>
     </div>
@@ -1216,16 +1312,64 @@ const handleSegmentClick = (segIdx: number) => {
                 </button>
                 {activeDropdown === 'solutions' && (
                   <div className="pl-4 space-y-1 pt-1">
-                    {solutionsMegaMenu.items.map((item: any, i: number) => (
-                      <Link
-                        key={i}
-                        href={item.url}
-                        onClick={handleNavClick}
-                        className={`block p-2.5 text-sm font-medium text-[#5F6B7A] ${isIrrigation ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#EAF6EE]' : 'hover:bg-[#F5FAFF]'} transition`}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
+                    {solutionsMegaMenu.items.map((item: any, i: number) => {
+                      const sSlug = solutionSlugOf(item?.url || '');
+                      const children = solutionChildrenBySlug.get(sSlug) || [];
+                      const hasChildren = children.length > 0;
+                      const isActiveItem = solutionChildView === sSlug;
+                      return (
+                        <div key={i}>
+                          <div className="flex items-center">
+                            <Link
+                              href={item.url}
+                              onClick={(e) => {
+                                if (hasChildren) {
+                                  e.preventDefault();
+                                  setSolutionChildView(isActiveItem ? null : sSlug);
+                                } else {
+                                  handleNavClick();
+                                }
+                              }}
+                              className={`flex-1 block p-2.5 text-sm font-medium text-[#5F6B7A] ${isIrrigation ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#EAF6EE]' : 'hover:bg-[#F5FAFF]'} transition`}
+                            >
+                              {item.title}
+                            </Link>
+                            {hasChildren && (
+                              <button
+                                onClick={() => setSolutionChildView(isActiveItem ? null : sSlug)}
+                                className={`p-2 mr-1 ${isIrrigation ? 'hover:bg-[#EAF6EE]' : 'hover:bg-[#F5FAFF]'}`}
+                                aria-label="Toggle sub-solutions"
+                              >
+                                <ChevronDown
+                                  className={`w-4 h-4 transition-transform duration-300 ${isActiveItem ? 'rotate-180' : ''}`}
+                                />
+                              </button>
+                            )}
+                          </div>
+                          {hasChildren && isActiveItem && (
+                            <div className="pl-4 space-y-0.5">
+                              <Link
+                                href={item.url}
+                                onClick={handleNavClick}
+                                className={`block px-2.5 py-1.5 text-xs font-semibold ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#EAF6EE]' : 'hover:bg-[#F5FAFF]'}`}
+                              >
+                                View All {item.title}
+                              </Link>
+                              {children.map((c: any, cIdx: number) => (
+                                <Link
+                                  key={c.slug || cIdx}
+                                  href={c.link || `/${c.slug}`}
+                                  onClick={handleNavClick}
+                                  className={`block px-2.5 py-1.5 text-sm text-[#5F6B7A] ${isIrrigation ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#EAF6EE]' : 'hover:bg-[#F5FAFF]'} transition`}
+                                >
+                                  {c.title}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>
