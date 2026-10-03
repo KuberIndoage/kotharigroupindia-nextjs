@@ -932,7 +932,7 @@ const handleSolutionBack = () => {
   <Link href={isIrrigation ? '/irrigation-applications' : '/pipe-applications'} className={navItemStyle}>
                 Applications
               </Link>
-    <Link href={isIrrigation ? '/successstories?division=irrigation' : '/successstories?division=pipe'} className={navItemStyle}>
+    <Link href={isIrrigation ? '/irrigation-successstories' : '/pipe-successstories'} className={navItemStyle}>
                 Success Stories
               </Link>
       {/* Resources Mega Menu */}

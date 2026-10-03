@@ -14,8 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   return successStoryDetailMetadata(slug);
 }
 
-export default async function SuccessStoryPage({ params }: { params: Promise<Params> }) {
+export default async function IrrigationSuccessStoryPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { slug } = await params;
 
-  return <SuccessStoryDetail slug={slug} backPath="/successstories" />;
+  return <SuccessStoryDetail slug={slug} backPath="/irrigation-successstories" />;
 }

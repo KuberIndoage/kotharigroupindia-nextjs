@@ -106,26 +106,39 @@ export const ProductDetailPage: React.FC<{
   const safeIndex = Math.min(currentIndex, maxIndex);
   const itemWidth = 100 / itemsPerPage;
 
-  // Always show all tabs; missing content renders a placeholder inside the tab.
-  const visibleTabs: { key: HeroTab; label: string }[] = useMemo(() => {
-    return [
-      { key: 'FEATURES' as HeroTab, label: 'Features' },
-      { key: 'SPECIFICATIONS' as HeroTab, label: 'Specifications' },
-
-       { key: 'APPLICATIONS' as HeroTab, label: 'Applications' },
-      { key: 'STANDARDS' as HeroTab, label: 'Standards' },
-      { key: 'DIMENSIONS' as HeroTab, label: 'Dimensions' },
-      { key: 'FITTINGS' as HeroTab, label: 'Fittings' },
-     
-      { key: 'FAQs' as HeroTab, label: 'FAQs' },
-    ];
-  }, []);
-
   const isEmptyHtml = (html?: string) => {
     if (!html) return true;
     const text = html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
     return text.length === 0;
   };
+
+  // Irrigation products hide Standards / Dimensions / Fittings unless that data exists.
+  const visibleTabs: { key: HeroTab; label: string }[] = useMemo(() => {
+    const tabs: { key: HeroTab; label: string }[] = [
+      { key: 'FEATURES' as HeroTab, label: 'Features' },
+      { key: 'SPECIFICATIONS' as HeroTab, label: 'Specifications' },
+      { key: 'APPLICATIONS' as HeroTab, label: 'Applications' },
+    ];
+
+    if (!isIrrigation) {
+      tabs.push(
+        { key: 'STANDARDS' as HeroTab, label: 'Standards' },
+        { key: 'DIMENSIONS' as HeroTab, label: 'Dimensions' },
+        { key: 'FITTINGS' as HeroTab, label: 'Fittings' },
+      );
+    } else {
+      if (!isEmptyHtml(wp?.standardsHtml))
+        tabs.push({ key: 'STANDARDS' as HeroTab, label: 'Standards' });
+      if (!isEmptyHtml(wp?.dimensionsHtml))
+        tabs.push({ key: 'DIMENSIONS' as HeroTab, label: 'Dimensions' });
+      if (!isEmptyHtml(wp?.fittingsHtml))
+        tabs.push({ key: 'FITTINGS' as HeroTab, label: 'Fittings' });
+    }
+
+    tabs.push({ key: 'FAQs' as HeroTab, label: 'FAQs' });
+
+    return tabs;
+  }, [isIrrigation, wp]);
 
   const EmptyTabIcon: Record<string, React.ElementType> = {
     Features: Sparkles,
