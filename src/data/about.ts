@@ -151,7 +151,7 @@ export const aboutCoreValues = {
 };
 
 export const aboutLegacy = {
-  heading: "THE LEGACY OF KOTHARI'S",
+  heading: "The Legacy of Kothari Group",
   timeline: [
     { year: '1980', title: 'The Beginning', description: 'Founder, Mr. Kothari, starts trading through a fertilizer shop', image: '/t1.jpg' },
     { year: '1985', title: 'Diversification', description: 'Diversifies into agriculture, irrigation products, trading and services', image: '/t7.jpg' },

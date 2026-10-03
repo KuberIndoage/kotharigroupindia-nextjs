@@ -105,7 +105,7 @@ export default async function NewsPage() {
                 Kothari Group
               </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tighter leading-[1.05] sm:leading-[1.02] lg:leading-[0.98] drop-shadow-xl m-0 p-0 max-w-5xl">
-                News &amp; Articles
+                News &amp; Events
               </h1>
               <p className="text-sm sm:text-base text-white/85 font-normal leading-relaxed max-w-3xl drop-shadow-sm">
                 Stay updated with the latest news, awards, launches and major announcements from Kothari
