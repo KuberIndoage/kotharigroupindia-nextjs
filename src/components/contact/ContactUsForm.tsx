@@ -12,6 +12,15 @@ const interests = [
   'Irrigation Division'
 ];
 
+const iamOptions = [
+  'Farmer',
+  'Dealer',
+  'Consultant',
+  'Government',
+  'Agri Professional',
+  'Other'
+];
+
 const requirements = [
   'Product Enquiry',
   'Quotation',
@@ -30,6 +39,7 @@ export const ContactUsForm: React.FC = () => {
     email: '',
     phone: '',
     interest: interests[0],
+    iam: iamOptions[0],
     requirement: requirements[0],
     otherRequirement: '',
   });
@@ -58,6 +68,7 @@ export const ContactUsForm: React.FC = () => {
           email: '',
           phone: '',
           interest: interests[0],
+          iam: iamOptions[0],
           requirement: requirements[0],
           otherRequirement: '',
         });
@@ -158,6 +169,20 @@ export const ContactUsForm: React.FC = () => {
             </label>
           ))}
         </div>
+      </div>
+
+      <div>
+        <label className={labelClass}>I Am *</label>
+        <select
+          required
+          value={formData.iam}
+          onChange={(e) => setFormData({ ...formData, iam: e.target.value })}
+          className={fieldClass}
+        >
+          {iamOptions.map((option) => (
+            <option key={option} value={option}>{option}</option>
+          ))}
+        </select>
       </div>
 
       <div>

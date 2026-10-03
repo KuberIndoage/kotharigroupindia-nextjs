@@ -31,7 +31,7 @@ export const CareersGallery: React.FC<CareersGalleryProps> = ({ jobs, locations 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight uppercase font-serif text-slate-900 m-0">
           Current Openings
         </h2>
-        <div className="flex flex-wrap gap-2">
+        {/* <div className="flex flex-wrap gap-2">
           {locations.map((loc) => (
             <button
               key={loc}
@@ -45,7 +45,7 @@ export const CareersGallery: React.FC<CareersGalleryProps> = ({ jobs, locations 
               {loc}
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Jobs List */}

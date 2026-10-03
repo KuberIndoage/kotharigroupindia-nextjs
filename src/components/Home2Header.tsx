@@ -75,6 +75,15 @@ const divisions = [
   },
 ];
 
+const iamOptions = [
+  'Farmer',
+  'Dealer',
+  'Consultant',
+  'Government',
+  'Agri Professional',
+  'Other'
+];
+
 const requirements = [
   'Product Enquiry',
   'Quotation',
@@ -118,6 +127,7 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
     email: '',
     phone: '',
     division: 'Irrigation Division',
+    iam: 'Farmer',
     requirement: 'Product Enquiry',
     otherRequirement: '',
   });
@@ -236,6 +246,7 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
           email: '',
           phone: '',
           division: 'Irrigation Division',
+          iam: 'Farmer',
           requirement: 'Product Enquiry',
           otherRequirement: '',
         });
@@ -702,6 +713,22 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
                     >
                       <option value="Irrigation Division">Irrigation Division (Drip & Irrigation)</option>
                       <option value="Pipe Division">Pipe Division (Agri, Plumbing & Drainage)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
+                      I Am *
+                    </label>
+                    <select
+                      required
+                      value={formData.iam}
+                      onChange={(e) => setFormData({ ...formData, iam: e.target.value })}
+                      className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] focus:outline-none focus:border-[#1575B3] focus:bg-white transition"
+                    >
+                      {iamOptions.map((option) => (
+                        <option key={option} value={option}>{option}</option>
+                      ))}
                     </select>
                   </div>
 

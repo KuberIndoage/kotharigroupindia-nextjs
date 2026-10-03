@@ -54,9 +54,10 @@ export default async function HomePage() {
         <Home2Header />
         <Hero />
         <WhyKothari />
+         <Solutions />
         <WhyKothariGroup/>
         <Impact />
-        <Solutions />
+       
         <News blogPosts={blogPosts} newsItems={newsItems} />
         <Home2Footer />
       </div>

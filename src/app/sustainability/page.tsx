@@ -26,7 +26,7 @@ export default function SustainabilityPage() {
         <SolutionOverview overview={[SUSTAINABILITY_INTRO]} />
         <SustainPillars />
         <SustainByDesign />
-        <SustainTestimonials />
+        {/* <SustainTestimonials /> */}
         <Home2Footer />
       </div>
     </AppShell>

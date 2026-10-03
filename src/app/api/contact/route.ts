@@ -10,7 +10,7 @@ import {
 export const runtime = 'nodejs';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MAX_LEN = { fullName: 100, email: 160, phone: 30, requirement: 100, otherRequirement: 500 } as const;
+const MAX_LEN = { fullName: 100, email: 160, phone: 30, iam: 40, requirement: 100, otherRequirement: 500 } as const;
 
 // All contact-page enquiries go to the single contact inbox,
 // regardless of the selected interest.
@@ -34,6 +34,7 @@ export async function POST(req: Request) {
   const email = String(data.email ?? '').trim();
   const phone = String(data.phone ?? '').trim();
   const interest = String(data.interest ?? '').trim();
+  const iam = String(data.iam ?? '').trim();
   const requirement = String(data.requirement ?? '').trim();
   const otherRequirement = String(data.otherRequirement ?? '').trim();
 
@@ -53,6 +54,7 @@ export async function POST(req: Request) {
     fullName.length > MAX_LEN.fullName ||
     email.length > MAX_LEN.email ||
     phone.length > MAX_LEN.phone ||
+    iam.length > MAX_LEN.iam ||
     requirement.length > MAX_LEN.requirement ||
     otherRequirement.length > MAX_LEN.otherRequirement
   ) {
@@ -90,6 +92,7 @@ export async function POST(req: Request) {
     `Email: ${email}`,
     `Phone: ${phone}`,
     `Interested in: ${interest || '-'} `,
+    `I am: ${iam || '-'} `,
     `Requirement: ${requirement}${requirement === 'Other' && otherRequirement ? ` - ${otherRequirement}` : ''} `,
   ].join('\n');
   const html = `
@@ -99,6 +102,7 @@ export async function POST(req: Request) {
       <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
       <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
       <tr><td><strong>Interested in</strong></td><td>${escapeHtml(interest || '-')}</td></tr>
+      <tr><td><strong>I am</strong></td><td>${escapeHtml(iam || '-')}</td></tr>
       <tr><td><strong>Requirement</strong></td><td>${escapeHtml(requirement)}${requirement === 'Other' && otherRequirement ? ` &mdash; <em>${escapeHtml(otherRequirement)}</em>` : ''}</td></tr>
     </table>
   `;

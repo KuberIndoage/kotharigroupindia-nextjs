@@ -326,7 +326,7 @@ export const AboutLegacy: React.FC = () => {
   }, [paused, active, timeline.length]);
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#061E33] via-[#0E588A] to-[#015CAA] pt-20 pb-8  overflow-hidden border-b border-slate-900/20">
+    <section className="relative w-full bg-gradient-to-br from-[#061E33] via-[#0E588A] to-[#015CAA] pt-16 pb-6  overflow-hidden border-b border-slate-900/20">
       {/* Decorative glows */}
       <div aria-hidden className="absolute -top-32 -right-24 w-[560px] h-[560px] bg-cyan-300/10 rounded-full blur-3xl pointer-events-none" />
       <div aria-hidden className="absolute -bottom-40 -left-24 w-[600px] h-[600px] bg-blue-900/50 rounded-full blur-3xl pointer-events-none" />
@@ -369,7 +369,7 @@ export const AboutLegacy: React.FC = () => {
       {/* Straight river line — full viewport width */}
       <div
         ref={boxRef}
-        className="relative mt-12 h-[420px] sm:h-[510px] lg:h-[530px] w-full"
+        className="relative mt-8 h-[380px] sm:h-[440px] lg:h-[460px] w-full"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >

@@ -158,7 +158,7 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ jobTitle, onClose }) => 
               <Mail className="w-5 h-5 text-[#82C3EC] shrink-0 mt-0.5" />
               <div>
                 <span className="block text-xs text-white/60 uppercase">Email</span>
-                <span className="text-sm font-medium text-white">enquiry@kotharigroupindia.com</span>
+                <span className="text-sm font-medium text-white">hr@kotharigroupindia.com</span>
               </div>
             </div>
 

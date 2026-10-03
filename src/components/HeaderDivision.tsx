@@ -372,6 +372,15 @@ const [aboutOpen, setAboutOpen] = useState(false);
     if (sSlug) solutionChildrenBySlug.set(sSlug, getChildSolutions(sSlug));
   }
 
+  const iamOptions = [
+    'Farmer',
+    'Dealer',
+    'Consultant',
+    'Government',
+    'Agri Professional',
+    'Other'
+  ];
+
   const requirements = [
     'Product Enquiry',
     'Quotation',
@@ -452,6 +461,7 @@ const [aboutOpen, setAboutOpen] = useState(false);
     email: '',
     phone: '',
     division: defaultDivisionInterest,
+    iam: 'Farmer',
     requirement: 'Product Enquiry',
     otherRequirement: '',
   });
@@ -596,6 +606,7 @@ const handleSolutionBack = () => {
           email: '',
           phone: '',
           division: defaultDivisionInterest,
+          iam: 'Farmer',
           requirement: 'Product Enquiry',
           otherRequirement: '',
         });
@@ -613,6 +624,11 @@ const handleSolutionBack = () => {
   const activeSolutionItem = menuItems.find(
     (it: any) => solutionSlugOf(it?.url || '') === activeChildSlug
   );
+
+  // Irrigation tab strip: children of the currently selected parent solution.
+  const activeSolutionMenuItem = menuItems[activeSolutionIdx];
+  const activeSolutionChildren =
+    solutionChildrenBySlug.get(solutionSlugOf(activeSolutionMenuItem?.url || '')) || [];
 
   const isSolid = solid || isScrolled || mobileOpen;
   const navItemStyle = `px-3 py-2 text-[16px] font-medium transition-all duration-200 flex items-center gap-1 ${
@@ -823,7 +839,7 @@ const handleSolutionBack = () => {
           </div>
 
           {/* Bottom Action Link */}
-          <div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'}`}>
+          {/* <div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'}`}>
             <Link
               href="/solutions"
               onClick={handleNavClick}
@@ -832,10 +848,82 @@ const handleSolutionBack = () => {
               <span>Explore All Industry Segments</span>
               <ChevronRight className={`w-4 h-4 text-[#0f172b] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} group-hover:translate-x-1 transition-transform`} />
             </Link>
-          </div>
+          </div> */}
+
+          <div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} flex items-center gap-8`}>
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>35+</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Years Legacy</span>
+  </div>
+  <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>8</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Factories</span>
+  </div>
+
+<div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
+
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>14</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Warehouses</span>
+  </div>
+  
+</div>
         </div>
 
         {/* Right Column - Solutions list with child view */}
+        {isIrrigation ? (
+          <div className="col-span-7 flex flex-col gap-6">
+            {/* Parent solution tabs — every click opens that solution page */}
+            <div className="flex flex-wrap gap-x-7 gap-y-2 border-b border-[#E2EBF3] pb-3">
+              {menuItems.map((item: any, idx: number) => {
+                const sSlug = solutionSlugOf(item?.url || '');
+                const hasChildren = (solutionChildrenBySlug.get(sSlug) || []).length > 0;
+                const isActiveTab = idx === activeSolutionIdx && hasChildren;
+
+                return (
+                  <Link
+                    key={idx}
+                    href={item.url}
+                    onClick={handleNavClick}
+                    className={`relative pb-1 text-sm font-medium text-[#5F6B7A] hover:text-[#1E8E3E] transition-colors ${
+                      isActiveTab
+                        ? "text-[#1E8E3E] after:absolute after:inset-x-0 after:-bottom-[13px] after:h-0.5 after:bg-[#1E8E3E]"
+                        : ''
+                    }`}
+                  >
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Child solutions of the active tab — nothing at all when it has none */}
+            {activeSolutionChildren.length > 0 && (
+              <div className="grid grid-cols-3 gap-6 max-h-[440px] overflow-y-auto pr-2 custom-scrollbar">
+                {activeSolutionChildren.map((c: any, idx: number) => (
+                  <Link
+                    key={c.slug || idx}
+                    href={c.link || `/${c.slug}`}
+                    onClick={handleNavClick}
+                    className="group flex flex-col space-y-2.5"
+                  >
+                    <div className="overflow-hidden aspect-[16/9] bg-slate-100">
+                      <img
+                        src={c.image}
+                        alt={c.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                    </div>
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-[#111111] group-hover:text-[#1E8E3E] transition-colors">
+                      <span>{c.title}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
         <div className="col-span-7 grid grid-cols-2 gap-6">
           {showChildView ? (
             <div className="col-span-2 space-y-6">
@@ -921,6 +1009,7 @@ const handleSolutionBack = () => {
             })
           )}
         </div>
+        )}
       </div>
     </div>
   )}
@@ -967,7 +1056,7 @@ const handleSolutionBack = () => {
                           </p>
                         </div>
                       {/* Resources Mega Menu: Text Action Link */}
-<div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'}`}>
+{/* <div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'}`}>
   <Link 
     href="/resources/knowledge-section"
     onClick={handleNavClick}
@@ -976,6 +1065,26 @@ const handleSolutionBack = () => {
     <span>Explore Technical Specifications & Documentation</span>
     <ChevronRight className={`w-4 h-4 text-[#0f172b] ${isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]'} group-hover:translate-x-1 transition-transform`} />
   </Link>
+</div> */}
+
+ <div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} flex items-center gap-8`}>
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>35+</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Years Legacy</span>
+  </div>
+  <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>8</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Factories</span>
+  </div>
+
+<div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
+
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>14</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Warehouses</span>
+  </div>
+  
 </div>
                       </div>
 
@@ -1040,16 +1149,24 @@ const handleSolutionBack = () => {
                           </p>
                         </div>
                 
-<div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} flex items-center gap-8`}>
+ <div className={`mt-8 pt-6 border-t ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} flex items-center gap-8`}>
   <div>
     <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>35+</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Years Legacy</span>
   </div>
   <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>800+</span>
-    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Partners</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>8</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Factories</span>
   </div>
+
+<div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
+
+  <div>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>14</span>
+    <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Warehouses</span>
+  </div>
+  
 </div>
                       </div>
 
@@ -1703,6 +1820,22 @@ const handleSolutionBack = () => {
 
                   <div>
                     <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
+                      I Am *
+                    </label>
+                    <select
+                      required
+                      value={formData.iam}
+                      onChange={(e) => setFormData({ ...formData, iam: e.target.value })}
+                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                    >
+                      {iamOptions.map((option) => (
+                        <option key={option} value={option}>{option}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
                       Requirement
                     </label>
                     <select
@@ -1778,14 +1911,37 @@ const handleSolutionBack = () => {
 
 
       
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[45] flex flex-col items-stretch gap-2">
        <Link
               href="/become-dealer"
         style={{ writingMode: 'vertical-rl' }}
-        className={`fixed right-0 top-1/2 -translate-y-1/2 z-[45] ${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'}   ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}  text-white font-extrabold text-[10px] sm:text-xs tracking-wider sm:tracking-widest uppercase py-4 sm:py-5 px-2.5 sm:px-3 shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border-l-1 border-y ${isIrrigation ? 'border-[#fff]' : 'border-[#fff]'} hover:border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center gap-2`}
+        className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'}   ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}  text-white font-extrabold text-[10px] sm:text-xs tracking-wider sm:tracking-widest uppercase py-4 sm:py-5 px-2.5 sm:px-3 shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border-l border-[#fff] hover:border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center gap-2`}
       >
         <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:scale-110 transition-transform duration-300 rotate-90" />
         <span className="whitespace-nowrap">Become Dealer</span>
       </Link>
+
+      <a
+        href={
+          isIrrigation
+            ? 'https://whatsapp.com/channel/0029Va6OjqKA89MhSFoEY32l'
+            : 'https://whatsapp.com/channel/0029Vb6myeSGU3BD6QbRqN3i'
+        }
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+        title="WhatsApp"
+        className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'} shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center px-3.5 py-5`}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="w-5 h-5 sm:w-[22px] sm:h-[22px] fill-white group-hover:scale-110 transition-transform duration-300"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.945c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.585 0 11.946-5.359 11.949-11.945a11.87 11.87 0 0 0-3.42-8.494" />
+        </svg>
+      </a>
+      </div>
 
 
 
