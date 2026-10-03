@@ -470,7 +470,7 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-300">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight uppercase font-serif text-slate-900">
-                News and Articles
+                News & Events
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
