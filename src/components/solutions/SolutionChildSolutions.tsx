@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionHeader } from './SectionHeader';
 import type { SolutionChildSolutions as SolutionChildSolutionsData } from '@/data/solutions';
 
@@ -13,7 +13,7 @@ export const SolutionChildSolutions: React.FC<{
   const isGreen = theme === 'green';
   const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
   const accentGroupHoverText = isGreen ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
-  const accentDot = isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
+  const accentHoverText = isGreen ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
@@ -41,6 +41,10 @@ export const SolutionChildSolutions: React.FC<{
       setCurrentIndex(maxIndex);
     }
   }, [itemsPerPage, products.length, currentIndex, maxIndex]);
+
+  const handlePrev = () => setCurrentIndex((i) => Math.max(0, i - itemsPerPage));
+  const handleNext = () =>
+    setCurrentIndex((i) => Math.min(maxIndex, i + itemsPerPage));
 
   return (
     <section className={`w-full  py-8 sm:py-10  ${isGreen ? 'bg-[#EAF6EE]' : 'bg-[#F5F6F8]'} border-b border-slate-300/70`}>
@@ -94,19 +98,25 @@ export const SolutionChildSolutions: React.FC<{
           </motion.div>
         </div>
 
-        {/* Slider Dots */}
+        {/* Prev / Next Arrows */}
         {maxIndex > 0 && (
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`h-1 transition-all duration-300 ${
-                  safeIndex === idx ? `${accentDot} w-6` : 'bg-slate-300 w-2 hover:bg-slate-400'
-                }`}
-              />
-            ))}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={handlePrev}
+              disabled={safeIndex === 0}
+              aria-label="Previous solutions"
+              className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={safeIndex >= maxIndex}
+              aria-label="Next solutions"
+              className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         )}
       </div>

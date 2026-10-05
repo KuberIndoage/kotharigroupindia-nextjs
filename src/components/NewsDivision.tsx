@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Clock, Quote, Star } from 'lucide-react';
+import { ArrowUpRight, Clock, Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from './main/Reveal';
@@ -109,6 +109,7 @@ function useSwipeController(
 export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: DivisionNewsCard[]; blogPosts?: DivisionNewsCard[]; loading?: boolean }> = ({ theme = 'blue', newsItems: newsItemsProp, blogPosts: blogPostsProp, loading = false }) => {
   const isGreen = theme === 'green';
   const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
+  const accentHoverText = isGreen ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
   const accentGroupHoverText = isGreen ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
   const FALLBACK_NEWS: DivisionNewsCard[] = [
     {
@@ -694,25 +695,26 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dash Indicators */}
-              <div className="flex items-center justify-center gap-3 pt-8">
-                {Array.from({ length: blogTotalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setBlogDirection(idx > blogSafePage ? 1 : -1);
-                      setBlogCurrentPage(idx);
-                    }}
-                    className={`h-1 transition-all duration-500 ${
-                      idx === blogSafePage
-                        ? isGreen
-                          ? `w-12 bg-[#1E8E3E]`
-                          : `w-12 bg-[#1575B3]`
-                        : 'w-4 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center justify-center gap-4 pt-8">
+                <button
+                  onClick={handleBlogPrev}
+                  onMouseEnter={() => setBlogPaused(true)}
+                  onMouseLeave={() => setBlogPaused(false)}
+                  aria-label="Previous blogs"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95`}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleBlogNext}
+                  onMouseEnter={() => setBlogPaused(true)}
+                  onMouseLeave={() => setBlogPaused(false)}
+                  aria-label="Next blogs"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95`}
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           ) : (
@@ -779,25 +781,26 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dash Indicators */}
-              <div className="flex items-center justify-center gap-3 pt-8">
-                {Array.from({ length: newsTotalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setNewsDirection(idx > newsSafePage ? 1 : -1);
-                      setNewsCurrentPage(idx);
-                    }}
-                    className={`h-1 transition-all duration-500 ${
-                      idx === newsSafePage
-                        ? isGreen
-                          ? `w-12 bg-[#1E8E3E]`
-                          : `w-12 bg-[#1575B3]`
-                        : 'w-4 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center justify-center gap-4 pt-8">
+                <button
+                  onClick={handleNewsPrev}
+                  onMouseEnter={() => setNewsPaused(true)}
+                  onMouseLeave={() => setNewsPaused(false)}
+                  aria-label="Previous news"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95`}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleNewsNext}
+                  onMouseEnter={() => setNewsPaused(true)}
+                  onMouseLeave={() => setNewsPaused(false)}
+                  aria-label="Next news"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95`}
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           ) : (

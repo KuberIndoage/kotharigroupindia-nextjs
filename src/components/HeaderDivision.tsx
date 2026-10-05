@@ -1924,7 +1924,7 @@ const handleSolutionBack = () => {
       <a
         href={
           isIrrigation
-            ? 'https://whatsapp.com/channel/0029Va6OjqKA89MhSFoEY32l'
+            ? 'https://wa.me/8799963638'
             : 'https://whatsapp.com/channel/0029Vb6myeSGU3BD6QbRqN3i'
         }
         target="_blank"

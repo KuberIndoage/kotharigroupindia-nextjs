@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, type PanInfo } from 'framer-motion';
-import { ChevronRight, ChevronDown, ChevronUp, Linkedin, X } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, ChevronUp, Linkedin, X } from 'lucide-react';
 import { SectionHeader } from '../solutions/SectionHeader';
 import { Reveal } from '../main/Reveal';
 import { boardHero, boardOfDirectors, youngLeadership, type BoardMember } from '@/data/board';
@@ -479,22 +479,26 @@ export const BoardYoungLeadership: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        <div className="flex items-center justify-center gap-3 pt-2">
-          {Array.from({ length: totalPages }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setDirection(idx > safePage ? 1 : -1);
-                setCurrentPage(idx);
-              }}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1 transition-all duration-300 ${
-                idx === safePage
-                  ? 'w-8 bg-[#1575B3]'
-                  : 'w-2 bg-slate-300 hover:bg-[#1575B3]/50'
-              }`}
-            />
-          ))}
+        {/* Prev / Next Arrows */}
+        <div className="flex items-center justify-center gap-4 pt-2">
+          <button
+            onClick={handlePrev}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            aria-label="Previous team members"
+            className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={handleNext}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            aria-label="Next team members"
+            className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>

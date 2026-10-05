@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowUpRight, Clock } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from './Reveal';
 
@@ -430,23 +430,26 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dash Indicators */}
-              <div className="flex items-center justify-center gap-3 pt-8">
-                {Array.from({ length: blogTotalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setBlogDirection(idx > blogSafePage ? 1 : -1);
-                      setBlogCurrentPage(idx);
-                    }}
-                    className={`h-1 transition-all duration-500 ${
-                      idx === blogSafePage
-                        ? 'w-12 bg-[#1575B3]'
-                        : 'w-4 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center justify-center gap-4 pt-8">
+                <button
+                  onClick={handleBlogPrev}
+                  onMouseEnter={() => setBlogPaused(true)}
+                  onMouseLeave={() => setBlogPaused(false)}
+                  aria-label="Previous blogs"
+                  className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleBlogNext}
+                  onMouseEnter={() => setBlogPaused(true)}
+                  onMouseLeave={() => setBlogPaused(false)}
+                  aria-label="Next blogs"
+                  className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           ) : (
@@ -508,23 +511,26 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dash Indicators */}
-              <div className="flex items-center justify-center gap-3 pt-8">
-                {Array.from({ length: newsTotalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setNewsDirection(idx > newsSafePage ? 1 : -1);
-                      setNewsCurrentPage(idx);
-                    }}
-                    className={`h-1 transition-all duration-500 ${
-                      idx === newsSafePage
-                        ? 'w-12 bg-[#1575B3]'
-                        : 'w-4 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center justify-center gap-4 pt-8">
+                <button
+                  onClick={handleNewsPrev}
+                  onMouseEnter={() => setNewsPaused(true)}
+                  onMouseLeave={() => setNewsPaused(false)}
+                  aria-label="Previous news"
+                  className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleNewsNext}
+                  onMouseEnter={() => setNewsPaused(true)}
+                  onMouseLeave={() => setNewsPaused(false)}
+                  aria-label="Next news"
+                  className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           ) : (

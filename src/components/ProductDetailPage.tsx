@@ -10,10 +10,10 @@ import { getProductHref, findProductBySlugs, getCategorySlug, isPipeCategorySlug
 import {
   Download, ShieldCheck, CheckCircle2, ChevronRight,
   Send, Sparkles, Layers, HelpCircle, Award, Search,
-  ArrowUpRight, ArrowRight, Factory, ChevronDown, ChevronUp, FileText, Check, Table, Wrench
+  ArrowUpRight, ArrowRight, Factory, ChevronDown, ChevronUp, FileText, Check, Table, Wrench, PlayCircle, ChevronLeft
 } from 'lucide-react';
 
-type HeroTab = 'FEATURES' | 'SPECIFICATIONS' | 'STANDARDS' | 'DIMENSIONS' | 'FITTINGS' | 'APPLICATIONS' | 'FAQs';
+type HeroTab = 'FEATURES' | 'SPECIFICATIONS' | 'STANDARDS' | 'DIMENSIONS' | 'FITTINGS' | 'APPLICATIONS' | 'INSTALLATION' | 'FAQs';
 
 export const ProductDetailPage: React.FC<{
   product?: ProductItem;
@@ -64,6 +64,7 @@ export const ProductDetailPage: React.FC<{
   const displayFaqs = wp?.faqs || productProp?.faqs || [];
   const displayCertImages = wp?.certificateImages || [];
   const displayVideoUrl = wp?.productVideoUrl || '';
+  const displayInstallationGuideUrl = wp?.installationGuideVideoUrl || '';
   
   const displayRelated = wp?.relatedProducts || [];
 
@@ -106,6 +107,11 @@ export const ProductDetailPage: React.FC<{
   const safeIndex = Math.min(currentIndex, maxIndex);
   const itemWidth = 100 / itemsPerPage;
 
+  const handleRelatedPrev = () =>
+    setCurrentIndex((i) => Math.max(0, i - itemsPerPage));
+  const handleRelatedNext = () =>
+    setCurrentIndex((i) => Math.min(maxIndex, i + itemsPerPage));
+
   const isEmptyHtml = (html?: string) => {
     if (!html) return true;
     const text = html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
@@ -122,19 +128,20 @@ export const ProductDetailPage: React.FC<{
 
     if (!isIrrigation) {
       tabs.push(
+        { key: 'FITTINGS' as HeroTab, label: 'Fittings' },
         { key: 'STANDARDS' as HeroTab, label: 'Standards' },
         { key: 'DIMENSIONS' as HeroTab, label: 'Dimensions' },
-        { key: 'FITTINGS' as HeroTab, label: 'Fittings' },
       );
     } else {
+      if (!isEmptyHtml(wp?.fittingsHtml))
+        tabs.push({ key: 'FITTINGS' as HeroTab, label: 'Fittings' });
       if (!isEmptyHtml(wp?.standardsHtml))
         tabs.push({ key: 'STANDARDS' as HeroTab, label: 'Standards' });
       if (!isEmptyHtml(wp?.dimensionsHtml))
         tabs.push({ key: 'DIMENSIONS' as HeroTab, label: 'Dimensions' });
-      if (!isEmptyHtml(wp?.fittingsHtml))
-        tabs.push({ key: 'FITTINGS' as HeroTab, label: 'Fittings' });
     }
 
+    tabs.push({ key: 'INSTALLATION' as HeroTab, label: 'Installation Guide' });
     tabs.push({ key: 'FAQs' as HeroTab, label: 'FAQs' });
 
     return tabs;
@@ -147,6 +154,7 @@ export const ProductDetailPage: React.FC<{
     Dimensions: Table,
     Fittings: Wrench,
     Applications: Layers,
+    'Installation Guide': PlayCircle,
     FAQs: HelpCircle,
   };
 
@@ -285,7 +293,7 @@ export const ProductDetailPage: React.FC<{
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="flex gap-0 bg-transparent overflow-x-auto scrollbar-none -mx-4 sm:mx-0 px-4 sm:px-0">
               {visibleTabs.map((t) => {
-                const Icon = t.key === 'FEATURES' ? Sparkles : t.key === 'SPECIFICATIONS' ? Factory : t.key === 'STANDARDS' ? ShieldCheck : t.key === 'DIMENSIONS' ? Table : t.key === 'FITTINGS' ? Wrench : t.key === 'APPLICATIONS' ? Layers : t.key === 'FAQs' ? HelpCircle : FileText;
+                const Icon = t.key === 'FEATURES' ? Sparkles : t.key === 'SPECIFICATIONS' ? Factory : t.key === 'STANDARDS' ? ShieldCheck : t.key === 'DIMENSIONS' ? Table : t.key === 'FITTINGS' ? Wrench : t.key === 'APPLICATIONS' ? Layers : t.key === 'INSTALLATION' ? PlayCircle : t.key === 'FAQs' ? HelpCircle : FileText;
                 return (
                   <button
                     key={t.key}
@@ -375,6 +383,26 @@ export const ProductDetailPage: React.FC<{
             )}
 
            
+
+            {heroTab === 'INSTALLATION' && (
+              !displayInstallationGuideUrl ? (
+                <EmptyTabPlaceholder label="Installation Guide" />
+              ) : (
+                <div className="py-2">
+                  <h3 className="text-white text-2xl sm:text-4xl font-serif font-light uppercase tracking-wide text-center mb-8">Installation Guide</h3>
+                  <div className="relative aspect-video w-full max-w-4xl mx-auto bg-slate-950 overflow-hidden border border-white/20 shadow-lg">
+                    <iframe
+                      src={displayInstallationGuideUrl}
+                      title="Kothari Installation Guide"
+                      className="absolute inset-0 w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              )
+            )}
 
             {heroTab === 'FAQs' && (
               (!displayFaqs || displayFaqs.length === 0) ? (
@@ -504,19 +532,25 @@ export const ProductDetailPage: React.FC<{
               </motion.div>
             </div>
 
-            {/* Slider Dots */}
+            {/* Prev / Next Arrows */}
             {maxIndex > 0 && (
-              <div className="flex justify-center gap-2 mt-8">
-                {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentIndex(idx)}
-                    aria-label={`Go to slide ${idx + 1}`}
-                    className={`h-1 transition-all duration-300 ${
-                      safeIndex === idx ? `${tDot} w-6` : 'bg-slate-300 w-2 hover:bg-slate-400'
-                    }`}
-                  />
-                ))}
+              <div className="flex items-center justify-center gap-4 mt-8">
+                <button
+                  onClick={handleRelatedPrev}
+                  disabled={safeIndex === 0}
+                  aria-label="Previous related products"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${tHoverBorder} ${tHoverText} transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100`}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleRelatedNext}
+                  disabled={safeIndex >= maxIndex}
+                  aria-label="Next related products"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${tHoverBorder} ${tHoverText} transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100`}
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             )}
             

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, type PanInfo } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ApplicationItem } from '@/data/applications';
 import { getApplicationDetailHref } from '@/data/applications';
 
@@ -190,23 +190,26 @@ export const ApplicationSlider: React.FC<ApplicationSliderProps> = ({
         </AnimatePresence>
       </div>
 
-      {/* Dot indicators */}
-      <div className="flex items-center justify-center gap-3 pt-6">
-        {Array.from({ length: totalPages }).map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => {
-              setDirection(idx > safePage ? 1 : -1);
-              setCurrentPage(idx);
-            }}
-            className={`h-1 transition-all duration-500 ${
-              idx === safePage
-                ? `w-12 ${isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'}`
-                : 'w-4 bg-slate-300 hover:bg-slate-400'
-            }`}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
+      {/* Prev / Next Arrows */}
+      <div className="flex items-center justify-center gap-4 pt-6">
+        <button
+          onClick={handlePrev}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          aria-label="Previous applications"
+          className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${isGreen ? 'hover:border-[#1E8E3E] hover:text-[#1E8E3E]' : 'hover:border-[#1575B3] hover:text-[#1575B3]'} transition-all duration-300 active:scale-95`}
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={handleNext}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          aria-label="Next applications"
+          className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${isGreen ? 'hover:border-[#1E8E3E] hover:text-[#1E8E3E]' : 'hover:border-[#1575B3] hover:text-[#1575B3]'} transition-all duration-300 active:scale-95`}
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
     </div>
   );

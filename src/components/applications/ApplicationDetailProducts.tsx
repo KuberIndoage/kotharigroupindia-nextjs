@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ApplicationDetail } from '@/data/applications';
 import {
   ApplicationDetailSection,
@@ -17,7 +17,7 @@ export const ApplicationDetailProducts: React.FC<{
   const isGreen = !isPipe;
   const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
   const accentGroupHoverText = isGreen ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
-  const accentDot = isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
+  const accentHoverText = isGreen ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
   const accentText = isGreen ? 'text-[#1E8E3E]' : 'text-[#1575B3]';
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,6 +47,10 @@ export const ApplicationDetailProducts: React.FC<{
 
   const headBg = isPipe ? 'bg-[#061E33]' : 'bg-[#0B3D20]';
   const rowBorder = isPipe ? 'border-slate-200' : 'border-[#1E8E3E]/15';
+
+  const handlePrev = () => setCurrentIndex((i) => Math.max(0, i - itemsPerPage));
+  const handleNext = () =>
+    setCurrentIndex((i) => Math.min(maxIndex, i + itemsPerPage));
 
   return (
     <ApplicationDetailSection tinted isPipe={isPipe}>
@@ -134,20 +138,27 @@ export const ApplicationDetailProducts: React.FC<{
         </motion.div>
       </div>
 
-      {/* Slider Dots */}
+      {/* Prev / Next Arrows */}
       {maxIndex > 0 && (
-        <div className="flex justify-center gap-2 mt-8">
-          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setCurrentIndex(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1 transition-all duration-300 ${
-                safeIndex === idx ? `${accentDot} w-6` : 'bg-slate-300 w-2 hover:bg-slate-400'
-              }`}
-            />
-          ))}
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <button
+            type="button"
+            onClick={handlePrev}
+            disabled={safeIndex === 0}
+            aria-label="Previous products"
+            className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100`}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            disabled={safeIndex >= maxIndex}
+            aria-label="Next products"
+            className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100`}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       )}
 

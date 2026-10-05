@@ -121,6 +121,7 @@ export interface WpProductData {
   
   // Media
   productVideoUrl: string;
+  installationGuideVideoUrl: string;
   
   // FAQ
   faqs: { question: string; answer: string }[];
@@ -211,6 +212,9 @@ export const fetchWpProductBySlug = cache(async (slug: string): Promise<WpProduc
     const rawVideoUrl = getMetaString(meta, 'product_video_url');
     const productVideoUrl = getYouTubeEmbedUrl(rawVideoUrl);
 
+    const rawInstallationGuideUrl = getMetaString(meta, 'tab_installation_guide');
+    const installationGuideVideoUrl = getYouTubeEmbedUrl(rawInstallationGuideUrl);
+
     // Existing fields
     const faqRawHtml = getMetaString(meta, 'faq_content');
     const faqs = faqRawHtml ? parseFaqHtml(faqRawHtml) : [];
@@ -291,6 +295,7 @@ export const fetchWpProductBySlug = cache(async (slug: string): Promise<WpProduc
       fittingsHtml,
       applicationsHtml,
       productVideoUrl,
+      installationGuideVideoUrl,
       faqs,
       pdfUrl,
       pdfName,

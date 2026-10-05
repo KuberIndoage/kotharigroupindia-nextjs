@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   ChevronRight,
+  ChevronLeft,
   Eye,
   Target,
   Lightbulb,
@@ -526,21 +527,29 @@ export const AboutLegacy: React.FC = () => {
           })()}
         </div>
 
-        {/* Page dots only */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-8 z-10 mt-2 flex items-center justify-center gap-2">
-          {Array.from({ length: totalPages }).map((_, pi) => (
+        {/* Prev / Next Arrows */}
+        {totalPages > 1 && (
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-8 z-10 mt-2 flex items-center justify-center gap-4">
             <button
-              key={pi}
-              onClick={() => goPage(pi)}
-              aria-label={`Go to milestone window ${pi + 1}`}
-              className={`h-1 transition-all duration-300 ${
-                pi === page
-                  ? 'w-8 bg-cyan-300 shadow-[0_0_8px_rgba(103,232,249,0.8)]'
-                  : 'w-2 bg-white/25 hover:bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
+              onClick={() => goPage(page - 1)}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              aria-label="Previous milestones"
+              className="w-11 h-11 flex items-center justify-center border border-white/25 bg-white/5 text-white hover:border-cyan-300 hover:text-cyan-200 transition-all duration-300 active:scale-95"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => goPage(page + 1)}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              aria-label="Next milestones"
+              className="w-11 h-11 flex items-center justify-center border border-white/25 bg-white/5 text-white hover:border-cyan-300 hover:text-cyan-200 transition-all duration-300 active:scale-95"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
     </section>
   );
 };

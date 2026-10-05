@@ -35,6 +35,13 @@ const divisionLinks = [
   { label: 'Irrigation Division', sub: 'Micro Irrigation', target: 'solutions', icon: Sprout, accent: 'text-[#1E8E3E] bg-[#EAF8EF]', url: '/irrigation-division' },
 ];
 
+const certificationLinks = [
+  'ISO 9001 Quality System',
+  'BIS IS 15778 / IS 4985',
+  'IS 13488 Micro Irrigation',
+  'PMKSY Govt. Subsidy Certified',
+];
+
 const supportLinks = [
   { label: 'Download', target: '/Download' },
   { label: 'Quality Policy', target: '/quality-policy' },
@@ -138,6 +145,16 @@ export const Home2Footer: React.FC<{ variant?: 'blue' | 'green' }> = ({ variant 
                 );
               })}
             </ul>
+
+            {/* Certifications placed right inside Our Divisions Column */}
+            <div className="space-y-2 text-xs pt-2 border-t border-white/20">
+              <h4 className="font-medium text-white text-sm">Certifications</h4>
+              <ul className="space-y-2 font-light text-white/80">
+                {certificationLinks.map((cert) => (
+                  <li key={cert}>{cert}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Support Column + Connect with us below */}
