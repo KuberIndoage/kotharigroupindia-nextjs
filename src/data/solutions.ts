@@ -6,6 +6,13 @@ export interface SolutionPillar {
   text: string;
 }
 
+export interface SolutionApplicationItem {
+  title: string;
+  description?: string;
+}
+
+export type SolutionApplication = string | SolutionApplicationItem;
+
 export interface SolutionFaq {
   question: string;
   answer: string;
@@ -25,7 +32,7 @@ export interface SolutionChildSolution {
   overview: string[];
   pillars: SolutionPillar[];
   whyChoose: string[];
-  applications: string[];
+  applications: SolutionApplication[];
   relatedProducts: SolutionRelatedProduct[];
   faqs: SolutionFaq[];
 }
@@ -57,7 +64,7 @@ export interface Solution {
   pillars: SolutionPillar[];
   childSolutions?: SolutionChildSolutions;
   whyChoose: string[];
-  applications: string[];
+  applications: SolutionApplication[];
   relatedProducts: SolutionRelatedProduct[];
 }
 
@@ -2277,22 +2284,22 @@ export const solutionsData: Solution[] = [
       {
         icon: 'ArrowDownAZ',
         label: 'Full Water Cycle Coverage',
-        text: 'From extraction to final delivery',
+        text: 'Covers every stage from sourcing and filtration to distribution and fertigation.',
       },
       {
         icon: 'SlidersHorizontal',
         label: 'Automation & Control',
-        text: ' Smart scheduling reduces manual oversight',
+        text: 'Smart scheduling reduces manual oversight.',
       },
       {
         icon: 'ListFilterPlus',
         label: 'Filtration First',
-        text: 'Clean water protects every downstream component',
+        text: 'Clean water protects every component downstream.',
       },
       {
         icon: 'ClipboardCheck',
         label: 'Turnkey Design',
-        text: ' End-to-end project planning and execution',
+        text: 'Planning, design and installation handled end to end.',
       },
     ],
     whyChoose: [
@@ -2304,11 +2311,27 @@ export const solutionsData: Solution[] = [
       'Helps farms plan for long-term water conservation, not just seasonal use',
     ],
     applications: [
-      'Large Agricultural Estates',
-      'Cooperative Farms',
-      'Government & Institutional Irrigation Projects',
-      'Multi-Crop Operations',
-    ],
+  {
+    title: 'Large Agricultural Estates',
+    description:
+      'Complete irrigation systems that connect sourcing, filtration, automation and fertigation, helping big estates manage water efficiently at every stage.',
+  },
+  {
+    title: 'Cooperative Farms',
+    description:
+      'Shared irrigation setups with automatic filters and controllers for scheduled, controlled watering, reducing downtime and manual oversight across member farms.',
+  },
+  {
+    title: 'Government & Institutional Irrigation Projects',
+    description:
+      'Turnkey irrigation design and installation for public and institutional projects, covering borewell access, filtration, automation and fertigation as one system.',
+  },
+  {
+    title: 'Multi-Crop Operations',
+    description:
+      'One automated system that handles varied crop needs, with controllers for scheduled, remote or sensor-triggered watering and precise fertigation alongside.',
+  },
+],
     relatedProducts: [
       {
         name: 'Dosing Pump',
@@ -2372,22 +2395,22 @@ export const solutionsData: Solution[] = [
       {
         icon: 'Thermometer',
         label: 'Hot & Cold Compatibility',
-        text: 'CPVC systems built for potable water use',
+        text: 'CPVC pipes rated for both hot and cold potable water, so one system serves every outlet.',
       },
       {
         icon: 'BadgeCheck',
         label: 'Leak-Free Joints',
-        text: 'Engineered fittings for long-term reliability',
+        text: 'Engineered fittings create secure joints that stay tight through years of daily use.',
       },
       {
         icon: 'FileCheckCorner',
         label: 'Code Compliant',
-        text: 'Meets residential & commercial plumbing standards',
+        text: 'Made to meet residential and commercial plumbing standards for safe, compliant installations.',
       },
       {
         icon: 'Building2',
         label: 'Wide Application Range',
-        text: ' From single homes to multi-story complexes',
+        text: 'Suitable for everything from single homes to multi-storey complexes.',
       },
     ],
     whyChoose: [
@@ -2399,11 +2422,31 @@ export const solutionsData: Solution[] = [
       'Responsive after-sales and technical support',
     ],
     applications: [
-      'Residential Buildings',
-      'Apartments & Housing Societies',
-      'Offices',
-      'Hospitality Projects',
-      ' Commercial Complexes',
+      {
+        title: 'Residential Buildings',
+        description:
+          'Reliable CPVC hot and cold water lines for homes, built to handle tough Indian water, hot summers and the daily wear of regular household use.',
+      },
+      {
+        title: 'Apartments & Housing Societies',
+        description:
+          'Durable CPVC and UPVC plumbing for multi-unit buildings, built to stay reliable under heavy daily use across many homes at once.',
+      },
+      {
+        title: 'Offices',
+        description:
+          'Dependable hot and cold water supply lines for office buildings and workspaces, designed for steady daily use and long-term, low-maintenance performance.',
+      },
+      {
+        title: 'Hospitality Projects',
+        description:
+          'Hot and cold water piping for hotels and resorts, where guests expect a steady supply and leak-free performance every single day.',
+      },
+      {
+        title: 'Commercial Complexes',
+        description:
+          'Long-lasting CPVC and UPVC plumbing for malls and large commercial buildings, built to handle high usage across many floors and water outlets.',
+      },
     ],
     relatedProducts: [
       {

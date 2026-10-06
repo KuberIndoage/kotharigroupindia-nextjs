@@ -1,5 +1,8 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import type { SolutionApplication } from '@/data/solutions';
 
 const APP_IMAGES = [
   'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80',
@@ -19,9 +22,25 @@ const APP_TAGLINES = [
   'Designed for easy installation at any scale.',
 ];
 
-export const SolutionApplications: React.FC<{ applications: string[]; theme?: 'blue' | 'green' }> = ({ applications, theme = 'blue' }) => {
+const normalizeApplications = (apps: SolutionApplication[]) =>
+  apps.map((app) =>
+    typeof app === 'string'
+      ? { title: app.trim(), description: '' }
+      : { title: (app.title || '').trim(), description: (app.description || '').trim() }
+  );
+
+export const SolutionApplications: React.FC<{ applications: SolutionApplication[]; theme?: 'blue' | 'green' }> = ({ applications, theme = 'blue' }) => {
   const isGreen = theme === 'green';
-  if (!applications.length) return null;
+  const [active, setActive] = useState(0);
+  const items = normalizeApplications(applications);
+  if (!items.length) return null;
+
+  const accentText = isGreen ? 'text-emerald-200' : 'text-cyan-200';
+  const mutedText = isGreen ? 'text-green-100/70' : 'text-blue-100/70';
+  const activeIndex = Math.min(active, items.length - 1);
+  const activeItem = items[activeIndex];
+  const activeTagline = APP_TAGLINES[activeIndex % APP_TAGLINES.length];
+
   return (
     <section className={`${isGreen ? 'bg-[#145E2A]' : 'bg-[#015CAA]'} py-24 relative overflow-hidden`}>
       {/* Background Decorative Elements */}
@@ -43,53 +62,88 @@ export const SolutionApplications: React.FC<{ applications: string[]; theme?: 'b
           </p>
         </div>
 
-        {/* Applications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {applications.map((app, idx) => (
-            <div
-              key={app}
-              className={`group relative ${isGreen ? 'bg-[#0E4A20]/40' : 'bg-[#014d8f]/40'} backdrop-blur-md border border-white/15 hover:border-white/40 transition-all duration-500 flex flex-col justify-between shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 overflow-hidden`}
-            >
-              {/* Top Accent Light Bar */}
-              <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent ${isGreen ? 'via-emerald-300' : 'via-cyan-400'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+        {/* Image (left) + Titles (right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+          {/* Left: Big preview image (stretches to match right column height) */}
+          <div className={`relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[420px] overflow-hidden border border-white/15 shadow-2xl ${isGreen ? 'bg-[#0E4A20]/40' : 'bg-[#014d8f]/40'}`}>
+            {items.map((item, idx) => (
+              <img
+                key={`${item.title}-${idx}`}
+                src={APP_IMAGES[idx % APP_IMAGES.length]}
+                alt={item.title}
+                referrerPolicy="no-referrer"
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out ${
+                  idx === activeIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                }`}
+              />
+            ))}
+            <div className={`absolute inset-0 bg-gradient-to-t ${isGreen ? 'from-[#0E4A20]/70' : 'from-[#014d8f]/70'} via-transparent to-transparent pointer-events-none`} />
 
-              <div>
-                {/* Image Frame */}
-                <div className="relative h-60 w-full overflow-hidden border-b border-white/10">
-                  <img
-                    src={APP_IMAGES[idx % APP_IMAGES.length]}
-                    alt={app}
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${isGreen ? 'from-[#0E4A20]/50' : 'from-[#014d8f]/50'} via-transparent to-transparent pointer-events-none`} />
-                </div>
-
-                {/* Content Area */}
-                <div className="p-7 space-y-4">
-                  <h3 className={`text-lg font-bold text-white ${isGreen ? 'group-hover:text-emerald-200' : 'group-hover:text-cyan-200'} transition-colors leading-snug`}>
-                    {app}
-                  </h3>
-                  <p className={`text-xs ${isGreen ? 'text-green-100/70' : 'text-blue-100/70'} font-light leading-relaxed`}>
-                    {APP_TAGLINES[idx % APP_TAGLINES.length]}
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              {/* <div className="p-7 pt-0">
-                <a
-                  href="#related-products"
-                  className="w-full inline-flex items-center justify-between bg-white/10 hover:bg-white text-white hover:text-[#015CAA] border border-white/20 hover:border-white text-xs font-semibold uppercase tracking-wider py-3.5 px-5 transition-all duration-300 group/btn"
-                >
-                  <span>Explore Products</span>
-                  <ArrowUpRight className="w-4 h-4 text-cyan-300 group-hover/btn:text-[#015CAA] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all" />
-                </a>
-              </div> */}
-
+            {/* Caption over image */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 space-y-2">
+              <h3 className={`text-xl sm:text-2xl font-serif font-light uppercase tracking-tight text-white leading-snug`}>
+                {activeItem.title}
+              </h3>
+              <p className={`text-sm ${mutedText} font-light leading-relaxed max-w-lg`}>
+                {activeTagline}
+              </p>
             </div>
-          ))}
+
+            {/* Accent bar */}
+            <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${isGreen ? 'from-emerald-300' : 'from-cyan-400'} via-transparent to-transparent`} />
+          </div>
+
+          {/* Right: Title list */}
+          <ul className="list-none p-0 m-0 border-t border-white/15">
+            {items.map((item, idx) => {
+              const isActive = idx === activeIndex;
+              const subtitle =
+                item.description || APP_TAGLINES[idx % APP_TAGLINES.length];
+              return (
+                <li key={`${item.title}-${idx}`} className="border-b border-white/15">
+                  <button
+                    type="button"
+                    onClick={() => setActive(idx)}
+                    onMouseEnter={() => setActive(idx)}
+                    onFocus={() => setActive(idx)}
+                    aria-label={`Show ${item.title} preview`}
+                    className="w-full text-left px-1 py-5 group focus:outline-none"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <span className={`block font-mono text-[11px] tracking-[0.2em] ${isActive ? accentText : mutedText} transition-colors duration-300`}>
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        <h3 className={`mt-1.5 text-lg sm:text-xl font-serif font-light uppercase tracking-tight text-white ${isActive ? accentText : ''} transition-colors duration-300`}>
+                          {item.title}
+                        </h3>
+
+                        {/* Description / tagline below the hovered title */}
+                        <div className={`grid transition-all duration-500 ease-out ${isActive ? 'grid-rows-[1fr] opacity-100 mt-3' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
+                          <div className="overflow-hidden">
+                            <p className={`text-sm ${mutedText} font-light leading-relaxed pr-6`}>
+                              {subtitle}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* <span
+                        className={`shrink-0 w-9 h-9 mt-1 flex items-center justify-center border transition-all duration-300 ${
+                          isActive
+                            ? `border-white/40 ${isGreen ? 'bg-emerald-300/20 text-emerald-200' : 'bg-cyan-400/20 text-cyan-200'}`
+                            : 'border-white/15 text-white/50 group-hover:border-white/40 group-hover:text-white'
+                        }`}
+                      >
+                        <ArrowUpRight className="w-4 h-4" />
+                      </span> */}
+                    </div>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
       </div>
