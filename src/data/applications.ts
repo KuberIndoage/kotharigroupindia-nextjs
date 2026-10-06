@@ -882,6 +882,339 @@ export const applicationDetails: ApplicationDetail[] = [
       buttonText: 'Discuss Your Requirement',
     },
   },
+
+  {
+    slug: 'rainwater-management-system',
+    division: 'pipe-division',
+    parentHref: '/pipe-applications',
+    parentLabel: 'Pipe Applications',
+    divisionHref: '/pipe-division',
+    metaTitle: 'Rainwater Management System | Kothari Pipes',
+    metaDescription:
+      'Explore rainwater management systems for buildings using SWR pipes for roof drainage, rainwater collection and controlled discharge.',
+    heroEyebrow: 'Pipe Applications',
+    h1: 'Rainwater Management System for Buildings',
+    tagline:
+      'A properly planned rainwater drainage system moves roof runoff safely away from buildings and helps prevent water accumulation during heavy rainfall.',
+    image: '/heronew.jpg',
+    bannerImage: '/farm.png',
+    overview: {
+      heading: 'Understanding Rainwater Management in Buildings',
+      paragraphs: [
+        `During heavy rainfall, a roof can collect a large volume of water in a short period. Without a properly planned drainage path, that water can overflow from the roof, run along external walls, collect around the building or enter areas where it is not wanted.`,
+        `A rainwater management system provides a defined route for this runoff. Roof water is collected through suitable outlets and carried through vertical and horizontal drainage sections towards an appropriate discharge point, recharge arrangement or collection system.`,
+        `The piping is an important part of this network. Pipe diameter, routing, connections, vertical drops and the capacity of the overall drainage arrangement all need to work together. The system also has to cope with repeated exposure to rain, outdoor conditions and seasonal changes.`,
+        `For building applications, Kothari KWIK Drain SWR is a uPVC drainage system designed for soil, waste and rainwater applications. Kothari's published information identifies Type A SWR pipes for ventilation and rainwater applications. `,
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Rainwater Management Systems Are Used',
+      intro: [
+        'Rainwater management systems are relevant to most buildings where roof runoff needs to be collected and directed safely.',
+      ],
+      items: [
+        {
+          label: 'Residential buildings and homes',
+          text: 'Roof rainwater is channelled through downpipes and drainage routes instead of allowing uncontrolled discharge around the building.',
+        },
+        {
+          label: 'Apartments and high-rise buildings',
+          text: ' Multiple roof or terrace collection points may need to connect into vertical rainwater stacks and suitable discharge arrangements. Kothari states that its SWR system is suitable for both low-rise and high-rise structures.',
+        },
+        {
+          label: 'Commercial buildings',
+          text: 'Offices, retail buildings and other commercial structures require planned rainwater routes to manage runoff from larger roof areas.',
+        },
+        {
+          label: 'Industrial and institutional buildings',
+          text: `Factories, schools, hospitals and similar facilities may have extensive roof areas where rainwater drainage needs to be coordinated with the building's overall drainage design.`,
+        },
+        {
+          label: 'Terraces and other roof structures',
+          text: 'The drainage arrangement needs to account for the roof layout and the locations where rainwater naturally collects.',
+        },
+      ],
+    },
+    requirements: {
+      heading: 'Key Requirements for Rainwater Drainage',
+      intro: 'A rainwater system should be planned around the building rather than selecting a pipe first and working backwards.',
+      items: [
+        {
+          label: 'Roof Area and Rainfall',
+          text: 'The amount of water entering the system depends on the roof or catchment area and the rainfall conditions at the project location. These factors influence the required drainage capacity. ',
+        },
+        {
+          label: 'Pipe Sizing and Flow',
+          text: 'Pipe diameter should be selected according to the expected rainwater flow and the configuration of the drainage network. Undersized sections can restrict discharge, while unnecessary changes in direction can affect the flow path.',
+        },
+        {
+          label: 'Routing and Slope',
+          text: 'Horizontal sections should have an appropriate fall towards the discharge point. Vertical rainwater pipes should be positioned to provide a practical and direct route from the collection points.',
+        },
+        {
+          label: 'Joints and Connections',
+          text: `The pipe and fittings need to form a properly connected drainage network. Kothari's SWR range uses a range of pipe and fitting configurations, including self-fit and ring-fit types. `,
+        },
+        {
+          label: 'Outdoor Exposure',
+          text: `Rainwater pipes installed outside a building are exposed to weather and sunlight. Kothari's published SWR information identifies its system as UV protected.`,
+        },
+        {
+          label: 'Maintenance Access',
+          text: `The layout should allow practical inspection and maintenance of collection points, bends and discharge sections. Keeping the drainage route straightforward also makes it easier to identify and address blockages.`,
+        },
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari SWR Pipes for Rainwater Management',
+      intro: 'For a rainwater management system, the SWR pipe forms the main drainage path that carries collected roof water towards the designated discharge point.',
+      items: [
+        {
+          name: 'SWR (Soil, Waste & Rainwater) Piping System',
+          url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems',
+          image: `${ADMIN}/2025/04/SWR-PIPES-FITTINGS.webp`,
+          paragraphs: [
+            'Kothari KWIK Drain SWR is a uPVC conventional drainage system designed for soil, waste and rainwater applications. Within the range, Kothari identifies Type A pipes for ventilation and rainwater applications, making this the relevant SWR category for building rainwater drainage.',
+            'The range specifies IS 13592 for the pipe and IS 14735 for fittings, with SWR pipe sizes listed as 75 mm, 110 mm and 160 mm in the referenced catalogue.',
+            'Kothari also identifies features including a smooth internal surface, UV protection and leak-resistant jointing within its SWR system. The catalogue describes the system as having high flow rates and resistance to chemical and corrosion-related conditions.',
+            'The actual pipe diameter and number of downpipes should not be selected from the product range alone. They need to be determined from the roof area, rainfall intensity, drainage layout and project design requirements.',
+          ],
+        },
+       
+      ],
+      mapping: {
+        heading: 'Application-to-Product Mapping',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Carry rainwater from roof drainage points', product: 'SWR (Soil, Waste & Rainwater) Piping System', role: 'Vertical or horizontal rainwater drainage' },
+          { requirement: 'Connect different sections of the rainwater network', product: 'SWR Fittings', role: 'Direction changes and pipe connections' },
+          { requirement: 'Outdoor rainwater drainage', product: 'KWIK Drain SWR', role: 'Designed for rainwater applications with UV protection' },
+          { requirement: 'Building rainwater drainage', product: 'KWIK Drain SWR Type A', role: 'Carries roof runoff towards the designated discharge point' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: 'How a Building Rainwater Management System Works',
+      intro: 'A building rainwater management system can be understood as a simple collection-and-discharge network:',
+      flow: [
+        'Roof / Terrace',
+        'Rainwater Outlet',
+        'Horizontal Collection Line',
+        'Vertical SWR Downpipe',
+        'Ground-Level Drainage / Collection Point',
+        'Discharge / Recharge / Storage Arrangement',
+      ],
+      steps: [
+        {
+          title: 'Rain falls on the roof',
+          text: 'During rainfall, water collects across the roof or terrace surface. The roof should be designed so that water moves towards the designated rainwater outlets rather than remaining stagnant.',
+        },
+        {
+          title: 'Water enters the drainage system',
+          text: 'Roof outlets or collection points direct the water into the rainwater piping network. Their number and location depend on the roof layout and project design.',
+        },
+        {
+          title: 'SWR pipes carry the runoff',
+          text: 'The collected water travels through the SWR drainage network. Kothari KWIK Drain SWR Type A is specifically identified for rainwater applications.',
+        },
+        {
+          title: ' Vertical pipes take water down',
+          text: 'On multi-storey buildings, vertical downpipes carry rainwater from upper levels towards the ground. Fittings allow the system to accommodate changes in direction and connect different sections.',
+        },
+        {
+          title: 'Water reaches the designated destination',
+          text: `At ground level, the rainwater can be directed towards the project's planned discharge, collection, recharge or drainage arrangement. The final destination depends on the building's overall water-management design.`,
+        },
+      ],
+    },
+    cta: {
+      heading: 'lanning a Rainwater Management System?',
+      body: 'Share your building type, roof layout and rainwater drainage requirement with the Kothari team to discuss the appropriate SWR piping options.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
+
+
+  {
+    slug: 'sprinkler-irrigation-system',
+    division: 'irrigation-division',
+    parentHref: '/irrigation-applications',
+    parentLabel: 'Irrigation Applications',
+    divisionHref: '/irrigation-division',
+    metaTitle: 'Sprinkler Irrigation System & Applications | Kothari',
+    metaDescription:
+      'Explore sprinkler irrigation applications, sprinkler systems, mini sprinklers and HDPE pipe sprinkler sets for agricultural water distribution.',
+    heroEyebrow: 'Irrigation Applications',
+    h1: 'Sprinkler Irrigation System',
+    tagline:
+      'A field irrigation method that distributes water over the crop area through sprinklers connected to a planned pipeline network.',
+    image: '/heronew.jpg',
+    bannerImage: '/drip.png',
+    overview: {
+      heading: 'Sprinkler Irrigation System Overview',
+      paragraphs: [
+        'When water needs to cover a larger area rather than reach individual plants directly, sprinkler irrigation can provide a practical way to distribute it across the field. The system carries water from the source through a network of main and distribution pipes before delivering it through sprinklers positioned according to the field and crop layout.',
+        'A sprinkler irrigation system typically brings together the water source, pumping arrangement, filtration where required, pipelines, connections and sprinkler equipment. The performance of the system depends on how these components are selected and arranged for the actual field conditions.',
+        'Pipe routing, operating pressure, available flow, field size and the distance between the water source and irrigation points all need to be considered during planning. The system may also need to be moved or reconfigured depending on the type of installation.',
+        'For farmers, dealers and agri consultants, the focus is therefore not simply on selecting a sprinkler. The pipeline network and sprinkler equipment need to work together to distribute water across the intended irrigation area.',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Sprinkler Irrigation Is Used',
+      intro: [
+        'Sprinkler irrigation is used across agricultural applications where water needs to be distributed over an area through an irrigation sprinkler rather than delivered directly to individual plants.',
+        'Common applications include:',
+      ],
+      items: [
+        {
+          label: 'Field Crops',
+          text: 'Sprinklers can distribute water across cultivated areas where crop rows and field dimensions allow area-based irrigation.',
+        },
+        {
+          label: 'Vegetable Cultivation',
+          text: 'The system can be planned around the crop layout and the required irrigation area.',
+        },
+        {
+          label: 'Orchards and Plantations',
+          text: ' Depending on the crop and layout, sprinklers can be positioned to cover the required area around the plants.',
+        },
+        {
+          label: 'Fodder and Pasture Areas',
+          text: 'Area-based water distribution can be useful where crops are grown across broader field sections.',
+        },
+        {
+          label: 'Open Agricultural Fields',
+          text: 'Sprinkler systems can be arranged around the available water source, field dimensions and irrigation zones.',
+        },
+        {
+          label: 'Portable Irrigation Setups',
+          text: ' Where the application requires equipment to be shifted between field sections, the pipe and sprinkler arrangement can be planned accordingly.',
+        },
+      ],
+      note: 'The final configuration depends on the crop, field conditions, water availability and irrigation system design.',
+    },
+    requirements: {
+      heading: 'Key Requirements for a Sprinkler Irrigation System',
+      intro: 'A sprinkler irrigation system needs to be planned as a complete water-distribution network. The sprinkler itself is only one part of that network.',
+      items: [
+        {
+          label: 'Water Source and Flow',
+          text: 'The available water source and flow determine how the system can be divided into irrigation sections. The pipeline arrangement should account for the amount of water required by the operating sprinklers.',
+        },
+        {
+          label: 'Operating Pressure',
+          text: 'Pressure is an important consideration because sprinklers depend on water being delivered through the system under suitable operating conditions. The pump, mainline, distribution pipes and sprinkler arrangement should therefore be considered together.',
+        },
+        {
+          label: 'Field Layout and Distance',
+          text: 'The distance from the water source to the irrigation area, field dimensions and changes in elevation can influence pipe routing and system planning. Larger fields may require the system to be divided into manageable sections.',
+        },
+        {
+          label: 'Pipe Selection',
+          text: 'The pipe network needs to suit the intended installation and operating conditions. For sprinkler systems, the choice between a fixed or movable arrangement can also influence the type of piping required.',
+        },
+        {
+          label: 'Connections and Mobility',
+          text: 'Connections between the mainline, distribution lines and sprinklers need to suit the system layout. In applications where the sprinkler set is moved between field areas, practical handling and connection arrangements become particularly important.',
+        },
+        {
+          label: 'Maintenance',
+          text: 'Filters, pipes, connections and sprinklers should remain accessible for inspection and maintenance. Regular checks can help identify issues such as blocked components, damaged pipes or connection problems before they affect the irrigation operation.',
+        },
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari Products for Sprinkler Irrigation',
+      intro: `Kothari's sprinkler irrigation range includes sprinkler equipment and an HDPE pipe-based sprinkler set for different field-level arrangements. The appropriate combination depends on the irrigation layout, field conditions and intended method of operation.`,
+      items: [
+        {
+          name: 'Metal Sprinkler',
+          url: '/metal-sprinkler/metal-sprinkler',
+          image: `${ADMIN}/2025/06/METAL-SPRINKLER.webp`,
+          paragraphs: [
+            'Metal Sprinkler forms the water-application component of a sprinkler irrigation system. It is used at the irrigation point where water needs to be distributed over the surrounding field area.',
+            'It can be considered for agricultural sprinkler arrangements where the sprinkler is connected to the water distribution network and positioned according to the field layout. Its role should be evaluated together with the pipeline arrangement and operating conditions of the system.',
+          ],
+        },
+        {
+          name: 'Mini Sprinkler',
+          url: '/mini-sprinklers-and-assemblies/mini-sprinkler',
+          image: `${ADMIN}/2025/04/MINI-SPRINKLER.png`,
+          paragraphs: [
+            'Mini Sprinkler is suited to sprinkler-based irrigation where water needs to be distributed over a more localised area. It can be incorporated into field irrigation layouts according to the crop arrangement and required area of application.',
+            'For a mini sprinkler system, the positioning of the sprinklers and the way water is brought to each irrigation point should be considered as part of the overall system design.',
+          ],
+        },
+        {
+          name: 'K-Eco Sprinkler',
+          url: '/k-eco-rain-pipes-and-k-flex-submain-pipes/k-eco-sprinkler',
+          image: `${ADMIN}/2025/04/K-Eco-sprinkler.webp`,
+          paragraphs: [
+            'K-Eco Sprinkler forms part of the sprinkler equipment used for field-level water distribution. It can be integrated into a sprinkler irrigation arrangement where water is transported through the pipe network and delivered through individual sprinkler points.',
+            'The appropriate layout depends on factors such as field configuration, water availability and the selected irrigation arrangement.',
+          ],
+        },
+        {
+          name: 'HDPE Pipe Sprinkler Set',
+          url: '/micro-mini-sprinklers/hdpe-pipe-sprinkler-set',
+          image: `${ADMIN}/2025/10/HDPE-Pipe-Sprinkler-Set-1.webp`,
+          paragraphs: [
+            'The HDPE Pipe Sprinkler Set combines the pipe-based water distribution arrangement with sprinkler irrigation equipment. It is relevant where the irrigation system requires a connected set for moving water from the supply point towards the field-level sprinklers.',
+            'It can be considered for agricultural applications where the pipe network and sprinkler equipment need to be planned as one system rather than as separate components.',
+          ],
+        },
+      ],
+      mapping: {
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Field-area water distribution', product: 'Metal Sprinkler', role: 'Sprinkler-based water application' },
+          { requirement: 'Localised sprinkler irrigation', product: 'Mini Sprinkler', role: 'Local area water distribution' },
+          { requirement: 'Sprinkler-based field irrigation', product: 'HDPE Pipe Sprinkler Set', role: 'Water conveyance and sprinkler setup' },
+          { requirement: 'Connecting drip components', product: 'Drip Poly Fittings', role: 'System connections' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: 'How a Sprinkler Irrigation System Works',
+      intro: 'A sprinkler irrigation system can be understood as a flow path from the water source to the sprinkler point:',
+      flow: [
+        'Water Source',
+        'Pumping / Water Supply',
+        'Main Pipeline',
+        'Distribution  Pipe',
+        'Sprinkler Connection',
+        'Sprinkler',
+        'Crop Area',
+      ],
+      steps: [
+        {
+          title: 'Water Source',
+          text: 'Water enters the system from the available agricultural water source. The source and pumping arrangement determine how water is brought into the irrigation network.',
+        },
+        {
+          title: 'Main Pipeline',
+          text: 'The main pipeline carries water from the supply point towards the agricultural field. Its routing depends on the location of the water source and the field being irrigated.',
+        },
+        {
+          title: 'Field Distribution',
+          text: 'Distribution pipes take water from the mainline towards individual irrigation sections. Depending on the system design, these sections may be fixed or arranged for movement between different areas of the field.',
+        },
+        {
+          title: ' Sprinkler Connection',
+          text: 'The sprinkler is connected to the water distribution network at the designated irrigation point. The connection arrangement needs to suit the pipe layout and the way the system is operated.',
+        },
+        {
+          title: 'Water Application',
+          text: 'The sprinkler distributes water over the intended field area. Metal Sprinkler, Mini Sprinkler and K-Eco Sprinkler can serve different sprinkler irrigation arrangements, while the HDPE Pipe Sprinkler Set provides a combined pipe-and-sprinkler arrangement for relevant applications.',
+        },
+      ],
+    },
+    cta: {
+      heading: 'Planning a Sprinkler Irrigation System?',
+      body: 'Share your field layout, water source and irrigation requirement with the Kothari team to discuss the relevant sprinkler and piping options.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
 ];
 
 export function getApplicationDetailBySlug(

@@ -75,14 +75,17 @@ const divisions = [
   },
 ];
 
-const iamOptions = [
-  'Farmer',
-  'Dealer',
-  'Consultant',
-  'Government',
-  'Agri Professional',
-  'Other'
-];
+const getIamOptions = (division: string) => {
+  const isIrrigation = division === 'Irrigation Division';
+  return [
+    'Farmer',
+    'Dealer',
+    'Government',
+    'Agri Professional',
+    ...(isIrrigation ? ['Irrigation Consultant'] : ['MEP Consultant', 'Plumber']),
+    'Other'
+  ];
+};
 
 const requirements = [
   'Product Enquiry',
@@ -131,6 +134,7 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
     requirement: 'Product Enquiry',
     otherRequirement: '',
   });
+  const iamOptions = getIamOptions(formData.division);
 
 
 
@@ -708,7 +712,15 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
                     </label>
                     <select
                       value={formData.division}
-                      onChange={(e) => setFormData({ ...formData, division: e.target.value })}
+                      onChange={(e) => {
+                        const nextDivision = e.target.value;
+                        const nextIamOptions = getIamOptions(nextDivision);
+                        setFormData((prev) => ({
+                          ...prev,
+                          division: nextDivision,
+                          iam: nextIamOptions.includes(prev.iam) ? prev.iam : 'Farmer',
+                        }));
+                      }}
                       className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] focus:outline-none focus:border-[#1575B3] focus:bg-white transition"
                     >
                       <option value="Irrigation Division">Irrigation Division (Drip & Irrigation)</option>

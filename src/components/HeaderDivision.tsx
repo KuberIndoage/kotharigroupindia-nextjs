@@ -375,9 +375,9 @@ const [aboutOpen, setAboutOpen] = useState(false);
   const iamOptions = [
     'Farmer',
     'Dealer',
-    'Consultant',
     'Government',
     'Agri Professional',
+    ...(isIrrigation ? ['Irrigation Consultant'] : ['MEP Consultant', 'Plumber']),
     'Other'
   ];
 
@@ -1924,7 +1924,7 @@ const handleSolutionBack = () => {
       <a
         href={
           isIrrigation
-            ? 'https://wa.me/8799963638'
+            ? 'https://wa.me/9307309582'
             : 'https://whatsapp.com/channel/0029Vb6myeSGU3BD6QbRqN3i'
         }
         target="_blank"

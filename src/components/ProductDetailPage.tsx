@@ -272,12 +272,14 @@ export const ProductDetailPage: React.FC<{
                 >
                   Enquire Now <ArrowRight className="w-4 h-4" />
                 </button>
-                <button
-                  onClick={() => setCertModalOpen(true)}
-                  className={`inline-flex items-center gap-2 bg-white border border-slate-300 ${tHoverBorder} ${tHoverText} text-slate-700 text-sm font-mono tracking-widest uppercase px-6 py-4 transition-colors`}
-                >
-                  <Award className="w-4 h-4" /> View Certifications
-                </button>
+                {!isIrrigation && (
+                  <button
+                    onClick={() => setCertModalOpen(true)}
+                    className={`inline-flex items-center gap-2 bg-white border border-slate-300 ${tHoverBorder} ${tHoverText} text-slate-700 text-sm font-mono tracking-widest uppercase px-6 py-4 transition-colors`}
+                  >
+                    <Award className="w-4 h-4" /> View Certifications
+                  </button>
+                )}
               </div>
             </div>
           </div>
