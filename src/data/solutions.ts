@@ -1553,27 +1553,27 @@ export const solutionsData: Solution[] = [
      
     ],
     pillars: [
-      {
-        icon: 'Target',
-        label: 'Targeted Delivery',
-        text: 'Water reaches the root zone, not the soil surface',
-      },
-      {
-        icon: 'Droplets',
-        label: 'Water Efficiency',
-        text: 'Reduces water consumption vs. flood irrigation',
-      },
-      {
-        icon: 'Sprout',
-        label: 'Yield Consistency',
-        text: 'Even distribution reduces crop stress',
-      },
-      {
-        icon: 'FlaskConical',
-        label: 'Fertigation Ready',
-        text: 'Compatible with dosing pumps & injectors for nutrient delivery',
-      },
-    ],
+  {
+    icon: 'CloudRain',
+    label: 'Targeted Delivery',
+    text: 'Water reaches the root zone, not the soil surface.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Water Efficiency',
+    text: 'Uses less water than flood irrigation.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Yield Consistency',
+    text: 'Even distribution reduces crop stress for steadier growth.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Fertigation Ready',
+    text: 'Works with dosing pumps and injectors to deliver nutrients with the water.',
+  },
+],
     childSolutions: {
       heading: 'Our Precision Irrigation Solutions',
       description: 'Four solutions that work together as one complete system.',
@@ -1593,28 +1593,28 @@ export const solutionsData: Solution[] = [
           overview: [
             'Precision drip irrigation delivers water directly to each plant\u2019s root zone through driplines and emitters, cutting evaporation and runoff while keeping soil moisture steady. Kothari\u2019s drip irrigation system range covers flat fields, slopes, subsurface installations and short-duration crops. Israeli technology and IS 13488 certification support uniform, clog-resistant performance.',
           ],
-          pillars: [
-            {
-              icon: 'Droplets',
-              label: 'Uniform Flow',
-              text: 'Consistent emitter output gives every plant an equal share.',
-            },
-            {
-              icon: 'Gauge',
-              label: 'Slope-Ready',
-              text: 'Pressure-compensated options hold flow on slopes and long runs.',
-            },
-            {
-              icon: 'ShieldCheck',
-              label: 'Clog Resistance',
-              text: 'Clog-resistant emitter design keeps lines running season after season.',
-            },
-            {
-              icon: 'Sun',
-              label: 'Long Field Life',
-              text: 'UV-stabilised materials built for Indian sun.',
-            },
-          ],
+        pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Uniform Flow',
+    text: 'Consistent emitter output gives every plant an equal share of water.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Slope-Ready',
+    text: 'Pressure-compensated options hold steady flow on slopes and long runs.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Clog Resistance',
+    text: 'Clog-resistant emitter design keeps lines running season after season.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Long Field Life',
+    text: 'UV-stabilised materials made for Indian sun.',
+  },
+],
           whyChoose: [
             'Non-pressure-compensated, pressure-compensated and thin wall options in one range',
             'Anti-siphon and no-drain designs for subsurface and greenhouse use',
@@ -1622,13 +1622,33 @@ export const solutionsData: Solution[] = [
             'Scalable from small landholdings to large commercial farms',
             'Backed by 35+ years of agri-piping manufacturing expertise',
           ],
-          applications: [
-            'Sugarcane & Cotton',
-            'Vegetables',
-            'Banana & Pomegranate',
-            'Orchards & Vineyards',
-            'Greenhouses & Nurseries',
-          ],
+         applications: [
+  {
+    title: 'Sugarcane & Cotton',
+    description:
+      'Drip lines for high-water-demand row crops, delivering steady root-zone moisture while cutting evaporation and runoff compared with flood irrigation.',
+  },
+  {
+    title: 'Vegetables',
+    description:
+      'Thin wall and non-pressure-compensated driplines suit short-duration vegetable crops, giving reliable season-length watering at a lower cost.',
+  },
+  {
+    title: 'Banana & Pomegranate',
+    description:
+      'Uniform emitter output gives each plant an equal share of water, helping fruit crops like banana and pomegranate get consistent moisture.',
+  },
+  {
+    title: 'Orchards & Vineyards',
+    description:
+      'Pressure-compensated drippers hold steady flow on slopes and long runs, keeping tree and vine rows evenly watered across uneven land.',
+  },
+  {
+    title: 'Greenhouses & Nurseries',
+    description:
+      'Anti-siphon and no-drain dripper designs for greenhouse and subsurface use, keeping watering precise in protected cultivation and nursery beds.',
+  },
+],
           relatedProducts: [
             {
               name: 'Dripline K-Gol NPC',
@@ -1701,28 +1721,28 @@ export const solutionsData: Solution[] = [
           overview: [
             'A sprinkler irrigation system applies water as controlled rainfall, covering closely spaced field crops, orchards, nurseries and lawns evenly. Kothari\u2019s range includes metal sprinklers for full-circle coverage, HDPE quick-coupling pipes for fast setup, rainguns for wide areas, micro and mini sprinklers for orchards and nurseries, and pop-up heads for turf.',
           ],
-          pillars: [
-            {
-              icon: 'Radar',
-              label: 'Even Coverage',
-              text: 'Full-circle spray without blind spots.',
-            },
-            {
-              icon: 'Zap',
-              label: 'Fast Setup',
-              text: 'Quick-coupling pipes make laying and shifting easy.',
-            },
-            {
-              icon: 'Expand',
-              label: 'Flexible Scale',
-              text: 'From micro sprinklers to rainguns for large areas.',
-            },
-            {
-              icon: 'CloudRainWind',
-              label: 'Crop Protection',
-              text: 'Fine-mist options for cooling and frost protection.',
-            },
-          ],
+        pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Even Coverage',
+    text: 'Full-circle spray with no blind spots.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Fast Setup',
+    text: 'Quick-coupling pipes make laying and shifting simple.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Flexible Scale',
+    text: 'Options from micro sprinklers to rainguns for large areas.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Crop Protection',
+    text: 'Fine-mist options for cooling and frost protection.',
+  },
+],
           whyChoose: [
             'Full range from micro sprinklers to rainguns',
             'Quick-coupling HDPE pipes for portable field layouts',
@@ -1731,13 +1751,33 @@ export const solutionsData: Solution[] = [
             'Pop-up heads and rotors for lawns and turf',
             'Backed by 35+ years of agri-piping manufacturing expertise',
           ],
-          applications: [
-            'Field Crops',
-            'Plantations',
-            'Orchards & Nurseries',
-            'Fodder & Lawns',
-            'Greenhouses',
-          ],
+     applications: [
+  {
+    title: 'Field Crops',
+    description:
+      'Sprinklers and quick-coupling HDPE pipes apply water like gentle rainfall, covering closely spaced field crops evenly with fast, portable setup.',
+  },
+  {
+    title: 'Plantations',
+    description:
+      'Rainguns and metal sprinklers cover wide plantation areas with strong, even spray, with portable pipe layouts that are easy to lay and shift.',
+  },
+  {
+    title: 'Orchards & Nurseries',
+    description:
+      'Micro and mini sprinklers give flexible, uniform coverage for orchards and nurseries, with adjustable spray patterns suited to young plants.',
+  },
+  {
+    title: 'Fodder & Lawns',
+    description:
+      'Pop-up heads and rotors give even coverage for fodder fields, lawns and turf, covering closely spaced growth that drip lines handle poorly.',
+  },
+  {
+    title: 'Greenhouses',
+    description:
+      'Fine-mist sprayers cool the air and keep humidity right inside greenhouses, while also supporting crop protection in extreme heat or cold.',
+  },
+],
           relatedProducts: [
             {
               name: 'Mini Sprinkler',
@@ -1810,28 +1850,28 @@ export const solutionsData: Solution[] = [
           overview: [
             'Water savings depend on what surrounds the emitter: clean water, stable pressure, protected pipelines and measured volumes. Kothari\u2019s drip irrigation filters stop the clogging that causes uneven watering. Pressure and relief valves prevent bursts and surges, water meters track usage, and controllers schedule irrigation by time or volume. It is water management for agriculture built into the system itself.',
           ],
-          pillars: [
-            {
-              icon: 'Filter',
-              label: 'Clean Water',
-              text: 'Filtration removes sand and organic debris before it reaches emitters.',
-            },
-            {
-              icon: 'Gauge',
-              label: 'Stable Pressure',
-              text: 'Valves regulate flow and protect pipelines from surges.',
-            },
-            {
-              icon: 'Layers',
-              label: 'Measured Use',
-              text: 'Meters track exactly how much water each cycle uses.',
-            },
-            {
-              icon: 'Cpu',
-              label: 'Scheduled Control',
-              text: 'Controllers replace guesswork with timed or volume-based irrigation.',
-            },
-          ],
+       pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Clean Water',
+    text: 'Filters remove sand and organic debris before water reaches the emitters.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Stable Pressure',
+    text: 'Valves regulate flow and protect pipelines from surges.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Measured Use',
+    text: 'Water meters show exactly how much each irrigation cycle uses.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Scheduled Control',
+    text: 'Controllers run irrigation by time or volume instead of guesswork.',
+  },
+],
           whyChoose: [
             'Complete filter range: hydrocyclone, sand, screen and disc',
             'Valves for pressure reduction, sustaining, relief and air release',
@@ -1840,13 +1880,33 @@ export const solutionsData: Solution[] = [
             'Compatible with any drip or sprinkler layout',
             'Backed by 35+ years of agri-piping manufacturing expertise',
           ],
-          applications: [
-            'Well & Borewell Water',
-            'River & Pond Water',
-            'Large Drip Systems',
-            'Sloped Farms',
-            'Commercial Farms',
-          ],
+        applications: [
+  {
+    title: 'Well & Borewell Water',
+    description:
+      'Hydrocyclone and sand filters remove sand and debris from groundwater before it reaches the emitters, preventing clogging and uneven watering.',
+  },
+  {
+    title: 'River & Pond Water',
+    description:
+      'Screen and disc filters with auto-backwash options clean silt and organic matter from open water sources, with less manual cleaning.',
+  },
+  {
+    title: 'Large Drip Systems',
+    description:
+      'Filters, pressure valves and air release valves protect big drip networks from clogging, surges and bursts, keeping every line running smoothly.',
+  },
+  {
+    title: 'Sloped Farms',
+    description:
+      'Pressure reducing and sustaining valves regulate flow on uneven land, protecting pipelines from surges and water hammer across elevation changes.',
+  },
+  {
+    title: 'Commercial Farms',
+    description:
+      'Water meters and controllers track and schedule irrigation by time or volume, so large farms use water in measured amounts rather than guesswork.',
+  },
+],
           relatedProducts: [
             {
               name: 'Hydrocyclone Filter',
@@ -1918,28 +1978,28 @@ export const solutionsData: Solution[] = [
           overview: [
             'Fertigation applies fertilizer through the irrigation system, so nutrients reach the root zone with every cycle. Kothari\u2019s automated irrigation system range starts with power-free Venturi injectors for smaller setups. Dosing pumps handle larger systems, and the Nutrijet IoT machine adds real-time EC and pH control, giving growers consistent nutrition with less fertilizer waste.',
           ],
-          pillars: [
-            {
-              icon: 'FlaskConical',
-              label: 'Precise Dosing',
-              text: 'Fertilizer is metered into the line, not spread by hand.',
-            },
-            {
-              icon: 'Sprout',
-              label: 'Root-Zone Nutrition',
-              text: 'Nutrients arrive with the water, exactly where roots feed.',
-            },
-            {
-              icon: 'Cpu',
-              label: 'Automation Ready',
-              text: 'Controllers schedule dosing by time, quantity or EC and pH.',
-            },
-            {
-              icon: 'Expand',
-              label: 'Scalable',
-              text: 'From Venturi injectors to IoT fertigation machines.',
-            },
-          ],
+         pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Precise Dosing',
+    text: 'Fertilizer is metered into the line instead of spread by hand.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Root-Zone Nutrition',
+    text: 'Nutrients travel with the water to where roots feed.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Automation Ready',
+    text: 'Controllers schedule dosing by time, quantity, or EC and pH.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Scalable',
+    text: 'From Venturi injectors for small setups to IoT fertigation machines.',
+  },
+],
           whyChoose: [
             'Venturi injectors, dosing pumps and IoT machines in one range',
             'Real-time EC and pH control on Nutrijet',
@@ -1948,13 +2008,33 @@ export const solutionsData: Solution[] = [
             'Reduces fertilizer waste versus manual application',
             'Backed by 35+ years of agri-piping manufacturing expertise',
           ],
-          applications: [
-            'Vegetables',
-            'Orchards',
-            'Vineyards',
-            'Nurseries',
-            'Greenhouses',
-          ],
+         applications: [
+  {
+    title: 'Vegetables',
+    description:
+      'Venturi injectors or dosing pumps feed measured nutrients with every irrigation cycle, supporting fast-growing vegetables with less fertilizer waste.',
+  },
+  {
+    title: 'Orchards',
+    description:
+      'Dosing pumps deliver nutrients to the root zone of tree crops with each watering, giving consistent feeding without manual fertilizer application.',
+  },
+  {
+    title: 'Vineyards',
+    description:
+      'Automated dosing by time or quantity gives vines steady, controlled nutrition, with fertilizer delivered exactly where the roots feed.',
+  },
+  {
+    title: 'Nurseries',
+    description:
+      'Precise, regular nutrient dosing for young plants and saplings, with Venturi injectors suiting smaller setups and clean fertigation layouts.',
+  },
+  {
+    title: 'Greenhouses',
+    description:
+      'Nutrijet IoT machines give real-time EC and pH control with remote monitoring, supporting consistent nutrition in protected cultivation.',
+  },
+],
           relatedProducts: [
             {
               name: 'Nutrijet Fertigation Machines',
@@ -2022,14 +2102,38 @@ export const solutionsData: Solution[] = [
       'Scalable from small landholdings to large commercial farms',
       'Backed by 35+ years of agri-piping manufacturing expertise',
     ],
-    applications: [
-      'Horticulture',
-      'Orchards',
-      'Vineyards',
-      'Row Crops',
-      'Plantation Crops',
-      'Commercial Farms',
-    ],
+   applications: [
+  {
+    title: 'Horticulture',
+    description:
+      'Precise root-zone watering for fruit, vegetable and flower crops, giving each plant the right amount of water and nutrients at the right time.',
+  },
+  {
+    title: 'Orchards',
+    description:
+      'Drip systems that deliver water straight to tree roots, cutting waste while keeping soil moisture steady across the whole growing season.',
+  },
+  {
+    title: 'Vineyards',
+    description:
+      'Even, controlled watering for vines, with driplines and filters working together to keep water delivery uniform and clog-free through the season.',
+  },
+  {
+    title: 'Row Crops',
+    description:
+      'Driplines laid along crop rows for uniform watering, limiting water to the plant zone to reduce weed growth and keep yields more consistent.',
+  },
+  {
+    title: 'Plantation Crops',
+    description:
+      'UV-stabilized drip lines built for long field life under Indian sun, giving plantation crops steady water delivery year after year.',
+  },
+  {
+    title: 'Commercial Farms',
+    description:
+      'Scalable systems of driplines, filters, valves and controllers that work from small landholdings up to large commercial farms.',
+  },
+],
     relatedProducts: [
       {
         name: 'Dripline K-Gol NPC',
@@ -2088,28 +2192,28 @@ export const solutionsData: Solution[] = [
     overview: [
       ' Polyhouse and greenhouse farming demand a level of precision open fields donnot require. Our Polyhouse Irrigation solutions are engineered for controlled-environment agriculture combining micro sprinklers, misters, foggers, and fine-tuned dripline layouts to maintain the exact humidity and moisture levels high-density crops need. A well-designed mini sprinkler system inside a polyhouse can make the difference between healthy, uniform crops and disease-prone overwatering. Ideal for floriculture, nurseries, and protected cultivation of vegetables.',
     ],
-    pillars: [
-      {
-        icon: 'CloudFog',
-        label: 'Climate-Matched Watering',
-        text: 'Misting & fogging options for humidity control',
-      },
-      {
-        icon: 'Grid2x2',
-        label: 'High-Density Layouts',
-        text: 'Designed for tightly spaced planting beds',
-      },
-      {
-        icon: 'RefreshCw',
-        label: 'Automation Friendly',
-        text: 'Pairs with controllers for scheduled watering cycles',
-      },
-      {
-        icon: 'Expand',
-        label: 'Compact Footprint ',
-        text: 'Space-efficient piping for enclosed structures',
-      },
-    ],
+   pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Climate-Matched Watering',
+    text: 'Misting and fogging options help manage humidity inside the polyhouse.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'High-Density Layouts',
+    text: 'Designed for tightly spaced planting beds.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Automation Friendly',
+    text: 'Pairs with controllers for scheduled watering cycles.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Compact Footprint',
+    text: 'Space-efficient piping that fits enclosed structures.',
+  },
+],
     whyChoose: [
       'Purpose-built for polyhouses, net houses, and greenhouse structures',
       'Micro sprinklers, misters & foggers for varying crop and humidity needs',
@@ -2118,14 +2222,33 @@ export const solutionsData: Solution[] = [
       'Easy to retrofit into existing polyhouse structures',
       'Pairs with automatic filters for cleaner, low-maintenance operation',
     ],
-    applications: [
-      'Floriculture ',
-      'Nurseries',
-      'Protected Vegetable Cultivation',
-      'Exotic Crop Farming',
-      'Seedling Propagation',
-      
-    ],
+   applications: [
+  {
+    title: 'Floriculture',
+    description:
+      'Micro sprinklers, misters and fine-tuned driplines maintain the humidity and moisture flowers need, lowering the risk of overwatering and disease.',
+  },
+  {
+    title: 'Nurseries',
+    description:
+      'Gentle misting and micro sprinklers keep saplings and young plants evenly moist, with automatic filters for clean, low-maintenance operation.',
+  },
+  {
+    title: 'Protected Vegetable Cultivation',
+    description:
+      'Controlled watering for vegetables grown under cover, keeping moisture precise in tightly spaced beds and cutting disease from uneven watering.',
+  },
+  {
+    title: 'Exotic Crop Farming',
+    description:
+      'Precise, climate-matched irrigation for high-value exotic crops, with misting and fogging options to hold humidity at the level each crop needs.',
+  },
+  {
+    title: 'Seedling Propagation',
+    description:
+      'Fine misting keeps seedling trays evenly moist without overwatering, helping young plants establish well in enclosed, controlled conditions.',
+  },
+],
     relatedProducts: [
       {
         name: 'K-Mic Micro Sprinkler',
@@ -2184,28 +2307,28 @@ export const solutionsData: Solution[] = [
     overview: [
         'For open-field crops that need broad, uniform coverage, our Agricultural Field Irrigation systems combine sprinkler irrigation, rain gun, and pivot-compatible piping engineered to withstand outdoor conditions across large landholdings. Built with UV-resistant HDPE irrigation pipes and metal/plastic sprinkler technology, this solution ensures uniform water distribution from field edge to field edge even across uneven terrain. Whether you need a full sprinkler irrigation system or a targeted mini sprinkler system for a smaller plot, our range is field-tested across diverse Indian growing conditions. ',
     ],
-    pillars: [
-      {
-        icon: 'Radar',
-        label: 'Wide-Area Coverage',
-        text: 'Engineered for large open fields',
-      },
-      {
-        icon: 'CloudRainWind',
-        label: 'Weather-Resistant Build',
-        text: 'UV and abrasion-resistant materials',
-      },
-      {
-        icon: 'WavesHorizontal',
-        label: 'Uniform Distribution',
-        text: ' Consistent water spread reduces dry patches',
-      },
-      {
-        icon: 'MountainSnow',
-        label: 'Terrain Adaptable',
-        text: 'Works across flat and uneven farmland',
-      },
-    ],
+   pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Wide-Area Coverage',
+    text: 'Sprinklers and rainguns engineered for large open fields.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Weather-Resistant Build',
+    text: 'UV and abrasion-resistant materials made for outdoor use.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Uniform Distribution',
+    text: 'Consistent water spread reduces dry patches.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Terrain Adaptable',
+    text: 'Works across flat and uneven farmland.',
+  },
+],
     whyChoose: [
       'Metal and plastic sprinkler options to match budget and field size',
       'HDPE Sprinkler Pipes (QCPE) for durable, quick-connect field layouts',
@@ -2214,13 +2337,33 @@ export const solutionsData: Solution[] = [
       'Reduces manual labor compared to flood/furrow irrigation',
       'Field-tested across diverse Indian soil and climate conditions',
     ],
-    applications: [
-      'Cereal & Grain Crops',
-      'Sugarcane',
-      'Cotton',
-      'Pulses',
-      'Large Commercial Farmland',
-    ],
+   applications: [
+  {
+    title: 'Cereal & Grain Crops',
+    description:
+      'Sprinkler and raingun systems give broad, uniform coverage across grain crops grown over wide areas, reducing dry patches from field edge to edge.',
+  },
+  {
+    title: 'Sugarcane',
+    description:
+      'Rainguns and HDPE sprinkler pipes cover large cane fields with high-volume, wide-radius watering, cutting the manual labour of flood or furrow irrigation.',
+  },
+  {
+    title: 'Cotton',
+    description:
+      'Uniform sprinkler coverage across open cotton fields, using UV-resistant pipes and durable sprinklers built to handle outdoor conditions season after season.',
+  },
+  {
+    title: 'Pulses',
+    description:
+      'Metal and plastic sprinkler options suit closely spaced pulse crops, matching budget and field size while spreading water evenly with fewer dry patches.',
+  },
+  {
+    title: 'Large Commercial Farmland',
+    description:
+      'Quick-connect HDPE pipe layouts and rainguns cover large landholdings efficiently, field-tested across diverse Indian soil and climate conditions.',
+  },
+],
     relatedProducts: [
       {
         name: 'Metal Sprinkler',
@@ -2492,28 +2635,28 @@ export const solutionsData: Solution[] = [
     overview: [
       `As Indian cities and townships expand, reliable drainage infrastructure becomes critical. Our Urban Drainage & Sewerage Networks solution covers soil, waste, and rainwater piping alongside underground drainage pipe systems built to handle the volume and pressure demands of urban and semi-urban infrastructure projects, from individual buildings to public infrastructure works. `,
     ],
-    pillars: [
-      {
-        icon: 'CloudRain',
-        label: 'Complete SWR Coverage',
-        text: ' Soil, waste & rainwater in one system family',
-      },
-      {
-        icon: 'ArrowDownToLine',
-        label: 'Underground Ready',
-        text: 'Engineered for buried, high-load applications',
-      },
-      {
-        icon: 'MapPinHouse',
-        label: 'Public Infrastructure Grade',
-        text: ' Built for municipal & township-scale projects',
-      },
-      {
-        icon: 'WrenchOff',
-        label: 'Long Service Life',
-        text: 'Corrosion and root-resistant materials',
-      },
-    ],
+   pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Complete SWR Coverage',
+    text: 'Soil, waste and rainwater piping from one system family for full building drainage.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Underground Ready',
+    text: 'UPVC underground drainage pipes built for buried, high-load conditions.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Public Infrastructure Grade',
+    text: 'Suited to municipal and township-scale projects with heavy sewerage and stormwater flow.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Long Service Life',
+    text: 'Corrosion and root-resistant materials mean fewer blockages and less maintenance over time.',
+  },
+],
     whyChoose: [
       'Soil, Waste & Rainwater (SWR) pipes for complete building drainage',
       'Underground pipe and fittings engineered for buried infrastructure',
@@ -2523,13 +2666,37 @@ export const solutionsData: Solution[] = [
       'Supported by nationwide dealer network for infrastructure-scale supply',
     ],
     applications: [
-      'Municipal Infrastructure',
-      'Townships & Housing Societies',
-      'Commercial Complexes',
-      'Public Works Projects',
-      'Campuses',
-      'Basements',
-    ],
+  {
+    title: 'Municipal Infrastructure',
+    description:
+      'Soil, waste and rainwater piping for city sewerage and stormwater networks, built to handle high-volume flow as Indian cities keep expanding.',
+  },
+  {
+    title: 'Townships & Housing Societies',
+    description:
+      'Reliable drainage systems for large residential layouts, carrying wastewater and rainwater away from many homes with fewer blockages over time.',
+  },
+  {
+    title: 'Commercial Complexes',
+    description:
+      'SWR piping for large commercial buildings, giving complete soil, waste and rainwater drainage from one system family with dependable performance.',
+  },
+  {
+    title: 'Public Works Projects',
+    description:
+      'Underground drainage pipes and fittings for public infrastructure works, engineered for buried, high-load conditions and backed by a nationwide dealer network.',
+  },
+  {
+    title: 'Campuses',
+    description:
+      'Drainage piping for schools, colleges and institutional campuses, handling wastewater and stormwater reliably across large, spread-out building clusters.',
+  },
+  {
+    title: 'Basements',
+    description:
+      'Drainage lines for below-ground spaces, helping carry wastewater and rainwater away with corrosion-resistant pipes that are durable and easy to install.',
+  },
+],
     relatedProducts: [
       {
         name: 'SWR (Soil, Waste & Rainwater) Piping System',
@@ -2574,28 +2741,28 @@ export const solutionsData: Solution[] = [
     overview: [
       ` For regions where groundwater is a primary water source, dependable borewell infrastructure isn't optional, it's essential. Our Groundwater Access Solutions combine precision-engineered column pipe for borewell installations with durable PVC casing pipes designed to withstand the pressure and depth demands of borewell drilling. Alongside this, our range of suction pipes and hose systems supports efficient water extraction from the source, ensuring long-term, reliable access to groundwater for both agricultural and rural community use. `,
     ],
-    pillars: [
-      {
-        icon: 'ArrowDownToLine',
-        label: 'Depth-Rated Strength',
-        text: ' Built to withstand borewell pressure conditions',
-      },
-      {
-        icon: 'ShieldCheck',
-        label: 'Corrosion Resistant',
-        text: ' Long service life in underground conditions',
-      },
-      {
-        icon: 'Link',
-        label: 'Precision Threading ',
-        text: 'Secure, leak-free pipe-to-pipe connections',
-      },
-      {
-        icon: 'Tractor',
-        label: 'Rural & Agri Ready',
-        text: 'Suited for farm and community water access',
-      },
-    ],
+   pillars: [
+  {
+    icon: 'CloudRain',
+    label: 'Depth-Rated Strength',
+    text: 'Column and casing pipes made to handle the pressure and depth of borewells.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Corrosion Resistant',
+    text: 'Materials that hold up underground for a long service life.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Precision Threading',
+    text: 'Accurate threads give secure, leak-free pipe-to-pipe connections.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'Rural & Agri Ready',
+    text: 'Suited to both farm borewells and community water supply.',
+  },
+],
     whyChoose: [
       'Column pipes engineered for submersible pump installations',
       'Casing pipes built to protect and stabilize borewell structures',
@@ -2605,11 +2772,27 @@ export const solutionsData: Solution[] = [
       'Backed by extensive channel partner network for on-ground support',
     ],
     applications: [
-      'Agricultural Borewells',
-      'Community Water Access Points',
-      'Rural Water Supply',
-      'Farm Groundwater Extraction',
-    ],
+  {
+    title: 'Agricultural Borewells',
+    description:
+      'Column and casing pipes built for borewell pressure and depth, helping farm borewells run reliably season after season with less risk of pipe failure.',
+  },
+  {
+    title: 'Community Water Access Points',
+    description:
+      'Durable borewell pipes for shared village and community water points, built to give many people dependable groundwater access over the long term.',
+  },
+  {
+    title: 'Rural Water Supply',
+    description:
+      'Column, casing and suction pipe systems that bring steady groundwater to rural homes and farms, even across varying soil and depth conditions.',
+  },
+  {
+    title: 'Farm Groundwater Extraction',
+    description:
+      'Suction pipes and hose systems that draw water efficiently from the source, supporting dependable groundwater use for irrigation across Indian farms.',
+  },
+],
     relatedProducts: [
       {
         name: 'Column Pipes',
@@ -2655,27 +2838,27 @@ export const solutionsData: Solution[] = [
       'Before water ever reaches a drip line or sprinkler, it has to travel often across large distances and varying terrain. Farm Infrastructure Piping Solutions provide the high-pressure agricultural pipes and HDPE pipes that form the backbone of farm water distribution, reliably carrying water from source to field. As an established HDPE pipe manufacturer, our HDPE pipes and fittings are built for durability across uneven terrain, supporting effective water management for agriculture at every stage of transport.',
     ],
     pillars: [
-      {
-        icon: 'Gauge',
-        label: 'High-Pressure Rated',
-        text: 'Built for bulk water conveyance, not just delivery',
-      },
-      {
-        icon: 'Route',
-        label: 'Long-Distance Durability',
-        text: 'Engineered for large landholdings',
-      },
-      {
-        icon: 'Mountain',
-        label: 'Terrain Resilient',
-        text: 'UPVC & PE materials suited to Indian field conditions',
-      },
-      {
-        icon: 'Network',
-        label: 'System Foundation',
-        text: 'The infrastructure layer beneath every irrigation method',
-      },
-    ],
+  {
+    icon: 'CloudRain',
+    label: 'High-Pressure Rated',
+    text: 'Pipes built to move bulk water under pressure, not just deliver it.',
+  },
+  {
+    icon: 'ArrowDownToLine',
+    label: 'Long-Distance Durability',
+    text: 'Strong enough to carry water across large landholdings.',
+  },
+  {
+    icon: 'MapPinHouse',
+    label: 'Terrain Resilient',
+    text: 'UPVC and PE pipes suited to uneven Indian field conditions.',
+  },
+  {
+    icon: 'WrenchOff',
+    label: 'System Foundation',
+    text: 'The base layer that feeds every drip, sprinkler and field irrigation setup.',
+  },
+],
     whyChoose: [
       'UPVC pressure pipes built for reliable bulk water transport',
       'PE pipes offering flexibility and durability across uneven terrain',
@@ -2684,11 +2867,23 @@ export const solutionsData: Solution[] = [
       'Reduces water loss during transport from source to field',
       'Engineered for the scale of Indian agricultural landholdings',
     ],
-    applications: [
-      'Lift IrrigationLarge Farms & Agricultural Estates',
-      'Multi-Field Operations',
-      'Source-to-Field Water Transport Projects',
-    ],
+   applications: [
+  {
+    title: 'Large Farms & Agricultural Estates',
+    description:
+      'HDPE and UPVC pipelines that lift and carry water across large landholdings, built to handle high pressure and long distances from source to field.',
+  },
+  {
+    title: 'Multi-Field Operations',
+    description:
+      'Backbone piping that connects one water source to several fields, with compatible valves for controlled flow and less water loss in transport.',
+  },
+  {
+    title: 'Source-to-Field Water Transport Projects',
+    description:
+      'Pressure pipes and flexible PE pipes for moving bulk water reliably over uneven terrain, reducing losses between the source and the field.',
+  },
+],
     relatedProducts: [
       {
         name: 'HDPE Piping',

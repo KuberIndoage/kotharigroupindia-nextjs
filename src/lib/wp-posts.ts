@@ -81,7 +81,53 @@ function estimateReadMinutes(content: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
-function mapPost(raw: any): WpBlogPost {
+// ACF "Author Image" raw value → attachment ID when it is an ID / image array.
+function rawAuthorImageValue(raw: any): unknown {
+  return raw?.acf?.author_image ?? raw?._embedded?.author?.[0]?.acf?.author_image ?? null;
+}
+
+function authorImageIdOf(value: unknown): number | null {
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  if (value && typeof value === 'object') {
+    const id = (value as any).ID;
+    if (typeof id === 'number' && Number.isFinite(id)) return id;
+  }
+  return null;
+}
+
+// Batch-resolve attachment IDs → image URL (one /media request per page of posts).
+async function fetchAuthorImageUrls(
+  raws: any[],
+  opts?: { fresh?: boolean }
+): Promise<Map<number, string>> {
+  const ids = [
+    ...new Set(
+      raws
+        .map((raw) => authorImageIdOf(rawAuthorImageValue(raw)))
+        .filter((id): id is number => id !== null)
+    ),
+  ];
+  if (!ids.length) return new Map();
+  try {
+    const res = await fetchWithTimeout(
+      `${WP_API}/wp/v2/media?include=${ids.join(',')}&per_page=${ids.length}&_fields=id,source_url,sizes${wpFreshParam(opts)}`,
+      wpFetchInit(opts)
+    );
+    if (!res.ok) return new Map();
+    const data = await res.json();
+    if (!Array.isArray(data)) return new Map();
+    return new Map<number, string>(
+      data.map((m: any) => [
+        Number(m.id),
+        m.sizes?.medium_large || m.sizes?.medium || m.source_url,
+      ])
+    );
+  } catch {
+    return new Map();
+  }
+}
+
+function mapPost(raw: any, mediaById?: Map<number, string>): WpBlogPost {
   const embed = raw._embedded || {};
   const media = embed['wp:featuredmedia'];
   const term = embed['wp:term'];
@@ -93,10 +139,16 @@ function mapPost(raw: any): WpBlogPost {
     embed?.author?.[0]?.name ??
     'Kothari Group';
   const authorAvatar = embed?.author?.[0]?.avatar_urls?.['96'] ?? null;
+  const rawAuthorImage = rawAuthorImageValue(raw);
+  // Accepts URL string (legacy), image array (ACF return format) or attachment ID (REST).
   const authorImageOverride =
-    raw.acf?.author_image ??
-    embed?.author?.[0]?.acf?.author_image ??
-    null;
+    typeof rawAuthorImage === 'string'
+      ? rawAuthorImage
+      : rawAuthorImage && typeof rawAuthorImage === 'object'
+        ? (rawAuthorImage as any).url ?? (rawAuthorImage as any).sizes?.medium_large ?? null
+        : authorImageIdOf(rawAuthorImage) !== null
+          ? mediaById?.get(authorImageIdOf(rawAuthorImage) as number) ?? null
+          : null;
   const content = raw.content?.rendered ?? '';
   return {
     id: raw.id,
@@ -129,7 +181,9 @@ export const fetchWpBlogPosts = cache(async (page = 1, perPage = 9, categoryId?:
     const total = Number(res.headers.get('x-wp-total') || '0');
     const totalPages = Number(res.headers.get('x-wp-totalpages') || res.headers.get('x-wp-total-pages') || '1');
     const data = await res.json();
-    const posts = (Array.isArray(data) ? data : []).map(mapPost);
+    const list = Array.isArray(data) ? data : [];
+    const mediaById = await fetchAuthorImageUrls(list);
+    const posts = list.map((p: any) => mapPost(p, mediaById));
     return { posts, total, totalPages };
   } catch {
     console.error('[wp-posts] Failed to fetch blog posts:', url);
@@ -219,13 +273,15 @@ async function fetchWpPostsByCategorySlugsImpl(
           `${WP_API}/wp/v2/posts?categories=${id}&per_page=${perCategory}&orderby=date&order=desc&_embed${wpFreshParam(opts)}`,
           wpFetchInit(opts)
         ).then(async (res) => {
-          if (!res.ok) return [];
+          if (!res.ok) return [] as any[];
           const data = await res.json();
-          return (Array.isArray(data) ? data : []).map(mapPost) as WpBlogPost[];
+          return Array.isArray(data) ? data : [];
         })
       )
     );
-    const posts = settled.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
+    const raws = settled.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
+    const mediaById = await fetchAuthorImageUrls(raws, opts);
+    const posts = raws.map((raw) => mapPost(raw, mediaById));
     return posts.sort((a, b) => b.id - a.id);
   } catch {
     console.error('[wp-posts] Failed to fetch posts by category slugs:', slugs.join(','));
@@ -257,7 +313,9 @@ export const fetchWpBlogPostBySlug = cache(async (slug: string): Promise<WpBlogP
     if (!res.ok) return null;
     const data = await res.json();
     const post = Array.isArray(data) && data.length ? data[0] : null;
-    return post ? mapPost(post) : null;
+    if (!post) return null;
+    const mediaById = await fetchAuthorImageUrls([post]);
+    return mapPost(post, mediaById);
   } catch {
     console.error('[wp-posts] Failed to fetch post by slug:', slug);
     return null;

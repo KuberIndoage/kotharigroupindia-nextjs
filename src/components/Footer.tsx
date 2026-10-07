@@ -137,18 +137,16 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Brand Info Column: ALWAYS expanded to lg:col-span-2 */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center  px-3 py-1 w-fit">
+            <div className="flex items-start">
                 <img
                   src={`${isIrrigation ? '/logos/Kothari Irrigation_W.png' : '/logos/Kothari Pipes_W.png'}`}
                   alt="Kothari Group Logo"
                   referrerPolicy="no-referrer"
-                  className="h-22 w-auto object-contain max-w-[140px]"
+                  className="w-[140px] max-w-full h-auto block"
                   onError={(e) => {
                     (e.target as HTMLElement).style.display = 'none';
                   }}
                 />
-              </div>
             </div>
 
             <p className="text-xs font-light text-white/80 leading-relaxed max-w-sm">
