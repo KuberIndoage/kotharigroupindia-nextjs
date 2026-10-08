@@ -45,7 +45,7 @@ export default async function SolutionPage({ params }: { params: Params | Promis
         productsMegaMenu={isPipe ? PipeproductsMegaMenu : IrrigationproductsMegaMenu}
         solutionsMegaMenu={isPipe ? pipeSolutionsMegaMenu : irrigationSolutionsMegaMenu}
       />
-      <SolutionPageTemplate solution={solution} theme={isPipe ? 'blue' : 'green'} />
+      <SolutionPageTemplate solution={solution} theme={isPipe ? 'blue' : 'blue'} />
       <Footer footerData={isPipe ? PipefooterData : IrrigationfooterData} />
     </AppShell>
   );

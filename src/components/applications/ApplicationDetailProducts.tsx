@@ -14,7 +14,8 @@ export const ApplicationDetailProducts: React.FC<{
   products: ApplicationDetail['products'];
   isPipe: boolean;
 }> = ({ products, isPipe }) => {
-  const isGreen = !isPipe;
+  // const isGreen = !isPipe;
+  const isGreen = isPipe;
   const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
   const accentGroupHoverText = isGreen ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
   const accentHoverText = isGreen ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
@@ -45,8 +46,10 @@ export const ApplicationDetailProducts: React.FC<{
     }
   }, [itemsPerPage, products.items.length, currentIndex, maxIndex]);
 
-  const headBg = isPipe ? 'bg-[#061E33]' : 'bg-[#0B3D20]';
-  const rowBorder = isPipe ? 'border-slate-200' : 'border-[#1E8E3E]/15';
+  // const headBg = isPipe ? 'bg-[#061E33]' : 'bg-[#0B3D20]';
+  // const rowBorder = isPipe ? 'border-slate-200' : 'border-[#1E8E3E]/15';
+  const headBg = isPipe ? 'bg-[#061E33]' : 'bg-[#061E33]';
+  const rowBorder = isPipe ? 'border-slate-200' : 'border-slate-200';
 
   const handlePrev = () => setCurrentIndex((i) => Math.max(0, i - itemsPerPage));
   const handleNext = () =>

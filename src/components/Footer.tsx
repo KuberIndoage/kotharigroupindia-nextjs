@@ -129,7 +129,8 @@ export const Footer: React.FC<FooterProps> = ({
   const productSegments = isIrrigation? irrigationProductSegments: pipepProductSegments;
 
   return (
-    <footer className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} pt-16 pb-8 text-left text-white`}>
+    // <footer className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} pt-16 pb-8 text-left text-white`}>
+    <footer className={`${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} pt-16 pb-8 text-left text-white`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
 
         {/* Main Footer Sitemap Columns */}

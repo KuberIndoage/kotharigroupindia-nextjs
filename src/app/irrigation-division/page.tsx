@@ -467,7 +467,7 @@ const FEATURE_PRODUCTS = [
       <HeroDivision heroData={heroData} />
       <DivisionOverview
         heading="Irrigation Division: Complete Farm Water Solutions"
-        accent="green"
+        accent="blue"
         paragraphs={[
           "Flood irrigation has long been the default across Indian farms, but it comes at a real cost: excess water use, uneven crop growth, and higher vulnerability to drought years. Drip irrigation solves this by delivering water directly to the root zone, cutting water usage while improving yield consistency across crops from sugarcane and cotton to vegetables and orchards. For larger, more open fields where drip isn't practical, our sprinkler irrigation systems provide uniform overhead coverage, engineered to IS standards for reliable, full-circle water distribution.",
           "Not every crop needs the same approach, though. Nurseries, orchards, and high-value horticulture crops often demand gentler, more targeted watering than a standard sprinkler can offer — which is where our micro sprinkler range comes in, delivering fine, uniform coverage without damaging delicate plants or seedlings. Whatever the system, water quality determines how long it lasts: sediment and organic debris quickly clog drippers and nozzles if left unfiltered, so our filters range from sand and screen filters to fully automatic self-cleaning units that protect every irrigation system we manufacture.",
@@ -476,11 +476,11 @@ const FEATURE_PRODUCTS = [
         ]}
       />
       {/* <Category tab="agriculture"/> */}
-      <FeaturedProducts products={FEATURE_PRODUCTS} theme="green"/>
+      <FeaturedProducts products={FEATURE_PRODUCTS} theme="blue"/>
       {/* <WhyKothariGroup /> */}
       {/* <Impact /> */}
-      <KnowledgeCentre itemData={items} theme="green"/>
-      <NewsDivision theme="green" newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
+      <KnowledgeCentre itemData={items} theme="blue"/>
+      <NewsDivision theme="blue" newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
       <Footer footerData={footerData}/>
     </>
   );

@@ -9,8 +9,10 @@ export const ApplicationDetailWhereUsed: React.FC<{
   whereUsed: ApplicationDetail['whereUsed'];
   isPipe: boolean;
 }> = ({ whereUsed, isPipe }) => {
-  const accent = isPipe ? 'border-[#1575B3]' : 'border-[#1E8E3E]';
-  const accentText = isPipe ? 'text-[#1575B3]' : 'text-[#1E8E3E]';
+  // const accent = isPipe ? 'border-[#1575B3]' : 'border-[#1E8E3E]';
+  // const accentText = isPipe ? 'text-[#1575B3]' : 'text-[#1E8E3E]';
+  const accent = isPipe ? 'border-[#1575B3]' : 'border-[#1575B3]';
+  const accentText = isPipe ? 'text-[#1575B3]' : 'text-[#1575B3]';
 
   return (
     <ApplicationDetailSection tinted isPipe={isPipe}>
@@ -42,7 +44,8 @@ export const ApplicationDetailWhereUsed: React.FC<{
       {whereUsed.note && (
         <p
           className={`text-sm sm:text-[15px] text-slate-700 font-normal leading-relaxed mt-12 mb-0 max-w-3xl border-t ${
-            isPipe ? 'border-slate-300' : 'border-[#1E8E3E]/20'
+            // isPipe ? 'border-slate-300' : 'border-[#1E8E3E]/20'
+            isPipe ? 'border-slate-300' : 'border-slate-300'
           } pt-6`}
         >
           {whereUsed.note}

@@ -38,17 +38,30 @@ export const ProductDetailPage: React.FC<{
         : false;
 
   // Theme accents: pipe = blue (unchanged), irrigation = green.
-  const tText = isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575B3]';
-  const tHoverText = isIrrigation ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
-  const tBg = isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
-  const tBgHover = isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]';
-  const tHoverBg = isIrrigation ? 'hover:bg-[#1E8E3E]' : 'hover:bg-[#1575B3]';
-  const tHoverBorder = isIrrigation ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
-  const tGroupHoverBg = isIrrigation ? 'group-hover:bg-[#1E8E3E]' : 'group-hover:bg-[#1575B3]';
-  const tGroupHoverBorder = isIrrigation ? 'group-hover:border-[#1E8E3E]' : 'group-hover:border-[#1575B3]';
-  const tGroupHoverText = isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
-  const tFocusBorder = isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]';
-  const tDot = isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
+  // const tText = isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575B3]';
+  // const tHoverText = isIrrigation ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
+  // const tBg = isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
+  // const tBgHover = isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]';
+  // const tHoverBg = isIrrigation ? 'hover:bg-[#1E8E3E]' : 'hover:bg-[#1575B3]';
+  // const tHoverBorder = isIrrigation ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
+  // const tGroupHoverBg = isIrrigation ? 'group-hover:bg-[#1E8E3E]' : 'group-hover:bg-[#1575B3]';
+  // const tGroupHoverBorder = isIrrigation ? 'group-hover:border-[#1E8E3E]' : 'group-hover:border-[#1575B3]';
+  // const tGroupHoverText = isIrrigation ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
+  // const tFocusBorder = isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]';
+  // const tDot = isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
+
+
+   const tText = isIrrigation ? 'text-[#1575B3]' : 'text-[#1575B3]';
+  const tHoverText = isIrrigation ? 'hover:text-[#1575B3]' : 'hover:text-[#1575B3]';
+  const tBg = isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]';
+  const tBgHover = isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]';
+  const tHoverBg = isIrrigation ? 'hover:bg-[#1575B3]' : 'hover:bg-[#1575B3]';
+  const tHoverBorder = isIrrigation ? 'hover:border-[#1575B3]' : 'hover:border-[#1575B3]';
+  const tGroupHoverBg = isIrrigation ? 'group-hover:bg-[#1575B3]' : 'group-hover:bg-[#1575B3]';
+  const tGroupHoverBorder = isIrrigation ? 'group-hover:border-[#1575B3]' : 'group-hover:border-[#1575B3]';
+  const tGroupHoverText = isIrrigation ? 'group-hover:text-[#1575B3]' : 'group-hover:text-[#1575B3]';
+  const tFocusBorder = isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]';
+  const tDot = isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]';
 
   const isWp = !!wp;
   const displayName = wp?.name || productProp?.name || 'Product';
@@ -289,7 +302,8 @@ export const ProductDetailPage: React.FC<{
       {/* TABS SECTION */}
       <section className="relative w-full border-b border-white/20 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${isIrrigation ? 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1600&q=80' : 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=1600&q=80'})` }} />
-        <div className={`absolute inset-0 bg-gradient-to-br ${isIrrigation ? 'from-[#145E2A]/95 via-[#1E8E3E]/90 to-[#052E16]/90' : 'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90'}`} />
+        {/* <div className={`absolute inset-0 bg-gradient-to-br ${isIrrigation ? 'from-[#145E2A]/95 via-[#1E8E3E]/90 to-[#052E16]/90' : 'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90'}`} /> */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${isIrrigation ?  'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90' : 'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90'}`} />
         
         <div className="relative z-10 w-full border-b border-white/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -463,7 +477,8 @@ export const ProductDetailPage: React.FC<{
 
             {/* RELATED PRODUCTS (Slider with Dots) */}
       {displayRelated.length > 0 && (
-        <section className={`w-full ${isIrrigation ? 'bg-[#EAF6EE]' : 'bg-[#F5F6F8]'} py-16 border-b ${isIrrigation ? 'border-[#1E8E3E]/15' : 'border-slate-300/70'}`}>
+        // <section className={`w-full ${isIrrigation ? 'bg-[#EAF6EE]' : 'bg-[#F5F6F8]'} py-16 border-b ${isIrrigation ? 'border-[#1E8E3E]/15' : 'border-slate-300/70'}`}>
+        <section className={`w-full ${isIrrigation ? 'bg-[#F5F6F8]' : 'bg-[#F5F6F8]'} py-16 border-b ${isIrrigation ? 'border-slate-300/70' : 'border-slate-300/70'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-300">
               <div>

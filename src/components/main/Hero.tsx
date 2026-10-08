@@ -50,7 +50,7 @@ const stats = [
   { value: '35+', label: 'Years of excellence' },
   { value: '8', label: 'Factories' },
   { value: '14', label: 'Warehouses' },
-  { value: '10', label: `Countries' products exported` },
+  { value: '10', label: `Countries products exported` },
 ];
 
 export const Hero = () => {

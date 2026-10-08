@@ -1215,6 +1215,1181 @@ export const applicationDetails: ApplicationDetail[] = [
       buttonText: 'Discuss Your Requirement',
     },
   },
+
+{
+    slug: 'residential-plumbing-system',
+    division: 'pipe-division',
+    parentHref: '/pipe-applications',
+    parentLabel: 'Pipe Applications',
+    divisionHref: '/pipe-division',
+    metaTitle: 'Residential Plumbing System | UPVC & CPVC | Kothari',
+    metaDescription:
+      'Explore Kothari UPVC and CPVC pipes for residential plumbing, including cold-water distribution and hot-water supply systems.',
+    heroEyebrow: 'Pipe Applications',
+    h1: 'Residential Plumbing Systems with UPVC & CPVC Pipes',
+    tagline:
+      'Planned piping for cold- and hot-water distribution across kitchens, bathrooms and other residential water-use points.',
+    image: '/heronew.jpg',
+    bannerImage: '/farm.png',
+    overview: {
+      heading: 'Understanding Residential Plumbing Systems',
+      paragraphs: [
+        'A residential plumbing system has to deliver water to multiple points in a house without compromising flow, pressure or water quality. From the incoming supply line to the kitchen, bathroom, wash area and water-heater connections, each section of the network has a specific role.',
+        'The piping system also needs to work within concealed walls, shafts, ceilings and service areas, where repairs can be inconvenient once construction is complete. When you’re picking pipe material, you’ve got to think about water temperature, pressure, how you’re setting things up, and what the system’s actually supposed to do. ',
+        `In most homes, there’s a clear line: one set of pipes for cold water, and another for hot.  Kothari's UPVC plumbing system is positioned for cold-water applications, while its KwikFlow CPVC system is designed for hot- and cold-water plumbing. The CPVC range is specified to handle temperatures up to 93°C and follows IS 15778 for pipes.`,
+        'The objective is to create a properly planned network in which the pipe, fittings and joints work together throughout the building.',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Residential Plumbing Systems Are Used',
+      intro: [
+        `Residential plumbing systems are used wherever water needs to be distributed from the building's incoming supply or storage arrangement to individual points of use.`,
+      ],
+      items: [
+        {
+          label: 'Independent houses and villas',
+          text: 'Water is distributed from the main supply or storage tank to kitchens, bathrooms, utility areas and other fixtures.',
+        },
+        {
+          label: 'Apartments and residential towers',
+          text: ' Vertical and horizontal plumbing networks distribute water across multiple floors and individual dwelling units.',
+        },
+        {
+          label: 'Housing developments',
+          text: 'Repeated plumbing layouts require consistent pipe and fitting specifications across multiple homes.',
+        },
+        {
+          label: 'Bathrooms and kitchens',
+          text: ' Cold-water lines supply fixtures, while CPVC is used where the system carries hot water.',
+        },
+        {
+          label: 'Renovation and replacement projects',
+          text: 'Existing plumbing sections may need to be replaced or extended while maintaining compatibility with the planned system.',
+        },
+      ],
+      note: `Kothari's CPVC catalogue specifically identifies residential and commercial buildings, public utilities, and concealed, down-take and terrace-looping installations among its applications.`,
+    },
+    requirements: {
+      heading: 'Key Requirements for Residential Plumbing',
+      intro: 'Residential plumbing should be planned around how the building will actually consume water. Pipe selection is not simply a question of choosing a diameter.',
+      items: [
+        {
+          label: 'Water Temperature',
+          text: 'The first distinction is whether a line carries cold or hot water. UPVC is positioned for cold-water plumbing, while Kothari KwikFlow CPVC is designed for hot- and cold-water applications and is specified for temperatures up to 93°C.',
+        },
+        {
+          label: 'Pressure and Flow',
+          text: 'The piping system needs to accommodate the operating pressure and expected flow of the building. Pipe size and class should be selected according to the plumbing design rather than using the same size throughout the house.',
+        },
+        {
+          label: 'Installation Arrangement',
+          text: 'Residential pipes may run through concealed walls, shafts, ceilings, service ducts or exposed areas. The installation method, pipe support and accessibility for maintenance should be considered during planning.',
+        },
+        {
+          label: 'Jointing',
+          text: `A plumbing system depends on properly made connections at changes of direction, branches and fixtures. Kothari's CPVC system uses solvent-cement joints, while its UPVC ASTM plumbing system uses compatible fittings and jointing arrangements.`,
+        },
+        {
+          label: 'Material Suitability',
+          text: 'The selected pipe should match the intended service. Using a cold-water plumbing pipe where the application requires hot-water service, for example, would not be an appropriate material selection.',
+        },
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari Products for Residential Plumbing',
+      intro: `The simplest way to select between Kothari's residential plumbing systems is to start with the water service required.`,
+      items: [
+        {
+          name: 'Kothari KwikFit UPVC Pipes',
+          url: '/upvc/upvc-astm-plumbing-piping-system',
+          image: `${ADMIN}/2025/04/UPVC-PIPES-FITTINGS.webp`,
+          paragraphs: [
+            'Kothari KwikFit UPVC is an ASTM plumbing system intended for cold-water plumbing. The published product material identifies UV and fire resistance, lead-free construction, low friction loss and easy installation among its characteristics. If you’re installing a typical cold-water system, you’ll usually see pipes made to ASTM D1785, with fittings that match ASTM D2466 or D2467 standards. That setup works for moving water from a tank or main supply over to taps, sinks, and anywhere else you need cold water around the house.',
+          ],
+        },
+        {
+          name: 'Kothari KwikFlow CPVC Pipes',
+          url: '/cpvc/cpvc-hot-and-cold-water-piping-system',
+          image: `${ADMIN}/2025/04/CPVC-PIPES-FITTINGS.webp`,
+          paragraphs: [
+            `If the house needs to handle hot water, things change a bit. Kothari KwikFlow CPVC, for instance, is meant for both hot and cold plumbing. So, if you're running hot water to showers or kitchen sinks, that’s a good fit. The range includes pipes between 15 mm and 150 mm and fittings from 15 mm to 50 mm. Pipes sized 15–50 mm follow IS 15778 standards, and bigger pipes are listed with ASTM standards in the product catalogue. `,
+            'For residential applications, CPVC can therefore be considered for lines serving hot-water fixtures as well as cold-water sections where the project specifies CPVC.',
+          ],
+        },
+       
+      ],
+      mapping: {
+        heading: 'Application-to-Product Mapping',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Cold-water distribution', product: 'KwikFit UPVC', role: 'Carries cold water from the supply/storage network to fixtures' },
+          { requirement: 'Hot-water distribution', product: 'KwikFlow CPVC', role: 'Carries hot water from the water-heating system to fixtures' },
+          { requirement: 'Hot- and cold-water plumbing', product: 'KwikFlow CPVC', role: 'Provides a common piping system where both services are specified' },
+          { requirement: 'Cold-water household plumbing', product: 'KwikFit UPVC', role: 'Used for applicable cold-water distribution sections' },
+          { requirement: 'Pipe connections and changes in direction', product: 'Compatible Kothari fittings', role: 'Connects pipe sections, branches and fixtures within the respective system' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: 'How a Residential Plumbing System Works',
+      intro: 'A typical residential water-supply system can be understood as a series of connected stages:',
+      flow: [
+        'Municipal / Approved Water Source',
+        'Underground or Overhead Storage',
+        'Main Building Supply Line',
+        'Floor / Zone Distribution',
+        'Cold & Hot Water Lines',
+        'Individual Fixtures',
+      ],
+      steps: [
+        {
+          title: 'Water is drawn from the source',
+          text: 'Water enters the system from the available farm source, such as a borewell, well, pond, reservoir or storage tank. The pump moves the water into the supply pipeline.',
+        },
+        {
+          title: 'The main line carries water across the farm',
+          text: 'The main pipeline takes water from the source towards the areas where it is required. HDPE or Self Fit PVC Pipe may be considered depending on the pipeline\u2019s design, pressure and installation requirements. Kothari lists both product categories for agricultural water-supply and irrigation applications.',
+        },
+        {
+          title: 'Sub-main lines distribute the water',
+          text: 'As the pipeline reaches different farm sections, sub-main lines divide the flow towards individual fields, orchard blocks, irrigation zones or other points of use.',
+        },
+        {
+          title: 'Fittings create the network',
+          text: 'Elbows, tees, reducers and adapters allow the pipeline to follow the farm layout and connect different pipe sizes or branches. Kothari\u2019s Agri PVC Moulded Fittings range includes these connection types.',
+        },
+        {
+          title: 'Water reaches its final point of use',
+          text: 'The distribution line ultimately feeds the required irrigation system, storage facility or farm-use point. Where the water is being used for drip or sprinkler irrigation, the farm water-supply network becomes the upstream section feeding that irrigation system.',
+        },
+      ],
+    },
+    cta: {
+      heading: 'Planning a Residential Plumbing System?',
+      body: 'Share your building layout, water-supply requirements and hot- or cold-water application with the Kothari team to discuss the appropriate piping range.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
+{
+  slug: 'commercial-building-plumbing-system',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Commercial Building Plumbing Pipes | Kothari',
+
+  metaDescription:
+    'Explore Kothari UPVC and CPVC pipes for commercial building plumbing, including cold-water and hot-water distribution systems.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Commercial Building Plumbing Systems with UPVC & CPVC',
+
+  tagline:
+    'Piping systems for organised hot- and cold-water distribution across offices, hotels, hospitals and commercial buildings.',
+
+  image: '/heronew.jpg',
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Understanding Commercial Building Plumbing Systems',
+
+    paragraphs: [
+      'Commercial buildings are a whole different story when it comes to plumbing. You’ve got hundreds of water points, everything from toilets and washrooms to kitchens, pantries, and utility spaces spread over several floors. If the water-supply network isn’t planned right, nothing works smoothly.',
+
+      'It’s nothing like a small house. Here, pipes run much longer, branch off in all directions, and each floor or zone needs its own pressure setup. Plus, you have to supply both cold and hot water, depending on what each space needs.',
+
+      'Pipe selection therefore needs to be based on the actual service. Water temperature, operating pressure, pipe size, building height, routing and installation conditions all influence the specification.',
+
+      `Kothari's KwikFit UPVC system is positioned for cold-water plumbing, while KwikFlow CPVC is designed for hot- and cold-water applications. The published KwikFlow range is specified for temperatures up to 93°C and includes pipes from 15 mm to 150 mm.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Commercial Plumbing Systems Are Used',
+
+    intro: [
+      'Commercial plumbing systems are used in buildings where water needs to be distributed consistently across multiple areas, floors and services.',
+    ],
+
+    items: [
+      {
+        label: 'Office buildings',
+
+        text: 'Water is distributed to washrooms, pantry areas and other employee or service facilities across different floors.',
+      },
+
+      {
+        label: 'Hotels and hospitality buildings',
+
+        text: 'Guest rooms, bathrooms, kitchens and service areas can require both cold- and hot-water distribution.',
+      },
+
+      {
+        label: 'Hospitals and healthcare facilities',
+
+        text: 'Plumbing networks serve patient areas, washrooms, kitchens and support facilities, with material selection governed by the project requirements.',
+      },
+
+      {
+        label: 'Shopping malls and retail buildings',
+
+        text: 'Water-supply lines serve public washrooms, food-service areas and building services.',
+      },
+
+      {
+        label: 'Educational and institutional buildings',
+
+        text: 'Schools, colleges and other institutions require distribution networks serving multiple blocks, floors or facilities.',
+      },
+
+      {
+        label: 'Commercial complexes',
+
+        text: 'Multiple tenants or functional areas may share a common water-supply infrastructure.',
+      },
+    ],
+
+    note: `Kothari's published plumbing material identifies commercial buildings, public utilities and applications such as hotels and hospitals for its plumbing pipe systems.`,
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Commercial Building Plumbing',
+
+    intro: 'Commercial plumbing needs to be planned as a network rather than as a collection of individual fixture connections. The design should account for demand, routing, pressure and the type of water being carried.',
+
+    items: [
+      {
+        label: 'Water Demand and Flow',
+
+        text: 'The number of fixtures and their expected usage influence the required flow through different sections of the system. Main lines, floor-level distribution and branches may therefore require different pipe sizes.',
+      },
+
+      {
+        label: 'Building Height and Pressure',
+
+        text: 'Multi-storey buildings can experience different pressure conditions between lower and upper floors. Pipe selection should follow the hydraulic design and the operating pressure expected in each section.',
+      },
+
+      {
+        label: 'Hot- and Cold-Water Service',
+
+        text: 'The temperature of the water is an important material-selection factor. Cold-water sections can use the specified UPVC plumbing system, while hot-water lines require a system designed for elevated temperatures. Kothari\'s KwikFlow CPVC is specified for hot- and cold-water plumbing up to 93°C.',
+      },
+
+      {
+        label: 'Installation and Routing',
+
+        text: 'Commercial piping may run through shafts, service ducts, false ceilings, walls or other designated service spaces. The routing should allow appropriate access during construction and maintenance.',
+      },
+
+      {
+        label: 'Jointing and System Compatibility',
+
+        text: 'Pipe, fittings and jointing materials should be compatible and installed according to the applicable product and project requirements. Kothari\'s CPVC installation guidance specifies the use of compatible CPVC solvent cement for its system.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products for Commercial Plumbing',
+
+    intro: 'For commercial building water supply, the choice between UPVC and CPVC should begin with the service temperature and the requirements of each plumbing section.',
+
+    items: [
+      {
+        name: 'Kothari KwikFit UPVC Pipes',
+        url: '/upvc/upvc-astm-plumbing-piping-system',
+        image: `${ADMIN}/2025/04/UPVC-PIPES-FITTINGS.webp`,
+        paragraphs: [
+          `KwikFit is Kothari's UPVC ASTM plumbing system for cold-water applications. The published range identifies UV and fire resistance, lead-free construction, low friction loss and easy installation among its characteristics. `,
+          `For cold-water networks, they usually use pipes according to ASTM D1785 and fittings that match ASTM D2466 or D2467 `,
+          `This kind of setup gets water from the main supply or storage tanks up to every floor, pantry, washroom basically anywhere people expect water.`,
+        ],
+      },
+
+      {
+        name: 'Kothari KwikFlow CPVC Pipes',
+        url: 'cpvc/cpvc-hot-and-cold-water-piping-system',
+        image: `${ADMIN}2025/04/CPVC-PIPES-FITTINGS.webp`,
+        paragraphs: [
+          `Now, when you need hot-water distribution in a place like a hotel, hospital, or busy kitchen, CPVC systems step in. Kothari's KwikFlow CPVC plumbing covers hot and cold water, with pipes built to IS 15778 standards and fittings made to ASTM D2846 and IS 17546. The pipes range from 15 mm up to 150 mm; fittings go from 15 mm to 50 mm. These systems hold strong up to 93°C. `,
+          'This makes CPVC relevant where a commercial building requires hot-water distribution, such as hotels, hospitals, kitchens and other facilities where heated water is part of the plumbing design.',
+        ],
+      },
+    ],
+
+    mapping: {
+      heading: 'Application Mapping',
+
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Cold-water distribution',
+          product: 'KwikFit UPVC',
+          role: 'Distribution of cold water to applicable building services',
+        },
+
+        {
+          requirement: 'Hot-water distribution',
+          product: 'KwikFlow CPVC',
+          role: 'Distribution of heated water to designated fixtures',
+        },
+
+        {
+          requirement: 'Combined hot- and cold-water plumbing',
+          product: 'KwikFlow CPVC',
+          role: 'Piping system for projects where CPVC is specified for both services',
+        },
+
+        {
+          requirement: 'Floor-level branches',
+          product: 'KwikFit UPVC / KwikFlow CPVC',
+          role: 'Selected according to water temperature and system design',
+        },
+
+        {
+          requirement: 'Pipe connections and changes in direction',
+          product: 'Compatible Kothari fittings',
+          role: 'Connects branches, changes direction and interfaces with fixtures',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How a Commercial Building Plumbing System Works',
+
+    intro: 'A typical commercial water-supply system can be understood through the following flow:',
+
+    flow: [
+      'Municipal / Approved Water Source',
+
+      'Storage Tank / Water Treatment, Where Required',
+
+      'Building Distribution Main',
+
+      'Vertical Risers',
+
+      'Floor-Level Distribution',
+
+      'Hot & Cold Water Branches',
+
+      'Fixtures and Points of Use',
+    ],
+
+    // MISSING: The supplied content does not contain
+    // detailed step-by-step descriptions for the flow.
+    steps: [
+       {
+          title: 'Water is drawn from the source',
+          text: 'Water enters the system from the available farm source, such as a borewell, well, pond, reservoir or storage tank. The pump moves the water into the supply pipeline.',
+        },
+        {
+          title: 'The main line carries water across the farm',
+          text: 'The main pipeline takes water from the source towards the areas where it is required. HDPE or Self Fit PVC Pipe may be considered depending on the pipeline\u2019s design, pressure and installation requirements. Kothari lists both product categories for agricultural water-supply and irrigation applications.',
+        },
+        {
+          title: 'Sub-main lines distribute the water',
+          text: 'As the pipeline reaches different farm sections, sub-main lines divide the flow towards individual fields, orchard blocks, irrigation zones or other points of use.',
+        },
+        {
+          title: 'Fittings create the network',
+          text: 'Elbows, tees, reducers and adapters allow the pipeline to follow the farm layout and connect different pipe sizes or branches. Kothari\u2019s Agri PVC Moulded Fittings range includes these connection types.',
+        },
+        {
+          title: 'Water reaches its final point of use',
+          text: 'The distribution line ultimately feeds the required irrigation system, storage facility or farm-use point. Where the water is being used for drip or sprinkler irrigation, the farm water-supply network becomes the upstream section feeding that irrigation system.',
+        },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning Plumbing for a Commercial Building?',
+
+    body: 'Share your building type, number of floors and hot- or cold-water requirements with the Kothari team to discuss the appropriate piping range.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+{
+  slug: 'industrial-water-supply',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Industrial Water Supply Pipes | Kothari Pipes',
+
+  metaDescription:
+    'Explore UPVC and HDPE piping options for industrial water supply, transfer and distribution systems based on flow, pressure and site conditions.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Industrial Water Supply',
+
+  tagline:
+    'Piping systems designed around the flow, pressure, route and operating conditions of industrial water networks.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Industrial Water Supply Overview',
+
+    paragraphs: [
+      'Industrial facilities often need to move water across considerable distances from a source or storage point to production areas, utility sections, treatment facilities and other points of use. The piping network has to handle the required flow while fitting around plant layouts, equipment and site conditions.',
+
+      'Unlike a simple building water line, an industrial water supply system may include long pipeline runs, underground sections, above-ground routes, multiple branches and different operating conditions across the network. Pipe selection therefore depends on factors such as water quality, flow, pressure, pipeline length, installation environment and the purpose for which the water is being supplied.',
+
+      'The right piping system should be selected as part of the overall hydraulic and project design. Depending on the application and operating conditions, HDPE pipes can be considered for suitable sections of an industrial water supply network.',
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Industrial Water Supply Is Used',
+
+    intro: [
+      'Industrial water supply systems are used wherever a facility needs to transfer and distribute water between its source, storage infrastructure, utilities and operating areas.',
+    ],
+
+    items: [
+      {
+        label: 'Manufacturing facilities',
+
+        text: 'Water can be distributed to production-support areas, utilities and other designated points within the plant.',
+      },
+
+      {
+        label: 'Industrial plants and factories',
+
+        text: 'Pipeline networks may connect storage tanks, water-treatment systems and different sections of the facility.',
+      },
+
+      {
+        label: 'Process and utility water networks',
+
+        text: 'Water can be transferred between treatment, storage and utility areas according to the plant\'s process design.',
+      },
+
+      {
+        label: 'Industrial estates and large facilities',
+
+        text: 'Longer pipelines may distribute water from a common source or storage facility to different operational zones.',
+      },
+
+      {
+        label: 'Infrastructure and utility projects',
+
+        text: 'Water transmission and distribution pipelines can connect supply points with remote or multiple points of use.',
+      },
+    ],
+
+    note: 'The actual piping arrangement depends on the water source, required flow, pressure, pipeline route and operating conditions of the project.',
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Industrial Water Supply',
+
+    intro: 'Industrial water supply systems need to be planned as a complete network rather than as individual pipeline sections. The design should account for water quality, flow requirements, operating pressure, installation conditions, and the overall pipeline route.',
+
+    items: [
+      {
+        label: 'Water Quality and Application',
+
+        text: 'Start with the water itself. The source, intended use and water quality should be understood before selecting the pipe material. If the water contains chemicals or other substances that may affect the piping material, compatibility should be confirmed as part of the technical selection.',
+      },
+
+      {
+        label: 'Flow and Pipe Sizing',
+
+        text: 'Industrial networks can involve substantial water demand and long pipeline runs. Pipe diameter should be established from the required flow, allowable pressure loss and hydraulic calculations rather than selecting a size based only on the connection size at the source or equipment.',
+      },
+
+      {
+        label: 'Operating Pressure',
+
+        text: 'The pipeline needs to accommodate the system\'s operating pressure and relevant pressure variations. Pump characteristics, elevation differences and the overall network layout should be considered during design.',
+      },
+
+      {
+        label: 'Installation Environment',
+
+        text: 'The installation route matters, particularly for underground pipelines. Soil conditions, external loads, temperature and exposure to the surrounding environment should be assessed where applicable.',
+      },
+
+      {
+        label: 'Pipeline Length and Layout',
+
+        text: 'Long industrial pipelines may require changes in direction, branches and connections to different sections of a facility. The proposed pipe material and installation method should be evaluated against the complete route rather than an individual section.',
+      },
+
+      {
+        label: 'Material Selection',
+
+        text: 'The right piping system should be selected as part of the overall hydraulic and project design, taking into account water characteristics, flow, pressure, installation environment and operating conditions.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+
+    intro: 'For industrial water supply, HDPE Pipes can serve different requirements within a water-transfer or distribution network. The final selection should be based on the project\'s hydraulic design and operating conditions.',
+
+    items: [
+      {
+        name: 'Kothari HDPE Pipes',
+
+        
+        url: '/pe-pipes-and-fittings/hdpe-piping',
+        image: `${ADMIN}/2025/04/HDPE-PIPE-111.webp`,
+
+        paragraphs: [
+          'HDPE Pipes can be considered for industrial water pipelines where the project requires an appropriate polyethylene piping system for the intended operating and installation conditions.',
+
+          'They can be evaluated for water transfer and distribution routes, including sections where pipeline routing or site conditions influence the material selection. For industrial projects, the selection should take into account operating pressure, pipe diameter, water characteristics, installation environment and the proposed joining method.',
+        ],
+      },
+    ],
+
+    // MISSING:
+    // The content provides a Suggested H2 "Product Selection at a Glance"
+    // but does not provide an actual mapping/table for it.
+    mapping: {
+      heading: 'Product Selection at a Glance',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Transfer water from the source across the farm', product: 'HDPE Pipe', role: 'Main or distribution water-transfer pipeline' },
+          { requirement: 'Rising and distributing lines', product: 'Self Fit PVC Pipe', role: 'Pressure water-supply and distribution line' },
+          { requirement: 'Main and sub-main irrigation lines', product: 'Self Fit PVC Pipe', role: 'Carries water towards drip or sprinkler networks' },
+          { requirement: 'Changes in direction or pipeline branches', product: 'Agri PVC Moulded Fittings', role: 'Connects, redirects and branches the pipeline' },
+          { requirement: 'Different pipe sizes need to be connected', product: 'Agri PVC Moulded Fittings', role: 'Reducers/adapters provide the required connection' },
+        ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How an Industrial Water Supply System Works',
+
+    intro: 'An industrial water supply network generally moves water from its source or storage facility through a main pipeline and then distributes it to the required areas of the plant.',
+
+    flow: [
+      'Water Source',
+
+      'Collection / Storage',
+
+      'Pumping / Main Pipeline',
+
+      'Primary Distribution',
+
+      'Branch Distribution',
+
+      'Point of Use',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+
+        text: 'Water enters the system from the designated source, such as an approved water supply, storage facility or treatment system.',
+      },
+
+      {
+        title: 'Collection / Storage',
+
+        text: 'Where required by the project, water is collected or stored before being transferred into the distribution network.',
+      },
+
+      {
+        title: 'Pumping / Main Pipeline',
+
+        text: 'Pumps or other transfer arrangements move water through the main pipeline. Flow and pressure requirements are determined by the system design.',
+      },
+
+      {
+        title: 'Primary Distribution',
+
+        text: 'The main pipeline carries water towards different sections of the industrial facility. Pipe diameter and routing are determined by the hydraulic requirements and site layout.',
+      },
+
+      {
+        title: 'Branch Distribution',
+
+        text: 'Branches divide the main supply into separate routes serving production-support areas, utilities, treatment sections, storage facilities or other designated points.',
+      },
+
+      {
+        title: 'Point of Use',
+
+        text: 'Water reaches the equipment, utility system or operational area for which the supply has been designed.',
+      },
+    ],
+
+    note: 'The exact arrangement can vary considerably between facilities. A project-specific hydraulic assessment is required to determine pipe sizes, pressure requirements, routing and the appropriate pipe material.',
+  },
+
+  cta: {
+    heading: 'Planning an Industrial Water Supply System?',
+
+    body: 'The right pipe depends on more than the required diameter. Flow, pressure, water characteristics and installation conditions all influence the selection.Share your industrial water supply requirement with the Kothari team to discuss the appropriate piping options for your project.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+{
+  slug: 'building-drainage-system',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Building Drainage System | Kothari Pipe',
+
+  metaDescription:
+    'Explore Kothari building drainage systems with solid-wall UPVC and Foamcore underground drainage piping for residential and commercial projects.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Building Drainage System',
+
+  tagline:
+    'Plan building drainage around wastewater flow, underground routing, connection points and site conditions for efficient movement of discharge away from the building.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Building Drainage System Overview',
+
+    paragraphs: [
+      `A building's drainage system has a simple job: get wastewater out from bathrooms, kitchens, and utility areas without causing trouble inside or around the building. But as buildings get bigger and plumbing gets more complicated, you can't just wing it. The part underground needs just as much planning as what's inside.`,
+
+      `The drainage network pulls wastewater from all over bathrooms, kitchens, you name it and sends it out through a combination of branch lines and underground pipes until it reaches the right collection point. That means the underground pipes have to match up with the planned routes, fit the connection points, handle the way they'll be installed, and manage the actual wastewater flow.`,
+
+      `For contractors, plumbers, and anyone else working on the project, choosing pipes isn't just about moving water. The system has to fit the building's layout, the space available for installation, the depth of the pipes, and the conditions around the site. Planning how pipes link up really matters, especially where a bunch of different branches come together underground.`,
+
+      `Kothari offers two options: the UPVC Underground Drainage Piping System and the Foamcore Underground Drainage Piping System. Each works for different drainage needs, and you can pick the one that best matches your project's design.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Building Drainage Systems Are Used',
+
+    intro: [
+      'Building drainage systems are required across residential, commercial and institutional construction where wastewater needs to be collected and transferred from the building to an appropriate discharge or collection point.',
+    ],
+
+    items: [
+      {
+        label: 'Residential buildings',
+
+        text: 'Wastewater from bathrooms, kitchens, and all the other plumbing fixtures has to find its way to the main sewer lines somehow. That whole journey starts right here.',
+      },
+
+      {
+        label: 'Apartments and housing projects',
+
+        text: `When you're dealing with multiple buildings, floors, and lots of discharge points, you can't just slap a drainage plan together after the fact. You need a game plan before anyone starts digging.`,
+      },
+
+      {
+        label: 'Commercial buildings',
+
+        text: 'Offices and retail spaces always have a bunch of plumbing fixtures and service areas running at the same time. The drainage setup needs to carry all that flow smoothly—otherwise, you will end up with a maintenance nightmare.',
+      },
+
+      {
+        label: 'Hotels and hospitality projects',
+
+        text: `These places pack in more bathrooms, kitchens, and utility zones than your average building. You can't afford to improvise the drainage system as you go. Plan it out early or it will come back to haunt you.`,
+      },
+
+      {
+        label: 'Institutional buildings',
+
+        text: `Schools and hospitals are never just a basic box—there's always something unique about the layout. The drainage network has to fit around the building's shape and whatever infrastructure is already there.`,
+      },
+
+      {
+        label: 'Industrial and service buildings',
+
+        text: 'Any time a project needs wastewater or drainage to move underground, this piping steps in and gets it done.',
+      },
+    ],
+
+    note: 'The final pipe selection depends on the building design, drainage layout, installation conditions and applicable project requirements.',
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Building Drainage',
+
+    intro: 'A building drainage system should be planned as part of the overall plumbing and site drainage design. Pipe selection needs to consider how wastewater moves from individual discharge points to the underground network and eventually to the designated collection or disposal point.',
+
+    items: [
+      {
+        label: 'Drainage layout',
+
+        text: 'Branch lines, vertical stacks, underground lines and connection points should be coordinated with the building plan. The routing should minimise unnecessary changes in direction while accommodating the available installation space.',
+      },
+
+      {
+        label: 'Pipe size and flow',
+
+        text: 'The pipe size and network configuration should be selected according to the expected wastewater discharge and the drainage design. Hydraulic requirements should be established by the project designer rather than using a standard size for every building.',
+      },
+
+      {
+        label: 'Installation conditions',
+
+        text: 'Underground sections may pass through different soil and site conditions. Available depth, trench arrangement and surrounding infrastructure should be considered during planning and installation.',
+      },
+
+      {
+        label: 'Jointing and connections',
+
+        text: 'Drainage systems typically include several branches and connection points. The selected piping system should be compatible with the fittings and jointing arrangement specified for the project.',
+      },
+
+      {
+        label: 'Material selection',
+
+        text: 'The pipe material should be appropriate for the intended drainage application and expected operating environment. Where wastewater may contain chemicals or aggressive substances, the project requirements should be reviewed before final selection.',
+      },
+
+      {
+        label: 'Maintenance',
+
+        text: 'Access points and the overall network layout should allow inspection and maintenance where required. Good planning at the design stage can reduce difficulties during future servicing.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+
+    intro: 'Kothari offers two underground drainage piping systems that can be considered for building drainage applications. The appropriate system should be selected according to the project design, installation requirements and applicable standards.',
+
+    items: [
+      {
+        name: 'UPVC Underground Drainage Piping System (Solid Wall UDS)',
+
+        url: '/underground-pipe-and-fittings/upvc-underground-drainage-piping-system',
+
+        image: `${ADMIN}/2025/04/UDS-PIPES-FITTINGS.webp`,
+
+        paragraphs: [
+          `Kothari's solid-wall UPVC Underground Drainage Piping System is intended for underground drainage networks where wastewater needs to be carried away from the building and routed towards the designated discharge or collection point.`,
+
+          `The system uses virgin UPVC and is identified as the KWIK Drain system. It conforms to IS 13592:2013 and IS 15328:2003, based on the available product information.`,
+
+          `For building projects, the system can form part of the underground section connecting building drainage outlets to the site's larger drainage network. Its selection and pipe sizing should follow the project drainage design and applicable requirements.`,
+        ],
+      },
+
+      {
+        name: 'Foamcore Underground Drainage Piping System',
+
+        url: '/underground-pipe-and-fittings/foamcore-underground-drainage-piping-system',
+
+        image: `${ADMIN}/2025/10/UDS-Foamcore.webp`,
+
+        paragraphs: [
+          'The Foamcore Underground Drainage Piping System is another option for underground drainage applications in building projects. It uses the KWIK DRAIN system and conforms to IS 16098 Part 1, based on the available product information.',
+
+          'It can be considered where the project design calls for a foamcore underground drainage piping system. As with any underground drainage installation, the final selection should take account of the building layout, wastewater flow, routing, installation conditions and specified project requirements.',
+        ],
+      },
+    ],
+
+
+   
+    mapping: {
+      heading: 'Application-to-Product Mapping',
+
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Underground building drainage',
+          product: 'UPVC Underground Drainage Piping System (Solid Wall UDS)',
+          role: 'Carries wastewater through the underground drainage network',
+        },
+
+        {
+          requirement: 'Foamcore underground drainage',
+          product: 'Foamcore Underground Drainage Piping System',
+          role: 'Underground wastewater conveyance',
+        },
+      ],
+    },
+
+    note: 'The supporting drainage network should be designed with the required branches, fittings, access points and connections to suit the building and site layout.',
+  },
+
+  howItWorks: {
+    heading: 'How a Building Drainage System Works',
+
+    intro: 'A building drainage system collects wastewater from individual plumbing fixtures and transfers it through a planned network to the designated underground drainage or collection point.',
+
+    flow: [
+      'Bathrooms / Kitchens / Utility Areas',
+
+      'Internal Drainage Lines',
+
+      'Building Drain / Outlet',
+
+      'Underground Drainage Piping',
+
+      'Site Drainage / Collection Network',
+
+      'Designated Discharge or Treatment Point',
+    ],
+
+    steps: [
+      {
+        title: 'Bathrooms / Kitchens / Utility Areas',
+
+        text: `Wastewater first leaves individual fixtures through the internal drainage network. Branch lines collect discharge from different areas and connect it to the building's main drainage route.`,
+      },
+
+      {
+        title: 'Internal Drainage Lines',
+
+        text: `Branch lines collect discharge from different areas and connect it to the building's main drainage route.`,
+      },
+
+      {
+        title: 'Building Drain / Outlet',
+
+        text: 'Once the wastewater reaches the building drain or outlet, it moves towards the underground section of the drainage network.',
+      },
+
+      {
+        title: 'Underground Drainage Piping',
+
+        text: `Once the wastewater reaches the underground section, the selected Kothari drainage piping system carries it towards the site's drainage or collection network. Depending on the project specification, the underground section can use the UPVC Underground Drainage Piping System (Solid Wall UDS) or Foamcore Underground Drainage Piping System.`,
+      },
+
+      {
+        title: 'Site Drainage / Collection Network',
+
+        text: 'The underground routing should be coordinated with the building foundation, other underground utilities, site levels and access requirements.',
+      },
+
+      {
+        title: 'Designated Discharge or Treatment Point',
+
+        text: 'Pipe sizing, gradients and the overall hydraulic design should be established by the project designer based on expected discharge and applicable project requirements.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Building Drainage System?',
+
+    body: 'Share your building layout and drainage requirements with the Kothari team to discuss suitable underground drainage piping options for your project.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+{
+  slug: 'rainwater-drainage-systems',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Rainwater Drainage Systems | Kothari Pipe',
+
+  metaDescription:
+    'Explore Kothari rainwater drainage systems using SWR and PP Low Noise Drainage piping for roofs, terraces and building rainwater management.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Rainwater Drainage Systems',
+
+  tagline:
+    'Plan rainwater drainage around roof areas, rainfall intensity, drainage routes and safe discharge points to manage water across the building site.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Rainwater Drainage System Overview',
+
+    paragraphs: [
+      `When it rains hard, water pools up on rooftops, terraces, and anywhere else that's out in the open. That water has to go somewhere if it just sits there or isn't directed away properly, it ends up gathering around the building. You might find walkways flooded, or the drainage system just gets overwhelmed with all that extra water.`,
+
+      `A good rainwater drainage system steps in here. It grabs the runoff from the roof and other surfaces and channels it away, using a mix of vertical and horizontal pipes to steer it toward a safe spot, whether that's a drain, a collection tank, or a recharge pit. The piping network therefore needs to be planned around the building layout, catchment area, rainfall conditions and available discharge route.`,
+
+      `For building owners, contractors and plumbing teams, pipe selection is only one part of the system. The routing, connection points, pipe capacity, vertical drops and discharge arrangement all need to work together. Exposed sections may also need to account for the building's appearance and operating environment.`,
+
+      `Kothari's PP Low Noise Drainage System and SWR (Soil, Waste & Rainwater) Piping System can be considered for rainwater drainage requirements based on the project design and application conditions.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Rainwater Drainage Systems Are Used',
+
+    intro: [
+      'Rainwater drainage systems are used wherever rainfall needs to be collected from roofs, terraces or other building surfaces and directed away from the structure.',
+    ],
+
+    items: [
+      {
+        label: 'Residential buildings',
+
+        text: `A sloped roof or an open terrace sheds water fast once the rain picks up the job here is simple but has to be exact: catch it at the right points and get it down and away before it pools or finds its way where it shouldn't.`,
+      },
+
+      {
+        label: 'Apartment projects',
+
+        text: 'Multiple blocks means multiple roofs draining at the same time, often at different heights the vertical drops have to tie into a horizontal layout that can actually carry that combined volume without backing up at the lowest point.',
+      },
+
+      {
+        label: 'Commercial buildings',
+
+        text: 'Flat roofs are common on offices and retail spaces, and flat roofs don\'t shed water on their own the way a sloped residential roof does; outlets and gradients have to be planned in, not assumed.',
+      },
+
+      {
+        label: 'Industrial buildings',
+
+        text: 'A factory shed roof can be enormous compared to a house roof, and when the monsoon hits hard, that whole surface is draining at once undersized piping here shows up fast as pooling or backflow.',
+      },
+
+      {
+        label: 'Institutional buildings',
+
+        text: 'Hospitals and schools are usually spread across several connected structures rather than one block, so rainwater routing has to follow whatever irregular footprint the campus actually has, not a textbook layout.',
+      },
+
+      {
+        label: 'Warehouses and large roof structures',
+
+        text: `These roofs are built for span, not drainage, which means outlets and piping runs are often the one part of the structure that has to be deliberately engineered rather than left to the roof's natural fall.`,
+      },
+    ],
+
+    note: 'The final system layout depends on the building design, roof area, rainfall conditions, drainage route and designated discharge or reuse arrangement.',
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Rainwater Drainage',
+
+    intro: 'Rainwater drainage should be planned from the point where water is collected through to its final discharge or collection point. The system needs to handle the expected runoff while fitting within the building and site layout.',
+
+    items: [
+      {
+        label: 'Roof and catchment area',
+
+        text: 'The size and configuration of the roof or surface area determine how much rainwater enters the drainage network. Different roof sections may require separate collection points.',
+      },
+
+      {
+        label: 'Rainfall conditions',
+
+        text: 'Local rainfall intensity should be considered when determining the required drainage capacity. The project designer should establish the hydraulic requirements rather than applying a fixed pipe arrangement to every building.',
+      },
+
+      {
+        label: 'Drainage routing',
+
+        text: 'Vertical rainwater pipes, horizontal lines and discharge routes should be coordinated with the building structure and other services. Unnecessary changes in direction should be avoided where the design permits.',
+      },
+
+      {
+        label: 'Pipe capacity',
+
+        text: 'Pipe size and network configuration should correspond to the expected rainwater flow and project design. Hydraulic calculations should guide final pipe selection.',
+      },
+
+      {
+        label: 'Connections and outlets',
+
+        text: 'Roof outlets, branch connections and discharge points need to be coordinated so that collected rainwater enters and leaves the system properly.',
+      },
+
+      {
+        label: 'Installation environment',
+
+        text: 'Outdoor and exposed sections may experience changing weather conditions and temperature. The selected system should be appropriate for the intended installation environment.',
+      },
+
+      {
+        label: 'Maintenance',
+
+        text: 'Roof outlets, accessible connections and discharge points should be planned so that leaves, debris and accumulated material can be inspected and cleared when required.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+
+    intro: 'Kothari offers drainage systems that can be considered for rainwater applications depending on the building design, drainage arrangement and project requirements.',
+
+    items: [
+      {
+        name: 'PP Low Noise Drainage System',
+        url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system',
+        image: `${ADMIN}/2025/10/PP-Low-Noise-Drainage-System.webp`,
+
+        paragraphs: [
+          'The PP Low Noise Drainage System is a three-layer mineral-filled polypropylene drainage system that can be considered where reduced drainage noise is an important consideration in building design.',
+
+          'The system is specified for 90°C continuous temperature and 95°C short-term temperature, with a pH range of 2–12 based on the available product information. These characteristics relate to the broader operating conditions of the drainage system and should be evaluated against the specific project requirement.',
+
+          `For rainwater drainage, its suitability should be assessed according to the building's roof drainage layout, expected flow and installation conditions.`,
+        ],
+
+        note: '3-layer mineral-filled polypropylene; 90°C continuous; 95°C short-term; pH 2–12.',
+      },
+
+      {
+        name: 'SWR (Soil, Waste & Rainwater) Piping System',
+
+        url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems',
+        
+        image: `${ADMIN}/2025/04/SWR-PIPES-FITTINGS.webp`,
+
+        paragraphs: [
+          'The SWR Piping System is designed for soil, waste and rainwater drainage applications. This makes it directly relevant to building drainage networks where rainwater needs to be collected and conveyed through planned piping routes.',
+
+          'The system uses KWIK-sil rubber ring push-fit jointing. Available product information also specifies lead-free construction, UV resistance, and resistance to sewer gases, acids and effluents. The system is rated for pressure up to 10 kg/cm² based on the available product information.',
+
+          'For rainwater applications, the system can form part of the vertical and horizontal drainage network connecting collection points to the designated discharge route.',
+        ],
+      },
+    ],
+
+    mapping: {
+      heading: 'Application-to-Product Mapping',
+
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Building rainwater drainage',
+          product: 'SWR Piping System',
+          role: 'Collection and conveyance of rainwater',
+        },
+
+        {
+          requirement: 'Drainage where reduced noise is a consideration',
+          product: 'PP Low Noise Drainage System',
+          role: 'Drainage piping within the building system',
+        },
+      ],
+    },
+
+    note: 'Final pipe sizing, routing and outlet arrangement should be established according to the project design, roof catchment area and applicable drainage requirements.',
+  },
+
+  howItWorks: {
+    heading: 'How a Rainwater Drainage System Works',
+
+    intro: 'A rainwater drainage system collects runoff from roof surfaces and carries it through a planned network to a designated discharge, collection or reuse point.',
+
+    flow: [
+      'Roof / Terrace Surface',
+
+      'Rainwater Outlet / Collection Point',
+
+      'Vertical Rainwater Pipe',
+
+      'Horizontal Drainage Line',
+
+      'Site Drainage / Collection Network',
+
+      'Discharge / Recharge / Reuse Point',
+    ],
+
+    steps: [
+      {
+        title: 'Roof / Terrace Surface',
+
+        text: 'Rainwater first collects on the roof or terrace and enters the drainage network through designated outlets.',
+      },
+
+      {
+        title: 'Rainwater Outlet / Collection Point',
+
+        text: 'Designated outlets collect the runoff from roof or terrace surfaces and direct it into the rainwater drainage network.',
+      },
+
+      {
+        title: 'Vertical Rainwater Pipe',
+
+        text: 'Vertical pipes carry the collected rainwater down through the building.',
+      },
+
+      {
+        title: 'Horizontal Drainage Line',
+
+        text: 'Horizontal drainage lines route the rainwater towards the planned discharge or collection point.',
+      },
+
+      {
+        title: 'Site Drainage / Collection Network',
+
+        text: 'Depending on the project design, the drainage network may use the SWR Piping System or PP Low Noise Drainage System for relevant sections. Connections, branches and changes in direction should be coordinated with the building structure and other services.',
+      },
+
+      {
+        title: 'Discharge / Recharge / Reuse Point',
+
+        text: 'The final discharge arrangement can vary by project. Rainwater may be directed to a site drainage network, collection system, recharge arrangement or another designated point as specified by the project design.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Rainwater Drainage System?',
+
+    body: 'Share your building layout, roof area and drainage requirements with the Kothari team to discuss suitable piping options for your project.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+}
+
+  
 ];
 
 export function getApplicationDetailBySlug(

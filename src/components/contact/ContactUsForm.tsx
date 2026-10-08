@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, Loader2 } from 'lucide-react';
 import {
   RECAPTCHA_SITE_KEY,
   getRecaptchaToken,
@@ -30,6 +30,9 @@ const requirements = [
   'Other'
 ];
 
+type OtpStatus = 'idle' | 'sending' | 'sent' | 'verifying' | 'verified';
+type OtpTone = 'info' | 'error' | 'success';
+
 export const ContactUsForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -44,9 +47,101 @@ export const ContactUsForm: React.FC = () => {
     otherRequirement: '',
   });
 
+  const [otpStatus, setOtpStatus] = useState<OtpStatus>('idle');
+  const [otp, setOtp] = useState('');
+  const [otpMsg, setOtpMsg] = useState('');
+  const [otpTone, setOtpTone] = useState<OtpTone>('info');
+  const [resendIn, setResendIn] = useState(0);
+
+  useEffect(() => {
+    if (resendIn <= 0) return;
+    const t = setTimeout(() => setResendIn((s) => s - 1), 1000);
+    return () => clearTimeout(t);
+  }, [resendIn]);
+
+  const resetOtp = () => {
+    setOtpStatus('idle');
+    setOtp('');
+    setOtpMsg('');
+    setResendIn(0);
+  };
+
+  const setPhone = (phone: string) => {
+    setFormData((prev) => ({ ...prev, phone }));
+    if (phone !== formData.phone) resetOtp();
+  };
+
+  const handleSendOtp = async () => {
+    if (otpStatus === 'sending' || resendIn > 0) return;
+    if (formData.phone.replace(/\D/g, '').length < 10) {
+      setOtpTone('error');
+      setOtpMsg('Enter a valid 10-digit mobile number first.');
+      return;
+    }
+    setOtpStatus('sending');
+    setOtpMsg('');
+    try {
+      const res = await fetch('/api/otp/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone: formData.phone,
+          userName: formData.fullName || 'Website User',
+        }),
+      });
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.ok) throw new Error(data?.error || 'Could not send the OTP.');
+      setOtpStatus('sent');
+      setOtp('');
+      setResendIn(data.resendIn || 30);
+      setOtpTone('info');
+      setOtpMsg(
+        data.devOtp
+          ? `Dev mode — AiSensy not configured. Your OTP is ${data.devOtp}`
+          : `OTP sent to ${formData.phone} on WhatsApp. Enter it below.`
+      );
+    } catch (err) {
+      setOtpStatus('idle');
+      setOtpTone('error');
+      setOtpMsg(err instanceof Error ? err.message : 'Could not send the OTP.');
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (otpStatus === 'verifying') return;
+    if (!/^\d{6}$/.test(otp)) {
+      setOtpTone('error');
+      setOtpMsg('Enter the 6-digit OTP.');
+      return;
+    }
+    setOtpStatus('verifying');
+    setOtpMsg('');
+    try {
+      const res = await fetch('/api/otp/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: formData.phone, otp }),
+      });
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.ok) throw new Error(data?.error || 'Incorrect OTP.');
+      setOtpStatus('verified');
+      setOtpMsg('WhatsApp number verified.');
+      setOtpTone('success');
+    } catch (err) {
+      setOtpStatus('sent');
+      setOtpTone('error');
+      setOtpMsg(err instanceof Error ? err.message : 'Incorrect OTP.');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (sending) return;
+    if (otpStatus !== 'verified') {
+      setOtpTone('error');
+      setOtpMsg('Please verify your phone number with the WhatsApp OTP first.');
+      return;
+    }
     setError('');
     setSending(true);
     try {
@@ -58,6 +153,10 @@ export const ContactUsForm: React.FC = () => {
       });
       const data = await res.json().catch(() => null);
       if (!res.ok || !data?.ok) {
+        if (data?.verifyRequired) {
+          resetOtp();
+          throw new Error(data?.error || 'Your OTP verification expired. Please verify again.');
+        }
         throw new Error(data?.error || 'Could not send your enquiry.');
       }
       setSubmitted(true);
@@ -72,6 +171,7 @@ export const ContactUsForm: React.FC = () => {
           requirement: requirements[0],
           otherRequirement: '',
         });
+        resetOtp();
       }, 6000);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not send your enquiry.');
@@ -84,6 +184,8 @@ export const ContactUsForm: React.FC = () => {
     'w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none focus:border-[#1575B3] focus:bg-white transition';
   const labelClass =
     'block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5';
+  const otpBtnClass =
+    'shrink-0 px-3.5 py-2.5 text-xs font-semibold border border-[#1575B3] text-[#1575B3] bg-white hover:bg-[#F5FAFF] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition';
 
   if (submitted) {
     return (
@@ -134,16 +236,100 @@ export const ContactUsForm: React.FC = () => {
         </div>
         <div>
           <label className={labelClass}>Phone Number *</label>
-          <input
-            type="tel"
-            required
-            placeholder="+91 98765 43210"
-            value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className={fieldClass}
-          />
+          <div className="flex gap-2">
+            <input
+              type="tel"
+              required
+              placeholder="+91 98765 43210"
+              value={formData.phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className={fieldClass}
+            />
+            {otpStatus !== 'verified' && (
+              <button
+                type="button"
+                onClick={handleSendOtp}
+                disabled={otpStatus === 'sending' || resendIn > 0}
+                className={otpBtnClass}
+              >
+                {otpStatus === 'sending'
+                  ? 'Sending…'
+                  : resendIn > 0
+                    ? `Resend ${resendIn}s`
+                    : otpStatus === 'idle'
+                      ? 'Send OTP'
+                      : 'Resend OTP'}
+              </button>
+            )}
+          </div>
         </div>
       </div>
+
+      {otpStatus === 'verified' && (
+        <div className="flex flex-wrap items-center justify-between gap-2 border border-[#1E8E3E]/30 bg-[#F4FBF6] px-3.5 py-2.5">
+          <span className="flex items-center gap-2 text-xs font-medium text-[#1E8E3E]">
+            <CheckCircle2 className="w-4 h-4" />
+            {formData.phone} verified on WhatsApp
+          </span>
+          <button
+            type="button"
+            onClick={resetOtp}
+            className="text-xs font-medium text-[#1575B3] underline underline-offset-2 hover:text-[#0E588A]"
+          >
+            Change number
+          </button>
+        </div>
+      )}
+
+      {(otpStatus === 'sent' || otpStatus === 'verifying') && (
+        <div className="border border-[#DCEAF5] bg-[#F8FBFE] p-3.5 space-y-2.5">
+          <div className="flex gap-2">
+            <input
+              type="text"
+              inputMode="numeric"
+              autoComplete="one-time-code"
+              maxLength={6}
+              placeholder="Enter 6-digit OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleVerifyOtp();
+                }
+              }}
+              className={`${fieldClass} tracking-[0.4em] text-center font-semibold`}
+            />
+            <button
+              type="button"
+              onClick={handleVerifyOtp}
+              disabled={otpStatus === 'verifying' || otp.length !== 6}
+              className="shrink-0 px-4 py-2.5 text-xs font-semibold bg-[#1575B3] hover:bg-[#0E588A] disabled:opacity-60 disabled:cursor-not-allowed text-white transition active:scale-[0.98]"
+            >
+              {otpStatus === 'verifying' ? (
+                <span className="flex items-center gap-1.5">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" /> Verifying
+                </span>
+              ) : (
+                'Verify OTP'
+              )}
+            </button>
+          </div>
+          {otpMsg && (
+            <p
+              className={`text-xs ${
+                otpTone === 'error'
+                  ? 'text-red-600'
+                  : otpTone === 'success'
+                    ? 'text-[#1E8E3E]'
+                    : 'text-[#5F6B7A]'
+              }`}
+            >
+              {otpMsg}
+            </p>
+          )}
+        </div>
+      )}
 
       <div>
         <span className={labelClass}>Interested in *</span>
@@ -213,15 +399,20 @@ export const ContactUsForm: React.FC = () => {
 
       <button
         type="submit"
-        disabled={sending}
+        disabled={sending || otpStatus !== 'verified'}
         className="w-full flex items-center justify-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3.5 font-medium text-sm transition-colors shadow-sm"
       >
-        {sending ? 'Sending…' : 'Submit'}
+        {sending ? 'Sending…' : otpStatus !== 'verified' ? 'Verify OTP to Submit' : 'Submit'}
         <Send className="w-4 h-4" />
       </button>
-      {error && (
+      {otpStatus !== 'verified' && !otpMsg && (
+        <p className="text-[11px] text-[#5F6B7A] -mt-2">
+          Verify your WhatsApp number with the OTP to enable submission.
+        </p>
+      )}
+      {(error || (otpStatus !== 'verified' && otpMsg && !['sent', 'verifying'].includes(otpStatus))) && (
         <p className="text-xs text-red-600 bg-red-50 border border-red-200 px-3 py-2">
-          {error}
+          {error || otpMsg}
         </p>
       )}
       {RECAPTCHA_SITE_KEY && (

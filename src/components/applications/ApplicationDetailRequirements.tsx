@@ -12,7 +12,8 @@ export const ApplicationDetailRequirements: React.FC<{
   requirements: ApplicationDetail['requirements'];
   isPipe: boolean;
 }> = ({ requirements, isPipe }) => {
-  const isGreen = !isPipe;
+  // const isGreen = !isPipe;
+  const isGreen = isPipe;
   const accentBg = isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
   const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]/40' : 'hover:border-[#1575B3]/40';
   const accentText = isGreen ? 'text-[#1E8E3E]' : 'text-[#1575B3]';

@@ -25,8 +25,11 @@ export const ApplicationDetailPopup: React.FC<{
     };
   }, [item, onClose]);
 
-  const accentText = isPipe ? 'text-[#1575B3]' : 'text-[#1E8E3E]';
-  const accentBg = isPipe ? 'bg-[#1575B3]' : 'bg-[#1E8E3E]';
+  // const accentText = isPipe ? 'text-[#1575B3]' : 'text-[#1E8E3E]';
+  // const accentBg = isPipe ? 'bg-[#1575B3]' : 'bg-[#1E8E3E]';
+
+    const accentText = isPipe ? 'text-[#1575B3]' : 'text-[#1575B3]';
+  const accentBg = isPipe ? 'bg-[#1575B3]' : 'bg-[#1575B3]';
 
   return (
     <AnimatePresence>

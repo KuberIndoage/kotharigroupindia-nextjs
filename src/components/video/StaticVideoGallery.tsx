@@ -49,7 +49,7 @@ export const StaticVideoGallery: React.FC<{
           <>
             <button
               onClick={() => setVisibleCount((c) => Math.min(videos.length, c + LOAD_STEP))}
-              className="px-7 py-3.5 text-xs font-mono font-semibold tracking-wider uppercase border border-[#1E8E3E] text-[#1E8E3E] hover:bg-[#1E8E3E] hover:text-white transition-all duration-200"
+              className="px-7 py-3.5 text-xs font-mono font-semibold tracking-wider uppercase border border-[#1575B3] text-[#1575B3] hover:bg-[#1575B3] hover:text-white transition-all duration-200"
             >
               Load More
             </button>
@@ -64,9 +64,9 @@ export const StaticVideoGallery: React.FC<{
             href={`https://www.youtube.com/playlist?list=${playlistId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#1E8E3E] hover:bg-[#145E2A] text-white px-7 py-3.5 text-sm font-medium transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#01568f] text-white px-7 py-3.5 text-sm font-medium transition-all duration-300"
           >
-            <PlayCircle className="w-4 h-4" />
+            <PlayCircle className="w-4 h-4" /> 
             Watch all on YouTube
           </a>
         )}

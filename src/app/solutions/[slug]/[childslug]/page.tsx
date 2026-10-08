@@ -47,7 +47,7 @@ export default async function SolutionChildPage({ params }: { params: Params | P
         productsMegaMenu={isPipe ? PipeproductsMegaMenu : IrrigationproductsMegaMenu}
         solutionsMegaMenu={isPipe ? pipeSolutionsMegaMenu : irrigationSolutionsMegaMenu}
       />
-      <SolutionChildPageTemplate solution={solution} child={child} theme={isPipe ? 'blue' : 'green'} />
+      <SolutionChildPageTemplate solution={solution} child={child} theme={isPipe ? 'blue' : 'blue'} />
       <Footer footerData={isPipe ? PipefooterData : IrrigationfooterData} />
     </AppShell>
   );

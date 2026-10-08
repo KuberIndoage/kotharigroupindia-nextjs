@@ -22,21 +22,25 @@ const stats = [
   { value: '35+', label: 'Years of excellence' },
   { value: '8', label: 'Factories' },
   { value: '14', label: 'Warehouses' },
-  { value: '10', label: `Countries' products exported` },
+  { value: '10', label: `Countries products exported` },
 ];
 
 // Hero background slides per division (public/banners).
-const BANNER_IMAGES = {
+// `mobile` is optional — slides without it keep the desktop image on phones.
+const BANNER_IMAGES: Record<
+  'irrigation' | 'pipe',
+  { src: string; mobile?: string }[]
+> = {
   irrigation: [
-    '/banners/irrigation/irrigation1.png',
-    '/banners/irrigation/irrigation2.png',
+    { src: '/banners/irrigation/irrigation1.png' },
+    { src: '/banners/irrigation/irrigation2.png' },
   ],
   pipe: [
-    '/banners/pipe/pipe1.png',
-    '/banners/pipe/pipe2.png',
-    '/banners/pipe/pipe3.png',
+    { src: '/banners/pipe/pipe1.png', mobile: '/banners/pipe/pipe1mobile.jpg' },
+    { src: '/banners/pipe/pipe2.png' },
+    { src: '/banners/pipe/pipe3.png' },
   ],
-} as const;
+};
 
 const SLIDE_INTERVAL_MS = 5000;
 
@@ -55,29 +59,32 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
   }, [bannerImages.length]);
 
   return (
-    <div className="relative w-full min-h-[75dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden">
-      {/* Height driver: gives the full banner its own height so cover never crops the bottom */}
-      <div className="w-full aspect-[1376/768]" aria-hidden />
+    <div className="relative w-full min-h-[440px] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden">
+      {/* Height driver: each banner gets its own height so cover never crops it */}
+      <div className="w-full aspect-[1080/1740] sm:hidden" aria-hidden />
+      <div className="hidden sm:block w-full aspect-[1376/768]" aria-hidden />
 
       {/* Background: auto-sliding banner images */}
       <div className="absolute inset-0 z-0">
-        {bannerImages.map((src, idx) => (
-          <img
-            key={src}
-            src={src}
-            alt=""
-            aria-hidden={idx !== slide}
-            referrerPolicy="no-referrer"
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-              idx === slide ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+        {bannerImages.map((banner, idx) => (
+          <picture key={banner.src}>
+            {banner.mobile && <source media="(max-width: 639px)" srcSet={banner.mobile} />}
+            <img
+              src={banner.src}
+              alt=""
+              aria-hidden={idx !== slide}
+              referrerPolicy="no-referrer"
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+                idx === slide ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          </picture>
         ))}
         {/* Base Dark Overlay */}
-        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-black/20 pointer-events-none" /> */}
         
         {/* Soft Contrast Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30 pointer-events-none" /> */}
       </div>
 
       {/* Primary Content Container - Grid layout strictly divides screen into [Breadcrumb] [Center Space] and [Bottom Dock]} */}
@@ -123,7 +130,7 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
         <div className="w-full flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-4 sm:gap-8 lg:gap-12">
           
           {/* Left Side: Stats Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 lg:gap-6 border-t border-white/20 pt-4 sm:pt-6 w-full lg:w-auto">
+          {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 lg:gap-6 border-t border-white/20 pt-4 sm:pt-6 w-full lg:w-auto">
             {stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">
@@ -134,7 +141,7 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
                 </span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Right Side: Compact Callout Card */}
           {/* <div className="w-full lg:w-auto lg:max-w-[340px] shrink-0">

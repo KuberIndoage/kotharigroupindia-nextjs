@@ -360,6 +360,7 @@ const [aboutOpen, setAboutOpen] = useState(false);
   const [activeSolutionIdx, setActiveSolutionIdx] = useState(0);
   const [solutionChildView, setSolutionChildView] = useState<string | null>(null);
   const division = solutionsMegaMenu.headline.includes('Irrigation') ? 'irrigation-division' : 'pipe-division';
+  // const isIrrigation = division === 'irrigation-division';
   const isIrrigation = division === 'irrigation-division';
   const router = useRouter();
   const defaultDivisionInterest = division === 'pipe-division' ? 'Pipe Division' : 'Irrigation Division';
@@ -1306,7 +1307,9 @@ const handleSolutionBack = () => {
               onClick={handleOpenGetInTouch}
               className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium transition-all ${
                 isSolid || activeDropdown
-                  ? `${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} text-white shadow-md ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}`
+                  // ? `${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} text-white shadow-md ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}`
+                  ? `${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]'} text-white shadow-md ${isIrrigation ? 'shadow-[#1575B3]/15' : 'shadow-[#1575B3]/15'}`
+                 
                   : 'bg-white hover:bg-white/90 text-black shadow-lg'
               }`}
             >
@@ -1915,7 +1918,8 @@ const handleSolutionBack = () => {
        <Link
               href="/become-dealer"
         style={{ writingMode: 'vertical-rl' }}
-        className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'}   ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}  text-white font-extrabold text-[10px] sm:text-xs tracking-wider sm:tracking-widest uppercase py-4 sm:py-5 px-2.5 sm:px-3 shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border-l border-[#fff] hover:border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center gap-2`}
+                className={`${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]'}   ${isIrrigation ? 'shadow-[#1575B3]/15' : 'shadow-[#1575B3]/15'}  text-white font-extrabold text-[10px] sm:text-xs tracking-wider sm:tracking-widest uppercase py-4 sm:py-5 px-2.5 sm:px-3 shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border-l border-[#fff] hover:border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center gap-2`}
+        // className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'}   ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}  text-white font-extrabold text-[10px] sm:text-xs tracking-wider sm:tracking-widest uppercase py-4 sm:py-5 px-2.5 sm:px-3 shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border-l border-[#fff] hover:border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center gap-2`}
       >
         <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:scale-110 transition-transform duration-300 rotate-90" />
         <span className="whitespace-nowrap">Become Dealer</span>
@@ -1931,7 +1935,8 @@ const handleSolutionBack = () => {
         rel="noopener noreferrer"
         aria-label="WhatsApp"
         title="WhatsApp"
-        className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'} shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center px-3.5 py-5`}
+        // className={`${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'} shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center px-3.5 py-5`}
+       className={`${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]'} ${isIrrigation ? 'shadow-[#1575B3]/15' : 'shadow-[#1575B3]/15'} shadow-[0_8px_30px_rgb(21,117,179,0.3)] hover:shadow-[0_8px_35px_rgb(21,117,179,0.5)] border border-[#fff] transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none group flex items-center justify-center px-3.5 py-5`}
       >
         <svg
           viewBox="0 0 24 24"
@@ -1951,7 +1956,8 @@ const handleSolutionBack = () => {
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   aria-label="Back to top"
                   title="Back to top"
-                  className={ `fixed bottom-6 right-6 z-[45] w-11 h-11 ${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'}  text-white shadow-lg flex items-center justify-center transition-all`}
+                  // className={ `fixed bottom-6 right-6 z-[45] w-11 h-11 ${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'}  text-white shadow-lg flex items-center justify-center transition-all`}
+                    className={ `fixed bottom-6 right-6 z-[45] w-11 h-11 ${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]'}  text-white shadow-lg flex items-center justify-center transition-all`}
                 >
                   <ArrowUp className="w-5 h-5" />
                 </button>

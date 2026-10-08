@@ -100,7 +100,7 @@ export const Home2Footer: React.FC<{ variant?: 'blue' | 'green' }> = ({ variant 
                 <span>Pipe Division: <a href="mailto:sales.pipe@kotharigroupindia.com" className="text-white hover:text-white hover:underline transition">sales.pipe@kotharigroupindia.com</a></span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-white shrink-0 invisible" />
+                <Mail className="w-4 h-4 text-white shrink-0" />
                 <span>Irrigation Division: <a href="mailto:sales.irrigation@kotharigroupindia.com" className="text-white hover:text-white hover:underline transition">sales.irrigation@kotharigroupindia.com</a></span>
               </div>
             </div>
