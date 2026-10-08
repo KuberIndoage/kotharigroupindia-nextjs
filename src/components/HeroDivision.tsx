@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
@@ -25,26 +25,54 @@ const stats = [
   { value: '10', label: `Countries' products exported` },
 ];
 
+// Hero background slides per division (public/banners).
+const BANNER_IMAGES = {
+  irrigation: [
+    '/banners/irrigation/irrigation1.png',
+    '/banners/irrigation/irrigation2.png',
+  ],
+  pipe: [
+    '/banners/pipe/pipe1.png',
+    '/banners/pipe/pipe2.png',
+    '/banners/pipe/pipe3.png',
+  ],
+} as const;
+
+const SLIDE_INTERVAL_MS = 5000;
+
 export const HeroDivision = ({heroData}: {heroData: any}) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const cardVideoRef = useRef<HTMLVideoElement>(null);
   const isIrrigationDivision = heroData.cardTitle.includes('Irrigation');
+  const bannerImages = isIrrigationDivision ? BANNER_IMAGES.irrigation : BANNER_IMAGES.pipe;
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    if (bannerImages.length <= 1) return;
+    const timer = setInterval(() => {
+      setSlide((prev) => (prev + 1) % bannerImages.length);
+    }, SLIDE_INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, [bannerImages.length]);
 
   return (
-    <div className="relative w-full h-[100dvh] bg-black text-white font-sans overflow-hidden">
-      {/* Background Video Container */}
+    <div className="relative w-full min-h-[75dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden">
+      {/* Height driver: gives the full banner its own height so cover never crops the bottom */}
+      <div className="w-full aspect-[1376/768]" aria-hidden />
+
+      {/* Background: auto-sliding banner images */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover object-center"
-        >
-          <source src={heroData.videoSrc} type="video/mp4" />
-        </video>
-        
+        {bannerImages.map((src, idx) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden={idx !== slide}
+            referrerPolicy="no-referrer"
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+              idx === slide ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
         {/* Base Dark Overlay */}
         <div className="absolute inset-0 bg-black/20 pointer-events-none" />
         
@@ -52,13 +80,13 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      {/* Primary Content Container - Grid layout strictly divides screen into [Breadcrumb] [Center Space] and [Bottom Dock] */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full pt-20 pb-6 sm:pb-8 grid grid-rows-[auto_1fr_auto] gap-6">
+      {/* Primary Content Container - Grid layout strictly divides screen into [Breadcrumb] [Center Space] and [Bottom Dock]} */}
+      <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-14 sm:pt-20 pb-4 sm:pb-6 lg:pb-8 grid grid-rows-[auto_1fr_auto] gap-3.5 sm:gap-6">
 
         {/* Row 1: Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
-          className="pt-10 w-full flex items-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-white/60 overflow-x-auto whitespace-nowrap shrink-0"
+          className="pt-4 sm:pt-10 w-full flex items-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-white/60 overflow-x-auto whitespace-nowrap shrink-0"
         >
           <Link href="/" className="hover:text-white transition-colors">
             Home
@@ -74,34 +102,28 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
           <div className="w-full flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-0">
             
             {/* Main Headline (Left) */}
-            <div className="w-full lg:w-2/3">
+            {/* <div className="w-full lg:w-2/3">
               <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[1.02] lg:leading-[0.95] drop-shadow-lg m-0">
                 {heroData.headline}
               </h1>
-            </div>
+            </div> */}
 
             {/* Dynamic Subtext and Button (Right) */}
-            <div className="w-full lg:w-1/3 flex flex-col gap-5 sm:gap-6 lg:pl-12">
+            {/* <div className="w-full lg:w-1/3 flex flex-col gap-5 sm:gap-6 lg:pl-12">
               <p className="text-white/95 text-base sm:text-lg leading-relaxed max-w-xl lg:max-w-none drop-shadow-md">
                 {heroData.subtext}
               </p>
-              {/* <a 
-                href="#" 
-                className="group inline-flex items-center self-start bg-white text-black px-6 sm:px-7 py-3.5 sm:py-4 font-semibold text-sm sm:text-base lg:text-lg hover:bg-white/90 transition-colors shrink-0 shadow-lg"
-              >
-                {heroData.ctaText}
-                <ArrowIcon />
-              </a> */}
-            </div>
+          
+            </div> */}
 
           </div>
         </div>
 
         {/* BOTTOM SECTION: Row 2 takes auto (locks strictly to the screen bottom) */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 sm:gap-8 lg:gap-12">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-4 sm:gap-8 lg:gap-12">
           
           {/* Left Side: Stats Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-6 border-t border-white/20 pt-6 w-full lg:w-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 lg:gap-6 border-t border-white/20 pt-4 sm:pt-6 w-full lg:w-auto">
             {stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">
@@ -115,11 +137,11 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
           </div>
 
           {/* Right Side: Compact Callout Card */}
-          <div className="w-full lg:w-auto lg:max-w-[340px] shrink-0">
+          {/* <div className="w-full lg:w-auto lg:max-w-[340px] shrink-0">
             <div className="bg-black/50 backdrop-blur-md border border-white/20 p-3.5 sm:p-4 rounded-sm shadow-2xl">
               <div className="grid grid-cols-[64px_1fr] sm:grid-cols-[72px_1fr] gap-3.5 items-center">
                 
-                {/* Video Thumbnail */}
+             
                 <div className="relative aspect-square overflow-hidden rounded-xs">
                   <video
                     ref={cardVideoRef}
@@ -133,7 +155,7 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
                   </video>
                 </div>
                 
-                {/* Card Text */}
+            
                 <div className="flex flex-col justify-center gap-1">
                   <p className="font-semibold text-sm text-white leading-snug">{heroData.cardTitle}</p>
                   <p className="text-xs text-white/80 leading-relaxed line-clamp-2">
@@ -142,7 +164,7 @@ export const HeroDivision = ({heroData}: {heroData: any}) => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
         </div>
 
