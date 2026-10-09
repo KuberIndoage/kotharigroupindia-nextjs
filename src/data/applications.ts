@@ -66,6 +66,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Sprinkler Irrigation System',
           description:
             'Uniform overhead coverage designed for larger, open field areas. Sprinkler irrigation is ideal where crop density and field layout make drip less practical, delivering even water distribution across wide areas.',
+          detailSlug: 'sprinkler-irrigation-system',
           image: 'https://picsum.photos/seed/kothari-sprinkler-irrigation/800/600',
           products: [
             { name: 'Metal Sprinkler', url: '/metal-sprinkler/metal-sprinkler' },
@@ -117,6 +118,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Drip Irrigation for Sugarcane',
           description:
             "High-volume, consistent water delivery suited to sugarcane's long growing cycle, supported by our K-Lin dripline range.",
+           detailSlug: 'drip-irrigation-for-sugarcane',
           image: 'https://picsum.photos/seed/kothari-sugarcane/800/600',
           products: [
             { name: 'Dripline K-Lin PCAS', url: '/drip-line/dripline-k-lin-pcas' },
@@ -137,6 +139,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Vegetable Irrigation Systems',
           description:
             'Precise, gentle irrigation suited to onion, tomato, chilli, and other short-duration vegetable crops.',
+          detailSlug: 'vegetable-irrigation-systems',
           image: 'https://picsum.photos/seed/kothari-vegetables/800/600',
           products: [
             { name: 'Thin Wall Dripline K-Slim', url: '/thinwall-drip-line/thin-wall-dripline-k-slim' },
@@ -147,6 +150,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Banana Irrigation Systems',
           description:
             'Reliable drip and micro sprinkler solutions for banana plantations, supporting consistent yield.',
+           detailSlug: 'banana-irrigation-systems',
           image: 'https://picsum.photos/seed/kothari-banana/800/600',
           products: [
             { name: 'Dripline K-Lin PCND', url: '/drip-line/dripline-k-lin-pcnd' },
@@ -194,6 +198,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Orchard Irrigation Systems',
           description:
             'Overhead and drip irrigation solutions for fruit orchards, including frost protection micro sprinklers.',
+          detailSlug: 'orchard-irrigation-systems',
           image: 'https://picsum.photos/seed/kothari-orchard/800/600',
           products: [
             { name: 'K-Mist', url: '/misters-and-assemblies/k-mist' },
@@ -205,6 +210,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Nursery Irrigation Systems',
           description:
             'Gentle, insect-proof micro sprinklers designed specifically for delicate nursery plants.',
+           detailSlug: 'nursery-irrigation-systems',
           image: 'https://picsum.photos/seed/kothari-nursery/800/600',
           products: [
             { name: 'K-Fogger', url: '/foggers-and-assemblies/k-fogger' },
@@ -215,6 +221,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Landscaping & Turf Irrigation',
           description:
             'Pop-up sprinklers, rotors, and turf irrigation systems for parks, gardens, and public landscaped areas.',
+           detailSlug: 'landscaping-turf-irrigation',
           image: 'https://picsum.photos/seed/kothari-landscaping/800/600',
           products: [
             { name: 'Pop-up Spray Heads and Rotors', url: '/garden-and-landscape-sprinklers/pop-up-spray-heads-rotors-landscape-turf-sprinklers-kothari-group' },
@@ -313,6 +320,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Rainwater Management Systems',
           description:
             'SWR and underground drainage systems for effective rainwater collection and discharge.',
+           detailSlug: 'rainwater-management-system',
           image: 'https://picsum.photos/seed/kothari-rainwater/800/600',
           products: [
             { name: 'SWR Pipes and Fittings', url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems' },
@@ -330,6 +338,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Residential Plumbing Systems',
           description:
             'CPVC and UPVC plumbing systems for homes, apartments, and housing societies.',
+          detailSlug: 'residential-plumbing-system',
           image: 'https://picsum.photos/seed/kothari-residential/800/600',
           products: [
             { name: 'CPVC Pipes & Fittings', url: '/cpvc/cpvc-hot-and-cold-water-piping-system' },
@@ -340,6 +349,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Commercial & Institutional Building Plumbing',
           description:
             'Durable plumbing and drainage systems for offices, schools, and commercial complexes.',
+           detailSlug: 'commercial-building-plumbing-system',
           image: 'https://picsum.photos/seed/kothari-commercial/800/600',
           products: [
             { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
@@ -377,6 +387,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Industrial Water Supply Pipes',
           description:
             'HDPE and UPVC pipes for reliable industrial water distribution.',
+           detailSlug: 'industrial-water-supply',
           image: 'https://picsum.photos/seed/kothari-industrial-water/800/600',
           products: [
             { name: 'HDPE Piping', url: '/pe-pipes-and-fittings/hdpe-piping' },
@@ -414,6 +425,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Building Drainage Systems',
           description:
             'SWR pipes and fittings for soil, waste, and rainwater discharge in residential and commercial buildings.',
+          detailSlug: 'building-drainage-system',
           image: 'https://picsum.photos/seed/kothari-building-drainage/800/600',
           products: [
             { name: 'SWR Pipes and Fittings', url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems' },
@@ -435,6 +447,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Rainwater Drainage Systems',
           description:
             'Low-noise and standard drainage systems for effective rainwater discharge.',
+             detailSlug: 'rainwater-drainage-systems',
           image: 'https://picsum.photos/seed/kothari-rainwater-drainage/800/600',
           products: [
             { name: 'PP Low Noise Drainage System', url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system' },
