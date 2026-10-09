@@ -1623,6 +1623,262 @@ export const applicationDetails: ApplicationDetail[] = [
   },
 },
 
+ {
+
+  slug: 'vegetable-irrigation-systems',
+
+  division: 'irrigation-division',
+
+  parentHref: '/irrigation-applications',
+
+  parentLabel: 'Irrigation Applications',
+
+  divisionHref: '/irrigation-division',
+
+  metaTitle: 'Vegetable Irrigation Systems | Kothari Irrigation',
+
+  metaDescription:
+    'Explore vegetable irrigation systems using thin-wall dripline for organised field water distribution, including Kothari K-Slim and K-Slim Ultra.',
+
+  heroEyebrow: 'Irrigation Applications',
+
+  h1: 'Vegetable Irrigation Systems',
+
+  tagline:
+    'Plan irrigation around crop rows, field layout and water availability with a drip-based system suited to vegetable cultivation.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/drip.png',
+
+  overview: {
+    heading: 'Understanding Vegetable Irrigation Systems',
+
+    paragraphs: [
+      'Vegetable crops often require irrigation to be organised around closely spaced crop rows and changing field requirements. In open-field cultivation, water has to move from the source to different sections of the farm and then reach the crop through a properly planned distribution network.',
+
+      'A vegetable irrigation system typically combines the water source, filtration, main and distribution pipelines, field connections and dripline. The pipeline network carries water towards the growing area, while the dripline provides the final distribution along the crop rows.',
+
+      'Field size, crop arrangement, water availability, flow, pressure and filtration requirements all influence the irrigation layout. Shorter crop cycles and multiple cultivation areas can also make practical operation and maintenance important considerations.',
+
+      'The irrigation network therefore needs to be planned as a complete system. The dripline, connections and distribution lines should suit the field layout and allow the farmer to manage different sections without making routine maintenance difficult.',
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Vegetable Irrigation Systems Are Used',
+
+    intro: [
+      'Vegetable irrigation systems are used across different types of vegetable cultivation where water needs to be distributed through planned field rows. The exact arrangement depends on the crop, field size, water source and irrigation method.',
+    ],
+
+    items: [
+      {
+        label: 'Open-Field Vegetable Cultivation',
+
+        text: 'A dripline can be arranged along vegetable crop rows, with distribution lines supplying different sections of the field.',
+      },
+
+      {
+        label: 'Commercial Vegetable Farms',
+
+        text: 'Larger farms can divide the growing area into irrigation sections based on field layout and available water supply.',
+      },
+
+      {
+        label: 'Seasonal Vegetable Crops',
+
+        text: 'For crops grown over shorter cultivation cycles, the irrigation system needs to be practical to install, operate and maintain throughout the growing period.',
+      },
+
+      {
+        label: 'Multiple Vegetable Blocks',
+
+        text: 'Where different vegetables are cultivated in separate areas, the distribution network can be planned around individual field sections and their irrigation requirements.',
+      },
+
+      {
+        label: 'Protected Cultivation',
+
+        text: 'Where drip irrigation is used in protected growing environments, the distribution network can be planned according to the bed and crop layout.',
+      },
+    ],
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Vegetable Irrigation',
+
+    intro: 'Vegetable irrigation needs to be planned according to the crop layout and the physical arrangement of the field. The dripline should form part of a properly designed water-distribution network rather than being considered separately.',
+
+    items: [
+      {
+        label: 'Water Source',
+
+        text: 'Start by assessing the available water source and its supply conditions. This provides the basis for planning the mainline, distribution network and irrigation sections.',
+      },
+
+      {
+        label: 'Flow and Pressure',
+
+        text: 'The system should be designed around the required flow and operating pressure. Mainlines, distribution lines and driplines need to work together as one network.',
+      },
+
+      {
+        label: 'Crop and Bed Layout',
+
+        text: 'Vegetable crops are commonly arranged in defined rows or beds. Dripline placement should follow this layout so that field connections and distribution lines remain practical.',
+      },
+
+      {
+        label: 'Field Zoning',
+
+        text: 'Larger farms or fields with different crop blocks may require separate irrigation sections. Zoning should be planned according to the available water supply and irrigation arrangement.',
+      },
+
+      {
+        label: 'Filtration and Water Quality',
+
+        text: 'Water quality and the selected irrigation equipment determine the filtration requirements. Appropriate filtration should be considered before water enters the dripline network.',
+      },
+
+      {
+        label: 'Installation and Maintenance',
+
+        text: 'Field connections should remain accessible for inspection and maintenance. The layout should also allow individual sections to be checked or serviced without unnecessarily disturbing the complete irrigation network.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Products',
+
+    intro: `For vegetable cultivation, Thin Wall Dripline K-Slim and Thin Wall Dripline K-Slim Ultra are relevant at the field-distribution stage of the irrigation system. They can be considered as part of a wider network consisting of the water source, filtration, mainline, distribution lines and field connections.`,
+
+    items: [
+      {
+        name: 'Thin Wall Dripline K-Slim',
+
+        url: '/thinwall-drip-line/thin-wall-dripline-k-slim',
+
+        image: `${ADMIN}/2025/04/DRIPLINE-K-SLIM-ULTRA.webp`,
+
+        paragraphs: [
+          'Thin Wall Dripline K-Slim is intended for use as part of a drip irrigation arrangement where water needs to be distributed along vegetable crop rows. It forms the final field-level section of the system after water has been carried through the main and distribution network.',
+
+          'For vegetable cultivation, its selection should be considered alongside the crop-row or bed layout, field dimensions, irrigation sections and verified product requirements. The overall system should be planned according to the actual conditions of the farm.',
+        ],
+      },
+
+      {
+        name: 'Thin Wall Dripline K-Slim Ultra',
+
+        url: '/thinwall-drip-line/thinwall-dripline-k-slim-ultra',
+
+        image: `${ADMIN}/2025/04/DRIPLINE-K-SLIM.webp`,
+
+        paragraphs: [
+          ' Thin Wall Dripline K-Slim Ultra is another thin-wall dripline option that can be considered for vegetable irrigation applications. It sits at the field-distribution stage and can be incorporated into a layout where a dripline follows the planned vegetable rows or beds.',
+
+          `The appropriate product should be selected based on the verified technical specifications, field conditions and irrigation requirements. The dripline should also be considered together with filtration, distribution lines and field connections rather than as a standalone component.`,
+        ],
+      },
+    ],
+
+    mapping: {
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Vegetable row irrigation',
+          product: 'Thin Wall Dripline K-Slim',
+          role: 'Field-level drip distribution',
+        },
+
+        {
+          requirement: 'Vegetable bed irrigation',
+          product: 'Thin Wall Dripline K-Slim Ultra',
+          role: 'Field-level drip distribution',
+        },
+
+        {
+          requirement: 'Drip-based vegetable irrigation',
+          product: 'K-Slim / K-Slim Ultra',
+          role: 'Final water-distribution stage',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How a Vegetable Irrigation System Works',
+
+    intro: 'A vegetable drip irrigation system moves water from the source through a planned pipeline network before distributing it along the crop rows or beds.',
+
+    flow: [
+      'Water Source',
+
+      'Filtration',
+
+      'Main Pipeline',
+
+      'Distribution Lines',
+
+      'Dripline Along Crop Rows',
+
+      'Crop Area',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+
+        text: 'Water enters the irrigation system from the available farm water source. Pumping requirements depend on the source and the overall system design.',
+      },
+
+      {
+        title: 'Filtration',
+
+        text: 'Where required, water passes through the appropriate filtration arrangement before entering the field distribution network. The filtration setup depends on water quality and the irrigation equipment being used.',
+      },
+
+      {
+        title: 'Main Pipeline',
+
+        text: 'The main pipeline carries water from the source towards the vegetable cultivation area. It forms the primary water-conveyance route.',
+      },
+
+      {
+        title: 'Distribution Lines',
+
+        text: 'Water moves from the mainline into distribution or submain lines serving different sections of the field. These sections can be arranged according to the farm layout and irrigation requirements.',
+      },
+
+      {
+        title: 'Dripline Along Crop Rows',
+
+        text: 'Thin Wall Dripline K-Slim or K-Slim Ultra is connected to the field distribution network and arranged along the planned vegetable rows or beds. This is the final distribution stage within the crop area.',
+      },
+
+      {
+        title: 'Crop Area',
+
+        text: 'Water moves through the dripline towards the vegetable crop. The complete system should allow the source, filtration, pipelines, field connections and dripline to function as one coordinated network.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Vegetable Irrigation System?',
+
+    body: 'Share your crop layout, field size and water-source details with the Kothari team to discuss the appropriate dripline arrangement.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
 
   
 ];
