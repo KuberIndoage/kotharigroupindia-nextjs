@@ -2098,8 +2098,6 @@ export const applicationDetails: ApplicationDetail[] = [
         text: 'Water reaches the equipment, utility system or operational area for which the supply has been designed.',
       },
     ],
-
-    note: 'The exact arrangement can vary considerably between facilities. A project-specific hydraulic assessment is required to determine pipe sizes, pressure requirements, routing and the appropriate pipe material.',
   },
 
   cta: {
@@ -2305,8 +2303,6 @@ export const applicationDetails: ApplicationDetail[] = [
         },
       ],
     },
-
-    note: 'The supporting drainage network should be designed with the required branches, fittings, access points and connections to suit the building and site layout.',
   },
 
   howItWorks: {
@@ -2574,9 +2570,7 @@ export const applicationDetails: ApplicationDetail[] = [
         },
       ],
     },
-
-    note: 'Final pipe sizing, routing and outlet arrangement should be established according to the project design, roof catchment area and applicable drainage requirements.',
-  },
+ },
 
   howItWorks: {
     heading: 'How a Rainwater Drainage System Works',
@@ -2658,9 +2652,7 @@ export const applicationDetails: ApplicationDetail[] = [
   heroEyebrow: 'Irrigation Applications',
   image: '/heronew.jpg',
   bannerImage: '/drip.png',
-
-  title: 'Banana Irrigation Systems',
-
+  h1: 'Banana Irrigation Systems',
   tagline:
     'Plan banana plantation irrigation around plant layout, water availability and field conditions with a suitable drip or micro-sprinkler distribution system.',
 
@@ -2680,9 +2672,9 @@ export const applicationDetails: ApplicationDetail[] = [
 
   whereUsed: {
     heading: 'Where Banana Irrigation Systems Are Used',
-    intro:
+    intro:[
       'Banana irrigation systems are used in plantations where water needs to be distributed systematically across rows of banana plants. The arrangement can be adapted to plantation size, field layout, water source and the chosen irrigation method.',
-
+],
     items: [
       {
         label: 'Commercial Banana Plantations',
@@ -2872,7 +2864,7 @@ export const applicationDetails: ApplicationDetail[] = [
   image: '/heronew.jpg',
   bannerImage: '/drip.png',
 
-  title: 'Irrigation for Other Field Crops',
+  h1: 'Irrigation for Other Field Crops',
 
   tagline:
     'Plan field-crop irrigation around water availability, field size and distribution requirements with practical piping for farm-level water movement.',
@@ -2890,9 +2882,9 @@ export const applicationDetails: ApplicationDetail[] = [
 
   whereUsed: {
     heading: 'Where Field Crop Irrigation Is Used',
-    intro:
+    intro:[
       'Irrigation piping for field crops is used across farms where water has to be distributed over open cultivation areas and the irrigation network needs to suit seasonal cropping patterns.',
-
+],
     items: [
       {
          label: 'Cotton and Fibre Crops',
@@ -3074,7 +3066,7 @@ export const applicationDetails: ApplicationDetail[] = [
   image: '/heronew.jpg',
   bannerImage: '/drip.png',
 
-  title: 'Orchard Irrigation Systems',
+  h1: 'Orchard Irrigation Systems',
 
   tagline:
     'Plan orchard irrigation around tree spacing, field conditions and water availability with suitable micro-irrigation equipment for targeted water application.',
@@ -3092,9 +3084,9 @@ export const applicationDetails: ApplicationDetail[] = [
 
   whereUsed: {
     heading: 'Where Orchard Irrigation Systems Are Used',
-    intro:
+    intro:[
       'Orchard irrigation systems are used across fruit-growing areas where trees are planted in organised rows and water needs to be distributed to defined areas around the plants.',
-
+],
     items: [
       {
         label: 'Fruit Orchards',
@@ -3284,7 +3276,7 @@ export const applicationDetails: ApplicationDetail[] = [
   image: '/heronew.jpg',
   bannerImage: '/drip.png',
 
-  title: 'Nursery Irrigation Systems',
+  h1: 'Nursery Irrigation Systems',
 
   tagline:
     'Plan nursery irrigation around plant requirements, growing conditions and water distribution needs with suitable fogging and micro-sprinkler equipment.',
@@ -3304,9 +3296,9 @@ export const applicationDetails: ApplicationDetail[] = [
 
   whereUsed: {
     heading: 'Where Nursery Irrigation Systems Are Used',
-    intro:
+    intro:[
       'Nursery irrigation systems are used wherever plants need controlled water application during propagation, early growth or commercial nursery production. The irrigation arrangement can vary depending on plant type, nursery layout and the stage of cultivation.',
-
+],
     items: [
       {
         label: 'Plant Nurseries',
@@ -3487,7 +3479,7 @@ export const applicationDetails: ApplicationDetail[] = [
   image: '/heronew.jpg',
   bannerImage: '/drip.png',
 
-  title: 'Landscaping & Turf Irrigation',
+  h1: 'Landscaping & Turf Irrigation',
 
   tagline:
     'Plan landscape and turf irrigation around area coverage, water distribution, operating pressure and the layout of lawns or planted spaces.',
@@ -3507,9 +3499,9 @@ export const applicationDetails: ApplicationDetail[] = [
 
   whereUsed: {
     heading: 'Where Landscaping & Turf Irrigation Is Used',
-    intro:
+    intro:[
       `You will find landscaping and turf irrigation just about anywhere there's grass, gardens, or green spaces that need a little help from a steady water supply.`,
-
+],
     items: [
       {
          label: 'Residential Landscapes',
