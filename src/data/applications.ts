@@ -1880,6 +1880,1819 @@ export const applicationDetails: ApplicationDetail[] = [
   },
 },
 
+  {
+  slug: 'industrial-water-supply',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Industrial Water Supply Pipes | Kothari Pipes',
+
+  metaDescription:
+    'Explore UPVC and HDPE piping options for industrial water supply, transfer and distribution systems based on flow, pressure and site conditions.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Industrial Water Supply',
+
+  tagline:
+    'Piping systems designed around the flow, pressure, route and operating conditions of industrial water networks.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Industrial Water Supply Overview',
+
+    paragraphs: [
+      'Industrial facilities often need to move water across considerable distances from a source or storage point to production areas, utility sections, treatment facilities and other points of use. The piping network has to handle the required flow while fitting around plant layouts, equipment and site conditions.',
+
+      'Unlike a simple building water line, an industrial water supply system may include long pipeline runs, underground sections, above-ground routes, multiple branches and different operating conditions across the network. Pipe selection therefore depends on factors such as water quality, flow, pressure, pipeline length, installation environment and the purpose for which the water is being supplied.',
+
+      'The right piping system should be selected as part of the overall hydraulic and project design. Depending on the application and operating conditions, HDPE pipes can be considered for suitable sections of an industrial water supply network.',
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Industrial Water Supply Is Used',
+
+    intro: [
+      'Industrial water supply systems are used wherever a facility needs to transfer and distribute water between its source, storage infrastructure, utilities and operating areas.',
+    ],
+
+    items: [
+      {
+        label: 'Manufacturing facilities',
+
+        text: 'Water can be distributed to production-support areas, utilities and other designated points within the plant.',
+      },
+
+      {
+        label: 'Industrial plants and factories',
+
+        text: 'Pipeline networks may connect storage tanks, water-treatment systems and different sections of the facility.',
+      },
+
+      {
+        label: 'Process and utility water networks',
+
+        text: 'Water can be transferred between treatment, storage and utility areas according to the plant\'s process design.',
+      },
+
+      {
+        label: 'Industrial estates and large facilities',
+
+        text: 'Longer pipelines may distribute water from a common source or storage facility to different operational zones.',
+      },
+
+      {
+        label: 'Infrastructure and utility projects',
+
+        text: 'Water transmission and distribution pipelines can connect supply points with remote or multiple points of use.',
+      },
+    ],
+
+    note: 'The actual piping arrangement depends on the water source, required flow, pressure, pipeline route and operating conditions of the project.',
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Industrial Water Supply',
+
+    intro: 'Industrial water supply systems need to be planned as a complete network rather than as individual pipeline sections. The design should account for water quality, flow requirements, operating pressure, installation conditions, and the overall pipeline route.',
+
+    items: [
+      {
+        label: 'Water Quality and Application',
+
+        text: 'Start with the water itself. The source, intended use and water quality should be understood before selecting the pipe material. If the water contains chemicals or other substances that may affect the piping material, compatibility should be confirmed as part of the technical selection.',
+      },
+
+      {
+        label: 'Flow and Pipe Sizing',
+
+        text: 'Industrial networks can involve substantial water demand and long pipeline runs. Pipe diameter should be established from the required flow, allowable pressure loss and hydraulic calculations rather than selecting a size based only on the connection size at the source or equipment.',
+      },
+
+      {
+        label: 'Operating Pressure',
+
+        text: 'The pipeline needs to accommodate the system\'s operating pressure and relevant pressure variations. Pump characteristics, elevation differences and the overall network layout should be considered during design.',
+      },
+
+      {
+        label: 'Installation Environment',
+
+        text: 'The installation route matters, particularly for underground pipelines. Soil conditions, external loads, temperature and exposure to the surrounding environment should be assessed where applicable.',
+      },
+
+      {
+        label: 'Pipeline Length and Layout',
+
+        text: 'Long industrial pipelines may require changes in direction, branches and connections to different sections of a facility. The proposed pipe material and installation method should be evaluated against the complete route rather than an individual section.',
+      },
+
+      {
+        label: 'Material Selection',
+
+        text: 'The right piping system should be selected as part of the overall hydraulic and project design, taking into account water characteristics, flow, pressure, installation environment and operating conditions.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+
+    intro: 'For industrial water supply, HDPE Pipes can serve different requirements within a water-transfer or distribution network. The final selection should be based on the projects hydraulic design and operating conditions.',
+
+    items: [
+      {
+        name: 'Kothari HDPE Pipes',
+
+        
+        url: '/pe-pipes-and-fittings/hdpe-piping',
+        image: `${ADMIN}/2025/04/HDPE-PIPE-111.webp`,
+
+        paragraphs: [
+          'HDPE Pipes can be considered for industrial water pipelines where the project requires an appropriate polyethylene piping system for the intended operating and installation conditions.',
+
+          'They can be evaluated for water transfer and distribution routes, including sections where pipeline routing or site conditions influence the material selection. For industrial projects, the selection should take into account operating pressure, pipe diameter, water characteristics, installation environment and the proposed joining method.',
+        ],
+      },
+    ],
+
+    // MISSING:
+    // The content provides a Suggested H2 "Product Selection at a Glance"
+    // but does not provide an actual mapping/table for it.
+    mapping: {
+      heading: 'Product Selection at a Glance',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Transfer water from the source across the farm', product: 'HDPE Pipe', role: 'Main or distribution water-transfer pipeline' },
+          { requirement: 'Rising and distributing lines', product: 'Self Fit PVC Pipe', role: 'Pressure water-supply and distribution line' },
+          { requirement: 'Main and sub-main irrigation lines', product: 'Self Fit PVC Pipe', role: 'Carries water towards drip or sprinkler networks' },
+          { requirement: 'Changes in direction or pipeline branches', product: 'Agri PVC Moulded Fittings', role: 'Connects, redirects and branches the pipeline' },
+          { requirement: 'Different pipe sizes need to be connected', product: 'Agri PVC Moulded Fittings', role: 'Reducers/adapters provide the required connection' },
+        ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How an Industrial Water Supply System Works',
+
+    intro: 'An industrial water supply network generally moves water from its source or storage facility through a main pipeline and then distributes it to the required areas of the plant.',
+
+    flow: [
+      'Water Source',
+
+      'Collection / Storage',
+
+      'Pumping / Main Pipeline',
+
+      'Primary Distribution',
+
+      'Branch Distribution',
+
+      'Point of Use',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+
+        text: 'Water enters the system from the designated source, such as an approved water supply, storage facility or treatment system.',
+      },
+
+      {
+        title: 'Collection / Storage',
+
+        text: 'Where required by the project, water is collected or stored before being transferred into the distribution network.',
+      },
+
+      {
+        title: 'Pumping / Main Pipeline',
+
+        text: 'Pumps or other transfer arrangements move water through the main pipeline. Flow and pressure requirements are determined by the system design.',
+      },
+
+      {
+        title: 'Primary Distribution',
+
+        text: 'The main pipeline carries water towards different sections of the industrial facility. Pipe diameter and routing are determined by the hydraulic requirements and site layout.',
+      },
+
+      {
+        title: 'Branch Distribution',
+
+        text: 'Branches divide the main supply into separate routes serving production-support areas, utilities, treatment sections, storage facilities or other designated points.',
+      },
+
+      {
+        title: 'Point of Use',
+
+        text: 'Water reaches the equipment, utility system or operational area for which the supply has been designed.',
+      },
+    ],
+
+    note: 'The exact arrangement can vary considerably between facilities. A project-specific hydraulic assessment is required to determine pipe sizes, pressure requirements, routing and the appropriate pipe material.',
+  },
+
+  cta: {
+    heading: 'Planning an Industrial Water Supply System?',
+
+    body: 'The right pipe depends on more than the required diameter. Flow, pressure, water characteristics and installation conditions all influence the selection. Share your industrial water supply requirement with the Kothari team to discuss the appropriate piping options for your project.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+  {
+  slug: 'building-drainage-system',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Building Drainage System | Kothari Pipe',
+
+  metaDescription:
+    'Explore Kothari building drainage systems with solid-wall UPVC and Foamcore underground drainage piping for residential and commercial projects.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Building Drainage System',
+
+  tagline:
+    'Plan building drainage around wastewater flow, underground routing, connection points and site conditions for efficient movement of discharge away from the building.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Building Drainage System Overview',
+
+    paragraphs: [
+      `A building's drainage system has a simple job: get wastewater out from bathrooms, kitchens, and utility areas without causing trouble inside or around the building. But as buildings get bigger and plumbing gets more complicated, you can't just wing it. The part underground needs just as much planning as what's inside.`,
+
+      `The drainage network pulls wastewater from all over bathrooms, kitchens, you name it and sends it out through a combination of branch lines and underground pipes until it reaches the right collection point. That means the underground pipes have to match up with the planned routes, fit the connection points, handle the way they'll be installed, and manage the actual wastewater flow.`,
+
+      `For contractors, plumbers, and anyone else working on the project, choosing pipes isn't just about moving water. The system has to fit the building's layout, the space available for installation, the depth of the pipes, and the conditions around the site. Planning how pipes link up really matters, especially where a bunch of different branches come together underground.`,
+
+      `Kothari offers two options: the UPVC Underground Drainage Piping System and the Foamcore Underground Drainage Piping System. Each works for different drainage needs, and you can pick the one that best matches your project's design.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Building Drainage Systems Are Used',
+
+    intro: [
+      'Building drainage systems are required across residential, commercial and institutional construction where wastewater needs to be collected and transferred from the building to an appropriate discharge or collection point.',
+    ],
+
+    items: [
+      {
+        label: 'Residential buildings',
+
+        text: 'Wastewater from bathrooms, kitchens, and all the other plumbing fixtures has to find its way to the main sewer lines somehow. That whole journey starts right here.',
+      },
+
+      {
+        label: 'Apartments and housing projects',
+
+        text: `When you're dealing with multiple buildings, floors, and lots of discharge points, you can't just slap a drainage plan together after the fact. You need a game plan before anyone starts digging.`,
+      },
+
+      {
+        label: 'Commercial buildings',
+
+        text: 'Offices and retail spaces always have a bunch of plumbing fixtures and service areas running at the same time. The drainage setup needs to carry all that flow smoothly—otherwise, you will end up with a maintenance nightmare.',
+      },
+
+      {
+        label: 'Hotels and hospitality projects',
+
+        text: `These places pack in more bathrooms, kitchens, and utility zones than your average building. You can't afford to improvise the drainage system as you go. Plan it out early or it will come back to haunt you.`,
+      },
+
+      {
+        label: 'Institutional buildings',
+
+        text: `Schools and hospitals are never just a basic box—there's always something unique about the layout. The drainage network has to fit around the building's shape and whatever infrastructure is already there.`,
+      },
+
+      {
+        label: 'Industrial and service buildings',
+
+        text: 'Any time a project needs wastewater or drainage to move underground, this piping steps in and gets it done.',
+      },
+    ],
+
+    note: 'The final pipe selection depends on the building design, drainage layout, installation conditions and applicable project requirements.',
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Building Drainage',
+
+    intro: 'A building drainage system should be planned as part of the overall plumbing and site drainage design. Pipe selection needs to consider how wastewater moves from individual discharge points to the underground network and eventually to the designated collection or disposal point.',
+
+    items: [
+      {
+        label: 'Drainage layout',
+
+        text: 'Branch lines, vertical stacks, underground lines and connection points should be coordinated with the building plan. The routing should minimise unnecessary changes in direction while accommodating the available installation space.',
+      },
+
+      {
+        label: 'Pipe size and flow',
+
+        text: 'The pipe size and network configuration should be selected according to the expected wastewater discharge and the drainage design. Hydraulic requirements should be established by the project designer rather than using a standard size for every building.',
+      },
+
+      {
+        label: 'Installation conditions',
+
+        text: 'Underground sections may pass through different soil and site conditions. Available depth, trench arrangement and surrounding infrastructure should be considered during planning and installation.',
+      },
+
+      {
+        label: 'Jointing and connections',
+
+        text: 'Drainage systems typically include several branches and connection points. The selected piping system should be compatible with the fittings and jointing arrangement specified for the project.',
+      },
+
+      {
+        label: 'Material selection',
+
+        text: 'The pipe material should be appropriate for the intended drainage application and expected operating environment. Where wastewater may contain chemicals or aggressive substances, the project requirements should be reviewed before final selection.',
+      },
+
+      {
+        label: 'Maintenance',
+
+        text: 'Access points and the overall network layout should allow inspection and maintenance where required. Good planning at the design stage can reduce difficulties during future servicing.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+
+    intro: 'Kothari offers two underground drainage piping systems that can be considered for building drainage applications. The appropriate system should be selected according to the project design, installation requirements and applicable standards.',
+
+    items: [
+      {
+        name: 'UPVC Underground Drainage Piping System (Solid Wall UDS)',
+
+        url: '/underground-pipe-and-fittings/upvc-underground-drainage-piping-system',
+
+        image: `${ADMIN}/2025/04/UDS-PIPES-FITTINGS.webp`,
+
+        paragraphs: [
+          `Kothari's solid-wall UPVC Underground Drainage Piping System is intended for underground drainage networks where wastewater needs to be carried away from the building and routed towards the designated discharge or collection point.`,
+
+          `The system uses virgin UPVC and is identified as the KWIK Drain system. It conforms to IS 13592:2013 and IS 15328:2003, based on the available product information.`,
+
+          `For building projects, the system can form part of the underground section connecting building drainage outlets to the site's larger drainage network. Its selection and pipe sizing should follow the project drainage design and applicable requirements.`,
+        ],
+      },
+
+      {
+        name: 'Foamcore Underground Drainage Piping System',
+
+        url: '/underground-pipe-and-fittings/foamcore-underground-drainage-piping-system',
+
+        image: `${ADMIN}/2025/10/UDS-Foamcore.webp`,
+
+        paragraphs: [
+          'The Foamcore Underground Drainage Piping System is another option for underground drainage applications in building projects. It uses the KWIK DRAIN system and conforms to IS 16098 Part 1, based on the available product information.',
+
+          'It can be considered where the project design calls for a foamcore underground drainage piping system. As with any underground drainage installation, the final selection should take account of the building layout, wastewater flow, routing, installation conditions and specified project requirements.',
+        ],
+      },
+    ],
+
+
+   
+    mapping: {
+      heading: 'Application-to-Product Mapping',
+
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Underground building drainage',
+          product: 'UPVC Underground Drainage Piping System (Solid Wall UDS)',
+          role: 'Carries wastewater through the underground drainage network',
+        },
+
+        {
+          requirement: 'Foamcore underground drainage',
+          product: 'Foamcore Underground Drainage Piping System',
+          role: 'Underground wastewater conveyance',
+        },
+      ],
+    },
+
+    note: 'The supporting drainage network should be designed with the required branches, fittings, access points and connections to suit the building and site layout.',
+  },
+
+  howItWorks: {
+    heading: 'How a Building Drainage System Works',
+
+    intro: 'A building drainage system collects wastewater from individual plumbing fixtures and transfers it through a planned network to the designated underground drainage or collection point.',
+
+    flow: [
+      'Bathrooms / Kitchens / Utility Areas',
+
+      'Internal Drainage Lines',
+
+      'Building Drain / Outlet',
+
+      'Underground Drainage Piping',
+
+      'Site Drainage / Collection Network',
+
+      'Designated Discharge or Treatment Point',
+    ],
+
+    steps: [
+      {
+        title: 'Bathrooms / Kitchens / Utility Areas',
+
+        text: `Wastewater first leaves individual fixtures through the internal drainage network. Branch lines collect discharge from different areas and connect it to the building's main drainage route.`,
+      },
+
+      {
+        title: 'Internal Drainage Lines',
+
+        text: `Internal drainage lines carry wastewater from individual branches towards the building drain or main outlet, following the planned drainage layout.`,
+      },
+
+      {
+        title: 'Building Drain / Outlet',
+
+        text: 'Once the wastewater reaches the building drain or outlet, it moves towards the underground section of the drainage network.',
+      },
+
+      {
+        title: 'Underground Drainage Piping',
+
+        text: `Once the wastewater reaches the underground section, the selected Kothari drainage piping system carries it towards the site's drainage or collection network. Depending on the project specification, the underground section can use the UPVC Underground Drainage Piping System (Solid Wall UDS) or Foamcore Underground Drainage Piping System.`,
+      },
+
+      {
+        title: 'Site Drainage / Collection Network',
+
+        text: 'The underground routing should be coordinated with the building foundation, other underground utilities, site levels and access requirements.',
+      },
+
+      {
+        title: 'Designated Discharge or Treatment Point',
+
+        text: 'Pipe sizing, gradients and the overall hydraulic design should be established by the project designer based on expected discharge and applicable project requirements.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Building Drainage System?',
+
+    body: 'Share your building layout and drainage requirements with the Kothari team to discuss suitable underground drainage piping options for your project.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+  {
+  slug: 'rainwater-drainage-systems',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Rainwater Drainage Systems | Kothari Pipe',
+
+  metaDescription:
+    'Explore Kothari rainwater drainage systems using SWR and PP Low Noise Drainage piping for roofs, terraces and building rainwater management.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Rainwater Drainage Systems',
+
+  tagline:
+    'Plan rainwater drainage around roof areas, rainfall intensity, drainage routes and safe discharge points to manage water across the building site.',
+
+  image: '/heronew.jpg',
+
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Rainwater Drainage System Overview',
+
+    paragraphs: [
+      `When it rains hard, water pools up on rooftops, terraces, and anywhere else that's out in the open. That water has to go somewhere if it just sits there or isn't directed away properly, it ends up gathering around the building. You might find walkways flooded, or the drainage system just gets overwhelmed with all that extra water.`,
+
+      `A good rainwater drainage system steps in here. It grabs the runoff from the roof and other surfaces and channels it away, using a mix of vertical and horizontal pipes to steer it toward a safe spot, whether that's a drain, a collection tank, or a recharge pit. The piping network therefore needs to be planned around the building layout, catchment area, rainfall conditions and available discharge route.`,
+
+      `For building owners, contractors and plumbing teams, pipe selection is only one part of the system. The routing, connection points, pipe capacity, vertical drops and discharge arrangement all need to work together. Exposed sections may also need to account for the building's appearance and operating environment.`,
+
+      `Kothari's PP Low Noise Drainage System and SWR (Soil, Waste & Rainwater) Piping System can be considered for rainwater drainage requirements based on the project design and application conditions.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Rainwater Drainage Systems Are Used',
+
+    intro: [
+      'Rainwater drainage systems are used wherever rainfall needs to be collected from roofs, terraces or other building surfaces and directed away from the structure.',
+    ],
+
+    items: [
+      {
+        label: 'Residential buildings',
+
+        text: `A sloped roof or an open terrace sheds water fast once the rain picks up the job here is simple but has to be exact: catch it at the right points and get it down and away before it pools or finds its way where it shouldn't.`,
+      },
+
+      {
+        label: 'Apartment projects',
+
+        text: 'Multiple blocks means multiple roofs draining at the same time, often at different heights the vertical drops have to tie into a horizontal layout that can actually carry that combined volume without backing up at the lowest point.',
+      },
+
+      {
+        label: 'Commercial buildings',
+
+        text: 'Flat roofs are common on offices and retail spaces, and flat roofs don\'t shed water on their own the way a sloped residential roof does; outlets and gradients have to be planned in, not assumed.',
+      },
+
+      {
+        label: 'Industrial buildings',
+
+        text: 'A factory shed roof can be enormous compared to a house roof, and when the monsoon hits hard, that whole surface is draining at once undersized piping here shows up fast as pooling or backflow.',
+      },
+
+      {
+        label: 'Institutional buildings',
+
+        text: 'Hospitals and schools are usually spread across several connected structures rather than one block, so rainwater routing has to follow whatever irregular footprint the campus actually has, not a textbook layout.',
+      },
+
+      {
+        label: 'Warehouses and large roof structures',
+
+        text: `These roofs are built for span, not drainage, which means outlets and piping runs are often the one part of the structure that has to be deliberately engineered rather than left to the roof's natural fall.`,
+      },
+    ],
+
+    note: 'The final system layout depends on the building design, roof area, rainfall conditions, drainage route and designated discharge or reuse arrangement.',
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Rainwater Drainage',
+
+    intro: 'Rainwater drainage should be planned from the point where water is collected through to its final discharge or collection point. The system needs to handle the expected runoff while fitting within the building and site layout.',
+
+    items: [
+      {
+        label: 'Roof and catchment area',
+
+        text: 'The size and configuration of the roof or surface area determine how much rainwater enters the drainage network. Different roof sections may require separate collection points.',
+      },
+
+      {
+        label: 'Rainfall conditions',
+
+        text: 'Local rainfall intensity should be considered when determining the required drainage capacity. The project designer should establish the hydraulic requirements rather than applying a fixed pipe arrangement to every building.',
+      },
+
+      {
+        label: 'Drainage routing',
+
+        text: 'Vertical rainwater pipes, horizontal lines and discharge routes should be coordinated with the building structure and other services. Unnecessary changes in direction should be avoided where the design permits.',
+      },
+
+      {
+        label: 'Pipe capacity',
+
+        text: 'Pipe size and network configuration should correspond to the expected rainwater flow and project design. Hydraulic calculations should guide final pipe selection.',
+      },
+
+      {
+        label: 'Connections and outlets',
+
+        text: 'Roof outlets, branch connections and discharge points need to be coordinated so that collected rainwater enters and leaves the system properly.',
+      },
+
+      {
+        label: 'Installation environment',
+
+        text: 'Outdoor and exposed sections may experience changing weather conditions and temperature. The selected system should be appropriate for the intended installation environment.',
+      },
+
+      {
+        label: 'Maintenance',
+
+        text: 'Roof outlets, accessible connections and discharge points should be planned so that leaves, debris and accumulated material can be inspected and cleared when required.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+
+    intro: 'Kothari offers drainage systems that can be considered for rainwater applications depending on the building design, drainage arrangement and project requirements.',
+
+    items: [
+      {
+        name: 'PP Low Noise Drainage System',
+        url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system',
+        image: `${ADMIN}/2025/10/PP-Low-Noise-Drainage-System.webp`,
+
+        paragraphs: [
+          'The PP Low Noise Drainage System is a three-layer mineral-filled polypropylene drainage system that can be considered where reduced drainage noise is an important consideration in building design.',
+
+          'The system is specified for 90°C continuous temperature and 95°C short-term temperature, with a pH range of 2–12 based on the available product information. These characteristics relate to the broader operating conditions of the drainage system and should be evaluated against the specific project requirement.',
+
+          `For rainwater drainage, its suitability should be assessed according to the building's roof drainage layout, expected flow and installation conditions.`,
+        ],
+      },
+
+      {
+        name: 'SWR (Soil, Waste & Rainwater) Piping System',
+
+        url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems',
+        
+        image: `${ADMIN}/2025/04/SWR-PIPES-FITTINGS.webp`,
+
+        paragraphs: [
+          'The SWR Piping System is designed for soil, waste and rainwater drainage applications. This makes it directly relevant to building drainage networks where rainwater needs to be collected and conveyed through planned piping routes.',
+
+          'The system uses KWIK-sil rubber ring push-fit jointing. Available product information also specifies lead-free construction, UV resistance, and resistance to sewer gases, acids and effluents. The system is rated for pressure up to 10 kg/cm² based on the available product information.',
+
+          'For rainwater applications, the system can form part of the vertical and horizontal drainage network connecting collection points to the designated discharge route.',
+        ],
+      },
+    ],
+
+    mapping: {
+      heading: 'Application-to-Product Mapping',
+
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Building rainwater drainage',
+          product: 'SWR Piping System',
+          role: 'Collection and conveyance of rainwater',
+        },
+
+        {
+          requirement: 'Drainage where reduced noise is a consideration',
+          product: 'PP Low Noise Drainage System',
+          role: 'Drainage piping within the building system',
+        },
+      ],
+    },
+
+    note: 'Final pipe sizing, routing and outlet arrangement should be established according to the project design, roof catchment area and applicable drainage requirements.',
+  },
+
+  howItWorks: {
+    heading: 'How a Rainwater Drainage System Works',
+
+    intro: 'A rainwater drainage system collects runoff from roof surfaces and carries it through a planned network to a designated discharge, collection or reuse point.',
+
+    flow: [
+      'Roof / Terrace Surface',
+
+      'Rainwater Outlet / Collection Point',
+
+      'Vertical Rainwater Pipe',
+
+      'Horizontal Drainage Line',
+
+      'Site Drainage / Collection Network',
+
+      'Discharge / Recharge / Reuse Point',
+    ],
+
+    steps: [
+      {
+        title: 'Roof / Terrace Surface',
+
+        text: 'Rainwater first collects on the roof or terrace and enters the drainage network through designated outlets.',
+      },
+
+      {
+        title: 'Rainwater Outlet / Collection Point',
+
+        text: 'Designated outlets collect the runoff from roof or terrace surfaces and direct it into the rainwater drainage network.',
+      },
+
+      {
+        title: 'Vertical Rainwater Pipe',
+
+        text: 'Vertical pipes carry the collected rainwater down through the building.',
+      },
+
+      {
+        title: 'Horizontal Drainage Line',
+
+        text: 'Horizontal drainage lines route the rainwater towards the planned discharge or collection point.',
+      },
+
+      {
+        title: 'Site Drainage / Collection Network',
+
+        text: 'Depending on the project design, the drainage network may use the SWR Piping System or PP Low Noise Drainage System for relevant sections. Connections, branches and changes in direction should be coordinated with the building structure and other services.',
+      },
+
+      {
+        title: 'Discharge / Recharge / Reuse Point',
+
+        text: 'The final discharge arrangement can vary by project. Rainwater may be directed to a site drainage network, collection system, recharge arrangement or another designated point as specified by the project design.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Rainwater Drainage System?',
+
+    body: 'Share your building layout, roof area and drainage requirements with the Kothari team to discuss suitable piping options for your project.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+  {
+  slug: 'banana-irrigation-systems',
+
+  division: 'irrigation-division',
+  parentHref: '/irrigation-applications',
+  parentLabel: 'Irrigation Applications',
+  divisionHref: '/irrigation-division',
+  metaTitle: 'Banana Irrigation Systems | Kothari Irrigation',
+
+  metaDescription:
+    'Explore banana irrigation systems using dripline and micro sprinklers for planned plantation water distribution with Kothari irrigation products.',
+  heroEyebrow: 'Irrigation Applications',
+  image: '/heronew.jpg',
+  bannerImage: '/drip.png',
+
+  title: 'Banana Irrigation Systems',
+
+  tagline:
+    'Plan banana plantation irrigation around plant layout, water availability and field conditions with a suitable drip or micro-sprinkler distribution system.',
+
+  overview: {
+    heading: 'Understanding Banana Irrigation Systems',
+    paragraphs: [
+      `Growing bananas isn't as simple as just planting and watering. You need a solid irrigation system because these crops grow in carefully arranged rows and need water spread out evenly. Once you start planting on a larger scale, it gets tricky fast. Without a proper plan, moving water between different parts of the field by hand turns into a real headache.`,
+
+      `Here's how the irrigation system usually works: it connects your water source to the banana plants with main pipelines and smaller distribution lines. You set up equipment in a way that matches the rows. Driplines run along each row and give each plant just what it needs, while micro sprinklers work well if you want to water a broader area around each plant.`,
+
+      `But there's more to it. You've got to think about where your water comes from, how much you have, the pressure, field size, plant spacing, and how you will filter out dirt that could clog the system. The pipes and connections need to be easy to check and fix, too, so you are not wasting time on maintenance.`,
+
+      `For farmers and ag specialists, it's all about the bigger picture. The best setup isn't just about picking a drip line or a sprinkler off the shelf. You have to look at your field layout, what kind of irrigation fits, and design everything so it's practical for your own operation.`,
+    ],
+
+  },
+
+  whereUsed: {
+    heading: 'Where Banana Irrigation Systems Are Used',
+    intro:
+      'Banana irrigation systems are used in plantations where water needs to be distributed systematically across rows of banana plants. The arrangement can be adapted to plantation size, field layout, water source and the chosen irrigation method.',
+
+    items: [
+      {
+        label: 'Commercial Banana Plantations',
+        text:
+          'Larger plantations can use planned pipeline networks to distribute water across multiple cultivation sections.',
+      },
+      {
+        label: 'Open-Field Banana Cultivation',
+         text:
+          'Driplines or micro sprinklers can be positioned according to the banana plant layout, with distribution lines supplying different areas of the field.',
+      },
+      {
+        label: 'New Banana Plantations',
+         text:
+          'The irrigation network can be planned along with plantation layout so that mainlines, distribution lines and field equipment are positioned before the crop is established.',
+      },
+      {
+       label: 'Established Banana Fields',
+         text:
+          'Existing plantations can assess their current water source and pipeline arrangement before introducing or upgrading field-level irrigation equipment.',
+      },
+      {
+        label: 'Multi-Section Plantations',
+         text:
+          'Where the plantation is divided into several blocks, the distribution network can be organised to supply individual sections according to the irrigation schedule and available water.',
+      },
+    ],
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Banana Irrigation',
+    intro:
+      'Banana irrigation should be planned around the plantation layout and the selected irrigation method. The main pipeline, distribution network and field equipment need to work together as one system.',
+
+    items: [
+      {
+        label: 'Water Source',
+         text:
+          'The available source should be assessed for its supply conditions before planning the irrigation network. This helps determine how the field can be divided and supplied.',
+      },
+      {
+       label: 'Flow and Pressure',
+         text:
+          'Flow and pressure requirements should be considered across the complete network. Mainlines, distribution lines and field-level irrigation equipment should be selected as connected parts of the system.',
+      },
+      {
+        label: 'Plantation Layout',
+         text:
+          'Banana plants are arranged in defined rows, so the irrigation network should follow the actual plantation layout. Field connections and irrigation equipment need to be positioned accordingly.',
+      },
+      {
+        label: 'Irrigation Method',
+         text:
+          'Dripline and micro sprinklers distribute water differently. The choice should depend on the plantation layout, irrigation objective and overall system design.',
+      },
+      {
+        label: 'Filtration and Water Quality',
+         text:
+          'The filtration arrangement should be considered according to the water source and selected irrigation equipment. Water quality is particularly relevant when designing a drip-based network.',
+      },
+      {
+        label: 'Installation and Maintenance',
+         text:
+          'Mainlines, field connections and irrigation equipment should remain accessible for inspection. The system should also allow individual sections to be serviced without unnecessarily affecting the wider plantation network.',
+      },
+    ],
+  },
+
+  products: {
+    heading: ' Recommended Kothari Products',
+    intro: `Kothari's Dripline K-Lin PCND and K-Mic Micro Sprinkler can be incorporated at the field-distribution stage of a banana irrigation system. The appropriate option depends on the plantation layout and the irrigation arrangement being designed.`,
+
+    items: [
+      {
+        name: 'Dripline K-Lin PCND',
+        url: '/drip-line/dripline-k-lin-pcnd',
+        image: `${ADMIN}/2025/04/DRIPLINE-K-LIN-PCND-1.webp`,
+        paragraphs: [
+          'Dripline K-Lin PCND is relevant where water needs to be distributed through dripline along planned banana plant rows. It forms part of the field-level network after water has travelled through the main and distribution pipelines.',
+          'For banana plantations, the dripline arrangement should follow the plant-row layout and connect properly with the field distribution network. Product selection should be based on the verified technical specifications and the requirements of the particular plantation.',
+        ],
+      },
+      {
+        name: 'K-Mic Micro Sprinkler',
+        url: '/micro-sprinklers-and-assemblies/k-mic-micro-sprinkler',
+        image: `${ADMIN}/2025/10/K-Mic-Micro-Sprinkler.webp`,
+        paragraphs: [
+          'K-Mic Micro Sprinkler is relevant to banana irrigation systems where micro-sprinkler-based water distribution is preferred. It forms the field-level application point after water is carried through the pipeline network.',
+          `For plantation planning, the position of the micro sprinklers should be considered alongside plant arrangement, field dimensions, water supply and system design. The required product configuration should be confirmed against the actual site and verified technical information.`,
+        ],
+      },
+    ],
+
+    mapping: {
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+      rows: [
+        {
+          requirement: 'Row-based banana irrigation',
+          product: 'Dripline K-Lin PCND',
+          role: 'Field-level drip distribution',
+        },
+        {
+          requirement: 'Micro-sprinkler irrigation',
+          product: 'K-Mic Micro Sprinkler',
+          role: 'Field-level water application',
+        },
+        {
+          requirement: 'Banana plantation irrigation',
+          product: 'K-Lin PCND / K-Mic',
+          role: 'Final distribution stage',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How a Banana Irrigation System Works',
+    intro:
+      'A banana irrigation system carries water from the source through a pipeline network and then distributes it within the plantation according to the selected irrigation method.',
+
+    flow: [
+      'Water Source',
+      'Filtration',
+      'Main Pipeline',
+      'Distribution Lines',
+      'Field-Level Irrigation',
+      'Banana Plantation',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+        text:
+          'Water enters the system from the available farm or plantation water source. Pumping requirements depend on the source and overall system design.',
+      },
+      {
+        title: 'Filtration',
+        text:
+          'Where required, water passes through the appropriate filtration arrangement before entering the field network. The filtration setup depends on the water source and selected irrigation equipment.',
+      },
+      {
+        title: 'Main Pipeline',
+         text:
+          'The main pipeline carries water from the source towards the banana plantation. It acts as the primary route for water movement across the irrigation system.',
+      },
+      {
+        title: 'Distribution Lines',
+        text:
+          'Water moves from the mainline into distribution or submain lines that supply different plantation sections. The network can be divided according to field size and irrigation requirements.',
+      },
+      {
+        title: 'Field-Level Irrigation',
+        text:
+          'At the field level, Dripline K-Lin PCND can be arranged along the banana plant rows, while K-Mic Micro Sprinkler can be positioned as part of a micro-sprinkler irrigation layout.',
+      },
+      {
+        title: 'Banana Plantation',
+         text:
+          'The selected field equipment distributes water within the planned crop area. The complete arrangement should allow the water source, filtration, pipelines, connections and field equipment to operate as one coordinated irrigation network.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Banana Irrigation System?',
+    body:'Share your plantation layout, water source and irrigation requirements with the Kothari team to discuss the appropriate field-distribution arrangement.',
+    buttonText: 'Discuss Your Requirement',
+  },
+
+ 
+},
+
+  {
+  slug: 'irrigation-for-field-crops',
+
+  division: 'irrigation-division',
+  parentHref: '/irrigation-applications',
+  parentLabel: 'Irrigation Applications',
+  divisionHref: '/irrigation-division',
+  metaTitle: 'Field Crop Irrigation Systems | Kothari Irrigation',
+  metaDescription: 'Explore irrigation piping for field crops, including LD Krishi Pipe and Polytube for water conveyance and field-level irrigation distribution.',
+  heroEyebrow: 'Irrigation Applications',
+  image: '/heronew.jpg',
+  bannerImage: '/drip.png',
+
+  title: 'Irrigation for Other Field Crops',
+
+  tagline:
+    'Plan field-crop irrigation around water availability, field size and distribution requirements with practical piping for farm-level water movement.',
+
+  overview: {
+    heading: 'Irrigation for Field Crops Overview',
+    paragraphs: [
+      `Crops like cotton, soybeans, pulses, groundnuts, and cereals usually cover a lot of ground, and getting water where it's needed can be tricky. You want an irrigation system that gets water from the source to every corner of the field, but you also don't want something that's a pain to set up, use, or move around.`,
+
+      `Depending on the irrigation method, the network may include a water source, pump, main conveyance line, distribution lines and field-level irrigation equipment. In open fields, the piping arrangement also needs to suit the crop layout, field distance and irrigation schedule.`,
+
+      'For some farms, the priority is moving water efficiently from the source to different field sections. In others, the requirement is to connect the distribution network to drip or sprinkler equipment. The piping selected should therefore match the way the field is irrigated, the distance involved, available water flow and the practical conditions under which the system will be installed and maintained.',
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Field Crop Irrigation Is Used',
+    intro:
+      'Irrigation piping for field crops is used across farms where water has to be distributed over open cultivation areas and the irrigation network needs to suit seasonal cropping patterns.',
+
+    items: [
+      {
+         label: 'Cotton and Fibre Crops',
+        text:
+          'Water can be conveyed from the source to field sections and connected to the selected irrigation arrangement.',
+      },
+      {
+         label: 'Pulses and Oilseeds',
+        text:
+          'Piping can support irrigation across open fields where crop areas and irrigation sections may change between seasons.',
+      },
+      {
+         label: 'Cereals and Other Field Crops',
+         text:
+          'Water conveyance lines can connect the farm water source with different sections of the cultivated area.',
+      },
+      {
+         label: 'Seasonal Cropping Fields',
+         text:
+          'The system can be planned around changing crop layouts and irrigation requirements from one cultivation cycle to another.',
+      },
+      {
+        label: 'Large Open Fields',
+         text:
+          'Longer distances between the water source and crop area may require dedicated conveyance and distribution arrangements.',
+      },
+    ],
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Field Crop Irrigation',
+    intro:
+      'The right piping arrangement depends largely on how water needs to move through the farm. Before selecting a product, the source location, field size and irrigation method should be understood.',
+
+    items: [
+      {
+         label: 'Water Source and Distance',
+         text:
+          'Identify where the water enters the system and how far it needs to travel. The distance between the source, distribution points and crop area influences the conveyance arrangement.',
+      },
+      {
+         label: 'Flow and Pressure',
+         text:
+          'The available water flow and operating pressure should be checked against the irrigation equipment being used. The pipe size and distribution layout should be selected accordingly rather than treating the entire field as a single operating section.',
+      },
+      {
+         label: 'Field Layout',
+         text:
+          'Crop area, field boundaries, access paths and changes between cultivation seasons can affect pipe routing. For open-field irrigation, the arrangement should remain practical for farm operations.',
+      },
+      {
+         label: 'Conveyance Requirement',
+         text:
+          'Where the primary requirement is to move water from one location to another, a suitable water-conveyance pipe can be used. Where water needs to reach drip or sprinkler equipment, the conveyance network must also accommodate the required field connections.',
+      },
+      {
+        label: 'Handling and Maintenance',
+         text:
+          'Field irrigation equipment is exposed to regular handling, movement and agricultural activity. Connections should remain accessible for inspection, while the system should be checked periodically for leakage, damage and operating issues.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+    intro: `For other field crops, the piping requirement can vary between water conveyance and field-level irrigation distribution. Kothari's LD Krishi Pipe and Polytube address these different stages of farm irrigation.`,
+
+    items: [
+      {
+        name: 'LD Krishi Pipe (Lay Flat Tubes)',
+        url: '/pe-pipes-and-fittings/ld-krishi-pipe-lay-flat-tubes',
+        image: `${ADMIN}/2025/04/LD-Krishi.webp`,
+        paragraphs: [
+          'LD Krishi Pipe is a lay-flat tube designed for farm water conveyance. It can be considered where water needs to be moved between the source, field sections and irrigation points through a practical surface-laid arrangement.',
+          'This type of pipe is particularly relevant to open-field irrigation where the conveyance route may change with field operations or cropping patterns. Kothari lists LD Krishi Pipe in sizes from 1 inch to 6 inches and offers it in Premium and Gold qualities. The product catalogue also specifies meter marking as a feature.',
+          'The appropriate size and variant should be selected according to the required flow, distance and operating conditions of the particular farm.',
+        ],
+      },
+      {
+        name: 'Polytube',
+        url: '/drip-tubes-polytube/polytube',
+        image: `${ADMIN}/2025/04/POLYTUBE.webp`,
+        paragraphs: [
+          'Polytube is used at the distribution side of irrigation systems where water needs to be carried towards field-level irrigation components. Kothari lists its Polytube for online drip irrigation in open-field installations, connections between submain and inline systems, and installation of micro and mini sprinklers. Available sizes listed by Kothari include 12, 16, 20, 25 and 32 mm.',
+          `This makes Polytube relevant where the field irrigation arrangement requires a smaller distribution tube between the main distribution network and the irrigation equipment. The final size and configuration should be determined from the irrigation layout and operating requirements.`,
+        ],
+      },
+    ],
+
+    mapping: {
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+      rows: [
+        {
+          requirement: 'Farm water conveyance',
+          product: 'LD Krishi Pipe',
+          role: 'Moves water between source and field sections',
+        },
+        {
+          requirement: 'Field-level distribution',
+          product: 'Polytube',
+          role: 'Carries water towards irrigation components',
+        },
+        {
+          requirement: 'Drip irrigation connections',
+          product: 'Polytube',
+          role: 'Connects distribution network with drip components',
+        },
+        {
+          requirement: 'Micro / mini sprinkler installation',
+          product: 'Polytube',
+          role: 'Provides field-level connection to irrigation equipment',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How Field Crop Irrigation Works',
+    intro:
+      'An irrigation system for field crops starts with water at the farm source and moves it through a conveyance and distribution network before reaching the crop area.',
+
+    flow: [
+      'Water Source',
+      'Pump / Water Delivery',
+      'LD Krishi Pipe – Water Conveyance',
+      'Field Distribution',
+      'Polytube',
+      'Drip / Micro Sprinkler / Other Irrigation Equipment',
+      'Field Crop',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+        text:
+          'Water enters the system from the available farm source. The source capacity and location determine how the irrigation network needs to be arranged.',
+      },
+      {
+        title: 'Water Conveyance',
+         text:
+          "Where a separate conveyance arrangement is required, LD Krishi Pipe can be used to move water towards the relevant field section. The route and pipe size should correspond to the farm's flow and distance requirements.",
+      },
+      {
+        title: 'Field Distribution',
+        text:
+          'Once water reaches the required field section, the distribution network directs it towards the irrigation equipment. Polytube can be used where a smaller field-level connection is required.',
+      },
+      {
+        title: 'Point of Application',
+        text:
+          "Depending on the crop and irrigation method, the Polytube can connect the distribution system to drip irrigation components or micro and mini sprinklers. Water is then delivered to the crop area according to the farm's irrigation plan.",
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning Irrigation for Your Field Crops?',
+    body:
+      'Share your field size, water source and irrigation method with the Kothari Irrigation team to discuss the suitable piping arrangement.',
+    buttonText: 'Discuss Your Requirement',
+  },
+
+},
+
+  {
+  slug: 'orchard-irrigation-systems',
+
+  division: 'irrigation-division',
+  parentHref: '/irrigation-applications',
+  parentLabel: 'Irrigation Applications',
+  divisionHref: '/irrigation-division',
+  metaTitle: 'Orchard Irrigation Systems | Kothari Irrigation',
+  metaDescription: 'Explore orchard irrigation systems using K-Mist, K-Fogger and K-Tuff Micro Sprinkler for planned field-level water application.',
+  heroEyebrow: 'Irrigation Applications',
+  image: '/heronew.jpg',
+  bannerImage: '/drip.png',
+
+  title: 'Orchard Irrigation Systems',
+
+  tagline:
+    'Plan orchard irrigation around tree spacing, field conditions and water availability with suitable micro-irrigation equipment for targeted water application.',
+
+  overview: {
+    heading: 'Orchard Irrigation Systems Overview',
+    paragraphs: [
+      `Orchard irrigation isn't your typical field job, it's a long-term thing. Since trees stay put for years, you have got to think about their spacing, how big their canopies get, and where exactly they are planted in those neat rows. The whole irrigation setup has to fit that layout, and it's got to be easy to run and keep in good shape over time.`,
+
+      `Here's how it usually goes: water starts at the farm source and moves through main pipes, then splits off into distribution lines. Eventually, it reaches the field gear that actually gets the water to the trees. Sometimes you water each tree separately, other times you treat whole sections at once. It really depends on your orchard and how you've designed the system.`,
+
+      `Planning matters. You have got to consider how much water you have, how fast it flows, the pressure you are working with, the way the trees are spaced out, what the soil's like, and the size of your orchard. If you are using smaller sprinklers or drip devices, good filtration and easy access to connections are essential. When you get the network right, you can manage different areas on your own schedule and make sure every tree gets what it needs.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Orchard Irrigation Systems Are Used',
+    intro:
+      'Orchard irrigation systems are used across fruit-growing areas where trees are planted in organised rows and water needs to be distributed to defined areas around the plants.',
+
+    items: [
+      {
+        label: 'Fruit Orchards',
+       text:
+          'Irrigation equipment can be positioned around tree rows according to the orchard layout and water-distribution plan.',
+      },
+      {
+        label: 'Commercial Plantations',
+        text:
+          'Larger orchard blocks can be divided into irrigation sections based on the available water supply and field arrangement.',
+      },
+      {
+        label: 'New Orchards',
+        text:
+          'The irrigation network can be planned alongside tree spacing, row orientation and the overall plantation layout.',
+      },
+      {
+        label: 'Established Orchards',
+        text:
+          'Irrigation equipment and distribution lines can be arranged around existing trees and the available farm infrastructure.',
+      },
+      {
+       label: 'Nursery and Horticultural Areas',
+         text:
+          'Micro-irrigation equipment can be considered where plants require controlled water application over defined areas.',
+      },
+    ],
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Orchard Irrigation',
+    intro:
+      'Orchard irrigation should be designed around the trees rather than treating the entire plantation as one uniform area. Tree spacing, orchard size and the irrigation method influence where the distribution lines and field equipment need to be placed.',
+
+    items: [
+      {
+       label: 'Water Source and Availability',
+        text:
+          'The available source should be assessed for location, seasonal availability and the amount of water that can be supplied to the irrigation network.',
+      },
+      {
+        label: 'Flow and Pressure',
+         text:
+          'Available flow and operating pressure should be matched with the selected irrigation equipment. The number of devices operating together and the size of each irrigation section should also be considered.',
+      },
+      {
+        label: 'Tree Spacing and Canopy Area',
+        text:
+          'Plant spacing and tree development influence the area where water needs to be applied. The field equipment should therefore be positioned according to the actual orchard layout rather than using a fixed arrangement for every plantation.',
+      },
+      {
+        label: 'Filtration and Water Quality',
+         text:
+          'Check the water quality before you settle on a filtration setup. If there are suspended particles in the water, they can cause problems for small irrigation devices. That’s why proper filtration and regular inspections are essential to keep the system running smoothly.',
+      },
+      {
+       label: 'Field Conditions and Maintenance',
+        text:
+          'The irrigation network should account for terrain, row access and the distance between the water source and orchard sections. Field connections and irrigation devices should remain accessible for inspection, cleaning and replacement when required.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+    intro: `Orchard irrigation can use different types of field-level equipment depending on the crop, tree arrangement and required water application pattern. The products below can be considered where micro-spray or fogging-based irrigation is appropriate to the system design.`,
+
+    items: [
+      {
+        name: 'K-Mist',
+        url: '/misters-and-assemblies/k-mist',
+        image: `${ADMIN}/2025/10/K–Fogger-K–Fogger.webp`,
+        paragraphs: [
+          'K-Mist can be considered for orchard applications where the irrigation design requires a fine spray or mist-type water application. Its role is at the field level, after water has been carried through the main and distribution network.',
+          'For orchard planning, the position of the K-Mist should be determined according to tree spacing, the intended application area and the operating conditions of the irrigation system. Product-specific discharge, pressure, coverage and other technical parameters should be confirmed from the latest Kothari product documentation before final selection.',
+        ],
+      },
+      {
+        name: 'K-Fogger',
+        url: '/foggers-and-assemblies/k-fogger',
+        image: `${ADMIN}/2025/10/K–Fogger-K–Fogger.webp`,
+        paragraphs: [
+          'K-Fogger is relevant where the orchard irrigation design requires fogging-type water application. It can be incorporated at the field level after water reaches the relevant orchard section through the distribution network.',
+          `The suitability of a fogger depends on the purpose of application and the conditions of the plantation. Its placement, quantity and operating arrangement should therefore be established as part of the overall irrigation design rather than selected independently.`,
+          'Current Kothari technical documentation should be referred to for product-specific specifications such as discharge, pressure and coverage.',
+        ],
+      },
+      {
+        name: 'K-Tuff Micro Sprinkler',
+        url: '/micro-sprinklers-and-assemblies/k-tuff-micro-sprinkler',
+        image: `${ADMIN}/2025/10/K-Tuff-Micro-Sprinkler.webp`,
+        paragraphs: [
+          'K-Tuff Micro Sprinkler can be used as a field-level micro-sprinkler option where the orchard requires localised spray application. It can be positioned around tree rows according to the plantation layout and irrigation design.',
+          `The product is relevant where water needs to be applied over a defined area around the plants rather than simply transported to the orchard. The final selection should consider tree spacing, required application area, available pressure and the overall distribution network.`,
+        ],
+      },
+    ],
+
+    mapping: {
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+      rows: [
+        {
+          requirement: 'Fine spray / mist application',
+          product: 'K-Mist',
+          role: 'Field-level water application',
+        },
+        {
+          requirement: 'Fogging-type application',
+          product: 'K-Fogger',
+          role: 'Field-level fogging application',
+        },
+        {
+          requirement: 'Localised micro-sprinkler irrigation',
+          product: 'K-Tuff Micro Sprinkler',
+          role: 'Water application around orchard plants',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How an Orchard Irrigation System Works',
+    intro:
+      'An orchard irrigation system starts at the available water source and carries water through a distribution network to field-level irrigation equipment positioned around the trees.',
+
+    flow: [
+      'Water Source',
+      'Pump / Water Delivery',
+      'Filtration',
+      'Main Pipeline',
+      'Submain / Distribution Lines',
+      'Field Connections',
+      'K-Mist / K-Fogger / K-Tuff Micro Sprinkler',
+      'Orchard Trees',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+         text:
+          'Water enters the irrigation system from the available farm source. Source capacity and location influence the design of the pumping and conveyance network.',
+      },
+      {
+        title: 'Pumping and Filtration',
+         text:
+          'Where required, pumping moves water into the irrigation network. Filtration is incorporated according to the water quality and the requirements of the selected irrigation equipment.',
+      },
+      {
+        title: 'Mainline and Distribution',
+        text:
+          'The main pipeline transports water towards the orchard. Submain or distribution lines then divide the water between individual orchard sections.',
+      },
+      {
+        title: 'Field Connections',
+        text:
+          'Field connections carry water from the distribution network to the selected irrigation devices. The layout should follow the tree rows and allow the equipment to be inspected and maintained.',
+      },
+      {
+        title: 'Water Application',
+         text:
+          "K-Mist, K-Fogger or K-Tuff Micro Sprinkler can be used at the final application stage where their respective application method suits the orchard design. The irrigation schedule should be determined according to crop requirements, soil conditions, weather and the farm's water-management plan.",
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning an Orchard Irrigation System?',
+    body:
+      'Share your orchard layout, tree spacing and water source with the Kothari Irrigation team to discuss suitable field-level irrigation equipment.',
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+
+  {
+  slug: 'nursery-irrigation-systems',
+  division: 'irrigation-division',
+  parentHref: '/irrigation-applications',
+  parentLabel: 'Irrigation Applications',
+  divisionHref: '/irrigation-division',
+  metaTitle: 'Nursery Irrigation Systems | Kothari Irrigation',
+  metaDescription: 'Explore nursery irrigation systems using K-Fogger and Micro Sprayer for planned water distribution across plant and seedling growing areas',
+  heroEyebrow: 'Irrigation Applications',
+  image: '/heronew.jpg',
+  bannerImage: '/drip.png',
+
+  title: 'Nursery Irrigation Systems',
+
+  tagline:
+    'Plan nursery irrigation around plant requirements, growing conditions and water distribution needs with suitable fogging and micro-sprinkler equipment.',
+
+  overview: {
+    heading: 'Nursery Irrigation System Overview',
+    paragraphs: [
+      `Nurseries have to manage water carefully because plants in different stages of growth don't need the same amount of moisture. If you water unevenly, some plants struggle to grow while others might end up in soggy soil. Too much water just ends up pooling around the roots and growing media, which does more harm than good.`,
+
+      `A good nursery irrigation system sends water where it's actually needed. It uses a mix of pipelines, distribution lines, and application tools to get water from the main source to every corner of the nursery. The piping carries the water out to all the specific sections, and then the field-level equipment takes over, making sure the right spots get watered.`,
+
+      `You can't just use a standard system. Everything about how the nursery is laid out, what kind of plants you are growing, the media you use, how much water you have on hand, and your operating conditions all dictate what the irrigation setup has to look like. Nurseries are different from open fields. The plants are packed closer together, whether in beds, containers, or propagation areas, so you have to control both where and how much water you apply.`,
+
+      `In the end, nursery operators need an irrigation system that works with the water source they have got and can reliably send water exactly where it's needed. That's what keeps the plants happy and growing strong.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Nursery Irrigation Systems Are Used',
+    intro:
+      'Nursery irrigation systems are used wherever plants need controlled water application during propagation, early growth or commercial nursery production. The irrigation arrangement can vary depending on plant type, nursery layout and the stage of cultivation.',
+
+    items: [
+      {
+        label: 'Plant Nurseries',
+        text:
+          'Used for routine irrigation of plants maintained in containers, beds or defined growing areas.',
+      },
+      {
+       label: 'Seedling Nurseries',
+        text:
+          'Suitable where young plants require carefully managed water application during early growth.',
+      },
+      {
+        label: 'Horticultural Nurseries',
+         text:
+          'Used for raising and maintaining ornamental, fruit and other horticultural plants.',
+      },
+      {
+        label: 'Propagation Areas',
+        text:
+          'Water distribution can be planned around areas where plants are being established or multiplied.',
+      },
+      {
+       label: 'Commercial Nursery Facilities',
+        text:
+          'Larger facilities can divide growing areas into sections and route water through a planned distribution network.',
+      },
+    ],
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Nursery Irrigation',
+    intro:
+      'A nursery irrigation system should be planned around both the water source and the way plants are arranged within the nursery. The first consideration is the available water source and whether it can provide the required flow for the intended irrigation sections.',
+
+    items: [
+      {
+        label: 'Water Flow and Pressure',
+       text:
+          'The available flow and operating pressure need to be considered when selecting and arranging application equipment. The system should be designed so that water reaches the intended nursery sections without creating avoidable distribution problems.',
+      },
+      {
+        label: 'Nursery Layout',
+         text:
+          'Beds, containers, propagation areas and plant spacing influence the position of distribution lines and irrigation equipment. The piping arrangement should allow practical access for nursery operations and maintenance.',
+      },
+      {
+        label: 'Water Quality',
+        text:
+          'Filtration and appropriate water-management practices may be required depending on the source water and the selected irrigation equipment. Water quality should be considered during system planning.',
+      },
+      {
+        label: 'Application Method',
+        text:
+          'Different nursery conditions may require different methods of water application. Fogging and micro-spraying equipment can be selected according to the plant area, growing stage and intended water application.',
+      },
+      {
+        label: 'Maintenance and Connections',
+         text:
+          'Pipe routing, connections and access points should allow inspection, cleaning and routine maintenance without unnecessarily disturbing the nursery.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+    intro: `For nursery applications, the field-level irrigation equipment needs to match the way plants are arranged and the type of water application required. Kothari's K-Fogger and Micro Sprayer can be considered for different nursery irrigation requirements.`,
+
+    items: [
+      {
+        name: 'K-Fogger',
+        url: '/foggers-and-assemblies/k-fogger',
+        image: `${ADMIN}/2025/10/K–Fogger-K–Fogger.webp`,
+        paragraphs: [
+          'The K-Fogger is relevant where a fogging-type water application is required within the nursery. It can be positioned as part of the field-level distribution arrangement after water has been carried through the main and distribution network.',
+          'Its use is particularly relevant when the nursery design calls for water application through fogging equipment rather than conventional open-field distribution. The actual placement and system design should be based on the nursery layout, plant requirements and operating conditions.',
+        ],
+      },
+      {
+        name: 'Micro Sprayer',
+        url: '/micro-jets-and-assemblies/micro-sprayer',
+        image: `${ADMIN}/2025/10/MICRO-SPRAYER.webp`,
+        paragraphs: [
+          'The Micro Sprayer provides a field-level method of applying water within a nursery irrigation arrangement. It can be connected to the distribution network and positioned according to the plant layout and area requiring irrigation.',
+          `It can be considered where the nursery requires localised spray-based water application. The number and placement of micro sprayers should be determined from the nursery layout, water availability and system design rather than applying a fixed arrangement to every nursery.`,
+        ],
+      },
+    ],
+
+    mapping: {
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+      rows: [
+        {
+          requirement: 'Fogging-type application',
+          product: 'K-Fogger',
+          role: 'Field-level water application',
+        },
+        {
+          requirement: 'Spray-based application',
+          product: 'Micro Sprayer',
+          role: 'Field-level water distribution',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How a Nursery Irrigation System Works',
+    intro:
+      'A nursery irrigation system typically moves water from the source through a planned distribution network before delivering it to the growing area.',
+
+    flow: [
+      'Water Source',
+      'Pump / Water Delivery',
+      'Filtration',
+      'Main Pipeline',
+      'Distribution / Submain Lines',
+      'Field Connections',
+      'K-Fogger / Micro Sprayer',
+      'Nursery Growing Area',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+        text:
+          'Water first enters the system from the available source and is transported through the main pipeline.',
+      },
+      {
+        title: 'Pumping and Filtration',
+        text:
+          'Depending on the nursery size and layout, pumping and filtration can be incorporated according to the water source and selected irrigation equipment.',
+      },
+      {
+        title: 'Main Pipeline',
+       text:
+          'The main pipeline carries water from the source towards the nursery distribution network.',
+      },
+      {
+        title: 'Distribution / Submain Lines',
+        text:
+          'Distribution or submain lines then carry water towards individual growing sections according to the nursery layout.',
+      },
+      {
+        title: 'Field Connections',
+        text:
+          'At the field level, connections are provided for the selected irrigation equipment. K-Fogger can be used where fogging-type application is required, while Micro Sprayer can be used where spray-based application is suitable.',
+      },
+      {
+        title: 'Nursery Growing Area',
+         text:
+          'The final arrangement depends on the nursery’s plant layout, water source, flow and pressure conditions, and the required method of water application. Proper routing also allows different nursery sections to be managed and maintained without unnecessarily disturbing the growing area.',
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Nursery Irrigation System?',
+    body:
+      'Share your nursery layout, water source and irrigation requirements with the Kothari team to discuss suitable water distribution and application options.',
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+
+  {
+  slug: 'landscaping-turf-irrigation',
+
+  division: 'irrigation-division',
+  parentHref: '/irrigation-applications',
+  parentLabel: 'Irrigation Applications',
+  divisionHref: '/irrigation-division',
+  metaTitle: 'Landscaping & Turf Irrigation | Kothari Irrigation',
+  metaDescription: 'Plan landscaping and turf irrigation with pop-up spray heads, rotors and Swing Join for lawns, sports grounds and landscaped areas.',
+  heroEyebrow: 'Irrigation Applications',
+  image: '/heronew.jpg',
+  bannerImage: '/drip.png',
+
+  title: 'Landscaping & Turf Irrigation',
+
+  tagline:
+    'Plan landscape and turf irrigation around area coverage, water distribution, operating pressure and the layout of lawns or planted spaces.',
+
+  overview: {
+    heading: 'Landscaping & Turf Irrigation Overview',
+    paragraphs: [
+      `Getting a lawn or sports field to look lush and green isn't as simple as just turning on the sprinklers. You need the right irrigation system, one that actually fits the space and works with how it's used. Otherwise, you'll get those dreaded muddy puddles in one spot and dried-out patches in another.`,
+
+      `These systems use a network of pipes, running either underground or above ground, to send water everywhere it's needed. Pop-up sprays and rotors do the real work, spreading water evenly. The right connectors make sure every part fits together, reaching the corners, curves, and edges, all while hooking smoothly into the main water line.`,
+
+      `Planning gets trickier when you are dealing with lawns that have odd shapes, spots with different types of plants, or turf that sees a lot of activity and maintenance. You need to look at things like where the water is coming from, how much flow and pressure you have, how pipes will run, where you will place irrigation gear, and how easy it will be to fix or maintain everything.`,
+
+      `In the end, you are aiming for an irrigation system that keeps the landscape hydrated, covers all the right spots, and lets people use and maintain the areas without trouble.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Landscaping & Turf Irrigation Is Used',
+    intro:
+      `You will find landscaping and turf irrigation just about anywhere there's grass, gardens, or green spaces that need a little help from a steady water supply.`,
+
+    items: [
+      {
+         label: 'Residential Landscapes',
+         text:
+          'Lawns, garden beds, flower patches you can route irrigation around all of it. The pipes stay hidden, so the yard looks tidy and you barely notice the setup.',
+      },
+      {
+         label: 'Commercial Properties',
+         text:
+          'Think hotels and office buildings. They stick to a schedule, keeping lawns and decorative plants green without bothering guests or staff during the day.',
+      },
+      {
+         label: 'Sports Grounds',
+         text:
+          'Every playing field brings its own shape and challenges. The irrigation system has to cover every blade of grass without interfering with practices or games.',
+      },
+      {
+         label: 'Parks and Public Gardens',
+         text:
+          `These bigger spaces don't need the same amount of water everywhere. People usually split them into zones, so each area gets what it needs based on what's planted there.`,
+      },
+      {
+         label: 'Golf and Recreational Landscapes',
+        text:
+          'Every part has different fairways, greens, roughs, flower beds. Irrigation systems have to fit the specific needs of all these areas.',
+      },
+      {
+         label: 'Roadside and Institutional Landscaping',
+        text:
+          'Green belts, hospital gardens, and school lawns stay healthy thanks to carefully planned piping and sprinklers. Most of the time, they run with almost no extra work.',
+      },
+    ],
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Landscape Irrigation',
+    intro:
+      'A landscaping or turf irrigation system should be designed around the physical layout of the site rather than treating the entire area as one uniform zone.',
+
+    items: [
+      {
+         label: 'Water Source and Flow',
+        text:
+          'Start with the available water source and determine the flow available for the irrigation system. Larger landscapes may need to be divided into manageable irrigation sections depending on the system design.',
+      },
+      {
+         label: 'Operating Pressure',
+         text:
+          'Spray heads and rotors require suitable operating conditions for their intended operation. Available pressure should therefore be considered before finalising equipment selection and layout.',
+      },
+      {
+         label: 'Coverage and Spacing',
+        text:
+          'The location and spacing of irrigation points should correspond to the shape of the lawn or landscaped area. Irregular boundaries may require more careful positioning to avoid watering outside the intended area.',
+      },
+      {
+        label: 'Pipe Routing',
+         text:
+          'Distribution lines should follow a practical route while allowing access for maintenance. Underground routing may also need to account for existing landscape features, pathways and other site infrastructure.',
+      },
+      {
+        label: 'Connections',
+        text:
+          'Field connections between the distribution pipe and irrigation equipment need to be planned carefully. Swing-type connection components can be useful where the irrigation equipment requires a suitable connection arrangement.',
+      },
+      {
+         label: 'Maintenance',
+        text:
+          'Valves, connections and irrigation points should remain accessible enough for inspection, adjustment and servicing without unnecessary disturbance to the landscape.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products',
+    intro: `Kothari products relevant to landscaping and turf irrigation include Pop-up Spray Heads and Rotors for water application and Swing Join for connecting irrigation equipment within the distribution arrangement.`,
+
+    items: [
+      {
+        name: 'Pop-up Spray Heads and Rotors',
+        url: '/garden-and-landscape-sprinklers/pop-up-spray-heads-and-rotors',
+        image: `${ADMIN}/2025/04/Pop-up-spray-heads-rotors.png`,
+        paragraphs: [
+          'Pop-up spray heads and rotors are used at the field level to distribute water across lawns, turf and landscaped areas. Their placement is determined by the shape of the area, required coverage and the overall irrigation layout.',
+          'For turf applications, the irrigation points need to be positioned so that the intended area receives water while pathways, buildings and other non-irrigated areas are considered during system planning. Different landscape zones may also require different equipment arrangements depending on their size and layout.',
+          `The selection and spacing of the specific spray head or rotor should be based on the manufacturer's verified operating characteristics and the site's available flow and pressure.`,
+        ],
+      },
+      {
+        name: 'Swing Join',
+        url: '/garden-and-landscape-sprinklers/swing-joint',
+        image: `${ADMIN}/2025/04/Swing-joint-1.png`,
+        paragraphs: [
+          'Swing Join forms part of the connection arrangement between the irrigation distribution network and field-level equipment. It can be considered when planning the connection and positioning of pop-up spray heads or rotors within a landscape irrigation system.',
+          `Its relevance is not limited to water conveyance; the connection arrangement also needs to suit the physical layout and maintenance requirements of the site. Final installation configuration should be determined according to the applicable product design and irrigation system layout.`,
+        ],
+      },
+    ],
+
+    mapping: {
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+      rows: [
+        {
+          requirement: 'Turf and lawn water application',
+          product: 'Pop-up Spray Heads and Rotors',
+          role: 'Field-level water distribution',
+        },
+        {
+          requirement: 'Irrigation equipment connection',
+          product: 'Swing Join',
+          role: 'Connection between distribution line and irrigation equipment',
+        },
+        
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How a Landscaping & Turf Irrigation System Works',
+    intro:
+      'A landscaping and turf irrigation system moves water from the source through a distribution network and delivers it to selected irrigation points across the landscape.',
+
+    flow: [
+      'Water Source',
+      'Pump / Water Supply',
+      'Main Pipeline',
+      'Distribution Lines / Irrigation Zones',
+      'Swing Join',
+      'Pop-up Spray Heads and Rotors',
+      'Lawn / Turf / Landscaped Area',
+    ],
+
+    steps: [
+      {
+        title: 'Water Source',
+        text:
+          'Water enters the system from the available source and is transported through the main pipeline.',
+      },
+      {
+        title: 'Pump / Water Supply',
+         text:
+          'The available water supply provides the flow required for the irrigation network according to the site and system design.',
+      },
+      {
+        title: 'Main Pipeline',
+         text:
+          'The mainline carries water from the source and feeds the distribution lines serving different irrigation zones across the site.',
+      },
+      {
+        title: 'Distribution Lines / Irrigation Zones',
+        text:
+          'Distribution lines serve different irrigation zones across the landscape. Dividing a larger site into irrigation zones can help the system work around different landscape sections and operating requirements.',
+      },
+      {
+        title: 'Swing Join',
+        text:
+          'At the field level, Swing Join can form part of the connection arrangement between the distribution line and the irrigation equipment.',
+      },
+      {
+        title: 'Pop-up Spray Heads and Rotors',
+        text:
+          'Pop-up spray heads and rotors then apply water over the designated turf or landscaped area.',
+      },
+      {
+        title: 'Lawn / Turf / Landscaped Area',
+        text:
+          "The irrigation layout should be planned according to the site's boundaries, available water flow and pressure, equipment characteristics and required coverage.",
+      },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning a Landscaping or Turf Irrigation System?',
+    body:
+      'Share your site layout, turf area and water supply details with the Kothari team to discuss the irrigation equipment and connection requirements for your project.',
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+
   
 ];
 
