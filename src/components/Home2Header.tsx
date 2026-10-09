@@ -15,7 +15,9 @@ import {
   Building2,
   Users,
   Award,
-  ArrowUp
+  ArrowUp,
+  CheckCircle2,
+  Loader2
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -24,6 +26,7 @@ import {
   RECAPTCHA_SITE_KEY,
   getRecaptchaToken,
 } from '@/lib/recaptcha-client';
+import { useOtpVerification } from '@/lib/use-otp-verification';
 
 const sections = [
   // { id: 'why-kothari', label: 'About Kothari Group' },
@@ -134,6 +137,7 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
     requirement: 'Product Enquiry',
     otherRequirement: '',
   });
+  const otp = useOtpVerification();
   const iamOptions = getIamOptions(formData.division);
 
 
@@ -221,12 +225,17 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
     setDivOpen(false);
     setAboutOpen(false);
     setFormSubmitted(false);
+    otp.resetOtp();
     setIsModalOpen(true);
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formSending) return;
+    if (otp.otpStatus !== 'verified') {
+      setFormError('Please verify your phone number with the WhatsApp OTP first.');
+      return;
+    }
     setFormError('');
     setFormSending(true);
     try {
@@ -238,6 +247,10 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
       });
       const data = await res.json().catch(() => null);
       if (!res.ok || !data?.ok) {
+        if (data?.verifyRequired) {
+          otp.resetOtp();
+          throw new Error(data?.error || 'Your OTP verification expired. Please verify again.');
+        }
         throw new Error(data?.error || 'Could not send your enquiry.');
       }
       setFormSubmitted(true);
@@ -245,6 +258,7 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
         setIsModalOpen(false);
         setFormSubmitted(false);
         setFormError('');
+        otp.resetOtp();
         setFormData({
           fullName: '',
           email: '',
@@ -678,7 +692,7 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,2fr)_minmax(0,2.5fr)] gap-4">
                     <div>
                       <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
                         Email Address
@@ -695,16 +709,104 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
                       <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
                         Phone Number *
                       </label>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="+91 "
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none focus:border-[#1575B3] focus:bg-white transition"
-                      />
+                      <div className="flex gap-2">
+                        <input
+                          type="tel"
+                          required
+                          placeholder="+91 "
+                          value={formData.phone}
+                          onChange={(e) => {
+                            const next = e.target.value;
+                            setFormData({ ...formData, phone: next });
+                            if (next !== formData.phone) otp.resetOtp();
+                          }}
+                          className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none focus:border-[#1575B3] focus:bg-white transition"
+                        />
+                        {otp.otpStatus !== 'verified' && (
+                          <button
+                            type="button"
+                            onClick={() => otp.sendOtp(formData.phone, formData.fullName || 'Website User')}
+                            disabled={otp.otpStatus === 'sending' || otp.resendIn > 0}
+                            className="shrink-0 px-3.5 py-2.5 text-xs font-semibold border border-[#1575B3] bg-white text-[#1575B3] hover:bg-[#F5FAFF] disabled:opacity-50 disabled:cursor-not-allowed transition active:scale-[0.98]"
+                          >
+                            {otp.otpStatus === 'sending'
+                              ? 'Sending…'
+                              : otp.resendIn > 0
+                                ? `Resend ${otp.resendIn}s`
+                                : otp.otpStatus === 'idle'
+                                  ? 'Send OTP'
+                                  : 'Resend OTP'}
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
+
+                  {otp.otpStatus === 'verified' && (
+                    <div className="flex flex-wrap items-center justify-between gap-2 border border-[#1E8E3E]/30 bg-[#F4FBF6] px-3.5 py-2.5">
+                      <span className="flex items-center gap-2 text-xs font-medium text-[#1E8E3E]">
+                        <CheckCircle2 className="w-4 h-4" />
+                        {formData.phone} verified on WhatsApp
+                      </span>
+                      <button
+                        type="button"
+                        onClick={otp.resetOtp}
+                        className="text-xs font-medium text-[#1575B3] underline underline-offset-2 hover:text-[#0E588A]"
+                      >
+                        Change number
+                      </button>
+                    </div>
+                  )}
+
+                  {(otp.otpStatus === 'sent' || otp.otpStatus === 'verifying') && (
+                    <div className="border border-[#DCEAF5] bg-[#F8FBFE] p-3.5 space-y-2.5">
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          inputMode="numeric"
+                          autoComplete="one-time-code"
+                          maxLength={6}
+                          placeholder="Enter 6-digit OTP"
+                          value={otp.otp}
+                          onChange={(e) => otp.setOtpField(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              e.preventDefault();
+                              otp.verifyOtp(formData.phone);
+                            }
+                          }}
+                          className="w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border border-[#DCEAF5] text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none focus:border-[#1575B3] focus:bg-white transition tracking-[0.4em] text-center font-semibold"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => otp.verifyOtp(formData.phone)}
+                          disabled={otp.otpStatus === 'verifying' || otp.otp.length !== 6}
+                          className="shrink-0 px-4 py-2.5 text-xs font-semibold bg-[#1575B3] hover:bg-[#0E588A] disabled:opacity-60 disabled:cursor-not-allowed text-white transition active:scale-[0.98]"
+                        >
+                          {otp.otpStatus === 'verifying' ? (
+                            <span className="flex items-center gap-1.5">
+                              <Loader2 className="w-3.5 h-3.5 animate-spin" /> Verifying
+                            </span>
+                          ) : (
+                            'Verify OTP'
+                          )}
+                        </button>
+                      </div>
+                      {otp.otpMsg && (
+                        <p
+                          className={`text-xs ${
+                            otp.otpTone === 'error'
+                              ? 'text-red-600'
+                              : otp.otpTone === 'success'
+                                ? 'text-[#1E8E3E]'
+                                : 'text-[#5F6B7A]'
+                          }`}
+                        >
+                          {otp.otpMsg}
+                        </p>
+                      )}
+                    </div>
+                  )}
 
                   <div>
                     <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
@@ -776,12 +878,17 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
 
                   <button
                     type="submit"
-                    disabled={formSending}
+                    disabled={formSending || otp.otpStatus !== 'verified'}
                     className="w-full flex items-center justify-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3.5 font-medium text-sm transition-colors shadow-sm mt-2"
                   >
-                    {formSending ? 'Submitting…' : 'Submit Inquiry'}
+                    {formSending ? 'Submitting…' : otp.otpStatus !== 'verified' ? 'Verify OTP to Submit' : 'Submit Inquiry'}
                     <ArrowRight className="w-4 h-4" />
                   </button>
+                  {otp.otpStatus !== 'verified' && !formError && (
+                    <p className="text-[11px] text-[#5F6B7A] -mt-2">
+                      Verify your WhatsApp number with the OTP to enable submission.
+                    </p>
+                  )}
                   {formError && (
                     <p className="text-xs text-red-600 bg-red-50 border border-red-200 px-3 py-2">
                       {formError}

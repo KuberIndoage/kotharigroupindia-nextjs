@@ -32,18 +32,38 @@ export async function sendWhatsAppOtp(
   const paramCount = Math.min(Math.max(Number(process.env.AISENSY_OTP_PARAM_COUNT || '1') || 1, 1), 5);
   const templateParams = Array.from({ length: paramCount }, () => otp);
 
+  // Copy Code / URL button parameter — Aisensy expects it in a separate `buttons` block.
+  const includeButton = process.env.AISENSY_OTP_INCLUDE_BUTTON !== 'false';
+
   try {
+    const payload: Record<string, unknown> = {
+      apiKey,
+      campaignName,
+      destination: phoneE164,
+      userName: userName || 'Website User',
+      source: 'Website',
+      templateParams,
+      media: {},
+      carouselCards: [],
+      location: {},
+      attributes: {},
+    };
+
+    if (includeButton) {
+      payload.buttons = [
+        {
+          type: 'button',
+          sub_type: 'url',
+          index: 0,
+          parameters: [{ type: 'text', text: otp }],
+        },
+      ];
+    }
+
     const res = await fetch(AISENSY_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        apiKey,
-        campaignName,
-        destination: phoneE164,
-        userName: userName || 'Website User',
-        source: 'Website',
-        templateParams,
-      }),
+      body: JSON.stringify(payload),
       signal: AbortSignal.timeout(15000),
     });
 

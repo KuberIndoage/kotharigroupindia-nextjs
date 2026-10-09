@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import { Menu, X, ChevronDown, ChevronRight, ChevronLeft, Phone, Mail, MapPin, Send, ArrowRight, Factory, Sprout, Users, Award, Building2, ArrowUp, Home } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, ChevronLeft, Phone, Mail, MapPin, Send, ArrowRight, Factory, Sprout, Users, Award, Building2, ArrowUp, Home, CheckCircle2, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import Script from 'next/script';
 import { useRouter } from 'next/navigation';
@@ -9,6 +9,7 @@ import {
   RECAPTCHA_SITE_KEY,
   getRecaptchaToken,
 } from '@/lib/recaptcha-client';
+import { useOtpVerification } from '@/lib/use-otp-verification';
 import { pipeSolutionsMegaMenu, irrigationSolutionsMegaMenu } from '@/data/products';
 import { getChildSolutions } from '@/data/solutions';
 import { normalizeSlug } from '@/lib/slug';
@@ -466,6 +467,7 @@ const [aboutOpen, setAboutOpen] = useState(false);
     requirement: 'Product Enquiry',
     otherRequirement: '',
   });
+  const otp = useOtpVerification();
 
 
    const [showTopButton, setShowTopButton] = useState(false);
@@ -576,6 +578,7 @@ const handleSolutionBack = () => {
     setMobileOpen(false);
     setActiveDropdown(null);
     setFormSubmitted(false);
+    otp.resetOtp();
     setFormData((prev) => ({ ...prev, division: defaultDivisionInterest }));
     setIsModalOpen(true);
     setAboutOpen(false);
@@ -584,6 +587,10 @@ const handleSolutionBack = () => {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formSending) return;
+    if (otp.otpStatus !== 'verified') {
+      setFormError('Please verify your phone number with the WhatsApp OTP first.');
+      return;
+    }
     setFormError('');
     setFormSending(true);
     try {
@@ -595,6 +602,10 @@ const handleSolutionBack = () => {
       });
       const data = await res.json().catch(() => null);
       if (!res.ok || !data?.ok) {
+        if (data?.verifyRequired) {
+          otp.resetOtp();
+          throw new Error(data?.error || 'Your OTP verification expired. Please verify again.');
+        }
         throw new Error(data?.error || 'Could not send your enquiry.');
       }
       setFormSubmitted(true);
@@ -602,6 +613,7 @@ const handleSolutionBack = () => {
         setIsModalOpen(false);
         setFormSubmitted(false);
         setFormError('');
+        otp.resetOtp();
         setFormData({
           fullName: '',
           email: '',
@@ -1691,16 +1703,16 @@ const handleSolutionBack = () => {
             onClick={() => setIsModalOpen(false)}
           />
 
-          <div className={`relative w-full max-w-4xl bg-white border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} shadow-2xl z-10 overflow-hidden my-auto max-h-[90vh] flex flex-col md:flex-row`}>
+          <div className={`relative w-full max-w-4xl bg-white border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} shadow-2xl z-10 overflow-hidden my-auto max-h-[90vh] flex flex-col md:flex-row`}>
             <button
               onClick={() => setIsModalOpen(false)}
-              className={`absolute top-4 right-4 z-20 p-2 text-[#5F6B7A] hover:text-[#111111] ${isIrrigation ? 'hover:bg-[#EAF6EE]' : 'hover:bg-[#F5FAFF]'} transition border border-transparent hover:${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'}`}
+              className={`absolute top-4 right-4 z-20 p-2 text-[#5F6B7A] hover:text-[#111111] ${isIrrigation ? 'hover:bg-[#F5FAFF]' : 'hover:bg-[#F5FAFF]'} transition border border-transparent hover:${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'}`}
               aria-label="Close dialog"
             >
               <X className="w-6 h-6" />
             </button>
 
-            <div className={`hidden md:flex md:w-5/12 ${isIrrigation ? 'bg-[#145E2A]' : 'bg-[#0E588A]'} text-white p-6 sm:p-8 flex-col justify-between shrink-0`}>
+            <div className={`hidden md:flex md:w-5/12 ${isIrrigation ? 'bg-[#0E588A]' : 'bg-[#0E588A]'} text-white p-6 sm:p-8 flex-col justify-between shrink-0`}>
               <div>
                 <img
                   src={isIrrigation ? '/logos/Kothari%20Irrigation_W.png' : '/logos/Kothari%20Pipes_W.png'}
@@ -1721,7 +1733,7 @@ const handleSolutionBack = () => {
 
               <div className="space-y-4 pt-6 border-t border-white/15">
                 <div className="flex items-start gap-3">
-                  <Phone className={`w-5 h-5 ${isIrrigation ? 'text-[#A9DDB8]' : 'text-[#82C3EC]'} shrink-0 mt-0.5`} />
+                  <Phone className={`w-5 h-5 ${isIrrigation ? 'text-[#82C3EC]' : 'text-[#82C3EC]'} shrink-0 mt-0.5`} />
                   <div>
                     <span className="block text-xs text-white/60 uppercase">Phone</span>
                     <span className="text-sm font-medium text-white">+91 1800 120 4343</span>
@@ -1729,7 +1741,7 @@ const handleSolutionBack = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Mail className={`w-5 h-5 ${isIrrigation ? 'text-[#A9DDB8]' : 'text-[#82C3EC]'} shrink-0 mt-0.5`} />
+                  <Mail className={`w-5 h-5 ${isIrrigation ? 'text-[#82C3EC]' : 'text-[#82C3EC]'} shrink-0 mt-0.5`} />
                   <div>
                     <span className="block text-xs text-white/60 uppercase">Email</span>
                     <span className="text-sm font-medium text-white">{formData.division === 'Pipe Division' ? 'sales.pipe@kotharigroupindia.com' : 'sales.irrigation@kotharigroupindia.com'}</span>
@@ -1737,7 +1749,7 @@ const handleSolutionBack = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className={`w-5 h-5 ${isIrrigation ? 'text-[#A9DDB8]' : 'text-[#82C3EC]'} shrink-0 mt-0.5`} />
+                  <MapPin className={`w-5 h-5 ${isIrrigation ? 'text-[#82C3EC]' : 'text-[#82C3EC]'} shrink-0 mt-0.5`} />
                   <div>
                     <span className="block text-xs text-white/60 uppercase">Headquarters</span>
                     <a href='https://maps.app.goo.gl/qCPHM3aF8EQkpaBw7' target="_blank" className="flex items-start gap-2 hover:text-white hover:underline ">
@@ -1778,11 +1790,11 @@ const handleSolutionBack = () => {
                       placeholder="e.g. Rajesh Kumar"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,2fr)_minmax(0,2.5fr)] gap-4">
                     <div>
                       <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
                         Email Address
@@ -1792,30 +1804,118 @@ const handleSolutionBack = () => {
                         placeholder="name@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                        className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
                         Phone Number *
                       </label>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="+91 "
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
-                      />
+                      <div className="flex gap-2">
+                        <input
+                          type="tel"
+                          required
+                          placeholder="+91 "
+                          value={formData.phone}
+                          onChange={(e) => {
+                            const next = e.target.value;
+                            setFormData({ ...formData, phone: next });
+                            if (next !== formData.phone) otp.resetOtp();
+                          }}
+                          className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                        />
+                        {otp.otpStatus !== 'verified' && (
+                          <button
+                            type="button"
+                            onClick={() => otp.sendOtp(formData.phone, formData.fullName || 'Website User')}
+                            disabled={otp.otpStatus === 'sending' || otp.resendIn > 0}
+                            className={`shrink-0 px-3.5 py-2.5 text-xs font-semibold border bg-white ${isIrrigation ? 'border-[#1575B3] text-[#1575B3] hover:bg-[#F5FAFF]' : 'border-[#1575B3] text-[#1575B3] hover:bg-[#F5FAFF]'} disabled:opacity-50 disabled:cursor-not-allowed transition active:scale-[0.98]`}
+                          >
+                            {otp.otpStatus === 'sending'
+                              ? 'Sending…'
+                              : otp.resendIn > 0
+                                ? `Resend ${otp.resendIn}s`
+                                : otp.otpStatus === 'idle'
+                                  ? 'Send OTP'
+                                  : 'Resend OTP'}
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
+
+                  {otp.otpStatus === 'verified' && (
+                    <div className="flex flex-wrap items-center justify-between gap-2 border border-[#1E8E3E]/30 bg-[#F4FBF6] px-3.5 py-2.5">
+                      <span className="flex items-center gap-2 text-xs font-medium text-[#1E8E3E]">
+                        <CheckCircle2 className="w-4 h-4" />
+                        {formData.phone} verified on WhatsApp
+                      </span>
+                      <button
+                        type="button"
+                        onClick={otp.resetOtp}
+                        className="text-xs font-medium text-[#1575B3] underline underline-offset-2 hover:text-[#0E588A]"
+                      >
+                        Change number
+                      </button>
+                    </div>
+                  )}
+
+                  {(otp.otpStatus === 'sent' || otp.otpStatus === 'verifying') && (
+                    <div className={`border p-3.5 space-y-2.5 ${isIrrigation ? 'border-[#DCEAF5] bg-[#F8FBFE]' : 'border-[#DCEAF5] bg-[#F8FBFE]'}`}>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          inputMode="numeric"
+                          autoComplete="one-time-code"
+                          maxLength={6}
+                          placeholder="Enter 6-digit OTP"
+                          value={otp.otp}
+                          onChange={(e) => otp.setOtpField(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              e.preventDefault();
+                              otp.verifyOtp(formData.phone);
+                            }
+                          }}
+                          className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition tracking-[0.4em] text-center font-semibold`}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => otp.verifyOtp(formData.phone)}
+                          disabled={otp.otpStatus === 'verifying' || otp.otp.length !== 6}
+                          className={`shrink-0 px-4 py-2.5 text-xs font-semibold text-white disabled:opacity-60 disabled:cursor-not-allowed transition active:scale-[0.98] ${isIrrigation ? 'bg-[#1575B3] hover:bg-[#0E588A]' : 'bg-[#1575B3] hover:bg-[#0E588A]'}`}
+                        >
+                          {otp.otpStatus === 'verifying' ? (
+                            <span className="flex items-center gap-1.5">
+                              <Loader2 className="w-3.5 h-3.5 animate-spin" /> Verifying
+                            </span>
+                          ) : (
+                            'Verify OTP'
+                          )}
+                        </button>
+                      </div>
+                      {otp.otpMsg && (
+                        <p
+                          className={`text-xs ${
+                            otp.otpTone === 'error'
+                              ? 'text-red-600'
+                              : otp.otpTone === 'success'
+                                ? 'text-[#1E8E3E]'
+                                : 'text-[#5F6B7A]'
+                          }`}
+                        >
+                          {otp.otpMsg}
+                        </p>
+                      )}
+                    </div>
+                  )}
 
                   <div>
                     <label className="block text-xs font-medium text-[#111111] uppercase tracking-wider mb-1.5">
                       Division Interest
                     </label>
                     <div
-                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111]`}
+                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111]`}
                     >
                       {defaultDivisionInterest}
                     </div>
@@ -1829,7 +1929,7 @@ const handleSolutionBack = () => {
                       required
                       value={formData.iam}
                       onChange={(e) => setFormData({ ...formData, iam: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
                     >
                       {iamOptions.map((option) => (
                         <option key={option} value={option}>{option}</option>
@@ -1844,7 +1944,7 @@ const handleSolutionBack = () => {
                     <select
                       value={formData.requirement}
                       onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
+                      className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition`}
                     >
                       {requirements.map((req) => (
                         <option key={req} value={req}>{req}</option>
@@ -1862,19 +1962,24 @@ const handleSolutionBack = () => {
                         placeholder="Please specify your requirement..."
                         value={formData.otherRequirement}
                         onChange={(e) => setFormData({ ...formData, otherRequirement: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#C8E6C9]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1E8E3E]' : 'focus:border-[#1575B3]'} focus:bg-white transition resize-none`}
+                        className={`w-full px-3.5 py-2.5 text-sm bg-[#F5F6F8] border ${isIrrigation ? 'border-[#DCEAF5]' : 'border-[#DCEAF5]'} text-[#111111] placeholder:text-[#5F6B7A]/60 focus:outline-none ${isIrrigation ? 'focus:border-[#1575B3]' : 'focus:border-[#1575B3]'} focus:bg-white transition resize-none`}
                       />
                     </div>
                   )}
 
                   <button
                     type="submit"
-                    disabled={formSending}
-                    className={`w-full flex items-center justify-center gap-2 ${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} disabled:opacity-60 disabled:cursor-not-allowed text-white py-3.5 font-medium text-sm transition-colors shadow-sm mt-2`}
+                    disabled={formSending || otp.otpStatus !== 'verified'}
+                    className={`w-full flex items-center justify-center gap-2 ${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]'} disabled:opacity-60 disabled:cursor-not-allowed text-white py-3.5 font-medium text-sm transition-colors shadow-sm mt-2`}
                   >
-                    {formSending ? 'Submitting…' : 'Submit Inquiry'}
+                    {formSending ? 'Submitting…' : otp.otpStatus !== 'verified' ? 'Verify OTP to Submit' : 'Submit Inquiry'}
                     <ArrowRight className="w-4 h-4" />
                   </button>
+                  {otp.otpStatus !== 'verified' && !formError && (
+                    <p className="text-[11px] text-[#5F6B7A] -mt-2">
+                      Verify your WhatsApp number with the OTP to enable submission.
+                    </p>
+                  )}
                   {formError && (
                     <p className="text-xs text-red-600 bg-red-50 border border-red-200 px-3 py-2">
                       {formError}

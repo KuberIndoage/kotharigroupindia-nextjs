@@ -6,6 +6,8 @@ import {
   verifyRecaptchaToken,
   NOT_CONFIGURED,
 } from '@/lib/mailer';
+import { aisensyConfigured } from '@/lib/aisensy';
+import { isVerified, normalizePhone } from '@/lib/otp-store';
 
 export const runtime = 'nodejs';
 
@@ -24,6 +26,15 @@ function resolveRecipient(division: string): string {
     process.env.CONTACT_IRRIGATION_EMAIL ||
     'sales.irrigation@kotharigroupindia.com'
   );
+}
+
+// WhatsApp OTP gate: the phone number must be verified before the enquiry is sent.
+// OTP_REQUIRED=true|false overrides; otherwise the gate is on whenever AiSensy is
+// configured (and during development), so a missing config never hard-blocks prod.
+function otpRequired(): boolean {
+  const flag = process.env.OTP_REQUIRED;
+  if (flag) return flag === 'true';
+  return aisensyConfigured() || process.env.NODE_ENV !== 'production';
 }
 
 export async function POST(req: Request) {
@@ -70,6 +81,21 @@ export async function POST(req: Request) {
       { ok: false, error: 'One or more fields are too long.' },
       { status: 400 }
     );
+  }
+
+  // WhatsApp OTP verification — phone must be verified in this server session.
+  if (otpRequired()) {
+    const normalizedPhone = normalizePhone(phone);
+    if (!normalizedPhone || !isVerified(normalizedPhone)) {
+      return NextResponse.json(
+        {
+          ok: false,
+          verifyRequired: true,
+          error: 'Please verify your phone number with the WhatsApp OTP before submitting.',
+        },
+        { status: 403 }
+      );
+    }
   }
 
   // reCAPTCHA v3 spam check — enforced only when a secret is configured.
