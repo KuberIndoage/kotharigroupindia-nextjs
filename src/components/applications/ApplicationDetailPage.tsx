@@ -13,7 +13,7 @@ export const ApplicationDetailPageTemplate: React.FC<{ detail: ApplicationDetail
   detail,
 }) => {
   const isPipe = detail.division === 'pipe-division';
-
+ 
   return (
     <div className="text-left"> 
       <ApplicationDetailHero detail={detail} />

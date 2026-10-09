@@ -1214,6 +1214,416 @@ export const applicationDetails: ApplicationDetail[] = [
       buttonText: 'Discuss Your Requirement',
     },
   },
+
+
+  {
+    slug: 'residential-plumbing-system',
+    division: 'pipe-division',
+    parentHref: '/pipe-applications',
+    parentLabel: 'Pipe Applications',
+    divisionHref: '/pipe-division',
+    metaTitle: 'Residential Plumbing System | UPVC & CPVC | Kothari',
+    metaDescription:
+      'Explore Kothari UPVC and CPVC pipes for residential plumbing, including cold-water distribution and hot-water supply systems.',
+    heroEyebrow: 'Pipe Applications',
+    h1: 'Residential Plumbing Systems with UPVC & CPVC Pipes',
+    tagline:
+      'Planned piping for cold- and hot-water distribution across kitchens, bathrooms and other residential water-use points.',
+    image: '/heronew.jpg',
+    bannerImage: '/farm.png',
+    overview: {
+      heading: 'Understanding Residential Plumbing Systems',
+      paragraphs: [
+        'A residential plumbing system has to deliver water to multiple points in a house without compromising flow, pressure or water quality. From the incoming supply line to the kitchen, bathroom, wash area and water-heater connections, each section of the network has a specific role.',
+        'The piping system also needs to work within concealed walls, shafts, ceilings and service areas, where repairs can be inconvenient once construction is complete. When you’re picking pipe material, you’ve got to think about water temperature, pressure, how you’re setting things up, and what the system’s actually supposed to do. ',
+        `In most homes, there’s a clear line: one set of pipes for cold water, and another for hot.  Kothari's UPVC plumbing system is positioned for cold-water applications, while its KwikFlow CPVC system is designed for hot- and cold-water plumbing. The CPVC range is specified to handle temperatures up to 93°C and follows IS 15778 for pipes.`,
+        'The objective is to create a properly planned network in which the pipe, fittings and joints work together throughout the building.',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Residential Plumbing Systems Are Used',
+      intro: [
+        `Residential plumbing systems are used wherever water needs to be distributed from the building's incoming supply or storage arrangement to individual points of use.`,
+      ],
+      items: [
+        {
+          label: 'Independent houses and villas',
+          text: 'Water is distributed from the main supply or storage tank to kitchens, bathrooms, utility areas and other fixtures.',
+        },
+        {
+          label: 'Apartments and residential towers',
+          text: ' Vertical and horizontal plumbing networks distribute water across multiple floors and individual dwelling units.',
+        },
+        {
+          label: 'Housing developments',
+          text: 'Repeated plumbing layouts require consistent pipe and fitting specifications across multiple homes.',
+        },
+        {
+          label: 'Bathrooms and kitchens',
+          text: ' Cold-water lines supply fixtures, while CPVC is used where the system carries hot water.',
+        },
+        {
+          label: 'Renovation and replacement projects',
+          text: 'Existing plumbing sections may need to be replaced or extended while maintaining compatibility with the planned system.',
+        },
+      ],
+      note: `Kothari's CPVC catalogue specifically identifies residential and commercial buildings, public utilities, and concealed, down-take and terrace-looping installations among its applications.`,
+    },
+    requirements: {
+      heading: 'Key Requirements for Residential Plumbing',
+      intro: 'Residential plumbing should be planned around how the building will actually consume water. Pipe selection is not simply a question of choosing a diameter.',
+      items: [
+        {
+          label: 'Water Temperature',
+          text: 'The first distinction is whether a line carries cold or hot water. UPVC is positioned for cold-water plumbing, while Kothari KwikFlow CPVC is designed for hot- and cold-water applications and is specified for temperatures up to 93°C.',
+        },
+        {
+          label: 'Pressure and Flow',
+          text: 'The piping system needs to accommodate the operating pressure and expected flow of the building. Pipe size and class should be selected according to the plumbing design rather than using the same size throughout the house.',
+        },
+        {
+          label: 'Installation Arrangement',
+          text: 'Residential pipes may run through concealed walls, shafts, ceilings, service ducts or exposed areas. The installation method, pipe support and accessibility for maintenance should be considered during planning.',
+        },
+        {
+          label: 'Jointing',
+          text: `A plumbing system depends on properly made connections at changes of direction, branches and fixtures. Kothari's CPVC system uses solvent-cement joints, while its UPVC ASTM plumbing system uses compatible fittings and jointing arrangements.`,
+        },
+        {
+          label: 'Material Suitability',
+          text: 'The selected pipe should match the intended service. Using a cold-water plumbing pipe where the application requires hot-water service, for example, would not be an appropriate material selection.',
+        },
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari Products for Residential Plumbing',
+      intro: `The simplest way to select between Kothari's residential plumbing systems is to start with the water service required.`,
+      items: [
+        {
+          name: 'Kothari KwikFit UPVC Pipes',
+          url: '/upvc/upvc-astm-plumbing-piping-system',
+          image: `${ADMIN}/2025/04/UPVC-PIPES-FITTINGS.webp`,
+          paragraphs: [
+            `Kothari KwikFit UPVC is an ASTM plumbing system intended for cold-water plumbing. The published product material identifies UV and fire resistance, lead-free construction, low friction loss and easy installation among its characteristics. If you are installing a typical cold-water system, you will usually see pipes made to ASTM D1785, with fittings that match ASTM D2466 or D2467 standards. That setup works for moving water from a tank or main supply over to taps, sinks, and anywhere else you need cold water around the house.`,
+          ],
+        },
+        {
+          name: 'Kothari KwikFlow CPVC Pipes',
+          url: '/cpvc/cpvc-hot-and-cold-water-piping-system',
+          image: `${ADMIN}/2025/04/CPVC-PIPES-FITTINGS.webp`,
+          paragraphs: [
+            `If the house needs to handle hot water, things change a bit. Kothari KwikFlow CPVC, for instance, is meant for both hot and cold plumbing. So, if you're running hot water to showers or kitchen sinks, that is a good fit. The range includes pipes between 15 mm and 150 mm and fittings from 15 mm to 50 mm. Pipes sized 15–50 mm follow IS 15778 standards, and bigger pipes are listed with ASTM standards in the product catalogue. `,
+            'For residential applications, CPVC can therefore be considered for lines serving hot-water fixtures as well as cold-water sections where the project specifies CPVC.',
+          ],
+        },
+       
+      ],
+      mapping: {
+        heading: 'Application-to-Product Mapping',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Cold-water distribution', product: 'KwikFit UPVC', role: 'Carries cold water from the supply/storage network to fixtures' },
+          { requirement: 'Hot-water distribution', product: 'KwikFlow CPVC', role: 'Carries hot water from the water-heating system to fixtures' },
+          { requirement: 'Hot- and cold-water plumbing', product: 'KwikFlow CPVC', role: 'Provides a common piping system where both services are specified' },
+          { requirement: 'Cold-water household plumbing', product: 'KwikFit UPVC', role: 'Used for applicable cold-water distribution sections' },
+          { requirement: 'Pipe connections and changes in direction', product: 'Compatible Kothari fittings', role: 'Connects pipe sections, branches and fixtures within the respective system' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: 'How a Residential Plumbing System Works',
+      intro: 'A typical residential water-supply system can be understood as a series of connected stages:',
+      flow: [
+        'Municipal / Approved Water Source',
+        'Underground or Overhead Storage',
+        'Main Building Supply Line',
+        'Floor / Zone Distribution',
+        'Cold & Hot Water Lines',
+        'Individual Fixtures',
+      ],
+      steps: [
+        {
+          title: 'Water is drawn from the source',
+          text: 'Water enters the system from the available farm source, such as a borewell, well, pond, reservoir or storage tank. The pump moves the water into the supply pipeline.',
+        },
+        {
+          title: 'The main line carries water across the farm',
+          text: 'The main pipeline takes water from the source towards the areas where it is required. HDPE or Self Fit PVC Pipe may be considered depending on the pipeline\u2019s design, pressure and installation requirements. Kothari lists both product categories for agricultural water-supply and irrigation applications.',
+        },
+        {
+          title: 'Sub-main lines distribute the water',
+          text: 'As the pipeline reaches different farm sections, sub-main lines divide the flow towards individual fields, orchard blocks, irrigation zones or other points of use.',
+        },
+        {
+          title: 'Fittings create the network',
+          text: 'Elbows, tees, reducers and adapters allow the pipeline to follow the farm layout and connect different pipe sizes or branches. Kothari\u2019s Agri PVC Moulded Fittings range includes these connection types.',
+        },
+        {
+          title: 'Water reaches its final point of use',
+          text: 'The distribution line ultimately feeds the required irrigation system, storage facility or farm-use point. Where the water is being used for drip or sprinkler irrigation, the farm water-supply network becomes the upstream section feeding that irrigation system.',
+        },
+      ],
+    },
+    cta: {
+      heading: 'Planning a Residential Plumbing System?',
+      body: 'Share your building layout, water-supply requirements and hot- or cold-water application with the Kothari team to discuss the appropriate piping range.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
+{
+  slug: 'commercial-building-plumbing-system',
+
+  division: 'pipe-division',
+
+  parentHref: '/pipe-applications',
+
+  parentLabel: 'Pipe Applications',
+
+  divisionHref: '/pipe-division',
+
+  metaTitle: 'Commercial Building Plumbing Pipes | Kothari',
+
+  metaDescription:
+    'Explore Kothari UPVC and CPVC pipes for commercial building plumbing, including cold-water and hot-water distribution systems.',
+
+  heroEyebrow: 'Pipe Applications',
+
+  h1: 'Commercial Building Plumbing Systems with UPVC & CPVC',
+
+  tagline:
+    'Piping systems for organised hot- and cold-water distribution across offices, hotels, hospitals and commercial buildings.',
+
+  image: '/heronew.jpg',
+  bannerImage: '/farm.png',
+
+  overview: {
+    heading: 'Understanding Commercial Building Plumbing Systems',
+
+    paragraphs: [
+      'Commercial buildings are a whole different story when it comes to plumbing. You have got hundreds of water points, everything from toilets and washrooms to kitchens, pantries, and utility spaces spread over several floors. If the water-supply network is not planned right, nothing works smoothly.',
+
+      'It is nothing like a small house. Here, pipes run much longer, branch off in all directions, and each floor or zone needs its own pressure setup. Plus, you have to supply both cold and hot water, depending on what each space needs.',
+
+      'Pipe selection therefore needs to be based on the actual service. Water temperature, operating pressure, pipe size, building height, routing and installation conditions all influence the specification.',
+
+      `Kothari's KwikFit UPVC system is positioned for cold-water plumbing, while KwikFlow CPVC is designed for hot- and cold-water applications. The published KwikFlow range is specified for temperatures up to 93°C and includes pipes from 15 mm to 150 mm.`,
+    ],
+  },
+
+  whereUsed: {
+    heading: 'Where Commercial Plumbing Systems Are Used',
+
+    intro: [
+      'Commercial plumbing systems are used in buildings where water needs to be distributed consistently across multiple areas, floors and services.',
+    ],
+
+    items: [
+      {
+        label: 'Office buildings',
+
+        text: 'Water is distributed to washrooms, pantry areas and other employee or service facilities across different floors.',
+      },
+
+      {
+        label: 'Hotels and hospitality buildings',
+
+        text: 'Guest rooms, bathrooms, kitchens and service areas can require both cold- and hot-water distribution.',
+      },
+
+      {
+        label: 'Hospitals and healthcare facilities',
+
+        text: 'Plumbing networks serve patient areas, washrooms, kitchens and support facilities, with material selection governed by the project requirements.',
+      },
+
+      {
+        label: 'Shopping malls and retail buildings',
+
+        text: 'Water-supply lines serve public washrooms, food-service areas and building services.',
+      },
+
+      {
+        label: 'Educational and institutional buildings',
+
+        text: 'Schools, colleges and other institutions require distribution networks serving multiple blocks, floors or facilities.',
+      },
+
+      {
+        label: 'Commercial complexes',
+
+        text: 'Multiple tenants or functional areas may share a common water-supply infrastructure.',
+      },
+    ],
+
+    note: `Kothari's published plumbing material identifies commercial buildings, public utilities and applications such as hotels and hospitals for its plumbing pipe systems.`,
+  },
+
+  requirements: {
+    heading: 'Key Requirements for Commercial Building Plumbing',
+
+    intro: 'Commercial plumbing needs to be planned as a network rather than as a collection of individual fixture connections. The design should account for demand, routing, pressure and the type of water being carried.',
+
+    items: [
+      {
+        label: 'Water Demand and Flow',
+
+        text: 'The number of fixtures and their expected usage influence the required flow through different sections of the system. Main lines, floor-level distribution and branches may therefore require different pipe sizes.',
+      },
+
+      {
+        label: 'Building Height and Pressure',
+
+        text: 'Multi-storey buildings can experience different pressure conditions between lower and upper floors. Pipe selection should follow the hydraulic design and the operating pressure expected in each section.',
+      },
+
+      {
+        label: 'Hot- and Cold-Water Service',
+
+        text: 'The temperature of the water is an important material-selection factor. Cold-water sections can use the specified UPVC plumbing system, while hot-water lines require a system designed for elevated temperatures. Kothari KwikFlow CPVC is specified for hot- and cold-water plumbing up to 93°C.',
+      },
+
+      {
+        label: 'Installation and Routing',
+
+        text: 'Commercial piping may run through shafts, service ducts, false ceilings, walls or other designated service spaces. The routing should allow appropriate access during construction and maintenance.',
+      },
+
+      {
+        label: 'Jointing and System Compatibility',
+
+        text: 'Pipe, fittings and jointing materials should be compatible and installed according to the applicable product and project requirements. Kothari CPVC installation guidance specifies the use of compatible CPVC solvent cement for its system.',
+      },
+    ],
+  },
+
+  products: {
+    heading: 'Recommended Kothari Products for Commercial Plumbing',
+
+    intro: 'For commercial building water supply, the choice between UPVC and CPVC should begin with the service temperature and the requirements of each plumbing section.',
+
+    items: [
+      {
+        name: 'Kothari KwikFit UPVC Pipes',
+        url: '/upvc/upvc-astm-plumbing-piping-system',
+        image: `${ADMIN}/2025/04/UPVC-PIPES-FITTINGS.webp`,
+        paragraphs: [
+          `KwikFit is Kothari's UPVC ASTM plumbing system for cold-water applications. The published range identifies UV and fire resistance, lead-free construction, low friction loss and easy installation among its characteristics. `,
+          `For cold-water networks, they usually use pipes according to ASTM D1785 and fittings that match ASTM D2466 or D2467 `,
+          `This kind of setup gets water from the main supply or storage tanks up to every floor, pantry, washroom basically anywhere people expect water.`,
+        ],
+      },
+
+      {
+        name: 'Kothari KwikFlow CPVC Pipes',
+        url: '/cpvc/cpvc-hot-and-cold-water-piping-system',
+        image: `${ADMIN}/2025/04/CPVC-PIPES-FITTINGS.webp`,
+        paragraphs: [
+          `Now, when you need hot-water distribution in a place like a hotel, hospital, or busy kitchen, CPVC systems step in. Kothari's KwikFlow CPVC plumbing covers hot and cold water, with pipes built to IS 15778 standards and fittings made to ASTM D2846 and IS 17546. The pipes range from 15 mm up to 150 mm; fittings go from 15 mm to 50 mm. These systems hold strong up to 93°C. `,
+          'This makes CPVC relevant where a commercial building requires hot-water distribution, such as hotels, hospitals, kitchens and other facilities where heated water is part of the plumbing design.',
+        ],
+      },
+    ],
+
+    mapping: {
+      heading: 'Application Mapping',
+
+      columnHeadings: [
+        'Application Requirement',
+        'Recommended Kothari Product',
+        'Role in the System',
+      ],
+
+      rows: [
+        {
+          requirement: 'Cold-water distribution',
+          product: 'KwikFit UPVC',
+          role: 'Distribution of cold water to applicable building services',
+        },
+
+        {
+          requirement: 'Hot-water distribution',
+          product: 'KwikFlow CPVC',
+          role: 'Distribution of heated water to designated fixtures',
+        },
+
+        {
+          requirement: 'Combined hot- and cold-water plumbing',
+          product: 'KwikFlow CPVC',
+          role: 'Piping system for projects where CPVC is specified for both services',
+        },
+
+        {
+          requirement: 'Floor-level branches',
+          product: 'KwikFit UPVC / KwikFlow CPVC',
+          role: 'Selected according to water temperature and system design',
+        },
+
+        {
+          requirement: 'Pipe connections and changes in direction',
+          product: 'Compatible Kothari fittings',
+          role: 'Connects branches, changes direction and interfaces with fixtures',
+        },
+      ],
+    },
+  },
+
+  howItWorks: {
+    heading: 'How a Commercial Building Plumbing System Works',
+
+    intro: 'A typical commercial water-supply system can be understood through the following flow:',
+
+    flow: [
+      'Municipal / Approved Water Source',
+
+      'Storage Tank / Water Treatment, Where Required',
+
+      'Building Distribution Main',
+
+      'Vertical Risers',
+
+      'Floor-Level Distribution',
+
+      'Hot & Cold Water Branches',
+
+      'Fixtures and Points of Use',
+    ],
+
+    // MISSING: The supplied content does not contain
+    // detailed step-by-step descriptions for the flow.
+    steps: [
+       {
+          title: 'Water is drawn from the source',
+          text: 'Water enters the system from the available farm source, such as a borewell, well, pond, reservoir or storage tank. The pump moves the water into the supply pipeline.',
+        },
+        {
+          title: 'The main line carries water across the farm',
+          text: 'The main pipeline takes water from the source towards the areas where it is required. HDPE or Self Fit PVC Pipe may be considered depending on the pipeline\u2019s design, pressure and installation requirements. Kothari lists both product categories for agricultural water-supply and irrigation applications.',
+        },
+        {
+          title: 'Sub-main lines distribute the water',
+          text: 'As the pipeline reaches different farm sections, sub-main lines divide the flow towards individual fields, orchard blocks, irrigation zones or other points of use.',
+        },
+        {
+          title: 'Fittings create the network',
+          text: 'Elbows, tees, reducers and adapters allow the pipeline to follow the farm layout and connect different pipe sizes or branches. Kothari\u2019s Agri PVC Moulded Fittings range includes these connection types.',
+        },
+        {
+          title: 'Water reaches its final point of use',
+          text: 'The distribution line ultimately feeds the required irrigation system, storage facility or farm-use point. Where the water is being used for drip or sprinkler irrigation, the farm water-supply network becomes the upstream section feeding that irrigation system.',
+        },
+    ],
+  },
+
+  cta: {
+    heading: 'Planning Plumbing for a Commercial Building?',
+
+    body: 'Share your building type, number of floors and hot- or cold-water requirements with the Kothari team to discuss the appropriate piping range.',
+
+    buttonText: 'Discuss Your Requirement',
+  },
+},
+
+
   
 ];
 

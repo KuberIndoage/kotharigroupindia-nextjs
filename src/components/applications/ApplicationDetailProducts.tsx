@@ -16,10 +16,10 @@ export const ApplicationDetailProducts: React.FC<{
 }> = ({ products, isPipe }) => {
   // const isGreen = !isPipe;
   const isGreen = isPipe;
-  const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
-  const accentGroupHoverText = isGreen ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
-  const accentHoverText = isGreen ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
-  const accentText = isGreen ? 'text-[#1E8E3E]' : 'text-[#1575B3]';
+  const accentHoverBorder = isGreen ? 'hover:border-[#1575B3]' : 'hover:border-[#1575B3]';
+  const accentGroupHoverText = isGreen ? 'group-hover:text-[#1575B3]' : 'group-hover:text-[#1575B3]';
+  const accentHoverText = isGreen ? 'hover:text-[#1575B3]' : 'hover:text-[#1575B3]';
+  const accentText = isGreen ? 'text-[#1575B3]' : 'text-[#1575B3]';
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);

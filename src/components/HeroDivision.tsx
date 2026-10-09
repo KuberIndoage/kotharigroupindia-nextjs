@@ -32,13 +32,14 @@ const BANNER_IMAGES: Record<
   { src: string; mobile?: string }[]
 > = {
   irrigation: [
-    { src: '/banners/irrigation/irrigation1.png' },
-    { src: '/banners/irrigation/irrigation2.png' },
+    { src: '/banners/irrigation/irrigation_1.png' },
+    { src: '/banners/irrigation/irrigation_2.png' },
+      { src: '/banners/irrigation/irrigation_3.png' },
   ],
   pipe: [
-    { src: '/banners/pipe/pipe1.png', mobile: '/banners/pipe/pipe1mobile.jpg' },
-    { src: '/banners/pipe/pipe2.png' },
-    { src: '/banners/pipe/pipe3.png' },
+    { src: '/banners/pipe/pipe_1.png', mobile: '/banners/pipe/pipe1mobile.jpg' },
+    { src: '/banners/pipe/pipe_2.png' },
+    { src: '/banners/pipe/pipe_3.png' }, 
   ],
 };
 
