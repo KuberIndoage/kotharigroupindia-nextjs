@@ -181,6 +181,7 @@ export const irrigationApplications: DivisionApplications = {
           title: 'Irrigation for Other Field Crops',
           description:
             'Flexible irrigation solutions adaptable to pulses, oilseeds, fodder, and other field crops.',
+          detailSlug: 'irrigation-for-field-crops',
           image: 'https://picsum.photos/seed/kothari-field-crops/800/600',
           products: [
             { name: 'LD Krishi Pipe (Lay Flat Tubes)', url: '/pe-pipes-and-fittings/ld-krishi-pipe-lay-flat-tubes' },
@@ -289,6 +290,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Municipal Water Supply Pipes',
           description:
             'Durable pipe systems for city and town water distribution networks.',
+          detailSlug: 'municipal-water-supply',
           image: 'https://picsum.photos/seed/kothari-municipal/800/600',
           products: [
             { name: 'HDPE Piping', url: '/pe-pipes-and-fittings/hdpe-piping' },
@@ -299,6 +301,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Rural Water Supply Pipes',
           description:
             'MDPE pipes and compression fittings supporting Jal Jeevan Mission and rural water access projects.',
+          detailSlug: 'rural-water-supply',
           image: 'https://picsum.photos/seed/kothari-rural-water/800/600',
           products: [
             { name: 'MDPE Pipes', url: '/pe-pipes-and-fittings/mdpe-pipes' },
@@ -3697,6 +3700,481 @@ export const applicationDetails: ApplicationDetail[] = [
     buttonText: 'Discuss Your Requirement',
   },
 },
+  {
+    slug: 'drip-irrigation-for-sugarcane',
+    division: 'irrigation-division',
+    parentHref: '/irrigation-applications',
+    parentLabel: 'Irrigation Applications',
+    divisionHref: '/irrigation-division',
+    metaTitle: 'Drip Irrigation for Sugarcane | Kothari Irrigation',
+    metaDescription:
+      'Explore drip irrigation for sugarcane, including field layout, water distribution requirements and Kothari K-Lin dripline options.',
+    heroEyebrow: 'Irrigation Applications',
+    h1: 'Drip Irrigation for Sugarcane',
+    tagline:
+      'A planned drip irrigation system helps distribute water along sugarcane rows while keeping field layout, water supply and irrigation control in view.',
+    image: '/heronew.jpg',
+    bannerImage: '/drip.png',
+    overview: {
+      heading: 'Understanding Drip Irrigation for Sugarcane',
+      paragraphs: [
+        'Sugarcane has a relatively long crop cycle, and irrigation needs to be managed across the crop area throughout its growth stages. In larger fields, the challenge is not only bringing water to the farm but distributing it through the rows in an organised manner.',
+        'Drip irrigation for sugarcane uses a network of mainlines, submain or distribution lines and driplines placed along the crop rows. Water moves from the source through the pipeline network and reaches the crop through the dripline. This makes the design of the distribution network an important part of the overall irrigation system.',
+        'Field size, row arrangement, water availability, operating pressure, filtration and the number of irrigation sections all influence how the system should be planned. The dripline also needs to suit the field conditions and remain practical to operate and maintain during the crop cycle.',
+        'For farmers and agricultural professionals, the objective is to create a water-distribution arrangement that matches the sugarcane field layout rather than treating the dripline as an isolated component.',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Drip Irrigation for Sugarcane Is Used',
+      intro: [
+        'Drip irrigation can be planned for sugarcane fields where water needs to be distributed along defined crop rows through a pipeline-based irrigation network. The system can be adapted to the field layout, water source and method of irrigation management',
+        'Common applications include:',
+      ],
+      items: [
+        {
+          label: 'Commercial Sugarcane Farms',
+          text: 'Larger sugarcane farms can use row-based drip distribution with the field divided into manageable irrigation sections.',
+        },
+        {
+          label: 'Open-Field Sugarcane Cultivation',
+          text: 'In open fields, the dripline is positioned along the crop rows and connected to the wider irrigation network.',
+        },
+        {
+          label: 'New Sugarcane Plantations',
+          text: 'For newly established fields, the irrigation layout can be planned along with the crop-row arrangement so that distribution lines and dripline locations are considered from the beginning.',
+        },
+        {
+          label: 'Established Sugarcane Fields',
+          text: 'Existing farms can assess their water source, current pipeline arrangement and crop layout before developing or modifying the drip irrigation network.',
+        },
+        {
+          label: 'Multi-Section Irrigation',
+          text: 'Where a field is divided into multiple sections, the pipeline arrangement can be planned to supply different areas according to the irrigation schedule and available water.',
+        },
+       
+      ],
+     
+    },
+    requirements: {
+      heading: 'Key Requirements for Sugarcane Drip Irrigation',
+      intro: 'A sugarcane drip irrigation system should be planned around the field rather than selecting the dripline first. The crop-row arrangement, available water and irrigation network need to work togethe.',
+      items: [
+        {
+          label: 'Water Source and Availability',
+          text: ' Understand the source, available water and expected irrigation requirement before sizing the distribution network. This provides the basis for planning the mainline and field sections.',
+        },
+        {
+          label: 'Flow and Pressure',
+          text: 'The irrigation system needs suitable flow and pressure at the field level. Mainlines, distribution lines and driplines should be considered as one connected network.',
+        },
+        {
+          label: 'Field Layout',
+          text: 'Sugarcane is planted in defined rows, so the position and length of the dripline should correspond with the actual field layout. Larger fields may need to be divided into separate irrigation sections.',
+        },
+        {
+          label: 'Filtration and Water Quality',
+          text: 'Filtration requirements depend on the water source and the selected irrigation equipment. Appropriate filtration helps the irrigation network operate with cleaner water.',
+        },
+        {
+          label: 'Pipeline Routing',
+          text: 'The main and distribution lines should follow a practical route that allows water to reach different field sections without making maintenance unnecessarily difficult.',
+        },
+        {
+          label: 'Connections and Maintenance',
+          text: 'Dripline connections, field outlets and other components should remain accessible for inspection and maintenance. The system should also allow damaged or disconnected sections to be identified and attended to without disrupting the entire field.',
+        },
+      ],
+    },
+    products: {
+      heading: ' Recommended Kothari Products',
+      intro: `Kothari's Dripline K-Lin PCAS and Dripline K-Lin NPC can be used as part of a sugarcane drip irrigation arrangement. Their role is at the field-distribution stage, where water from the irrigation pipeline network is delivered along the crop rows.`,
+      items: [
+        {
+          name: 'Dripline K-Lin PCAS',
+          url: '/drip-line/dripline-k-lin-pcas',
+          image: `${ADMIN}/2025/04/DRIPLINE-K-LIN-PCAS-1.webp`,
+          paragraphs: [
+            'Dripline K-Lin PCAS is relevant where the irrigation layout requires dripline-based water distribution along sugarcane rows. It forms part of the field-level network between the distribution pipeline and the crop area.',
+            'For a sugarcane application, its selection should be considered together with the field layout, irrigation sections, water source and the rest of the distribution network. The final arrangement should account for the actual site conditions rather than treating the dripline independently.',
+          ],
+        },
+        {
+          name: 'Dripline K-Lin NPC',
+          url: '/drip-line/dripline-k-lin-npc',
+          image: `${ADMIN}/2025/04/DRIPLINE-K-LIN-1.webp`,
+          paragraphs: [
+            ' Dripline K-Lin NPC can be used for row-based drip irrigation where water needs to be distributed through a planned field network. It is positioned at the crop-distribution stage, after water has travelled through the main and distribution pipelines.',
+            `For sugarcane fields, the dripline layout needs to follow the crop arrangement and connect correctly with the distribution network. Selection should be based on the project's verified technical requirements and site conditions.`,
+          ],
+        },
+      ],
+      mapping: {
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Row-based drip distribution', product: 'Dripline K-Lin PCAS', role: 'Field-level water distribution' },
+          { requirement: 'Sugarcane row irrigation', product: 'Dripline K-Lin NPC', role: 'Crop-row water distribution' },
+          { requirement: 'Field irrigation network', product: 'K-Lin PCAS / K-Lin NPC', role: 'Final distribution stage' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: 'How a Sugarcane Drip Irrigation System Works',
+      intro: 'A sugarcane drip irrigation system moves water through a series of stages before it reaches the crop rows. The pipeline network handles water conveyance, while the dripline forms the final distribution stage within the field.',
+      flow: [
+        'Water Source',
+        'Filtration',
+        'Main Pipeline',
+        'Distribution / Submain Lines',
+        'Drip Poly Fittings',
+        'Dripline / Drippers',
+        'Crop Root Zone',
+      ],
+      steps: [
+        {
+          title: 'Water Source',
+          text: 'Water enters the irrigation system from the available farm water source. Pumping arrangements depend on the source and overall system design.',
+        },
+        {
+          title: 'Filtration',
+          text: 'Where required, water passes through the appropriate filtration arrangement before entering the field distribution network. Filtration requirements depend on water quality and the irrigation system being used.',
+        },
+        {
+          title: 'Main Pipeline',
+          text: 'The main pipeline carries water from the source towards the sugarcane field. It forms the primary water-conveyance route for the irrigation system.',
+        },
+        {
+          title: 'Distribution Lines',
+          text: 'Water is then directed towards different field sections through distribution or submain lines. The field can be divided into irrigation sections depending on its size and water supply.',
+        },
+        {
+          title: 'Dripline Along Crop Rows',
+          text: 'Dripline K-Lin PCAS or K-Lin NPC is connected at the field-distribution stage and laid along the planned sugarcane rows. Water then moves through the dripline towards the crop.',
+        },
+        {
+          title: 'Crop Area',
+          text: 'The final stage is water delivery along the sugarcane rows. The complete arrangement should be designed so that the source, filtration, pipelines, connections and dripline work as one irrigation network.',
+        },
+      ],
+    },
+    cta: {
+      heading: 'Planning Drip Irrigation for Sugarcane?',
+      body: 'Share your field layout, water source and irrigation requirements with the Kothari team to discuss the appropriate dripline arrangement.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
+
+   {
+    slug: 'municipal-water-supply',
+    division: 'pipe-division',
+    parentHref: '/pipe-applications',
+    parentLabel: 'Pipe Applications',
+    divisionHref: '/pipe-division',
+    metaTitle: 'Municipal Water Supply Pipes | HDPE & UPVC | Kothari',
+    metaDescription:
+      'Explore Kothari HDPE and UPVC pressure pipes for urban and rural municipal water supply and distribution applications.',
+    heroEyebrow: 'Pipe Applications',
+    h1: 'Municipal Water Supply Systems',
+    tagline:
+      'Municipal water supply systems use HDPE Pipes for urban infrastructure and UPVC Pressure Pipes for rural distribution, subject to project specifications and requirements.',
+    image: '/heronew.jpg',
+    bannerImage: '/farm.png',
+    overview: {
+      heading: 'Understanding Municipal Water Supply Systems',
+      paragraphs: [
+        'A municipal water supply network typically consists of multiple interconnected sections - from the treated-water source and transmission network to distribution pipelines and individual service connections.',
+        'The system must maintain controlled water flow and pressure while supporting reliable distribution across different locations.',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Municipal Water Supply Pipelines Are Used',
+      intro: [
+        'Municipal water-supply piping can be used across a range of infrastructure environments.',
+      ],
+      items: [
+        {
+          label: 'Urban Water Supply',
+          text: 'Urban networks can involve extensive distribution infrastructure serving residential communities, commercial developments, institutional areas and other densely populated locations.',
+        },
+        
+        {
+          label: 'Rural Water Supply',
+          text: 'Rural water-supply networks may serve villages, local communities, public facilities and distributed settlements where dependable water distribution is required.',
+        },
+       
+      ],
+    
+    },
+    requirements: {
+      heading: 'Key Requirements for Municipal Water Supply Piping',
+      intro: 'A municipal water supply system should be planned around water demand and site conditions, with pipe diameter, pressure rating, installation method, jointing and material suitability selected to meet the network requirements.',
+      items: [
+        {
+          label: 'Water Demand and Flow',
+          text: 'The network should be designed around the required water demand and expected flow across different sections of the distribution system.',
+        },
+        {
+          label: 'Operating Pressure',
+          text: 'The pipe pressure rating should correspond to the operating conditions of the network, including pressure variations across different sections.',
+        },
+        {
+          label: 'Pipe Diameter',
+          text: 'Pipe diameter affects the volume of water that can be transported and the hydraulic performance of the network. Diameter selection should therefore be based on the required flow and system design.',
+        },
+        {
+          label: 'Installation Conditions',
+          text: 'Underground pipelines can encounter varying soil, terrain and installation conditions. The selected piping system and jointing method should be appropriate for the installation environment.',
+        },
+        {
+          label: 'Jointing and Connections',
+          text: 'Reliable connections are essential to maintain continuity throughout the network. Pipe material, fittings and jointing methodology should be considered together during system planning.',
+        },
+        {
+          label: 'Water Quality and Material Suitability',
+          text: 'For drinking-water applications, the selected pipe system should meet the applicable material and project requirements.HDPE Pipe range is stated to be suitable for drinking-water pipelines, while its UPVC pressure-pipe range is positioned for pressure-fluid and water-supply applications.',
+        },
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari Pipes for Municipal Water Supply',
+      intro: 'The right product depends on where the pipe sits within the farm network. A typical system may use one pipe material for the main water-transfer line and fittings to create the required branches and connections.',
+      items: [
+        {
+          name: 'HDPE Pipe',
+          url: '/pe-pipes-and-fittings/hdpe-piping',
+          image: `${ADMIN}/2025/04/HDPE-PIPE-111.webp`,
+          paragraphs: [
+            'HDPE Pipe is suited to agricultural water-transfer applications where a flexible pipe system is required for carrying water from the source towards the distribution network. Kothari identifies its HDPE Pipes for agriculture, irrigation schemes, portable water supply lines, rising and distributing lines and borewell applications.',
+            'The range specifies HDPE pipe dimensions according to IS 4984:2016 and lists different PE grades, SDRs and nominal pressure ratings. This allows selection according to the pressure requirements of the particular pipeline rather than treating every farm line the same.',
+          ],
+        },
+        {
+          name: 'UPVC Pressure Pipes',
+          url: '/upvc/upvc-astm-plumbing-piping-system',
+          image: `${ADMIN}/2025/04/UPVC-PIPES-FITTINGS.webp`,
+          paragraphs: [
+            'For rural water-supply requirements, Kothari UPVC Pressure Pipes provide a pressure-piping option for transporting water through distribution networks.',
+            'The range describes these pipes as strong, leak-proof and engineered to carry fluids under pressure, with applications including water-supply systems.',
+          ],
+        },
+       
+      ],
+      mapping: {
+        heading: 'Application-to-Product Mapping',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Urban municipal water supply', product: 'HDPE Pipe', role: 'Water transmission and distribution infrastructure' },
+          { requirement: 'Urban potable water lines', product: 'HDPE Pipes', role: 'Potable water supply pipelines' },
+          { requirement: 'Urban rising mains', product: 'HDPE Pipes', role: 'Pressurised water conveyance' },
+          { requirement: 'Rural water supply', product: 'UPVC Pressure Pipes', role: 'Pressure-water distribution' },
+          { requirement: 'Rural community water networks', product: 'UPVC Pressure Pipes', role: 'Water-supply distribution' },
+          { requirement: 'Water-supply branches and connections', product: 'Compatible fittings', role: 'Network connections and direction changes' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: ' How a Municipal Water Supply System Works',
+      intro: 'A Municipal Water Supply System can be visualised as a network rather than a single pipeline:',
+      flow: [
+        'Water Source',
+        'Water Treatment',
+        'Transmission Pipeline',
+        'Distribution Main',
+        'Local Distribution Network',
+        'Service Connection',
+        'End User',
+      ],
+      steps: [
+        {
+          title: 'The Water Source',
+          text: 'Water is collected from rivers, lakes, reservoirs or groundwater sources to meet the municipal water demand of residential, commercial and public facilities.',
+        },
+        {
+          title: 'The Water Treatment',
+          text: 'Raw water undergoes filtration, sedimentation and disinfection to remove impurities, reduce contaminants and make it suitable for safe public consumption.',
+        },
+        {
+          title: 'Transmission Pipeline',
+          text: 'Treated water travels through large-capacity pipelines from treatment plants to storage reservoirs or distribution facilities, depending on network design and distance.',
+        },
+        {
+          title: 'Distribution Main',
+          text: 'Distribution mains carry treated water from storage facilities or transmission lines toward different zones, supporting reliable supply across urban and rural communities.',
+        },
+        {
+          title: 'Local Distribution Network',
+          text: 'Smaller interconnected pipelines distribute water throughout neighbourhoods, streets and residential areas while maintaining suitable flow and pressure for local demand.',
+        },
+        {
+          title: 'Service Connection',
+          text: 'Service connections link the local distribution pipeline to individual properties, allowing treated water to enter buildings through designated connections and meters.',
+        },
+        {
+          title: 'End User',
+          text: 'End users receive treated water for drinking, cooking, cleaning and other daily needs through household taps and approved connections within their properties.',
+        },
+      ],
+    },
+    cta: {
+      heading: 'Planning a Municipal Water Supply Systems',
+      body: 'Share your water source, approximate pipeline distance and intended use with our team to discuss the piping options suitable for Municipal Water Supply Systems.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
+
+   {
+    slug: 'rural-water-supply',
+    division: 'pipe-division',
+    parentHref: '/pipe-applications',
+    parentLabel: 'Pipe Applications',
+    divisionHref: '/pipe-division',
+    metaTitle: 'Rural Water Supply Pipes | HDPE Pipes | Kothari',
+    metaDescription:
+      'Explore HDPE pipes and compression fittings for rural water supply, drinking-water distribution and applicable Jal Jeevan Mission projects.',
+    heroEyebrow: 'Pipe Applications',
+    h1: 'HDPE Pipes for Rural Water Supply Systems',
+    tagline:
+      'Plan the right piping network to move Rural water efficiently from its source to fields, storage points and irrigation systems.',
+    image: '/heronew.jpg',
+    bannerImage: '/farm.png',
+    overview: {
+      heading: 'Understanding Rural Water Supply Systems',
+      paragraphs: [
+        'Getting water safely from its source into rural homes and communities isn’t always simple. You need more than just pipes. What you really need is a network that can handle different terrains, shifting ground conditions, and variable pressure requirements. The trick is building a distribution system that doesn’t just move water, but does so reliably, every day.',
+        'Where does that water actually come from? In rural systems, you might be pulling water from a treatment plant, overhead tank, borewell, or some other approved source. Once it hits the main pipeline, it runs through rising mains and branches off through distribution lines and smaller connections to reach homes, schools, clinics, and other community spots.',
+        'Choosing the right pipe isn’t just about picking something that “works.” You’ve got to factor in the pressure rating, pipe diameter, layout, soil and ground conditions, and how you’ll make the connections. Kothari offers HDPE Pipes that tick the box for potable water, rising mains, and general distribution. Their MDPE Pipes with Compression Fittings are fit for drinking water, housing areas, and the Jal Jeevan Mission.',
+        'So, it’s not just about laying down pipes. It’s about planning a network that actually suits the site—something you can install, connect, and maintain without headaches later on',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Rural Water Supply Pipes Are Used',
+      intro: [
+        'Rural water piping shines when you’ve got water that needs to reach spread-out communities and villages from a central or local source.',
+      ],
+      items: [
+        {
+          label: 'Village Water Networks',
+          text: 'Village water networks: Pipes carry treated or approved water to households and community centers.',
+        },
+        {
+          label: 'Jal Jeevan Mission',
+          text: ' Jal Jeevan Mission: Projects aimed at bringing drinking water right to rural homes. Kothari’s catalog clearly lists Jal Jeevan Mission as a target application for its MDPE offerings.',
+        },
+        {
+          label: 'Rural Housing and Developments',
+          text: 'Rural housing and developments: Water goes from a shared source or tank to several homes.',
+        },
+        {
+          label: 'Public Infrastructure',
+          text: ' Public infrastructure: Delivering water to schools, health centers, or wherever else it’s needed in the community.',
+        },
+        {
+          label: 'Main Rural Pipelines',
+          text: ' Main rural pipelines: Rising mains and distribution lines connect your main source with scattered parts of a settlement.',
+        },
+       
+      ],
+      note: 'Self Fit PVC Pipes for rising and distributing lines, irrigation schemes, and main and sub-main lines for drip and sprinkler irrigation.',
+    },
+    requirements: {
+      heading: 'Key Requirements for Rural Water Supply Piping',
+      intro: 'Designing a rural supply network means looking at everything along the route-not just the endpoint.',
+      items: [
+        {
+          label: 'Water Source and Supply',
+          text: 'First, find out where the water’s coming from a plant, a tank, a borewell? Your choices here decide how the rest of the network shapes up.',
+        },
+        {
+          label: 'Flow and Pipe Diameter',
+          text: `The pipe size should match the flow you need and how many connections need water. Go too small and you'll choke the system. Go too big and costs shoot up for nothing.`,
+        },
+        {
+          label: 'Pressure',
+          text: 'Pick a pipeline that can handle the pressure you’re dealing with. Kothari’s HDPE range comes in different PE grades, SDRs, and pressure ratings, all in line with the latest IS 4984:2016 standards.',
+        },
+        {
+          label: 'Installation Site & Terrain',
+          text: 'Rural lines cut through all kinds of ground farm fields, roads, rocky patches, you name it. Make sure your pipe system and installation plan adapt to this reality.',
+        },
+        {
+          label: 'Connections and Branch Lines',
+          text: 'You’ll have to connect up lots of branches and service points. So, your fittings need to match the pipe and allow for easy, reliable connections. Kothari’s MDPE Pipes & Compression Fittings are strong on quick installation, solid corrosion resistance, and water safety with options ranging from 20 mm up to 110 mm and a PN 16 pressure rating.',
+        },
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari Pipes for Rural Water Supply',
+      intro: 'Build your network with both the pipe and the connection system in mind. Main pipelines do the heavy lifting, while fittings branch off water where you need it.',
+      items: [
+        {
+          name: 'HDPE Pipe',
+          url: 'pe-pipes-and-fittings/hdpe-piping',
+          image: `${ADMIN}/2025/04/HDPE-PIPE-111.webp`,
+          paragraphs: [
+            `Kothari HDPE Pipes are a go-to when you need tough, reliable pipes for most rural water-supply jobs especially main lines, rising mains, and distribution routes. They're high-density, food-grade polyethylene, built to last and meet IS 4984:2016 wall-thickness and pressure standards.`,
+          ],
+        },
+        {
+          name: 'MDPE Pipe & Compression Fittings',
+          url: '/pe-pipes-and-fittings/mdpe-pipes',
+          image: `${ADMIN}/2025/08/MDPE-PIPE.webp`,
+          paragraphs: [
+            'For smaller branches and connections, the MDPE Pipe & Compression Fittings are spot on. Kothari’s range covers everything from drinking water to housing and even gas handling. They start at 20 mm diameter and go up to 110 mm, all PN 16, with easy installation and tough corrosion resistance.',
+          ],
+        },
+      ],
+      mapping: {
+        heading: 'Application-to-Product Mapping',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Transfer water from the source across the farm', product: 'HDPE Pipe', role: 'Main or distribution water-transfer pipeline' },
+          { requirement: 'Rising and distributing lines', product: 'Self Fit PVC Pipe', role: 'Pressure water-supply and distribution line' },
+          { requirement: 'Main and sub-main irrigation lines', product: 'Self Fit PVC Pipe', role: 'Carries water towards drip or sprinkler networks' },
+          { requirement: 'Changes in direction or pipeline branches', product: 'Agri PVC Moulded Fittings', role: 'Connects, redirects and branches the pipeline' },
+          { requirement: 'Different pipe sizes need to be connected', product: 'Agri PVC Moulded Fittings', role: 'Reducers/adapters provide the required connection' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: 'How a Rural Water Supply System Works',
+      intro: 'A farm Rural Water Supply System can be visualised as a network rather than a single pipeline:',
+      flow: [
+        'Water Source',
+        'Treatment/Quality Control',
+        'Storage (like an overhead tank)',
+        'Rising Main',
+        'Distribution Network',
+        'Branch Connections',
+        ' Homes/Community Sites',
+      ],
+      steps: [
+        {
+          title: 'Water is drawn from the source',
+          text: 'Water enters the system from the available farm source, such as a borewell, well, pond, reservoir or storage tank. The pump moves the water into the supply pipeline.',
+        },
+        {
+          title: 'The main line carries water across the farm',
+          text: 'The main pipeline takes water from the source towards the areas where it is required. HDPE or Self Fit PVC Pipe may be considered depending on the pipeline\u2019s design, pressure and installation requirements. Kothari lists both product categories for agricultural water-supply and irrigation applications.',
+        },
+        {
+          title: 'Sub-main lines distribute the water',
+          text: 'As the pipeline reaches different farm sections, sub-main lines divide the flow towards individual fields, orchard blocks, irrigation zones or other points of use.',
+        },
+        {
+          title: 'Fittings create the network',
+          text: 'Elbows, tees, reducers and adapters allow the pipeline to follow the farm layout and connect different pipe sizes or branches. Kothari\u2019s Agri PVC Moulded Fittings range includes these connection types.',
+        },
+        {
+          title: 'Water reaches its final point of use',
+          text: 'The distribution line ultimately feeds the required irrigation system, storage facility or farm-use point. Where the water is being used for drip or sprinkler irrigation, the farm water-supply network becomes the upstream section feeding that irrigation system.',
+        },
+      ],
+    },
+    cta: {
+      heading: 'Planning a Rural Water Supply System?',
+      body: 'Share your water source, approximate pipeline distance and intended use with our team to discuss the piping options suitable for your rural area.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
 
   
 ];
