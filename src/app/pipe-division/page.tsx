@@ -388,8 +388,9 @@ const FEATURE_PRODUCTS = [
       <HeaderDivison productsMegaMenu={PipeproductsMegaMenu} solutionsMegaMenu={pipeSolutionsMegaMenu}/>
       <HeroDivision heroData={heroData} />
       <DivisionOverview
-        heading="Plumbing Pipes & Fittings: Built for Every Structure"
+        heading="About Kothari Pipe Division"
         accent="blue"
+        image="https://kotharigroupindia.com/img/images/Building_pipe.webp"
         paragraphs={[
           'Modern buildings demand plumbing that can handle hard water, high temperatures, and years of continuous daily use without corrosion or scaling. CPVC and UPVC pipes and fittings meet this need with lightweight, corrosion-free systems built for long-term reliability. We manufacture both to IS and ASTM standards, with our CPVC systems built for hot and cold water applications up to 93°C, and our UPVC systems engineered for reliable cold water plumbing across homes, high-rises, and commercial complexes.',
           'Reliable water supply is only half the picture — what happens after water is used matters just as much. Our SWR piping systems handle soil, waste, and rainwater discharge for buildings, using push-fit rubber ring joints that stay leak-proof for decades without solvent welding. For larger infrastructure and municipal projects, our UDS underground drainage systems are engineered to withstand soil pressure and heavy loads well below the surface, where a pipe failure is far more costly to repair.',

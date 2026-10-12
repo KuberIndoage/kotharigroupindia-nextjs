@@ -1,8 +1,8 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence, PanInfo } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface Product {
   id: string;
@@ -78,20 +78,24 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
   theme = 'blue',
 }) => {
   const isGreen = theme === 'green';
-  const [itemsPerPage, setItemsPerPage] = useState(3);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [direction, setDirection] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [stageLayout, setStageLayout] = useState<{
+    cardW: number;
+    cardH: number;
+    sideShift: number;
+  }>({ cardW: 380, cardH: 460, sideShift: 470 });
+  const stageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setItemsPerPage(1);
-      } else if (window.innerWidth < 1024) {
-        setItemsPerPage(2);
-      } else {
-        setItemsPerPage(3);
-      }
+      const stage = stageRef.current;
+      if (!stage) return;
+      const w = stage.clientWidth;
+      const cardW = Math.min(Math.max(w * 0.58, 260), 560);
+      const cardH = Math.min(Math.max(cardW * 1.05, 300), 460);
+      const sideShift = cardW / 2 + Math.min(Math.max(w * 0.11, 56), 300);
+      setStageLayout({ cardW, cardH, sideShift });
     };
 
     handleResize();
@@ -99,74 +103,66 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const totalPages = Math.max(1, Math.ceil(products.length / itemsPerPage));
-  const safePage = currentPage % totalPages;
+  const totalSlides = products.length;
 
   const handleNext = useCallback(() => {
-    setDirection(1);
-    setCurrentPage((prev) => (prev + 1) % totalPages);
-  }, [totalPages]);
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
 
   const handlePrev = useCallback(() => {
-    setDirection(-1);
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
-  }, [totalPages]);
-
-  // Touch & Swipe gesture handling
-  const handlePanEnd = (_: any, info: PanInfo) => {
-    const swipeThreshold = 40;
-    const velocityThreshold = 200;
-
-    if (
-      info.offset.x < -swipeThreshold ||
-      info.velocity.x < -velocityThreshold
-    ) {
-      handleNext();
-    } else if (
-      info.offset.x > swipeThreshold ||
-      info.velocity.x > velocityThreshold
-    ) {
-      handlePrev();
-    }
-  };
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
 
   useEffect(() => {
-    if (isPaused || totalPages <= 1) return;
+    if (isPaused || totalSlides <= 1) return;
 
     const autoSlideTimer = setInterval(() => {
       handleNext();
     }, 4000);
 
     return () => clearInterval(autoSlideTimer);
-  }, [isPaused, totalPages, handleNext]);
+  }, [isPaused, totalSlides, handleNext]);
 
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? '100%' : '-100%',
-      opacity: 0,
-    }),
-    center: {
-      x: '0%',
-      opacity: 1,
+  const getOffset = useCallback(
+    (index: number) => {
+      let offset = ((index - currentIndex) % totalSlides + totalSlides) % totalSlides;
+      if (offset > totalSlides / 2) offset -= totalSlides;
+      return offset;
     },
-    exit: (dir: number) => ({
-      x: dir < 0 ? '100%' : '-100%',
-      opacity: 0,
-    }),
-  };
-
-  const visibleProducts = products.slice(
-    safePage * itemsPerPage,
-    safePage * itemsPerPage + itemsPerPage
+    [currentIndex, totalSlides]
   );
 
+  const getCardTargets = (offset: number) => {
+    const { cardW, cardH, sideShift } = stageLayout;
+    const centerX = -cardW / 2;
+    const centerY = -cardH / 2;
+    const abs = Math.abs(offset);
+
+    if (offset === 0) {
+      return { x: centerX, y: centerY, scale: 1, rotateY: 0, opacity: 1, zIndex: 50 };
+    }
+
+    const isLeft = offset < 0;
+    const x = isLeft ? centerX - sideShift : centerX + sideShift;
+    const sideOpacity = abs === 1 ? 0.42 : 0;
+
+    return {
+      x,
+      y: centerY,
+      scale: 0.78,
+      rotateY: isLeft ? 16 : -16,
+      opacity: sideOpacity,
+      zIndex: abs === 1 ? 40 : 10,
+    };
+  };
+
   return (
-    <section className="relative w-full py-24 overflow-hidden select-none">
+    <section className="relative w-full py-16 overflow-hidden select-none">
       {/* Background + Gradient Overlay (matches Product Detail Page tabs section) */}
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${isGreen ? 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1600&q=80' : 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=1600&q=80'})` }} />
-      <div className={`absolute inset-0 bg-gradient-to-br ${isGreen ? 'from-[#145E2A]/95 via-[#1E8E3E]/90 to-[#052E16]/90' : 'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90'}`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${isGreen ? 'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90' : 'from-[#0E588A]/95 via-[#1575B3]/90 to-[#083251]/90'}`} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-14 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10 relative z-10">
         
         {/* Top Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
@@ -176,97 +172,68 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
             </h2>
           </div>
 
-          <p className={`text-xs sm:text-sm ${isGreen ? 'text-green-100/80' : 'text-blue-100/80'} max-w-md font-light leading-relaxed`}>
+          <p className={`text-xs sm:text-sm ${isGreen ? 'text-blue-100/80' : 'text-blue-100/80'} max-w-md font-light leading-relaxed`}>
             World-class piping and irrigation engineering, crafted for extreme durability, operational efficiency, and long-term reliability.
           </p>
         </div>
 
-        {/* Product Grid Stage */}
-        <div className="relative min-h-[600px] w-full py-6 px-1 touch-pan-y overflow-hidden">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={safePage}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-              onPanEnd={handlePanEnd}
-              className="w-full cursor-grab active:cursor-grabbing touch-pan-y"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {visibleProducts.map((product) => (
-                  <div
-                    key={product.id}
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                    className={`group relative ${isGreen ? 'bg-[#0E4A20]/40' : 'bg-[#014d8f]/40'} backdrop-blur-md border border-white/15 hover:border-white/40 transition-all duration-500 flex flex-col justify-between shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1 overflow-hidden`}
-                  >
-                    {/* Top Accent Light Bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent ${isGreen ? 'via-emerald-300' : 'via-cyan-400'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+        {/* Product 3D Stacked Carousel Stage */}
+        <div
+          ref={stageRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          className="relative w-full overflow-hidden touch-pan-y"
+          style={{ height: stageLayout.cardH + 140, perspective: 1400 }}
+        >
+          {products.map((product, mapIndex) => {
+            const offset = getOffset(mapIndex);
+            const targets = getCardTargets(offset);
+            const isCenter = offset === 0;
 
-                    <div>
-                      {/* Product Showcase Image Frame */}
-                      <div className="relative h-72 sm:h-80 w-full bg-white p-6 flex items-center justify-center border-b border-white/10 overflow-hidden">
-                        <img
-                          src={product.image}
-                          alt={product.title}
-                          draggable={false}
-                          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
-                        />
-                      </div>
-
-                      {/* Content Area */}
-                      <div className="p-7 space-y-4">
-                        <div className="space-y-1">
-                          <h3 className={`text-lg font-bold text-white ${isGreen ? 'group-hover:text-emerald-200' : 'group-hover:text-cyan-200'} transition-colors leading-snug`}>
-                            {product.title}
-                          </h3>
-                        </div>
-
-                        <p className={`text-xs ${isGreen ? 'text-green-100/70' : 'text-blue-100/70'} font-light leading-relaxed line-clamp-3`}>
-                          {product.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Premium Full-Width CTA Button */}
-                    <div className="p-7 pt-0">
-                      <Link
-                        href={product.link}
-                        className={`w-full inline-flex items-center justify-between bg-white/10 hover:bg-white text-white ${isGreen ? 'hover:text-[#145E2A]' : 'hover:text-[#015CAA]'} border border-white/20 hover:border-white text-xs font-semibold uppercase tracking-wider py-3.5 px-5 transition-all duration-300 group/btn`}
-                      >
-                        <span>Explore Product</span>
-                        <ArrowUpRight className={`w-4 h-4 ${isGreen ? 'text-emerald-300 group-hover/btn:text-[#145E2A]' : 'text-cyan-300 group-hover/btn:text-[#015CAA]'} group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all`} />
-                      </Link>
-                    </div>
-
+            return (
+              <motion.div
+                key={product.id}
+                style={{ left: '50%', top: '50%', width: stageLayout.cardW, height: stageLayout.cardH }}
+                initial={targets}
+                animate={targets}
+                transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
+                className={`absolute overflow-hidden bg-white shadow-[0_30px_60px_rgba(2,30,53,0.35)] ${isCenter ? 'ring-1 ring-white/60' : ''}`}
+              >
+                <Link href={product.link} className="group relative block h-full w-full cursor-pointer">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    draggable={false}
+                    className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-105 pointer-events-none"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-white py-3.5 sm:py-4 px-4">
+                    <h3 className="text-sm sm:text-base font-bold text-black leading-snug line-clamp-2 text-center">
+                      {product.title}
+                    </h3>
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+                </Link>
+              </motion.div>
+            );
+          })}
 
-{/* Dynamic Dash Indicators */}
-        {/* <div className="flex items-center justify-center gap-3 pt-6">
-          {Array.from({ length: totalPages }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setDirection(idx > safePage ? 1 : -1);
-                setCurrentPage(idx);
-              }}
-              className={`h-1 transition-all duration-500 ${
-                idx === safePage
-                  ? 'w-12 bg-cyan-400'
-                  : 'w-4 bg-white/20 hover:bg-white/50'
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div> */}
+          {/* Left / Right Navigation Arrows */}
+          <button
+            type="button"
+            onClick={handlePrev}
+            aria-label="Previous product"
+            className={`absolute top-1/2 -translate-y-1/2 left-3 sm:left-8 z-[60] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center border border-white/40 text-white bg-white/10 hover:bg-white hover:text-[#015CAA] backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105`}
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            aria-label="Next product"
+            className={`absolute top-1/2 -translate-y-1/2 right-3 sm:right-8 z-[60] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center border border-white/40 text-white bg-white/10 hover:bg-white hover:text-[#015CAA] backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105`}
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+        </div>
 
         {/* Explore All Products */}
         <div className="flex justify-center">
@@ -276,10 +243,10 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
                 ? '/irrigation-products'
                 : '/pipe-products'
             }
-            className={`inline-flex items-center gap-2 bg-white hover:bg-transparent  ${isGreen? 'text-[#145E2A] ':'text-[#015CAA]'} hover:text-white border border-white/60 hover:border-white px-8 py-3.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 group/btn`}
+            className={`inline-flex items-center gap-2 bg-white hover:bg-transparent  ${isGreen? 'text-[#015CAA] ':'text-[#015CAA]'} hover:text-white border border-white/60 hover:border-white px-8 py-3.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 group/btn`}
           > 
             <span>Explore All Products</span>
-            <ArrowUpRight className={`w-4 h-4 ${isGreen ? 'text-[#145E2A] ':'text-[#015CAA]'} group-hover/btn:text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all`} />
+            <ArrowUpRight className={`w-4 h-4 ${isGreen ? 'text-[#015CAA] ':'text-[#015CAA]'} group-hover/btn:text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all`} />
           </Link>
         </div>
 

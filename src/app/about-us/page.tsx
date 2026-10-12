@@ -25,14 +25,18 @@ export default function AboutPage() {
       <div className="text-left">
         <Home2Header />
         <AboutHero />
-        <AboutGrowth />
+
+          <AboutWhyKothari />
+           <AboutLegacy />
+            <ManufacturingUnits />
+      
         <AboutVisionMission />
-        <AboutApproach />
+        {/* <AboutApproach /> */}
        
-        <AboutLegacy />
-        <ManufacturingUnits />
-        <AboutCoreValues />
-        <AboutWhyKothari />
+         {/* <AboutGrowth /> */}
+       
+        {/* <AboutCoreValues /> */}
+      
         <Home2Footer />
       </div>
     </AppShell>

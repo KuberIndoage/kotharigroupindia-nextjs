@@ -149,19 +149,22 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
       quote: "We are an authorised dealer of Kothari Group & dealing exclusively with Kothari Group since the last 20 years. Thanks to the company for supplying quality products consistently & its team for providing prompt services all the time.",
       author: 'Kumareshwar Traders',
       role: 'Mudhol, Karnataka',
-      company: 'Apex Buildcon Projects'
+      company: 'Apex Buildcon Projects',
+      image: 'https://images.pexels.com/photos/35839965/pexels-photo-35839965.jpeg'
     },
     {
       quote: "We are really delighted by the quality of Kothari Group’s Products & Services. Thank you so much, and we will be looking forward to an excellent continuing business relationship.",
       author: 'Arihant Marketing',
       role: ' Bijapur Karnataka',
-      company: 'Nashik Agriculture Cooperative'
+      company: 'Nashik Agriculture Cooperative',
+      image: 'https://images.pexels.com/photos/7580764/pexels-photo-7580764.jpeg'
     },
     {
       quote: "Kothari Group’s Kosons Submersible Cables & Wires are excellent and specially designed Products. The finishing of the Submersible Cables is excellent.",
       author: 'Nitin Omprakash Mundada',
       role: ' Beed(MH)',
-      company: 'Smart Infra Consultants'
+      company: 'Smart Infra Consultants',
+      image: 'https://images.pexels.com/photos/35964702/pexels-photo-35964702.jpeg'
     }
   ];
 
@@ -385,6 +388,17 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
     navigate
   );
 
+  const testimonialAvatarUrl = (author: string) => {
+    const initials = author
+      .split(' ')
+      .map((word) => word[0])
+      .filter(Boolean)
+      .slice(0, 2)
+      .join('')
+      .toUpperCase();
+    return `https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(initials)}&backgroundColor=${isGreen ? '1E8E3E' : '1575B3'}`;
+  };
+
   const NewsCardSkeleton: React.FC = () => (
     <div className="bg-white border border-slate-200/90 shadow-sm overflow-hidden">
       <div className="h-44 sm:h-48 bg-slate-200 animate-pulse" />
@@ -469,7 +483,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
               const target = e.target as HTMLElement;
               target.style.opacity = '0.3';
             }}
-            className="w-full h-auto object-contain opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
+            className="w-full h-52 object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80" />
 
@@ -479,20 +493,16 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
               {item.category}
             </span>
           </div>
+
+          {/* Date Strip */}
+          <div className={`absolute bottom-0 left-0 right-0 ${isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} text-white px-4 py-2 text-[11px] font-mono tracking-widest uppercase text-center`}>
+            {item.date}
+          </div>
         </div>
 
         {/* Content Body */}
         <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-[11px] font-mono tracking-widest text-slate-500 uppercase font-medium">
-              <span>{item.date}</span>
-              {/* <span>•</span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-3 h-3 text-slate-400" />
-                {item.readTime}
-              </span> */}
-            </div>
-
             <h3 className={`text-lg font-serif font-normal text-slate-900 leading-snug tracking-tight ${accentGroupHoverText} transition-colors duration-300`}>
               {item.title}
             </h3>
@@ -556,10 +566,24 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                         onMouseLeave={() => setTestimonialsPaused(false)}
                         className="h-full"
                       >
-                        <div className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative h-full ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group`}>
+                        <div className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group overflow-hidden h-[500px]`}>
                           <Quote className={`w-8 h-8 ${isGreen ? 'text-[#1E8E3E]/20' : 'text-[#1575B3]/20'} absolute top-6 right-6`} />
 
                           <div className="space-y-6 relative z-10">
+                            <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-white shadow-md">
+                              <img
+                                src={item.image}
+                                alt={item.author}
+                                draggable={false}
+                                onError={(e) => {
+                                  const target = e.target as HTMLImageElement;
+                                  target.onerror = null;
+                                  target.src = testimonialAvatarUrl(item.author);
+                                }}
+                                className="w-full h-full object-cover pointer-events-none"
+                              />
+                            </div>
+
                             <div className="flex items-center gap-1">
                               {[...Array(5)].map((_, i) => (
                                 <Star key={i} className={`w-4 h-4 ${isGreen ? 'fill-[#1E8E3E] text-[#1E8E3E]' : 'fill-[#1575B3] text-[#1575B3]'}`} />
@@ -571,7 +595,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                             </p>
                           </div>
 
-                          <div className="pt-6 mt-6 border-t border-slate-200">
+                          <div className="pt-6 mt-6 border-t border-slate-200 relative z-10">
                             <h4 className={`text-base font-medium text-slate-900 ${accentGroupHoverText} transition-colors duration-300`}>
                               {item.author}
                             </h4>
@@ -613,11 +637,25 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                 {testimonials.map((item, idx) => (
                   <Reveal key={idx} delay={idx * 90} className="h-full">
                     <div
-                      className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group h-full`}
+                      className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group overflow-hidden h-[500px]`}
                     >
                       <Quote className={`w-8 h-8 ${isGreen ? 'text-[#1E8E3E]/20' : 'text-[#1575B3]/20'} absolute top-6 right-6`} />
 
                       <div className="space-y-6 relative z-10">
+                        <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-white shadow-md">
+                          <img
+                            src={item.image}
+                            alt={item.author}
+                            draggable={false}
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.onerror = null;
+                              target.src = testimonialAvatarUrl(item.author);
+                            }}
+                            className="w-full h-full object-cover pointer-events-none"
+                          />
+                        </div>
+
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className={`w-4 h-4 ${isGreen ? 'fill-[#1E8E3E] text-[#1E8E3E]' : 'fill-[#1575B3] text-[#1575B3]'}`} />
@@ -629,7 +667,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                         </p>
                       </div>
 
-                      <div className="pt-6 mt-6 border-t border-slate-200">
+                      <div className="pt-6 mt-6 border-t border-slate-200 relative z-10">
                         <h4 className={`text-base font-medium text-slate-900 ${accentGroupHoverText} transition-colors duration-300`}>
                           {item.author}
                         </h4>
