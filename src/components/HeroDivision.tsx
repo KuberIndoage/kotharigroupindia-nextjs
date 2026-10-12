@@ -35,7 +35,7 @@ const BANNER_IMAGES: Record<
     { src: '/banners/irrigation/irrigation_1.png' },
     { src: '/banners/irrigation/irrigation_2.png' },
       { src: '/banners/irrigation/irrigation_3.png' },
-  ],
+  ], 
   pipe: [
     { src: '/banners/pipe/pipe_1.png' , mobile: '/banners/pipe/pipe1mobile.jpeg' },
     { src: '/banners/pipe/pipe_2.png', mobile: '/banners/pipe/pipe2mobile.jpg' },

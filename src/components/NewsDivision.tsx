@@ -166,7 +166,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
       company: 'Smart Infra Consultants',
       image: 'https://images.pexels.com/photos/35964702/pexels-photo-35964702.jpeg'
     }
-  ];
+  ]; 
 
   const FALLBACK_BLOGS: DivisionNewsCard[] = [
     {

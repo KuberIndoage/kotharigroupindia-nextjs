@@ -247,7 +247,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
           > 
             <span>Explore All Products</span>
             <ArrowUpRight className={`w-4 h-4 ${isGreen ? 'text-[#015CAA] ':'text-[#015CAA]'} group-hover/btn:text-white group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all`} />
-          </Link>
+          </Link> 
         </div>
 
       </div>
