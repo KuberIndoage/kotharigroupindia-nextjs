@@ -173,7 +173,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
           </div>
 
           <p className={`text-xs sm:text-sm ${isGreen ? 'text-blue-100/80' : 'text-blue-100/80'} max-w-md font-light leading-relaxed`}>
-            World-class piping and irrigation engineering, crafted for extreme durability, operational efficiency, and long-term reliability.
+          {theme==='green'? 'Explore Kothari’s irrigation products, designed for durability, efficient water use, and reliable performance across diverse farming conditions. ' : 'Explore Kothari’s durable pipes and fittings for reliable water flow across plumbing, agriculture, and infrastructure. '}
           </p>
         </div>
 

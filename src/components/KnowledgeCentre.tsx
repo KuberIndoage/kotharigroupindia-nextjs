@@ -29,8 +29,8 @@ const defaultItems = [
 export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'green' }> = ({ itemData = defaultItems, theme = 'blue' }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const isGreen = theme === 'green';
-  const accentBg = isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]';
-  const accentText = isGreen ? 'text-[#1E8E3E]' : 'text-[#1575B3]';
+  const accentBg = isGreen ? 'bg-[#1575B3]' : 'bg-[#1575B3]';
+  const accentText = isGreen ? 'text-[#1575B3]' : 'text-[#1575B3]';
 
   return (
     <section id="knowledge-centre" className="w-full bg-white py-16 sm:py-24 border-b border-slate-300/70 scroll-mt-20">
@@ -44,7 +44,7 @@ export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'gre
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-            Technical documentation, engineering guidelines, and field manuals for Kothari systems.
+         {isGreen ? 'Get access to useful knowledge about farming, as well as irrigation, which will help you plan the watering process, take care of crops better, and utilize the water and nutrients more efficiently. ' : 'Find technical documentation, product specifications and installation instructions to use Kothari system efficiently. '}
           </p>
         </div>
 

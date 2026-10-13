@@ -306,13 +306,13 @@ const productsMegaMenu = {
 const items = [
   {
     title: 'Plumbing Systems',
-    description: 'Comprehensive engineering documentation and technical specifications for CPVC and UPVC piping infrastructure. Features material thermal ratings, chemical resistance matrices, precise solvent welding joint protocols, flow rate optimization charts, and hydraulic pressure loss calculations tailored for high-performance residential, commercial, and industrial plumbing installations.',
+    description: 'Research technical info on CPVC and UPVC pipes and fittings for home, commercial, and industrial plumbing. Learn about the properties of materials, temperature characteristics, chemical resistance, methods of joining, flow characteristics, and hydraulics for effective planning of the system.',
     image: 'https://kotharigroupindia.com/img/images/Building_pipe.webp',
     link: '#plumbing'
   },
   {
     title: 'Agri & Borewell',
-    description: 'Extensive field deployment manuals and practical technical guides covering subterranean UPVC agricultural main lines, HDPE coil layout optimization, surge pressure protection strategies, and precise structural torque thresholds engineered for high-depth borewell column pipe systems.',
+    description: 'Access practical recommendations for piping and borewell installations including UPVC pipelines, laying HDPE pipes, pressure regulation, and installation of column pipes.',
     image: 'https://kotharigroupindia.com/img/images/Agri_Pipes.webp',
     link: '#agri'
   },
@@ -392,17 +392,17 @@ const FEATURE_PRODUCTS = [
         accent="blue"
         image="https://kotharigroupindia.com/img/images/Building_pipe.webp"
         paragraphs={[
-          'Modern buildings demand plumbing that can handle hard water, high temperatures, and years of continuous daily use without corrosion or scaling. CPVC and UPVC pipes and fittings meet this need with lightweight, corrosion-free systems built for long-term reliability. We manufacture both to IS and ASTM standards, with our CPVC systems built for hot and cold water applications up to 93°C, and our UPVC systems engineered for reliable cold water plumbing across homes, high-rises, and commercial complexes.',
-          'Reliable water supply is only half the picture — what happens after water is used matters just as much. Our SWR piping systems handle soil, waste, and rainwater discharge for buildings, using push-fit rubber ring joints that stay leak-proof for decades without solvent welding. For larger infrastructure and municipal projects, our UDS underground drainage systems are engineered to withstand soil pressure and heavy loads well below the surface, where a pipe failure is far more costly to repair.',
-          'Groundwater access presents its own engineering challenge: a pipe buried hundreds of feet underground has to perform flawlessly from day one, since failure means re-drilling. Our PVC pipes for borewell and agricultural applications are built with this in mind, supporting everything from column and casing pipes to on-farm water distribution, alongside our HDPE and MDPE piping and a complete line of valves for reliable flow control.',
-          'Rounding out our range, our garden hose pipes bring the same engineering discipline to everyday watering needs, alongside cable protection pipes, electrical conduit, and braided hose pipes built for industrial use. With ISI-marked quality across every product line, we bring the same technical precision to a single household tap that we bring to large-scale infrastructure projects.',
-        ]}
+          'Modern plumbing systems require pipes and fittings that deliver optimal performance throughout the years of daily use. Kothari Group produces CPVC and UPVC pipes and fittings for residential, commercial, as well as high-rise applications. Built to enhance water flow, our CPVC systems work well for hot and cold water applications of up to 93 degrees Celsius. The UPVC pipes offer a robust solution for cold water plumbing tasks.',
+          `Efficient water management also depends on efficient drainage. Kothari Group's SWR piping systems are designed to manage the discharge of soil, waste, as well as rainwater, whereas the underground drainage systems ensure efficient installation even for the most challenging infrastructure developments. Our companies produce effective solutions for waste transportation throughout buildings, urban drainage systems, and city projects.`,
+          'For accessing groundwater and for getting agricultural water supply, our PVC borewell pipes, casing pipes, and column pipes are expected to serve well in a complex underground environment. Our company also has HDPE and MDPE pipes and valves that are needed for water supply throughout farms.',
+          'From garden hose and electrical conduits to cable protection and industrial braided hoses, Kothari Group offers pipes for a wide array of purposes.',
+        ]} 
       />
       {/* <Category tab="pipes"/> */}
       <FeaturedProducts products={FEATURE_PRODUCTS} theme="blue"/>
       {/* <WhyKothariGroup /> */}
       {/* <Impact /> */}
-      <KnowledgeCentre itemData={items} />
+      <KnowledgeCentre itemData={items} /> 
       <NewsDivision newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
       <Footer footerData={footerData}/>
     </>

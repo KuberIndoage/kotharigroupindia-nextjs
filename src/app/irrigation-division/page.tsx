@@ -126,19 +126,19 @@ function AgricultureDivisionContent() {
   const items = [
     {
       title: 'Banana Guides',
-      description: 'Expert banana cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+      description: 'Get familiar with the information on growing banana plants, spacing, irrigation process, fertigation, and combating pests. ',
       image: 'https://images.pexels.com/photos/4399936/pexels-photo-4399936.jpeg',
       link: '#banana'
     },
     {
       title: 'Chilli Guides',
-      description: 'Expert chilli cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and fruit quality.',
+      description: 'Get useful information about growing chillies, irrigation, water management, plant spacing, and pest control.  ',
       image: 'https://images.pexels.com/photos/34111554/pexels-photo-34111554.jpeg',
       link: '#chilli'
     },
     {
       title: 'Onion Guides',
-      description: 'Expert onion cultivation guidance on spacing, irrigation, fertigation, and pest management for better yield and bulb quality.',
+      description: 'Follow the advice provided on how to grow onions, use space for the plants, irrigation, and pest management. ',
       image: 'https://images.pexels.com/photos/7129153/pexels-photo-7129153.jpeg',
       link: '#onion'
     }
@@ -480,8 +480,8 @@ const FEATURE_PRODUCTS = [
       <FeaturedProducts products={FEATURE_PRODUCTS} theme="green"/>
       {/* <WhyKothariGroup /> */}
       {/* <Impact /> */}
-      <KnowledgeCentre itemData={items} theme="blue"/>
-      <NewsDivision theme="blue" newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
+      <KnowledgeCentre itemData={items} theme="green"/>
+      <NewsDivision theme="green" newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
       <Footer footerData={footerData}/>
     </>
   );

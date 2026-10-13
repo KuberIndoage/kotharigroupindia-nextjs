@@ -108,9 +108,9 @@ function useSwipeController(
 
 export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: DivisionNewsCard[]; blogPosts?: DivisionNewsCard[]; loading?: boolean }> = ({ theme = 'blue', newsItems: newsItemsProp, blogPosts: blogPostsProp, loading = false }) => {
   const isGreen = theme === 'green';
-  const accentHoverBorder = isGreen ? 'hover:border-[#1E8E3E]' : 'hover:border-[#1575B3]';
-  const accentHoverText = isGreen ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]';
-  const accentGroupHoverText = isGreen ? 'group-hover:text-[#1E8E3E]' : 'group-hover:text-[#1575B3]';
+  const accentHoverBorder = isGreen ? 'hover:border-[#1575B3]' : 'hover:border-[#1575B3]';
+  const accentHoverText = isGreen ? 'hover:text-[#1575B3]' : 'hover:text-[#1575B3]';
+  const accentGroupHoverText = isGreen ? 'group-hover:text-[#1575B3]' : 'group-hover:text-[#1575B3]';
   const FALLBACK_NEWS: DivisionNewsCard[] = [
     {
       key: 'NEWS-01',
@@ -495,7 +495,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
           </div>
 
           {/* Date Strip */}
-          <div className={`absolute bottom-0 left-0 right-0 ${isGreen ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} text-white px-4 py-2 text-[11px] font-mono tracking-widest uppercase text-center`}>
+          <div className={`absolute bottom-0 left-0 right-0 ${isGreen ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} text-white px-4 py-2 text-[11px] font-mono tracking-widest uppercase text-center`}>
             {item.date}
           </div>
         </div>
@@ -539,9 +539,9 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-              What engineers, agricultural experts, and project managers say about our piping solutions.
+             {isGreen ? 'Listen to the dealers and representatives of agriculture to find out about the quality of Kothari irrigation products and customer service experience. ' : 'Learn from distributors and experts in the industry about what they think of Kothari’s products, quality, and customer service quality. '}
             </p>
-          </div>
+          </div> 
 
           {/* Testimonial Cards */}
           {testimonials.length > testimonialsItemsPerPage ? (
@@ -567,7 +567,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                         className="h-full"
                       >
                         <div className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group overflow-hidden h-[500px]`}>
-                          <Quote className={`w-8 h-8 ${isGreen ? 'text-[#1E8E3E]/20' : 'text-[#1575B3]/20'} absolute top-6 right-6`} />
+                          <Quote className={`w-8 h-8 ${isGreen ? 'text-[#1575B3]/20' : 'text-[#1575B3]/20'} absolute top-6 right-6`} />
 
                           <div className="space-y-6 relative z-10">
                             <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-white shadow-md">
@@ -697,7 +697,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-              Engineering deep-dives, agricultural guides, and polymer specifications curated by Kothari specialists.
+             {isGreen ?  'Learn about useful farming techniques, methods of irrigation, and receive an expert opinion. ' : ' Explore expert tips on pipes, plumbing fittings, groundwater access, drainage, and efficient water management. '}
             </p>
           </div>
 
@@ -783,8 +783,8 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-              Manufacturing expansions, corporate developments, and official press releases from Kothari Group.
-            </p>
+             {isGreen ? 'Stay updated on Kothari Group’s latest milestones, innovations, and industry developments.' : 'Stay updated on Kothari Group’s latest milestones, innovations, and industry developments.'}
+            </p>  
           </div>
 
           {/* News Cards Grid / Auto Slider */}
