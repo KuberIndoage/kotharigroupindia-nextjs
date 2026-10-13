@@ -153,9 +153,9 @@ export const aboutCoreValues = {
 export const aboutLegacy = {
   heading: "The Legacy of Kothari Group",
   timeline: [
-    { year: '1980', title: 'The Beginning', description: 'Founder, Mr. Kothari, starts trading through a fertilizer shop', image: '/t1.jpg' },
+    { year: '1980', title: 'The Beginning', description: 'Founder, Mr. Kothari, starts trading through a fertilizer shop', image: '/legacy/1980.png' },
     { year: '1985', title: 'Diversification', description: 'Diversifies into agriculture, irrigation products, trading and services', image: '/t7.jpg' },
-    { year: '1997', title: 'PVC Manufacturing', description: 'Commenced PVC pipe and fitting manufacturing with a single machine', image: '/plant_extrusion_line_1784719717817.jpg' },
+    { year: '1997', title: 'PVC Manufacturing', description: 'Commenced PVC pipe and fitting manufacturing with a single machine', image: '/legacy/1997.png' },
     { year: '1999', title: 'Hose Pipe Production', description: 'Initiating the production of Hose pipes at Unit 2', image: '/plant_warehouse_storage_1784719730647.jpg' },
     { year: '2002', title: 'Agri Cables', description: 'Forays into Agri submersible cables', image: '/t2.jpg' },
     { year: '2003', title: 'HDPE Pipes & Fittings', description: 'Unit 3: HDPE pipes and fittings', image: '/t3.jpg' },

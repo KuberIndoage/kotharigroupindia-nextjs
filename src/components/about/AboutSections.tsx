@@ -245,7 +245,7 @@ export const AboutCoreValues: React.FC = () => {
 /* ── 6. LEGACY — THE RIVER OF MILESTONES ─────────────── */
 const LEGACY_RIVER_PATH = 'M 0 250 L 1200 250';
 
-const LEGACY_VIEW_W = 1200;
+const LEGACY_VIEW_W = 1200; 
 const LEGACY_VIEW_H = 500;
 
 const LEGACY_BG_IMAGES = [
@@ -518,9 +518,9 @@ export const AboutLegacy: React.FC = () => {
                     referrerPolicy="no-referrer"
                     className="w-full h-28 sm:h-32 object-cover object-center"
                   />
-                  <span className="block px-4 py-3 border-t border-white/10">
+                  {/* <span className="block px-4 py-3 border-t border-white/10">
                     {dm.description}
-                  </span>
+                  </span> */}
                 </span>
               </div>
             );

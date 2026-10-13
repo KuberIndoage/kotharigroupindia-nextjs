@@ -19,29 +19,29 @@ export const WhyKothariGroup = () => {
     {
       id: '02',
       title: 'High Quality',
-      subtitle: 'Products & Materials',
-      description: `We deliver durable, high-quality products designed to perform reliably in India's diverse rural and urban needs`,
+      subtitle: 'Durable Products & Materials',
+      description: `High-quality pipes, fittings, and irrigation products built to last.`,
       icon: Award,
     },
     {
       id: '03',
       title: 'Innovative',
-      subtitle: 'Precision Solutions',
-      description: 'We lead through innovation with cutting-edge, affordable, and sustainable water management technologies.',
+      subtitle: 'Precision Water Management',
+      description: 'Smart irrigation and piping solutions for efficient water management.',
       icon: Lightbulb,
     },
     {
       id: '04',
       title: 'Pan India',
-      subtitle: 'Distribution Presence',
-      description: 'Our extensive dealer and distributor network, spanning 23+ states, ensures wide accessibility and quick delivery of our products.',
+      subtitle: 'Extensive Distribution Network',
+      description: 'Serving customers across 23+ states through our dealer network.',
       icon: Globe,
     },
     {
       id: '05',
       title: 'Customer-First',
-      subtitle: 'Driven Approach',
-      description: 'Quick delivery, responsive after-sales support, and a customer-first approach ensure strong, long-lasting relationships unmatched by competitors.',
+      subtitle: 'Driven by Customer Needs',
+      description: 'Reliable products, responsive support, and dependable service.',
       icon: Handshake,
     },
   ];
@@ -82,7 +82,7 @@ export const WhyKothariGroup = () => {
             </h2>
           </div>
           <p className="text-sm text-slate-500 max-w-md font-normal leading-relaxed">
-            Over three decades of manufacturing leadership, precision polymer engineering, and trust across millions of Indian farms and structures.
+            With 35+ years of manufacturing expertise, we deliver trusted pipes, fittings, and irrigation solutions across India.
           </p>
         </div>
 

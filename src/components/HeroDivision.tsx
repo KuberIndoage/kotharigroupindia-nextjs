@@ -32,14 +32,14 @@ const BANNER_IMAGES: Record<
   { src: string; mobile?: string }[]
 > = {
   irrigation: [
-    { src: '/banners/irrigation/irrigation_1.png' },
-    { src: '/banners/irrigation/irrigation_2.png' },
-      { src: '/banners/irrigation/irrigation_3.png' },
+    { src: '/banners/irrigation/irrigation_1.png', mobile: '/banners/irrigation/mobile/irrigation_1M.jpg' },
+    { src: '/banners/irrigation/irrigation_2.png', mobile: '/banners/irrigation/mobile/irrigation_2M.jpg' },
+      { src: '/banners/irrigation/irrigation_3.png' , mobile: '/banners/irrigation/mobile/irrigation_3M.jpg' }, 
   ], 
   pipe: [
-    { src: '/banners/pipe/pipe_1.png' , mobile: '/banners/pipe/pipe1mobile.jpeg' },
-    { src: '/banners/pipe/pipe_2.png', mobile: '/banners/pipe/pipe2mobile.jpg' },
-    { src: '/banners/pipe/pipe_3.png' }, 
+    { src: '/banners/pipe/pipe_1.png' , mobile: '/banners/pipe/mobile/pipe_1M.jpg' },
+    { src: '/banners/pipe/pipe_2.png', mobile: '/banners/pipe/mobile/pipe_2M.jpg' },
+    { src: '/banners/pipe/pipe_3.png', mobile: '/banners/pipe/mobile/pipe_3M.jpg' }, 
   ], 
 };
 

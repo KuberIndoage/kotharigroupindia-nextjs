@@ -47,7 +47,7 @@ export const Solutions = () => {
             <div className="flex items-center gap-3">
               <span className="w-8 h-[2px] bg-[#1575B3]" />
               <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#1575B3]">
-                ABOUT US
+                About Kothari Group
               </span>
             </div>
 
@@ -55,7 +55,9 @@ export const Solutions = () => {
             <blockquote 
               className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight leading-[1.35] text-[#0F172A] select-none"
             >
-              “Water is where every field and every home begins. <span className="font-semibold">We manage it end to end</span>, with irrigation that keeps farms thriving and plumbing that keeps buildings running. <span className="font-semibold">That is water management done right.</span>”
+
+              “We believe better water management builds a better tomorrow. <span className="font-semibold">At Kothari Group, we combine reliable pipes and advanced irrigation solutions</span> to move, manage, and conserve water efficiently. <span className="font-semibold">From homes and infrastructure to farms</span>, we create solutions designed for a more water-secure future.”
+              {/* “Water is where every field and every home begins. <span className="font-semibold">We manage it end to end</span>, with irrigation that keeps farms thriving and plumbing that keeps buildings running. <span className="font-semibold">That is water management done right.</span>” */}
             </blockquote>
 
             {/* Author Attribution Block */}

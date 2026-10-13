@@ -396,7 +396,7 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-              Engineering deep-dives, agricultural guides, and polymer specifications curated by Kothari specialists.
+              Discover expert insights, ideas, and updates on pipes, irrigation, and smarter water management.
             </p>
           </div>
 
@@ -477,7 +477,7 @@ const FALLBACK_BLOGS: HomeNewsCard[] = [
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-              Manufacturing expansions, corporate developments, and official press releases from Kothari Group.
+              Stay updated on Kothari Group’s latest milestones, innovations, and industry developments.
             </p>
           </div>
 

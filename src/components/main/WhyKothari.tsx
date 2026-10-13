@@ -27,8 +27,8 @@ const divisionData: DivisionOverview[] = [
   {
     id: 'pipes-division',
     title: 'Pipe Division',
-    shortDesc: 'Engineered fluid conveyance and underground infrastructure systems.',
-    fullDesc: 'Comprehensive piping architecture designed for residential towers, urban drainage, subterranean cable ducting, and deep extraction systems.',
+    shortDesc: 'Pipes, Fittings & Pipelining Solutions for Modern Infrastructure',
+    fullDesc: 'Our Pipe Division delivers reliable pipes, pipe fittings, and plumbing fittings for efficient water management across homes, farms, and urban infrastructure, supporting water conveyance, drainage, and groundwater access.',
     bgImage: 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=1600&q=80',
     hoverGradient: 'from-[#0E588A]/95 via-[#1575B3]/90 to-slate-950/95',
     accentColor: 'text-[#1575B3] group-hover:text-sky-300',
@@ -44,8 +44,8 @@ const divisionData: DivisionOverview[] = [
   {
     id: 'irrigation-division',
     title: 'Irrigation Division',
-    shortDesc: 'Micro-hydration, drip networks, and smart farm automation.',
-    fullDesc: 'Advanced agricultural infrastructure engineered for maximum crop yield, zero-clog filtration, precision nutrient delivery, and automated farm governance.',
+    shortDesc: 'Precision Irrigation & Micro-Irrigation Solutions for Better Agriculture',
+    fullDesc: 'Our Irrigation Division delivers drip, micro-irrigation, and greenhouse irrigation solutions for efficient water management, helping farmers optimize water use, nutrient delivery, and crop productivity.',
     bgImage: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1600&q=80',
     hoverGradient: 'from-emerald-950/95 via-teal-900/90 to-slate-950/95',
     accentColor: 'text-emerald-400 group-hover:text-emerald-300',
@@ -72,7 +72,7 @@ export const WhyKothari = () => {
             Divisions
           </h2>
           <p className="text-sm text-slate-600 max-w-md md:text-left font-normal leading-relaxed">
-            Architectural conduits and agrarian micro-irrigation systems engineered for high-end infrastructure and scale.
+            Integrated pipe and irrigation solutions designed to support India's residential, commercial, agricultural, and infrastructure water management requirements. 
           </p>
         </div>
 

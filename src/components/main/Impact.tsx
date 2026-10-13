@@ -62,7 +62,7 @@ export const Impact: React.FC = () => {
           </div>
 
           <p className="text-xs sm:text-sm text-sky-100/80 max-w-sm font-light leading-relaxed">
-            Quantifiable scale across civil water supply, agricultural automation, and regional distribution networks.
+            Supporting India's civil infrastructure, agriculture, and water management through reliable piping and irrigation solutions.
           </p>
         </div>
 
