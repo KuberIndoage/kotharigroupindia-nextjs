@@ -218,7 +218,7 @@ export const AboutVisionMission: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <SectionHeader
           title="Vision & Mission"
-          description="The direction we travel and the standard we hold."
+          description="To create a world where water management is effective, practical, and economical."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {aboutVisionMission.map((item, idx) => {
@@ -250,7 +250,7 @@ export const AboutVisionMission2: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <SectionHeader
           title="Purpose & Principle"
-          description="The direction we travel and the standard we hold."
+          description="Our Purpose, Guided by Integrity and Responsible Water Management."
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {aboutPurposePrinciple.map((item, idx) => {
