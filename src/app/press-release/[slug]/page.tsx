@@ -131,7 +131,7 @@ async function Article({ slug }: { slug: string }) {
                     src={article.authorAvatar}
                     alt={article.author}
                     referrerPolicy="no-referrer"
-                    className="w-7 h-7 sm:w-10 sm:h-10 rounded-full object-cover border border-white/40"
+                    className="w-16 h-16 sm:w-24 sm:h-24 rounded-full object-cover border border-white/40"
                   />
                 ) : (
                   <span className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-[#1575B3]/90 text-white flex items-center justify-center text-[10px] sm:text-sm font-semibold uppercase">
@@ -143,25 +143,20 @@ async function Article({ slug }: { slug: string }) {
                       .join('')}
                   </span>
                 )}
-                <div>
-                  <span className="block text-[6px] sm:text-[10px] font-mono tracking-[0.2em] uppercase text-white/70">
+                <div className='flex flex-col gap-1'>
+                  <span className="block text-[8px] sm:text-sm font-mono tracking-[0.2em] uppercase text-white/70">
                     Written by
                   </span>
-                  <span className="block text-[9px] sm:text-sm font-semibold text-white leading-snug">
+                  <span className="block text-[12px] sm:text-[18px] font-semibold text-white leading-snug">
                     {article.author}
                   </span>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-white/20">
-                <span className="block text-[6px] sm:text-[10px] font-mono tracking-[0.2em] uppercase text-white/70">
-                  Published on
-                </span>
-                <span className="flex items-center gap-2 text-[8px] sm:text-sm font-semibold text-white">
+                  <span className="flex items-center gap-2 text-[8px] sm:text-sm font-semibold text-white/70">
                   <Calendar className="w-2 h-2 sm:w-4 sm:h-4 text-white/90" />
                   {article.date}
                 </span>
+                </div>
               </div>
+
             </div>
           </div>
         </div>

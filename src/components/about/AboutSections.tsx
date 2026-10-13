@@ -19,6 +19,7 @@ import {
   TrendingUp,
   MapPin,
   ArrowUpRight,
+  YoutubeIcon,
 } from 'lucide-react';
 import { SectionHeader } from '../solutions/SectionHeader';
 import { Reveal } from '../main/Reveal';
@@ -30,20 +31,25 @@ import {
   aboutCoreValues,
   aboutLegacy,
   aboutWhyKothari,
+  aboutPurposePrinciple,
+  capGrowth,
 } from '@/data/about';
 
 /* ── 1. HERO ─────────────────────────────────────────── */
 export const AboutHero: React.FC = () => {
-  return (
+  return ( 
     <div className="relative w-full min-h-[40dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden flex flex-col justify-between">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={aboutHero.image}
-          alt="About Kothari Group"
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center"
-        />
+        <picture className="absolute inset-0">
+          <source media="(max-width: 639px)" srcSet={aboutHero.mobileBG} />
+          <img
+            src={aboutHero.image}
+            alt="About Kothari Group"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
         <div className="absolute inset-0 bg-black/25 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/50 pointer-events-none" />
       </div>
@@ -57,7 +63,7 @@ export const AboutHero: React.FC = () => {
         </nav> */}
 
         {/* Headline Section */}
-        <div className="w-full flex flex-col gap-5 sm:gap-6 my-auto py-8">
+        <div className="w-full flex flex-col gap-5 sm:gap-6 py-8 sm:my-auto">
           <span className="inline-block self-start text-[11px] font-mono tracking-[0.25em] uppercase text-white border border-white/25 bg-white/10 backdrop-blur-sm px-3 py-1.5">
             {aboutHero.eyebrow}
           </span>
@@ -69,7 +75,10 @@ export const AboutHero: React.FC = () => {
           </p>
         </div>
 
-        {/* Stats Strip - Anchored at Bottom */}
+{/* Stats Strip - Anchored at Bottom */}
+        {/* Mobile aspect spacer: keeps headline at top and stats at bottom */}
+        <div aria-hidden="true" className="w-full shrink-0 aspect-video sm:hidden" />
+
         <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full border-t border-white/20 pt-6 mt-auto max-w-2xl">
           {aboutGrowth.stats.map((stat) => (
             <div key={stat.label} className="flex flex-col">
@@ -82,6 +91,94 @@ export const AboutHero: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const AboutHero2: React.FC = () => {
+  return ( 
+    <div className="relative w-full min-h-[40dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden flex flex-col justify-between">
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0">
+        <picture className="absolute inset-0">
+          <source media="(max-width: 639px)" srcSet={'/banners/capability/Capabilities-&-Infrastructure_banner-mobile.jpg'} />
+          <img
+            src={'/banners/capability/Capabilities-&-Infrastructure_banner.jpg'}
+            alt="About Kothari Group"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/50 pointer-events-none" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full min-h-[40dvh] sm:min-h-[100dvh] pt-24 sm:pt-28 pb-8 sm:pb-12 flex flex-col justify-between">
+       
+        <div className="w-full flex flex-col gap-5 sm:gap-6 py-8 sm:my-auto">
+          <span className="inline-block self-start text-[11px] font-mono tracking-[0.25em] uppercase text-white border border-white/25 bg-white/10 backdrop-blur-sm px-3 py-1.5">
+          About · Capabilities
+          </span>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tighter leading-[1.05] sm:leading-[1.02] lg:leading-[0.98] drop-shadow-xl m-0 p-0 max-w-5xl">
+           Capabilities & Infrastructure
+          </h1>
+         
+        </div>
+
+{/* Stats Strip - Anchored at Bottom */}
+        {/* Mobile aspect spacer: keeps headline at top and stats at bottom */}
+        <div aria-hidden="true" className="w-full shrink-0 aspect-video sm:hidden" />
+
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-stretch lg:items-end gap-6 sm:gap-8 lg:gap-12 w-full mt-auto">
+                
+                     <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full lg:w-auto border-t border-white/20 pt-6">
+                       {[
+                         { value: '8', label: 'Manufacturing units across India' },
+                         { value: '100%', label: 'Automated production' },
+                         { value: '24+', label: 'Facilities nationwide' },
+                       ].map((stat, idx) => (
+                         <div key={idx} className="flex flex-col">
+                           <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">
+                             {stat.value}
+                           </span>
+                           <span className="text-xs sm:text-sm text-white/90 leading-snug mt-1 drop-shadow-sm">
+                             {stat.label}
+                           </span>
+                         </div>
+                       ))}
+                     </div>
+       
+               
+                     <div className="w-full lg:w-auto lg:max-w-[420px] shrink-0">
+                       <a
+                         href="https://www.youtube.com/watch?v=ev5S-JlLG4A"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         aria-label="Watch our capabilities on YouTube"
+                         className="group card bg-black/50 backdrop-blur-md border border-white/20 rounded-sm shadow-2xl overflow-hidden block cursor-pointer"
+                       >
+                         <div className="relative aspect-video w-full bg-slate-900">
+                           <img
+                             src="https://img.youtube.com/vi/ev5S-JlLG4A/maxresdefault.jpg"
+                             alt="Watch our capabilities"
+                             referrerPolicy="no-referrer"
+                             loading="lazy"
+                             className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                           />
+                           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors" />
+                           <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] pointer-events-none" />
+                           <div className="absolute inset-0 flex items-center justify-center">
+                             <YoutubeIcon className="w-9 h-9 drop-shadow-lg text-red-600" />
+                           </div>
+                         </div>
+                         <div className="px-4 py-3 text-xs font-mono tracking-widest uppercase text-white/85 group-hover:text-sky-200 flex items-center justify-between gap-3 transition-colors">
+                           <span>Watch our capabilities</span>
+                           <ArrowUpRight className="w-4 h-4" />
+                         </div>
+                       </a>
+                     </div>
+                   </div>
       </div>
     </div>
   );
@@ -113,6 +210,7 @@ export const AboutGrowth: React.FC = () => {
 
 /* ── 3. VISION / MISSION ─────────────────────────────── */
 const VISION_ICONS: Record<string, React.ElementType> = { vision: Eye, mission: Target };
+const PURPOSE_ICONS: Record<string, React.ElementType> = { purpose: Handshake, principle: Target };
 
 export const AboutVisionMission: React.FC = () => {
   return (
@@ -125,6 +223,38 @@ export const AboutVisionMission: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {aboutVisionMission.map((item, idx) => {
             const Icon = VISION_ICONS[item.icon] || Eye;
+            return (
+              <Reveal key={item.type} delay={idx * 90} className="h-full">
+                <div className="group bg-white border border-slate-200 p-8 sm:p-10 flex flex-col gap-5 h-full shadow-sm hover:shadow-xl hover:border-[#1575B3] hover:-translate-y-1 transition-all duration-500">
+                  <div className="w-12 h-12 bg-[#F5F6F8] border border-slate-200 flex items-center justify-center group-hover:bg-[#1575B3] group-hover:border-[#1575B3] transition-colors">
+                    <Icon className="w-6 h-6 text-[#1575B3] group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-serif font-light uppercase tracking-tight text-slate-900">
+                    {item.heading}
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+export const AboutVisionMission2: React.FC = () => {
+  return (
+    <section className="w-full bg-[#F5F6F8] py-16 sm:py-24 border-b border-slate-300/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+        <SectionHeader
+          title="Purpose & Principle"
+          description="The direction we travel and the standard we hold."
+        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {aboutPurposePrinciple.map((item, idx) => {
+            const Icon = PURPOSE_ICONS[item.icon] || Eye;
             return (
               <Reveal key={item.type} delay={idx * 90} className="h-full">
                 <div className="group bg-white border border-slate-200 p-8 sm:p-10 flex flex-col gap-5 h-full shadow-sm hover:shadow-xl hover:border-[#1575B3] hover:-translate-y-1 transition-all duration-500">
@@ -362,7 +492,7 @@ export const AboutLegacy: React.FC = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-blue-100/80 max-w-md font-normal leading-relaxed">
-            Four decades of milestones winding like a river — five years ride the full flow at once. When the fifth flows past, the next five arrive.
+         Kothari Group has established a legacy of over 40 years in the domain of pipes and irrigation solutions for sustainable water management. 
           </p>
         </div>
       </div>
@@ -570,7 +700,7 @@ export const AboutWhyKothari: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <SectionHeader
           title={aboutWhyKothari.heading}
-          description="Six reasons farmers, builders and engineers standardize on Kothari."
+          description="Born in Solapur, Maharashtra, Kothari Group has grown with a clear purpose: to make water management more efficient, accessible, and reliable. "
         />
         <div className="flex flex-col divide-y divide-slate-200 border-y border-slate-200 bg-white">
           {aboutWhyKothari.items.map((item, i) => {

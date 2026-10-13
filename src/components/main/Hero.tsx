@@ -18,8 +18,9 @@ const ArrowIcon = () => (
 
 const slides = [
   {
-    bgImage: '/heronew.jpg',
-    cardImage: '/heronew.jpg',
+    bgImage: '/banners/home/Home-banner-1.jpg',
+    mobileBg: '/banners/home/mobile/Home-banner-1_mobile.jpg',
+    cardImage: '/banners/home/Home-banner-1.jpg',
     headline: <>Trusted Water Management for India’s Growing Needs</>,
     subtext: 'Delivering high-durability plumbing solutions designed for leak-free precision, flawless water delivery, and modern waste management.',
     ctaText: 'Explore Plumbing Systems',
@@ -27,8 +28,9 @@ const slides = [
     cardDescription: 'Reliable pipes and fittings for efficient water flow.',
   },
   {
-    bgImage: '/heronew2.jpg',
-    cardImage: '/heronew2.jpg',
+    bgImage:  '/banners/home/Home-banner-2.jpg',
+    mobileBg: '/banners/home/mobile/Home-banner-2-Mobile.jpg',
+    cardImage:  '/banners/home/Home-banner-2.jpg',
    headline: <>Trusted Water Management for India’s Growing Needs</>,
     subtext: 'Building heavy-duty agricultural piping systems that optimize every drop, protecting crops and maximizing harvest yields nationwide.',
     ctaText: 'Discover Agri Solutions',
@@ -36,8 +38,9 @@ const slides = [
     cardDescription: 'Durable agricultural pipes for efficient farm water conveyance.',
   },
   {
-    bgImage: '/heronew3.jpg',
-    cardImage: '/heronew3.jpg',
+    bgImage:'/banners/home/Home-banner-3.jpg',
+    mobileBg: '/banners/home/mobile/Home-banner-3_Mobile.jpg',
+    cardImage:'/banners/home/Home-banner-3.jpg',
    headline: <>Trusted Water Management for India’s Growing Needs</>,
     subtext: 'Empowering millions of farmers with intelligent micro-irrigation systems designed for peak crop vitality and water conservation.',
     ctaText: 'View Micro Irrigation',
@@ -98,14 +101,14 @@ export const Hero = () => {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <div ref={bgRef} className="relative w-full h-full">
-          <Image
-            src={active.bgImage}
-            alt="Hero Background"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+          <picture className="absolute inset-0">
+            <source media="(max-width: 639px)" srcSet={active.mobileBg} />
+            <img
+              src={active.bgImage}
+              alt="Hero Background"
+              className="w-full h-full object-cover object-center"
+            />
+          </picture>
         </div>
         
         {/* Base Dark Overlay */}

@@ -96,10 +96,10 @@ export const WhyKothariGroup = () => {
             <div className="absolute inset-0 z-0">
               <div 
                 className="w-full h-full bg-cover bg-center mix-blend-overlay"
-                style={{ backgroundImage: `url('/heronew3.jpg')` }}
+                style={{ backgroundImage: `url('/banners/home/Why-kothari-Group-_1.jpg')` }}
               />
               {/* Overlay clear in center */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#041E33fa_0%,#062A4Acc_28%,#020D18fa_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#041E33d9_0%,#062A4A99_48%,#020D18cc_100%)]" />
             </div>
 
             {/* TOP PORTION (Header & Title) */}

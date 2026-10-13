@@ -13,27 +13,31 @@ export interface ManufacturingUnitsData {
 export const manufacturingUnitsData: ManufacturingUnitsData = {
   heading: 'Our Manufacturing Units',
   description:
-    "For over four decades, Kothari Group has powered India's irrigation and pipe manufacturing industry with innovative water management and piping solutions. We started by equipping millions of farmers with water management solutions built for Indian farms, and we've grown to be a trusted, genuine Indian manufacturer of building pipe solutions nationwide. Today, our 8 manufacturing units produce CPVC, UPVC, HDPE, and PVC pipes and fittings at scale, engineered to deliver reliable water and plumbing solutions to millions of homes and farms across the country.",
+    "The foundation of strong products lies in effective manufacturing processes. Kothari Group has 8 manufacturing units where various kinds of pipes such as PVC, UPVC, HDPE and CPVC along with irrigation systems are manufactured. Thanks to our manufacturing capabilities, we are able to cater to the requirements of agriculture, residential, commercial and infrastructure projects. We use our manufacturing experience, strive to produce the best products available in India and deliver quality services at an affordable cost.",
   units: [
-    { img: '/units/unit-1.jpeg', name: 'PVC Pipes & Fittings 1997 (Mohol-MH)' },
-    { img: '/units/unit-2.jpeg', name: 'Hose Pipes 1999 (Mohol-MH)' },
-    { img: '/units/unit-3.jpeg', name: 'HDPE Pipes & Fittings 2003 (Mohol-MH)' },
-    { img: '/units/unit-4.jpeg', name: 'Irrigation Systems 2004 (Mohol-MH)' },
+    { img: '/units/unit-1.jpg', name: 'PVC Pipes & Fittings (Mohol, Solapur-MH)' },
+    { img: '/units/unit-2.jpg', name: 'Hose Pipes (Mohol, Solapur-MH)' },
+    { img: '/units/unit-3.jpg', name: 'HDPE Pipes & Fittings (Mohol, Solapur-MH)' },
+    { img: '/units/unit-4.jpg', name: 'Irrigation Systems (Mohol, Solapur-MH)' },
     {
-      img: '/units/unit-5.jpeg',
-      name: 'Submersible Cables & Wires 2015 (Chincholi-MH)',
+      img: '/units/unit-5.jpg',
+      name: 'Submersible Cables & Wires (Chincholi, Solapur-MH)',
     },
     {
-      img: '/units/unit-6.jpeg',
-      name: 'PVC Pipes & Irrigation Systems 2019 (Kukarwada-GJ)',
+      img: '/units/unit-6.jpg',
+      name: 'PVC Pipes & Irrigation Systems (Kukarwada, Mehsana-GJ)',
     },
     {
-      img: '/units/unit-7.jpeg',
-      name: 'Plumbing Pipes & Fittings 2023 (Yawali-MH)',
+      img: '/units/unit-7.jpg',
+      name: 'Plumbing Pipes & Fittings (Yawali, Solapur-MH)',
     },
     {
-      img: '/units/unit-8.jpeg',
-      name: 'PVC, DWC & HDPE 2025 (Pithampur-MP)',
+      img: '/units/unit-8.jpg',
+      name: 'PVC, DWC & HDPE (Pithampur, Dhar-MP)',
+    },
+    {
+      img: '/units/unit-9.jpg',
+      name: 'PVC, HDPE, DWC Pipes & Fittings (Gandrajupalle, Chittoor-AP)',
     },
   ],
 };

@@ -870,14 +870,14 @@ const handleSolutionBack = () => {
   </div>
   <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>8</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>9</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Factories</span>
   </div>
 
 <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
 
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>14</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>11</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Warehouses</span>
   </div>
   
@@ -1087,14 +1087,14 @@ const handleSolutionBack = () => {
   </div>
   <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>8</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>9</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Factories</span>
   </div>
 
 <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
 
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>14</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>11</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Warehouses</span>
   </div>
   
@@ -1169,14 +1169,14 @@ const handleSolutionBack = () => {
   </div>
   <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>8</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>9</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Factories</span>
   </div>
 
 <div className={`w-px h-8 ${isIrrigation ? 'bg-[#C8E6C9]' : 'bg-[#DCEAF5]'}`} />
 
   <div>
-    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>14</span>
+    <span className={`text-3xl font-light ${isIrrigation ? 'text-[#1E8E3E]' : 'text-[#1575b3]'} tracking-tight`}>11</span>
     <span className="block text-xs font-medium text-[#5F6B7A] uppercase tracking-wider mt-0.5">Warehouses</span>
   </div>
   

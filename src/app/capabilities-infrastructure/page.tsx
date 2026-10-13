@@ -8,6 +8,7 @@ import { FacilityMap } from '@/components/contact/FacilityMap';
 import { SolutionOverview } from '@/components/solutions/SolutionOverview';
 import { CertificatesSection } from '@/components/capabilities/CertificatesSection';
 import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { AboutHero2 } from '@/components/about/AboutSections';
 
 export const generateMetadata = wpPageMetadataFor('capabilities-infrastructure', {
   title: 'Capabilities & Infrastructure | Kothari Group India',
@@ -43,7 +44,7 @@ const technologyCards = [
   },
 ];
 
-const CAPABILITIES_INTRO = [
+const CAPABILITIES_INTRO = [ 
   `At Kothari Group, with decades of expertise, we have developed a deep understanding of the needs of the agricultural and construction industry. That's why, we only manufacture quality and cost-effective irrigation solutions and pipes according to the customer's needs.`,
   `We have 8 strategically located manufacturing units across the country, which helps to meet the requirements of various geographies and markets.`,
 ];
@@ -54,9 +55,10 @@ export default function CapabilitiesInfrastructurePage() {
       <div className="text-left">
         <Home2Header />
 
+        <AboutHero2/>
         {/* Hero */}
-        <div className="relative w-full min-h-[40dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden flex flex-col justify-between">
-          {/* Background Image Container */}
+        {/* <div className="relative w-full min-h-[40dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden flex flex-col justify-between">
+       
           <div className="absolute inset-0 z-0">
             <img
               src="/plant_aerial_view_1784719755067.jpg"
@@ -68,9 +70,9 @@ export default function CapabilitiesInfrastructurePage() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/50 pointer-events-none" />
           </div>
 
-          {/* Main Container */}
+ 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full min-h-[40dvh] sm:min-h-[100dvh] pt-24 sm:pt-28 pb-8 sm:pb-12 flex flex-col justify-between">
-            {/* Headline Section - Centered Vertically */}
+     
             <div className="w-full flex flex-col gap-5 sm:gap-6 my-auto py-8">
               <span className="inline-block self-start text-[11px] font-mono tracking-[0.25em] uppercase text-white border border-white/25 bg-white/10 backdrop-blur-sm px-3 py-1.5">
                 About · Capabilities
@@ -80,9 +82,9 @@ export default function CapabilitiesInfrastructurePage() {
               </h1>
             </div>
 
-            {/* Stats & Video - Anchored at Bottom */}
+       
             <div className="flex flex-col-reverse lg:flex-row justify-between items-stretch lg:items-end gap-6 sm:gap-8 lg:gap-12 w-full mt-auto">
-              {/* Left Side: Stats Grid */}
+         
               <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full lg:w-auto border-t border-white/20 pt-6">
                 {[
                   { value: '8', label: 'Manufacturing units across India' },
@@ -100,7 +102,7 @@ export default function CapabilitiesInfrastructurePage() {
                 ))}
               </div>
 
-              {/* Right Side: Video Card */}
+        
               <div className="w-full lg:w-auto lg:max-w-[420px] shrink-0">
                 <a
                   href="https://www.youtube.com/watch?v=ev5S-JlLG4A"
@@ -131,7 +133,7 @@ export default function CapabilitiesInfrastructurePage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Overview */}
         <SolutionOverview overview={CAPABILITIES_INTRO} />

@@ -35,20 +35,21 @@ export interface WhyKothariItem {
 }
 
 export const aboutHero = {
-  eyebrow: 'KOTHARI GROUP',
-  heading: 'ABOUT US',
+  eyebrow: 'KOTHARI GROUP', 
+  heading: 'ABOUT KOTHARI GROUP',
   description:
-    'We are dedicated to nurturing lands and building dreams with innovative irrigation solutions for agriculture and plumbing solutions for farms and buildings.',
-  image: '/heronew2.jpg',
+    'From agriculture and residences to rising infrastructure, Kothari Group offer reliable piping and water supply services that allow water to arrive where it matters most. ',
+  image: '/banners/about/About-us-Banner.jpg',
+  mobileBG: '/banners/about/About-us-Banner_mobile.jpg',
 };
 
 export const aboutGrowth = {
-  heading: 'Our Growth Fueled By Innovation & Knowledge',
+  heading: 'Our progress is driven by Creativity & Knowledge',
   intro:
-    'Our nation\u2019s growth is powered by agriculture and construction. Hence, we\u2019re here to revolutionize both these sectors with a wide array of innovative irrigation and piping solutions.',
+    'For India to be successful, agriculture should have advanced irrigation technologies, cities should have reliable infrastructures, and communities should have advanced methods of water management. At Kothari Group, we unite these needs by providing practical, efficient pipes, fittings, and irrigation technologies.',
   paragraphs: [
-    'For over four decades, Kothari Group, an ISO-9001:2015 company, has been on a mission to support India\u2019s agricultural revolution. Our journey started by empowering millions of farmers throughout India with innovative water management solutions for farms.',
-    'Since then, we have extended our expertise to provide innovative building pipe solutions in India, flying high and expanding our horizons. Today, we take pride in bringing ease and joy to the lives of millions of people around the world.',
+    `For years, we have developed hand in hand with India's agricultural and infrastructural needs. What started as an effort at supporting agriculture has turned into a variety of solutions for water transportation, irrigation, plumbing, and infrastructures.`,
+    'The philosophy we follow can be described in three words: identify needs, improve water distribution, and create reliable products. From drip and micro-irrigation systems to robust pipes, Kothari Group continues to develop products and manufacturing practices that will help farms, homes, and communities of India.',
   ],
   stats: [
     { value: '7500+', label: 'Channel Partners' },
@@ -57,22 +58,55 @@ export const aboutGrowth = {
   ] as AboutStat[],
 };
 
+export const capGrowth = {
+  heading: 'Our progress is driven by Creativity & Knowledge',
+  intro:
+    'For India to be successful, agriculture should have advanced irrigation technologies, cities should have reliable infrastructures, and communities should have advanced methods of water management. At Kothari Group, we unite these needs by providing practical, efficient pipes, fittings, and irrigation technologies.',
+  paragraphs: [
+    `For years, we have developed hand in hand with India's agricultural and infrastructural needs. What started as an effort at supporting agriculture has turned into a variety of solutions for water transportation, irrigation, plumbing, and infrastructures.`,
+    'The philosophy we follow can be described in three words: identify needs, improve water distribution, and create reliable products. From drip and micro-irrigation systems to robust pipes, Kothari Group continues to develop products and manufacturing practices that will help farms, homes, and communities of India.',
+  ],
+  stats: [
+    { value: '8', label: 'Manufacturing units across India' },
+    { value: '100%', label: 'Automated production' },
+    { value: '24+', label: 'Facilities nationwide' },
+  ] as AboutStat[],
+};
+
 export const aboutVisionMission: VisionMissionItem[] = [
   {
     type: 'vision',
     heading: 'Our Vision',
     description:
-      'To be the leader in innovating rural and urban water management solutions that empower India\u2019s growth, sustain life, and build a prosperous future for every Indian.',
+      'To be India’s most trusted water management company, enabling secure and efficient water use for rural and urban communities.',
     icon: 'vision',
   },
   {
     type: 'mission',
     heading: 'Our Mission',
     description:
-      'Deliver high-quality, advanced, affordable, and sustainable products with outstanding performance, across rural and urban infrastructure in India.',
+      'We design, manufacture, and deliver reliable, high-performance, affordable, and sustainable solutions for irrigation, water distribution, plumbing, and infrastructure—helping customers use water efficiently every day.',
     icon: 'mission',
   },
 ];
+
+export const aboutPurposePrinciple = [
+  {
+    type: 'purpose',
+    heading: 'Our Purpose',
+    description:
+      'To make every drop of water count for a stronger, more prosperous India.',
+    icon: 'purpose',
+  },
+  {
+    type: 'principle',
+    heading: 'Our Guiding Principle',
+    description:
+      'Do what is right for water, the customer, the company, and India—every time.',
+    icon: 'principle',
+  },
+];
+
 
 export const aboutApproach = {
   heading: 'Our Approach',

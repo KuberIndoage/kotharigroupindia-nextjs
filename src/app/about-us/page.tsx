@@ -9,6 +9,7 @@ import {
   AboutCoreValues,
   AboutLegacy,
   AboutWhyKothari,
+  AboutVisionMission2,
 } from '@/components/about/AboutSections';
 import { ManufacturingUnits } from '@/components/about/ManufacturingUnits';
 import { wpPageMetadataFor } from '@/lib/wp-seo';
@@ -25,15 +26,17 @@ export default function AboutPage() {
       <div className="text-left">
         <Home2Header />
         <AboutHero />
-
+  <AboutGrowth />
           <AboutWhyKothari />
            <AboutLegacy />
             <ManufacturingUnits />
       
         <AboutVisionMission />
+
+         <AboutVisionMission2 />
         {/* <AboutApproach /> */}
        
-         {/* <AboutGrowth /> */}
+       
        
         {/* <AboutCoreValues /> */}
       
