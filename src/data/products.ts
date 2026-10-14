@@ -761,22 +761,22 @@ export const pipeSolutionsMegaMenu = {
     {
       title: "Residential & Commercial Plumbing Solutions",
       url: "/solutions/residential-commercial-plumbing",
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+      image: "/solutions/pipe/residential-commercial-plumbing/hero.jpg",
     },
     {
       title: "Urban Drainage & Sewerage Networks",
       url: "/solutions/urban-drainage-sewerage",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+      image: "/solutions/pipe/urban-drainage-sewerage/hero.jpg",
     },
     {
       title: "Groundwater Access Solutions",
       url: "/solutions/groundwater-access",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80",
+      image: "/solutions/pipe/groundwater-access/hero.jpg",
     },
     {
       title: "Farm Infrastructure Piping Solutions",
       url: "/solutions/farm-infrastructure-piping",
-      image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=600&q=80",
+      image: "/solutions/pipe/farm-infrastructure-piping/hero.jpg",
     },
   ],
 };

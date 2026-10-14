@@ -629,7 +629,7 @@ const handleSolutionBack = () => {
     } finally {
       setFormSending(false);
     }
-  };
+  }; 
 
   const activeChildSlug = solutionChildView;
   const activeChildItems = activeChildSlug ? solutionChildrenBySlug.get(activeChildSlug) || [] : [];

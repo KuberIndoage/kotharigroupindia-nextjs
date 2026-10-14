@@ -198,7 +198,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'Column pipes, casing pipes, and screen pipes engineered for safe, long-term groundwater extraction.',
             detailSlug: 'borewell-water-supply-pipes-for-groundwater-extraction',
-          image: 'https://picsum.photos/seed/kothari-borewell/800/600',
+          image: '/applications/pipe/section1/Borewell-Water Supply-Pipes.jpg',
           products: [
             { name: 'Column Pipes', url: '/column-pipes/column-pipes-with-ss' },
             { name: 'Casing Pipes', url: '/casing-pipes/casing-pipes-fittings' },
@@ -211,7 +211,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'Agricultural PVC and HDPE pipes for reliable on-farm water distribution.',
           detailSlug: 'farm-water-supply',
-          image: 'https://picsum.photos/seed/kothari-farm-water/800/600',
+          image: '/applications/pipe/section1/Farm-Water Supply-Pipes.jpg',
           products: [
             { name: 'HDPE Piping', url: '/pe-pipes-and-fittings/hdpe-piping' },
             { name: 'Agri PVC Moulded Fittings', url: '/upvc-pressure-pipes-fittings/agri-pvc-moulded-fittings' },
@@ -230,7 +230,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'Durable pipe systems for city and town water distribution networks.',
           detailSlug: 'municipal-water-supply',
-          image: 'https://picsum.photos/seed/kothari-municipal/800/600',
+          image: '/applications/pipe/section2/Municipal-Water-Supply-Pipes.jpg',
           products: [
             { name: 'HDPE Piping', url: '/pe-pipes-and-fittings/hdpe-piping' },
             { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
@@ -241,7 +241,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'MDPE pipes and compression fittings supporting Jal Jeevan Mission and rural water access projects.',
           detailSlug: 'rural-water-supply',
-          image: 'https://picsum.photos/seed/kothari-rural-water/800/600',
+          image: '/applications/pipe/section2/Rural-Water-Supply-Pipes.jpg',
           products: [
             { name: 'MDPE Pipes', url: '/pe-pipes-and-fittings/mdpe-pipes' },
             { name: 'Compression Fittings', url: '/pe-pipes-and-fittings/compression-fittings' },
@@ -252,7 +252,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'SWR and underground drainage systems for effective rainwater collection and discharge.',
            detailSlug: 'rainwater-management-system',
-          image: 'https://picsum.photos/seed/kothari-rainwater/800/600',
+          image: '/applications/pipe/section2/Rainwater-Management-Systems.jpg',
           products: [
             { name: 'SWR Pipes and Fittings', url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems' },
             { name: 'PP Low Noise Drainage System', url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system' },
@@ -270,7 +270,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'CPVC and UPVC plumbing systems for homes, apartments, and housing societies.',
           detailSlug: 'residential-plumbing-system',
-          image: 'https://picsum.photos/seed/kothari-residential/800/600',
+          image: '/applications/pipe/section3/Residential-Plumbing-System.jpg',
           products: [
             { name: 'CPVC Pipes & Fittings', url: '/cpvc/cpvc-hot-and-cold-water-piping-system' },
             { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
@@ -281,7 +281,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'Durable plumbing and drainage systems for offices, schools, and commercial complexes.',
            detailSlug: 'commercial-building-plumbing-system',
-          image: 'https://picsum.photos/seed/kothari-commercial/800/600',
+          image: '/applications/pipe/section3/Commercial-Building-Plumbing-Systems.jpg',
           products: [
             { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
             { name: 'CPVC Pipes & Fittings', url: '/cpvc/cpvc-hot-and-cold-water-piping-system' },
@@ -299,7 +299,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'HDPE and UPVC pipes for reliable industrial water distribution.',
            detailSlug: 'industrial-water-supply',
-          image: 'https://picsum.photos/seed/kothari-industrial-water/800/600',
+          image: '/applications/pipe/section4/Industrial-Water-Supply-Pipes.jpg',
           products: [
             { name: 'HDPE Piping', url: '/pe-pipes-and-fittings/hdpe-piping' },
             { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
@@ -318,7 +318,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'SWR pipes and fittings for soil, waste, and rainwater discharge in residential and commercial buildings.',
           detailSlug: 'building-drainage-system',
-          image: 'https://picsum.photos/seed/kothari-building-drainage/800/600',
+          image: '/applications/pipe/section5/Building-Drainage-Systems.jpg',
           products: [
             { name: 'SWR Pipes and Fittings', url: '/soil-waste-and-rainwater-pipes-and-fittings/swr-pipes-and-fittings-for-drainage-systems' },
             { name: 'PP Low Noise Drainage System', url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system' },
@@ -329,7 +329,7 @@ export const pipeApplications: DivisionApplications = {
           description:
             'Low-noise and standard drainage systems for effective rainwater discharge.',
              detailSlug: 'rainwater-drainage-systems',
-          image: 'https://picsum.photos/seed/kothari-rainwater-drainage/800/600',
+          image: '/applications/pipe/section5/Rainwater-Drainage-Systems.jpg',
           products: [
             { name: 'PP Low Noise Drainage System', url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system' },
             { name: 'Sub-Surface Drainage System', url: '/underground-pipe-and-fittings/sub-surface-drainage-system' },
@@ -616,7 +616,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Farm Water Supply Pipes for Agricultural Water Distribution',
     tagline:
       'Plan the right piping network to move farm water efficiently from its source to fields, storage points and irrigation systems.',
-    image: '/heronew.jpg',
+    image: '/applications/pipe/section1/Farm-Water Supply-Pipes.jpg',
     bannerImage: '/farm.png',
     overview: {
       heading: 'Farm Water Supply: Understanding the Application',
@@ -781,7 +781,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Rainwater Management System for Buildings',
     tagline:
       'A properly planned rainwater drainage system moves roof runoff safely away from buildings and helps prevent water accumulation during heavy rainfall.',
-    image: '/heronew.jpg',
+    image: '/applications/pipe/section2/Rainwater-Management-Systems.jpg',
     bannerImage: '/farm.png',
     overview: {
       heading: 'Understanding Rainwater Management in Buildings',
@@ -1114,7 +1114,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Residential Plumbing Systems with UPVC & CPVC Pipes',
     tagline:
       'Planned piping for cold- and hot-water distribution across kitchens, bathrooms and other residential water-use points.',
-    image: '/heronew.jpg',
+    image: '/applications/pipe/section3/Residential-Plumbing-System.jpg',
     bannerImage: '/farm.png',
     overview: {
       heading: 'Understanding Residential Plumbing Systems',
@@ -1278,7 +1278,7 @@ export const applicationDetails: ApplicationDetail[] = [
   tagline:
     'Piping systems for organised hot- and cold-water distribution across offices, hotels, hospitals and commercial buildings.',
 
-  image: '/heronew.jpg',
+  image: '/applications/pipe/section3/Commercial-Building-Plumbing-Systems.jpg',
   bannerImage: '/farm.png',
 
   overview: {
@@ -1788,7 +1788,7 @@ export const applicationDetails: ApplicationDetail[] = [
   tagline:
     'Piping systems designed around the flow, pressure, route and operating conditions of industrial water networks.',
 
-  image: '/heronew.jpg',
+  image: '/applications/pipe/section4/Industrial-Water-Supply-Pipes.jpg',
 
   bannerImage: '/farm.png',
 
@@ -2016,7 +2016,7 @@ export const applicationDetails: ApplicationDetail[] = [
   tagline:
     'Plan building drainage around wastewater flow, underground routing, connection points and site conditions for efficient movement of discharge away from the building.',
 
-  image: '/heronew.jpg',
+  image: '/applications/pipe/section5/Building-Drainage-Systems.jpg',
 
   bannerImage: '/farm.png',
 
@@ -2279,7 +2279,7 @@ export const applicationDetails: ApplicationDetail[] = [
   tagline:
     'Plan rainwater drainage around roof areas, rainfall intensity, drainage routes and safe discharge points to manage water across the building site.',
 
-  image: '/heronew.jpg',
+  image: '/applications/pipe/section5/Rainwater-Drainage-Systems.jpg',
 
   bannerImage: '/farm.png',
 
@@ -3745,7 +3745,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Municipal Water Supply Systems',
     tagline:
       'Municipal water supply systems use HDPE Pipes for urban infrastructure and UPVC Pressure Pipes for rural distribution, subject to project specifications and requirements.',
-    image: '/heronew.jpg',
+    image: '/applications/pipe/section2/Municipal-Water-Supply-Pipes.jpg',
     bannerImage: '/farm.png',
     overview: {
       heading: 'Understanding Municipal Water Supply Systems',
@@ -3903,7 +3903,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'HDPE Pipes for Rural Water Supply Systems',
     tagline:
       'Plan the right piping network to move Rural water efficiently from its source to fields, storage points and irrigation systems.',
-    image: '/heronew.jpg',
+    image: '/applications/pipe/section2/Rural-Water-Supply-Pipes.jpg',
     bannerImage: '/farm.png',
     overview: {
       heading: 'Understanding Rural Water Supply Systems',
@@ -4058,7 +4058,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Borewell Water Supply Pipes',
     tagline:
       'A piping system for extracting groundwater from borewells and carrying it safely to farms, homes and other points of use.',
-    image: '/heronew.jpg',
+    image: '/applications/pipe/section1/Borewell-Water Supply-Pipes.jpg',
     bannerImage: '/farm.png',
     overview: {
       heading: 'Understanding Borewell Water Supply Systems',

@@ -25,8 +25,8 @@ const APP_TAGLINES = [
 const normalizeApplications = (apps: SolutionApplication[]) =>
   apps.map((app) =>
     typeof app === 'string'
-      ? { title: app.trim(), description: '' }
-      : { title: (app.title || '').trim(), description: (app.description || '').trim() }
+      ? { title: app.trim(), description: '', image: undefined as string | undefined }
+      : { title: (app.title || '').trim(), description: (app.description || '').trim(), image: app.image }
   );
 
 export const SolutionApplications: React.FC<{ applications: SolutionApplication[]; theme?: 'blue' | 'green' }> = ({ applications, theme = 'blue' }) => {
@@ -69,7 +69,7 @@ export const SolutionApplications: React.FC<{ applications: SolutionApplication[
             {items.map((item, idx) => (
               <img
                 key={`${item.title}-${idx}`}
-                src={APP_IMAGES[idx % APP_IMAGES.length]}
+                src={ item.image || APP_IMAGES[idx % APP_IMAGES.length]}
                 alt={item.title}
                 referrerPolicy="no-referrer"
                 loading={idx === 0 ? 'eager' : 'lazy'}

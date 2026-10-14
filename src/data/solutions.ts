@@ -9,6 +9,7 @@ export interface SolutionPillar {
 export interface SolutionApplicationItem {
   title: string;
   description?: string;
+  image?:string;
 }
 
 export type SolutionApplication = string | SolutionApplicationItem;
@@ -2525,7 +2526,7 @@ export const solutionsData: Solution[] = [
     slug: 'residential-commercial-plumbing',
     division: 'pipe',
     eyebrow: 'Pipe Division',
-    heroImage: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=2000&q=80',
+    heroImage: '/solutions/pipe/residential-commercial-plumbing/hero.jpg',
     metaTitle: 'CPVC & PVC Pipe Manufacturers in India | Kothari Group',
     metaDescription:
       ' Kothari Group is a trusted CPVC and PVC pipe manufacturer in India, offering hot & cold water plumbing pipes and fittings for homes and commercial buildings.',
@@ -2569,27 +2570,32 @@ export const solutionsData: Solution[] = [
         title: 'Residential Buildings',
         description:
           'Reliable CPVC hot and cold water lines for homes, built to handle tough Indian water, hot summers and the daily wear of regular household use.',
-      },
+     image:'/solutions/pipe/residential-commercial-plumbing/applications/Residential-Buildings.jpg',
+        },
       {
         title: 'Apartments & Housing Societies',
         description:
           'Durable CPVC and UPVC plumbing for multi-unit buildings, built to stay reliable under heavy daily use across many homes at once.',
-      },
+   image:'/solutions/pipe/residential-commercial-plumbing/applications/Appartment-&-Housing-Societes.jpg',
+        },
       {
         title: 'Offices',
         description:
           'Dependable hot and cold water supply lines for office buildings and workspaces, designed for steady daily use and long-term, low-maintenance performance.',
-      },
+        image:'/solutions/pipe/residential-commercial-plumbing/applications/Office.jpg',
+        },
       {
         title: 'Hospitality Projects',
         description:
           'Hot and cold water piping for hotels and resorts, where guests expect a steady supply and leak-free performance every single day.',
-      },
+     image:'/solutions/pipe/residential-commercial-plumbing/applications/Hospital-Projects.jpg',
+        },
       {
         title: 'Commercial Complexes',
         description:
           'Long-lasting CPVC and UPVC plumbing for malls and large commercial buildings, built to handle high usage across many floors and water outlets.',
-      },
+      image:'/solutions/pipe/residential-commercial-plumbing/applications/commercial-complex.jpg',
+        },
     ],
     relatedProducts: [
       {
@@ -2626,7 +2632,7 @@ export const solutionsData: Solution[] = [
     slug: 'urban-drainage-sewerage',
     division: 'pipe',
     eyebrow: 'Pipe Division',
-    heroImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80',
+    heroImage: '/solutions/pipe/urban-drainage-sewerage/hero.jpg',
     metaTitle: 'Underground Drainage Pipe Solutions | Kothari Group',
     metaDescription:
       `Kothari Group's underground drainage pipe systems are engineered for reliable sewerage and stormwater management across urban and township infrastructure. `,
@@ -2670,32 +2676,39 @@ export const solutionsData: Solution[] = [
     title: 'Municipal Infrastructure',
     description:
       'Soil, waste and rainwater piping for city sewerage and stormwater networks, built to handle high-volume flow as Indian cities keep expanding.',
-  },
+ image:'/solutions/pipe/urban-drainage-sewerage/applications/Municipal-Infrastructure.jpg',
+
+    },
   {
     title: 'Townships & Housing Societies',
     description:
       'Reliable drainage systems for large residential layouts, carrying wastewater and rainwater away from many homes with fewer blockages over time.',
-  },
-  {
-    title: 'Commercial Complexes',
-    description:
-      'SWR piping for large commercial buildings, giving complete soil, waste and rainwater drainage from one system family with dependable performance.',
-  },
+  image:'/solutions/pipe/urban-drainage-sewerage/applications/Township-&-Housing-Societes.jpg',
+    },
+  // {
+  //   title: 'Commercial Complexes',
+  //   description:
+  //     'SWR piping for large commercial buildings, giving complete soil, waste and rainwater drainage from one system family with dependable performance.',
+  // },
   {
     title: 'Public Works Projects',
     description:
       'Underground drainage pipes and fittings for public infrastructure works, engineered for buried, high-load conditions and backed by a nationwide dealer network.',
-  },
+ image:'/solutions/pipe/urban-drainage-sewerage/applications/Public-Works-Projects.jpg',
+    },
   {
     title: 'Campuses',
     description:
       'Drainage piping for schools, colleges and institutional campuses, handling wastewater and stormwater reliably across large, spread-out building clusters.',
-  },
+ image:'/solutions/pipe/urban-drainage-sewerage/applications/Campuses.jpg',
+
+    },
   {
     title: 'Basements',
     description:
       'Drainage lines for below-ground spaces, helping carry wastewater and rainwater away with corrosion-resistant pipes that are durable and easy to install.',
-  },
+ image:'/solutions/pipe/urban-drainage-sewerage/applications/Besmets.jpg',
+    },
 ],
     relatedProducts: [
       {
@@ -2732,7 +2745,7 @@ export const solutionsData: Solution[] = [
     slug: 'groundwater-access',
     division: 'pipe',
     eyebrow: 'Pipe Division',
-    heroImage: 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=2000&q=80',
+    heroImage: '/solutions/pipe/groundwater-access/hero.jpg',
     metaTitle: ' Borewell Pipes & Column Pipe Manufacturer | Kothari Group',
     metaDescription:
       ' Kothari Group manufactures borewell pipes, column pipes, casing pipes, and suction pipes engineered for dependable groundwater access across India.',
@@ -2776,22 +2789,26 @@ export const solutionsData: Solution[] = [
     title: 'Agricultural Borewells',
     description:
       'Column and casing pipes built for borewell pressure and depth, helping farm borewells run reliably season after season with less risk of pipe failure.',
-  },
+ image:'/solutions/pipe/groundwater-access/applications/Agricultural-Borewells.jpg',
+    },
   {
     title: 'Community Water Access Points',
     description:
       'Durable borewell pipes for shared village and community water points, built to give many people dependable groundwater access over the long term.',
-  },
+ image:'/solutions/pipe/groundwater-access/applications/Community-water-access-points.jpg',
+    },
   {
     title: 'Rural Water Supply',
     description:
       'Column, casing and suction pipe systems that bring steady groundwater to rural homes and farms, even across varying soil and depth conditions.',
-  },
+ image:'/solutions/pipe/groundwater-access/applications/Rural-Water-Supply.jpg',
+    },
   {
     title: 'Farm Groundwater Extraction',
     description:
       'Suction pipes and hose systems that draw water efficiently from the source, supporting dependable groundwater use for irrigation across Indian farms.',
-  },
+ image:'/solutions/pipe/groundwater-access/applications/Farm-Groundwater-Extraction.jpg',
+    },
 ],
     relatedProducts: [
       {
@@ -2828,7 +2845,7 @@ export const solutionsData: Solution[] = [
     slug: 'farm-infrastructure-piping',
     division: 'pipe',
     eyebrow: 'Pipe Division',
-    heroImage: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=2000&q=80',
+    heroImage:  '/solutions/pipe/farm-infrastructure-piping/hero.jpg',
     metaTitle: 'HDPE Pipes & Agricultural Pipes Manufacturer | Kothari Group',
     metaDescription:
       ' Kothari Group manufactures HDPE pipes and agricultural pipes engineered for reliable farm water conveyance and agricultural water management across India. ',
@@ -2872,17 +2889,20 @@ export const solutionsData: Solution[] = [
     title: 'Large Farms & Agricultural Estates',
     description:
       'HDPE and UPVC pipelines that lift and carry water across large landholdings, built to handle high pressure and long distances from source to field.',
-  },
+image:'/solutions/pipe/farm-infrastructure-piping/applications/Large-Farms-&-Agricultural-Estates.jpg',
+    },
   {
     title: 'Multi-Field Operations',
     description:
       'Backbone piping that connects one water source to several fields, with compatible valves for controlled flow and less water loss in transport.',
-  },
+image:'/solutions/pipe/farm-infrastructure-piping/applications/Multi-Field-Operations.jpg',
+    },
   {
     title: 'Source-to-Field Water Transport Projects',
     description:
       'Pressure pipes and flexible PE pipes for moving bulk water reliably over uneven terrain, reducing losses between the source and the field.',
-  },
+  image:'/solutions/pipe/farm-infrastructure-piping/applications/Source-to-Field-Water-Transport-Projects.jpg',
+    },
 ],
     relatedProducts: [
       {
