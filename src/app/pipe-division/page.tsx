@@ -388,7 +388,7 @@ const FEATURE_PRODUCTS = [
       <HeaderDivison productsMegaMenu={PipeproductsMegaMenu} solutionsMegaMenu={pipeSolutionsMegaMenu}/>
       <HeroDivision heroData={heroData} />
       <DivisionOverview
-        heading="About Kothari Pipe Division"
+        heading="Plumbing & Agri Pipes, Fittings: Built for Every Need"
         accent="blue"
         image="https://kotharigroupindia.com/img/images/Building_pipe.webp"
         paragraphs={[

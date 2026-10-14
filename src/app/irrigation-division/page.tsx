@@ -466,14 +466,14 @@ const FEATURE_PRODUCTS = [
       <HeaderDivison productsMegaMenu={IrrigationproductsMegaMenu} solutionsMegaMenu={irrigationSolutionsMegaMenu}/>
       <HeroDivision heroData={heroData} />
       <DivisionOverview
-        heading="About Kothari Irrigation Division"
+        heading="Irrigation Division: Complete Farm Water Solutions"
         accent="blue"
         image="https://kotharigroupindia.com/img/images/Irrigation_products.webp"
         paragraphs={[
-          "Flood irrigation has long been the default across Indian farms, but it comes at a real cost: excess water use, uneven crop growth, and higher vulnerability to drought years. Drip irrigation solves this by delivering water directly to the root zone, cutting water usage while improving yield consistency across crops from sugarcane and cotton to vegetables and orchards. For larger, more open fields where drip isn't practical, our sprinkler irrigation systems provide uniform overhead coverage, engineered to IS standards for reliable, full-circle water distribution.",
-          "Not every crop needs the same approach, though. Nurseries, orchards, and high-value horticulture crops often demand gentler, more targeted watering than a standard sprinkler can offer — which is where our micro sprinkler range comes in, delivering fine, uniform coverage without damaging delicate plants or seedlings. Whatever the system, water quality determines how long it lasts: sediment and organic debris quickly clog drippers and nozzles if left unfiltered, so our filters range from sand and screen filters to fully automatic self-cleaning units that protect every irrigation system we manufacture.",
-          'Water alone only gets a crop halfway there. Our fertigation systems combine precise nutrient delivery with irrigation itself, using dosing pumps, Venturi injectors, and IoT-enabled machines to apply fertilizer exactly when and where a crop needs it, reducing waste compared to manual application. And for growers managing larger operations, our controllers bring smart, automated scheduling to irrigation and fertigation alike, cutting down on manual labour while improving consistency across every irrigation cycle.',
-          'With IS 13488-certified irrigation systems built to withstand real field conditions, we bring the same engineering discipline to a single drip line as we do to a multi-acre automated irrigation project — helping farmers get more from every drop of water.',
+        "Water conservation through effective irrigation allows farmers to use available water resources optimally while ensuring the crops get enough water. Kothari Group provides farmers with drip irrigation systems that deliver water exactly to the root zones of the plants in addition to offering sprinkler irrigation systems that ensure uniform coverage in larger fields.",
+        "The micro and mini sprinklers we offer can provide gentle and uniform irrigation to the orchards, nurseries, and sensitive crops. Our sand, screen and automatic filters are available for purifying the irrigation water and preventing build-up of sediments and debris.",
+        "Our fertigation systems, which combine water and nutrients, enable farmers to apply fertilizing solutions more effectively and reduce wastage. Using dosing pumps, Venturi injectors, IoT-enabled fertigation machines, and automated controllers, farmers can control their irrigation processes and processes of applying fertilizers.",
+        "Our irrigation systems designed for harsh field conditions are a great combination of high-tech equipment and efficient water management."
         ]}
       />
       {/* <Category tab="agriculture"/> */}
