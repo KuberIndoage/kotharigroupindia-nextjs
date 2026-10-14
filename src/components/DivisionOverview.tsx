@@ -87,7 +87,7 @@ export const DivisionOverview: React.FC<DivisionOverviewProps> = ({
               <img
                 src={image}
                 alt={heading}
-                className="w-full h-72 sm:h-80 lg:h-[460px] object-cover shadow-lg"
+                className="w-full h-72 sm:h-80 lg:h-[460px] object-cover"
               />
             </div>
           )}

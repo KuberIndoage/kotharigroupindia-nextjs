@@ -307,13 +307,13 @@ const items = [
   {
     title: 'Plumbing Systems',
     description: 'Research technical info on CPVC and UPVC pipes and fittings for home, commercial, and industrial plumbing. Learn about the properties of materials, temperature characteristics, chemical resistance, methods of joining, flow characteristics, and hydraulics for effective planning of the system.',
-    image: 'https://kotharigroupindia.com/img/images/Building_pipe.webp',
+    image: '/banners/pipe/knowladge-Center_Pipe-Plumbing.png',
     link: '#plumbing'
   },
   {
     title: 'Agri & Borewell',
     description: 'Access practical recommendations for piping and borewell installations including UPVC pipelines, laying HDPE pipes, pressure regulation, and installation of column pipes.',
-    image: 'https://kotharigroupindia.com/img/images/Agri_Pipes.webp',
+    image: '/banners/pipe/knowladge-Center_Pipe-Agri-&-borewell.png',
     link: '#agri'
   },
  
@@ -390,8 +390,8 @@ const FEATURE_PRODUCTS = [
       <DivisionOverview
         heading="Plumbing & Agri Pipes, Fittings: Built for Every Need"
         accent="blue"
-        image="https://kotharigroupindia.com/img/images/Building_pipe.webp"
-        paragraphs={[
+        image="/banners/pipe/About-Kothari-Pipes.png"
+        paragraphs={[ 
           'Modern plumbing systems require pipes and fittings that deliver optimal performance throughout the years of daily use. Kothari Group produces CPVC and UPVC pipes and fittings for residential, commercial, as well as high-rise applications. Built to enhance water flow, our CPVC systems work well for hot and cold water applications of up to 93 degrees Celsius. The UPVC pipes offer a robust solution for cold water plumbing tasks.',
           `Efficient water management also depends on efficient drainage. Kothari Group's SWR piping systems are designed to manage the discharge of soil, waste, as well as rainwater, whereas the underground drainage systems ensure efficient installation even for the most challenging infrastructure developments. Our companies produce effective solutions for waste transportation throughout buildings, urban drainage systems, and city projects.`,
           'For accessing groundwater and for getting agricultural water supply, our PVC borewell pipes, casing pipes, and column pipes are expected to serve well in a complex underground environment. Our company also has HDPE and MDPE pipes and valves that are needed for water supply throughout farms.',
