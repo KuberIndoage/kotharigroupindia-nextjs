@@ -75,38 +75,6 @@ export const irrigationApplications: DivisionApplications = {
             { name: 'HDPE Pipe Sprinkler Set', url: '/sprinkler-connectors-and-accessories/hdpe-pipe-sprinkler-set' },
           ],
         },
-        {
-          title: 'Fertigation Systems',
-          description:
-            'Combined water and nutrient delivery through dosing pumps, Venturi injectors, and IoT-enabled fertigation machines.',
-          image: 'https://picsum.photos/seed/kothari-fertigation/800/600',
-          products: [
-            { name: 'Nutrijet Fertigation Machine', url: '/fertigation-machines/nutrijet-fertigation-machines' },
-            { name: 'Venturi Injector', url: '/dosing-pumps-and-fertilizer-injectors/venturi-injector' },
-            { name: 'Dosing Pump', url: '/dosing-pumps-and-fertilizer-injectors/dozing-pump' },
-          ],
-        },
-        {
-          title: 'Water Saving & Efficient Irrigation',
-          description:
-            'Low-flow, high-uniformity systems designed to reduce water usage without compromising crop health.',
-          image: 'https://picsum.photos/seed/kothari-water-saving/800/600',
-          products: [
-            { name: 'Dripline K-Lin NPC', url: '/drip-line/dripline-k-lin-npc' },
-            { name: 'Micro Sprayer', url: '/micro-jets-and-assemblies/micro-sprayer' },
-          ],
-        },
-        {
-          title: 'Crop Water Management Systems',
-          description:
-            'Complete system design, from filtration to automation, for consistent, reliable irrigation scheduling.',
-          image: 'https://picsum.photos/seed/kothari-crop-water-management/800/600',
-          products: [
-            { name: 'Irribeat Controllers', url: '/controllers/irribeat-controllers' },
-            { name: 'GSI Galcon Smart Irrigation Controller', url: '/controllers/gsi-galcon-smart-irrigation-controller' },
-            { name: 'Galpro Controller (AC/DC)', url: '/controllers/galpro-controller-ac-dc' },
-          ],
-        },
       ],
     },
     {
@@ -123,16 +91,6 @@ export const irrigationApplications: DivisionApplications = {
           products: [
             { name: 'Dripline K-Lin PCAS', url: '/drip-line/dripline-k-lin-pcas' },
             { name: 'Dripline K-Lin NPC', url: '/drip-line/dripline-k-lin-npc' },
-          ],
-        },
-        {
-          title: 'Cotton Irrigation Systems',
-          description:
-            'Uniform, low-CV drip irrigation that supports even boll development across the field.',
-          image: 'https://picsum.photos/seed/kothari-cotton/800/600',
-          products: [
-            { name: 'Dripline K-Gol PC', url: '/drip-line/dripline-k-gol-pc' },
-            { name: 'Turbo Dripper', url: '/emitters-drippers/turbo-dripper' },
           ],
         },
         {
@@ -155,26 +113,6 @@ export const irrigationApplications: DivisionApplications = {
           products: [
             { name: 'Dripline K-Lin PCND', url: '/drip-line/dripline-k-lin-pcnd' },
             { name: 'K-Mic Micro Sprinkler', url: '/micro-sprinklers-and-assemblies/k-mic-micro-sprinkler' },
-          ],
-        },
-        {
-          title: 'Pomegranate Irrigation Systems',
-          description:
-            'Targeted, trunk-safe irrigation for pomegranate orchards, including frost and heat protection options.',
-          image: 'https://picsum.photos/seed/kothari-pomegranate/800/600',
-          products: [
-            { name: 'K-Mic Excel', url: '/micro-sprinklers-and-assemblies/k-mic-excel' },
-            { name: 'Micro Sprayer', url: '/micro-jets-and-assemblies/micro-sprayer' },
-          ],
-        },
-        {
-          title: 'Grape Irrigation Systems (Vineyard Irrigation)',
-          description:
-            'Precision drip irrigation for vineyards, including pressure-compensated options for sloped terrain.',
-          image: 'https://picsum.photos/seed/kothari-grapes/800/600',
-          products: [
-            { name: 'Dripline K-Lin PCAS', url: '/drip-line/dripline-k-lin-pcas' },
-            { name: 'PC Dripper', url: '/emitters-drippers/pc-dripper' },
           ],
         },
         {
@@ -259,6 +197,7 @@ export const pipeApplications: DivisionApplications = {
           title: 'Borewell Water Supply Pipes',
           description:
             'Column pipes, casing pipes, and screen pipes engineered for safe, long-term groundwater extraction.',
+            detailSlug: 'borewell-water-supply-pipes-for-groundwater-extraction',
           image: 'https://picsum.photos/seed/kothari-borewell/800/600',
           products: [
             { name: 'Column Pipes', url: '/column-pipes/column-pipes-with-ss' },
@@ -309,17 +248,6 @@ export const pipeApplications: DivisionApplications = {
           ],
         },
         {
-          title: 'Water Distribution Networks',
-          description:
-            'HDPE and UPVC pipe systems for large-scale water conveyance and distribution.',
-          image: 'https://picsum.photos/seed/kothari-water-distribution/800/600',
-          products: [
-            { name: 'HDPE Coils', url: '/pe-pipes-and-fittings/hdpe-coils' },
-            { name: 'HDPE Fittings', url: '/pe-pipes-and-fittings/hdpe-fittings' },
-            { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
-          ],
-        },
-        {
           title: 'Rainwater Management Systems',
           description:
             'SWR and underground drainage systems for effective rainwater collection and discharge.',
@@ -359,26 +287,6 @@ export const pipeApplications: DivisionApplications = {
             { name: 'CPVC Pipes & Fittings', url: '/cpvc/cpvc-hot-and-cold-water-piping-system' },
           ],
         },
-        {
-          title: 'High-Rise Building Piping Systems',
-          description:
-            'Pressure-rated piping systems engineered for multi-storey plumbing risers and shafts.',
-          image: 'https://picsum.photos/seed/kothari-high-rise/800/600',
-          products: [
-            { name: 'CPVC Pipes & Fittings', url: '/cpvc/cpvc-hot-and-cold-water-piping-system' },
-            { name: 'CPVC Solvent Cement', url: '/cpvc/cpvc-solvent-cement' },
-          ],
-        },
-        {
-          title: 'Hotels & Hospitals Plumbing Systems',
-          description:
-            'Reliable, low-maintenance plumbing systems for round-the-clock institutional use.',
-          image: 'https://picsum.photos/seed/kothari-institutional/800/600',
-          products: [
-            { name: 'CPVC Pipes & Fittings', url: '/cpvc/cpvc-hot-and-cold-water-piping-system' },
-            { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
-          ],
-        },
       ],
     },
     {
@@ -397,26 +305,7 @@ export const pipeApplications: DivisionApplications = {
             { name: 'UPVC Pipes & Fittings', url: '/upvc/upvc-astm-plumbing-piping-system' },
           ],
         },
-        {
-          title: 'Process Water Piping',
-          description:
-            'Chemically resistant piping for industrial process lines and cooling systems.',
-          image: 'https://picsum.photos/seed/kothari-process-water/800/600',
-          products: [
-            { name: 'Butterfly Valve', url: '/valves/butterfly-valve' },
-            { name: 'Flush Valve', url: '/valves/flush-valve' },
-          ],
-        },
-        {
-          title: 'Chemical Fluid Conveyance Pipes',
-          description:
-            'Corrosion-resistant pipes and fittings for safe transport of chemicals and effluents.',
-          image: 'https://picsum.photos/seed/kothari-chemical/800/600',
-          products: [
-            { name: 'Single & Double Union PVC Ball Valve', url: '/valves/single-and-double-union-pvc-ball-valve' },
-            { name: 'Double Union PP Ball Valve', url: '/valves/double-union-pp-ball-valve' },
-          ],
-        },
+       
       ],
     },
     {
@@ -436,17 +325,6 @@ export const pipeApplications: DivisionApplications = {
           ],
         },
         {
-          title: 'Sewage Drainage Systems',
-          description:
-            'Underground drainage pipes (UDS, Foamcore, DWC) engineered for municipal and building sewerage systems.',
-          image: 'https://picsum.photos/seed/kothari-sewage/800/600',
-          products: [
-            { name: 'Underground DWC Pipes', url: '/underground-pipe-and-fittings/underground-double-wall-corrugated-pipes' },
-            { name: 'Foamcore Underground Drainage Piping System', url: '/underground-pipe-and-fittings/foamcore-underground-drainage-piping-system' },
-            { name: 'UPVC Underground Drainage Piping System (Solid Wall UDS)', url: '/underground-pipe-and-fittings/upvc-underground-drainage-piping-system' },
-          ],
-        },
-        {
           title: 'Rainwater Drainage Systems',
           description:
             'Low-noise and standard drainage systems for effective rainwater discharge.',
@@ -455,15 +333,6 @@ export const pipeApplications: DivisionApplications = {
           products: [
             { name: 'PP Low Noise Drainage System', url: '/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system' },
             { name: 'Sub-Surface Drainage System', url: '/underground-pipe-and-fittings/sub-surface-drainage-system' },
-          ],
-        },
-        {
-          title: 'Wastewater Drainage Systems',
-          description:
-            'HDPE sewerage pipes built for industrial and municipal wastewater management.',
-          image: 'https://picsum.photos/seed/kothari-wastewater/800/600',
-          products: [
-            { name: 'HDPE (Sewerage IS: 14333)', url: '/underground-pipe-and-fittings/hdpe' },
           ],
         },
       ],

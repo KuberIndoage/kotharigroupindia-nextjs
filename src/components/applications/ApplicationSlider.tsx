@@ -19,7 +19,7 @@ function ApplicationCard({
   const isGreen = theme === 'green';
   const detailHref = basePath ? getApplicationDetailHref(basePath, item) : undefined;
   return (
-    <div className={`group relative h-full flex flex-col ${isGreen ? 'bg-[#F2FAF4]' : 'bg-white'} border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden`}>
+     <Link href={detailHref || '/'} className={`group relative h-full flex flex-col ${isGreen ? 'bg-[#F2FAF4]' : 'bg-white'} border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden`}>
       {/* Image */}
       <div className="relative h-52 sm:h-56 w-full overflow-hidden border-b border-slate-200">
         <img
@@ -34,14 +34,9 @@ function ApplicationCard({
       {/* Content */}
       <div className="flex flex-col flex-1 p-7 sm:p-8">
         <h3 className="text-xl sm:text-2xl font-serif font-light uppercase tracking-tight text-slate-900 m-0 leading-snug">
-          {detailHref ? (
-            <Link href={detailHref} className="inline-flex items-start gap-2 hover:opacity-70 transition-opacity">
-              <span>{item.title}</span>
-              <ArrowUpRight className="w-5 h-5 mt-1 shrink-0" />
-            </Link>
-          ) : (
+          {
             item.title
-          )}
+         }
         </h3>
         <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-4 mb-6">
           {item.description}
@@ -65,7 +60,7 @@ function ApplicationCard({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
