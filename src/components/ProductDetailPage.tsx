@@ -244,7 +244,7 @@ export const ProductDetailPage: React.FC<{
             
             {/* LEFT — Image */}
             <div className="lg:col-span-5 flex flex-col h-full">
-              <div className="group relative border border-slate-200 overflow-hidden flex-1 flex items-center justify-center min-h-[320px] lg:min-h-0">
+              <div className="group relative  overflow-hidden flex-1 flex items-center justify-center min-h-[320px] lg:min-h-0">
                 <img
                   src={displayImage}
                   alt={displayName}
