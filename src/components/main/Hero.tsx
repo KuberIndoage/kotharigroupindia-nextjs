@@ -24,8 +24,8 @@ const slides = [
     headline: <>Trusted Water Management for India’s Growing Needs</>,
     subtext: 'Delivering high-durability plumbing solutions designed for leak-free precision, flawless water delivery, and modern waste management.',
     ctaText: 'Explore Plumbing Systems',
-    cardTitle: 'Plumbing & Fittings',
-    cardDescription: 'Reliable pipes and fittings for efficient water flow.',
+    cardTitle: 'Conservation in every drop of water for the growing nation. ',
+    cardDescription: 'Conservation in every drop of water for the growing nation.  ',
   },
   {
     bgImage:  '/banners/home/Home-banner-2.jpg',
@@ -34,8 +34,8 @@ const slides = [
    headline: <>Trusted Water Management for India’s Growing Needs</>,
     subtext: 'Building heavy-duty agricultural piping systems that optimize every drop, protecting crops and maximizing harvest yields nationwide.',
     ctaText: 'Discover Agri Solutions',
-    cardTitle: 'Agri Piping Networks',
-    cardDescription: 'Durable agricultural pipes for efficient farm water conveyance.',
+    cardTitle: 'Efficient Water Management for a Stronger, More Sustainable India. ',
+    cardDescription: 'Efficient Water Management for a Stronger, More Sustainable India. ',
   },
   {
     bgImage:'/banners/home/Home-banner-3.jpg',
@@ -44,8 +44,8 @@ const slides = [
    headline: <>Trusted Water Management for India’s Growing Needs</>,
     subtext: 'Empowering millions of farmers with intelligent micro-irrigation systems designed for peak crop vitality and water conservation.',
     ctaText: 'View Micro Irrigation',
-    cardTitle: 'Micro Irrigation Systems',
-    cardDescription: 'Precision drip irrigation for efficient water and crop management.',
+    cardTitle: 'Quality-engineered pipes Manufactured for every water management.',
+    cardDescription: 'Quality-engineered pipes Manufactured for every water management.',
   },
 ];
 
@@ -170,7 +170,7 @@ export const Hero = () => {
                 
                 {/* Dynamic Card Text */}
                 <div ref={cardContentRef} className="flex flex-col justify-center gap-1">
-                  <p className="font-semibold text-sm text-white leading-snug">{active.cardTitle}</p>
+                  {/* <p className="font-semibold text-sm text-white leading-snug">{active.cardTitle}</p> */}
                   <p className="text-xs text-white/80 leading-relaxed line-clamp-2">
                     {active.cardDescription}
                   </p>

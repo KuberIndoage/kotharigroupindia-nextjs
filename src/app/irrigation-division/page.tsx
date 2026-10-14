@@ -466,7 +466,7 @@ const FEATURE_PRODUCTS = [
       <HeaderDivison productsMegaMenu={IrrigationproductsMegaMenu} solutionsMegaMenu={irrigationSolutionsMegaMenu}/>
       <HeroDivision heroData={heroData} />
       <DivisionOverview
-        heading="Irrigation Division: Complete Farm Water Solutions"
+        heading="Irrigation Solution: Complete Farm Water Solutions"
         accent="blue"
         image="/banners/irrigation/About-Kothari-Irrigation.png"
         paragraphs={[

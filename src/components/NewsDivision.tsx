@@ -165,7 +165,14 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
       role: ' Beed(MH)',
       company: 'Smart Infra Consultants',
       image: 'https://images.pexels.com/photos/35964702/pexels-photo-35964702.jpeg'
-    }
+    },
+      {
+      quote: "Kothari Group’s Kosons Submersible Cables & Wires are excellent and specially designed Products. The finishing of the Submersible Cables is excellent.",
+      author: 'Nitin Omprakash Mundada',
+      role: ' Beed(MH)',
+      company: 'Smart Infra Consultants',
+      image: 'https://images.pexels.com/photos/35964702/pexels-photo-35964702.jpeg'
+    },
   ]; 
 
   const FALLBACK_BLOGS: DivisionNewsCard[] = [

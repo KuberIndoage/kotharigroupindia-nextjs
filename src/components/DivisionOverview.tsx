@@ -47,7 +47,7 @@ export const DivisionOverview: React.FC<DivisionOverviewProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="pb-8 border-b border-slate-300/80 mb-10">
-          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight font-serif ${headingColor} leading-tight max-w-7xl`}>
+          <h2 className={`text-3xl sm:text-4xl lg:text-[42px] font-light tracking-tight font-serif ${headingColor} leading-tight max-w-7xl`}>
             {heading}
           </h2>
         </div>
