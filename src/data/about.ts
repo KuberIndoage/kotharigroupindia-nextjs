@@ -222,10 +222,11 @@ export const aboutLegacy = {
     { year: '2018', title: '7500CR Turnover', description: 'Achieves 750Cr turnover', image: '/legacy/2018.png'},
     { year: '2019', title: 'Gujarat Manufacturing Plant', description: 'New manufacturing plant at Kukarwada, Gujarat', image: '/legacy/2019.png' },
     { year: '2021', title: 'Mega Facility in Solapur', description: 'Mega facility in Solapur', image: '/legacy/2021.png'},
-    { year: '2023A', title: 'Kothari Udyam Nagar', description: '100-acre mega plant at Kothari Udyam Nagar', image: '/legacy/2023A.png'},
-     { year: '2023B', title: 'Kothari Udyam Nagar', description: '100-acre mega plant at Kothari Udyam Nagar', image: '/legacy/2023B.png'},
+    { year: '2023', title: 'Kothari Udyam Nagar', description: '100-acre mega plant at Kothari Udyam Nagar', image: '/legacy/2023A.png'},
+
     { year: '2024', title: '1000CR Turnover', description: 'Achieved 1000CR turnover', image:'/legacy/2024.png' },
-    { year: '2025', title: 'Indore Expansion', description: 'Started factory and office in Indore', image: '/legacy/2025.png' },
+        { year: '2025', title: 'Kothari Udyam Nagar', description: '100-acre mega plant at Kothari Udyam Nagar', image: '/legacy/2023B.png'},
+    // { year: '2025', title: 'Indore Expansion', description: 'Started factory and office in Indore', image: '/legacy/2025.png' },
     { year: '2026', title: 'Indore Expansion', description: 'Started factory and office in Indore', image: '/legacy/2026.png' },
   ] as TimelineEntry[],
 };
