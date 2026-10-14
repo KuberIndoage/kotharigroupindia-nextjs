@@ -4176,6 +4176,183 @@ export const applicationDetails: ApplicationDetail[] = [
     },
   },
 
+  {
+    slug: 'borewell-water-supply-pipes-for-groundwater-extraction',
+    division: 'pipe-division',
+    parentHref: '/pipe-applications',
+    parentLabel: 'Pipe Applications',
+    divisionHref: '/pipe-division',
+    metaTitle: ' Borewell Water Supply Pipes | Kothari Pipes',
+    metaDescription:
+      'Explore Borewell Water Supply Pipes for agricultural water distribution, including HDPE, Self Fit PVC Pipes and Agri PVC Moulded Fittings.',
+    heroEyebrow: 'Pipe Applications',
+    h1: 'Borewell Water Supply Pipes',
+    tagline:
+      'A piping system for extracting groundwater from borewells and carrying it safely to farms, homes and other points of use.',
+    image: '/heronew.jpg',
+    bannerImage: '/farm.png',
+    overview: {
+      heading: 'Understanding Borewell Water Supply Systems',
+      paragraphs: [
+        'iA borewell water supply system has to do two jobs: bring groundwater up from the bore and keep that water moving through the system after extraction. The piping used inside the borewell therefore needs to be selected according to the bore depth, pump arrangement, water requirement and ground conditions.',
+        'A typical borewell system includes pipes that support the pumping arrangement and pipes that line and protect the borehole. The right combination helps manage water movement while limiting problems caused by soil ingress, unwanted groundwater layers or demanding underground conditions.',
+        'For agricultural applications, the extracted water may then be carried to an irrigation network. In other cases, it may be supplied to a building, farm facility or other point of use.',
+        'Kothari Pipes offers Column Pipes, Casing Pipes, Slotted Pipes and Ribbed Casing Pipes for different parts of the borewell arrangement. The appropriate product depends on the role it needs to perform within the system.',
+      ],
+    },
+    whereUsed: {
+      heading: 'Where Borewell Water Supply Systems Are Used',
+      intro: [
+        'Borewell water supply systems are used wherever groundwater needs to be extracted and transported from an underground source.',
+      ],
+      items: [
+        {
+          label: 'Agricultural farms',
+          text: `Groundwater extracted through a borewell can be taken into the farm's irrigation system for crop watering. This is relevant across field crops, horticulture and other agricultural applications where borewell water is part of the irrigation source.`,
+        },
+        
+        {
+          label: 'Farmhouses and rural properties',
+          text: 'Borewells may provide water for general water-supply requirements where a suitable groundwater source is available.',
+        },
+        {
+          label: 'Residential and building water supply',
+          text: ' Borewell systems can be used as a groundwater source for buildings, subject to the applicable water-quality and local requirements.',
+        },
+        {
+          label: 'Industrial and commercial sites ',
+          text: `Groundwater extraction may form part of a site's water-supply arrangement where permitted and technically suitable.`,
+        },
+        {
+          label: 'Groundwater extraction systems ',
+          text: ` Casing and screen/slotted pipe arrangements are used within the bore structure to support the borehole and allow groundwater to enter the system.`,
+        },
+       
+      ],
+    
+    },
+    requirements: {
+      heading: 'Key Requirements for Borewell Water Supply Piping',
+      intro: 'Selecting borewell piping is not simply a matter of choosing a pipe by diameter. The pipe has to match the conditions under which it will operate.',
+      items: [
+        {
+          label: 'Bore depth and installation conditions',
+          text: 'The depth of the borewell affects the length of the pipe assembly and the loads acting on components installed within the bore. The bore diameter and construction also need to be considered while selecting the piping arrangement.',
+        },
+        {
+          label: 'Pump and water-delivery requirements',
+          text: 'The type and size of the submersible pump, expected water delivery and operating conditions influence the selection of the column pipe. The pipe system should be considered along with the pump rather than as a separate component.',
+        },
+        {
+          label: 'Borehole protection',
+          text: 'Casing pipes serve as a protective lining for the borehole. They help protect the bore from soil or water entering from unwanted layers',
+        },
+        {
+          label: 'Groundwater entry and sediment control',
+          text: 'Where groundwater needs to enter the borehole, the screen or slotted section needs to be appropriate for the bore construction and surrounding formation. Slot dimensions and configuration should be selected according to the project requirements rather than assumed universally.',
+        },
+        {
+          label: 'Mechanical and connection requirements',
+          text:`The pipe must be suitable for the loads, depth and connection arrangement involved in the installation. For column pipes, Kothari's published product information describes an Impact-Sustaining Lock System, EPDM sealing rings and square-threaded joints.`,
+        },
+       
+      ],
+    },
+    products: {
+      heading: 'Recommended Kothari Pipes for Borewell Water Supply',
+      intro: `Kothari's borewell range addresses different functions within the borewell structure. The key is to select the product according to where it sits in the system and what it needs to do.`,
+      items: [
+        {
+          name: 'Column Pipe',
+          url: '/column-pipes/column-pipes-with-ss',
+          image: `${ADMIN}/2025/10/Coloum-Pipes.webp`,
+          paragraphs: [
+            'The Column Pipe forms the connection between the submersible pump and the water-delivery system above the borewell. It carries the pumped water upward and forms part of the suspended pipe assembly inside the bore.',
+            `Kothari's published information identifies its Column Pipes for submersible-pump applications and describes an Impact-Sustaining Lock System, EPDM rings for watertight joints and square-threaded connections designed to provide grip and strength against tensile loads.`,
+          ],
+        },
+        {
+          name: 'Casing Pipe',
+          url: '/casing-pipes/casing-pipes-fittings',
+          image: `${ADMIN}/2025/04/CASING-PIPE.webp`,
+          paragraphs: [
+            'The Casing Pipe is used to line and protect the borehole. Its role is different from that of the column pipe: instead of carrying water from the submersible pump upward, it forms a protective sleeve around the borehole.',
+            'Kothari describes its Casing Pipes as being used to protect boreholes or wells from soil and water from unwanted layers.',
+          ],
+        },
+        {
+          name: 'Slotted Pipe',
+          url: '/casing-pipes/screen-pipe-slotted-pipe',
+          image: `${ADMIN}/2025/10/Screen-Pipe-Slotted-Pipe-n.webp`,
+          paragraphs: [
+            'A Slotted Pipe is used where groundwater needs to enter the borewell through the screened section. Its position and slot arrangement are important because the screen needs to allow water entry while helping manage the entry of surrounding material.',
+            'For a project-specific selection, slot size, slot configuration and applicable product dimensions should be confirmed from the Kothari technical range. [INPUT REQUIRED]',
+          ],
+        },
+        {
+          name: 'Ribbed Casing Pipe',
+          url: '/casing-pipes/ribbed-casing-pipe',
+          image: `${ADMIN}/2025/10/Ribbed-Casing-Pipe.png`,
+          paragraphs: [
+            'A Ribbed Casing Pipe can be used as part of the borewell casing arrangement where the project requires this particular casing design.',
+          ],
+        },
+       
+      ],
+      mapping: {
+        heading: 'Application-to-Product Mapping',
+        columnHeadings: ['Application Requirement', 'Recommended Kothari Product', 'Role in the System'],
+        rows: [
+          { requirement: 'Pumped water needs to be lifted from the borewell', product: 'Column Pipe', role: 'Connects the submersible pump to the water-delivery line' },
+          { requirement: 'Borehole needs protective lining', product: 'Casing Pipe', role: 'Protects and lines the borehole' },
+          { requirement: 'Groundwater needs to enter through a screened section', product: 'Slotted Pipe', role: 'Provides the groundwater-entry section' },
+          { requirement: 'Borewell requires a ribbed casing arrangement', product: 'Ribbed Casing Pipe', role: 'Used as part of the casing arrangement' },
+        ],
+      },
+    },
+    howItWorks: {
+      heading: ' How a Borewell Water Supply System Works',
+      intro: 'A borewell water-supply system can be understood as a series of connected stages:',
+      flow: [
+        'Groundwater Formation',
+        'Casing / Borehole Protection',
+        ' Slotted or Screened Section',
+        'Submersible Pump',
+        ' Column Pipe',
+        'Surface Delivery Pipeline',
+        ' Farm / Building / Point of Use',
+      ],
+      steps: [
+        {
+          title: ' Groundwater enters the borewell',
+          text: 'Groundwater surrounding the bore enters the borewell through the appropriate screened or slotted section. The exact screen arrangement depends on the bore construction and surrounding ground formation.',
+        },
+        {
+          title: 'The borehole is protected',
+          text: 'Casing pipes form the structural lining around the borehole. They help keep the borehole protected from surrounding soil and from water entering through unwanted layers.',
+        },
+        {
+          title: 'The pump extracts the water',
+          text: 'A submersible pump positioned inside the borewell draws groundwater into the pumping system.',
+        },
+        {
+          title: 'Column Pipe carries the water upward',
+          text: `The Column Pipe connects with the submersible pump and carries the extracted water towards the surface. Its joints form part of the suspended pipe assembly inside the borewell. Kothari's Column Pipe design includes an EPDM ring and locking/threading features described for watertightness and load support.`,
+        },
+        {
+          title: 'Water moves to the point of use',
+          text: 'Once the water reaches the surface, it can enter the appropriate delivery or distribution pipeline and move towards the farm, building or other intended point of use.',
+        },
+        
+      ],
+    },
+    cta: {
+      heading: 'Planning a Borewell Water Supply System?',
+      body: 'Share your bore depth, pumping requirement and application with the Kothari team to identify the relevant piping options for your system.',
+      buttonText: 'Discuss Your Requirement',
+    },
+  },
+
   
 ];
 

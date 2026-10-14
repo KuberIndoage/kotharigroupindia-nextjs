@@ -21,7 +21,7 @@ export const ApplicationDetailPageTemplate: React.FC<{ detail: ApplicationDetail
       <ApplicationDetailWhereUsed whereUsed={detail.whereUsed} isPipe={isPipe} />
       <ApplicationDetailRequirements requirements={detail.requirements} isPipe={isPipe} />
       <ApplicationDetailProducts products={detail.products} isPipe={isPipe} />
-      <ApplicationDetailHowItWorks detail={detail} />
+      {/* <ApplicationDetailHowItWorks detail={detail} /> */}
       {/* <ApplicationDetailRelated detail={detail} /> */}
       <ApplicationDetailCta cta={detail.cta} isPipe={isPipe} />
     </div>
