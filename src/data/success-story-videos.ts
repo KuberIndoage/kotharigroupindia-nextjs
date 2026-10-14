@@ -103,3 +103,18 @@ export const irrigationSuccessStoryVideos: KothariVideo[] = [
   { title: "कोठारी एग्री मल्च फिल्म से किसान को हुआ फायदा", category: 'Success Story', embedId: 'k6vgec6vgv4' },
   { title: "कोठारी एग्री मल्च फिल्म | छत्तीसगढ़ के किसानों की प्रतिक्रिया", category: 'Success Story', embedId: 'HBcCpEDnvFg' },
 ];
+
+
+export const pipeSuccessStoryPlaylistId = 'PLAoCO67sTX-L9pmTaj8zmGkWxPwEHO0Pw';
+
+export const pipeSuccessStoryVideos: KothariVideo[] = [
+  { title: "Real Plumber Story | How Better Pipes Reduce Complaints & Build Trust", category: 'Success Story', embedId: 'aKJfwVnAQio' },
+  { title: "A Happy Customer’s Real Story | The Secret Behind Lasting Trust", category: 'Success Story', embedId: 'Ojfk-hM3R0w' },
+  { title: "Expert Plumber Story | What Makes a Plumber Truly Trusted?", category: 'Success Story', embedId: 'upUtsCrvclk' },
+  { title: "Why Strong Partnerships Matter | Channel Partner Spotlight", category: 'Success Story', embedId: '3Qfr561NRZ8' },
+  { title: "What Builds a Strong Business Partnership? | Trust, Growth & Partnership", category: 'Success Story', embedId: 'rPzzL952Qw0' },
+  { title: "What Makes a Strong Channel Partner? | Mr. Sakharam Wagh’s Success Story", category: 'Success Story', embedId: 'KUReJSGV9gs' },
+  { title: "Birajdar Traders Success Story | A Partnership Built on Trust & Growth", category: 'Success Story', embedId: 'RnSEFsFD_0M' },
+  { title: "Shri Siddeshwar Building Suppliers | A Story of Trust, Growth & Partnership", category: 'Success Story', embedId: 'dIh9gj83L1c' },
+  { title: "Channel Partner Success Story | Mr. Pandurang Dange’s Trusted Journey", category: 'Success Story', embedId: 'qdeWEgSMCzY' },
+];

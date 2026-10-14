@@ -1,4 +1,5 @@
 import { SuccessStoriesListing } from '@/components/successstories/SuccessStoriesListing';
+import { irrigationSuccessStoryPlaylistId, irrigationSuccessStoryVideos, pipeSuccessStoryPlaylistId, pipeSuccessStoryVideos } from '@/data/success-story-videos';
 import { wpPageMetadataFor } from '@/lib/wp-seo';
 
 export const revalidate = 600;
@@ -25,6 +26,8 @@ export default async function PipeSuccessStoriesPage({
       subtitle="Real project outcomes from Kothari Group pipe division — plumbing, drainage and agri piping installations built to last."
       detailBasePath="/pipe-successstories"
       paginationBasePath="/pipe-successstories"
+      videos={pipeSuccessStoryVideos}
+      playlistId={pipeSuccessStoryPlaylistId}
       storiesTitle="Latest Success Stories"
     />
   );

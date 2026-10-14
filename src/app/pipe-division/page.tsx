@@ -11,6 +11,7 @@ import { WhyKothariGroup } from '@/components/main/WhyKothariGroup';
 import { Impact } from '@/components/main/Impact';
 import { Footer } from '@/components/Footer';
 import { NewsDivision, type DivisionNewsCard } from '@/components/NewsDivision';
+import { pipeTestimonials } from '@/data/divisionTestimonials';
 import { Facebook, Instagram, Youtube } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FeaturedProducts } from '@/components/FeaturedProducts';
@@ -403,7 +404,7 @@ const FEATURE_PRODUCTS = [
       {/* <WhyKothariGroup /> */}
       {/* <Impact /> */}
       <KnowledgeCentre itemData={items} /> 
-      <NewsDivision newsItems={cards.newsItems} blogPosts={cards.blogPosts} loading={loading} />
+      <NewsDivision newsItems={cards.newsItems} blogPosts={cards.blogPosts} testimonials={pipeTestimonials} loading={loading} />
       <Footer footerData={footerData}/>
     </>
   );

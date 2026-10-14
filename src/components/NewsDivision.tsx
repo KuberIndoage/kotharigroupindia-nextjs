@@ -6,6 +6,9 @@ import { ArrowUpRight, Clock, Quote, Star, ChevronLeft, ChevronRight } from 'luc
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from './main/Reveal';
+import type { DivisionTestimonial } from '@/data/divisionTestimonials';
+
+export type { DivisionTestimonial };
 
 export interface DivisionNewsCard {
   key: string;
@@ -106,7 +109,7 @@ function useSwipeController(
   };
 }
 
-export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: DivisionNewsCard[]; blogPosts?: DivisionNewsCard[]; loading?: boolean }> = ({ theme = 'blue', newsItems: newsItemsProp, blogPosts: blogPostsProp, loading = false }) => {
+export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: DivisionNewsCard[]; blogPosts?: DivisionNewsCard[]; testimonials?: DivisionTestimonial[]; loading?: boolean }> = ({ theme = 'blue', newsItems: newsItemsProp, blogPosts: blogPostsProp, testimonials: testimonialsProp, loading = false }) => {
   const isGreen = theme === 'green';
   const accentHoverBorder = isGreen ? 'hover:border-[#1575B3]' : 'hover:border-[#1575B3]';
   const accentHoverText = isGreen ? 'hover:text-[#1575B3]' : 'hover:text-[#1575B3]';
@@ -144,36 +147,28 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
     }
   ];
 
-  const testimonials = [
+  const FALLBACK_TESTIMONIALS: DivisionTestimonial[] = [
     {
       quote: "We are an authorised dealer of Kothari Group & dealing exclusively with Kothari Group since the last 20 years. Thanks to the company for supplying quality products consistently & its team for providing prompt services all the time.",
       author: 'Kumareshwar Traders',
       role: 'Mudhol, Karnataka',
-      company: 'Apex Buildcon Projects',
       image: 'https://images.pexels.com/photos/35839965/pexels-photo-35839965.jpeg'
     },
     {
       quote: "We are really delighted by the quality of Kothari Group’s Products & Services. Thank you so much, and we will be looking forward to an excellent continuing business relationship.",
       author: 'Arihant Marketing',
-      role: ' Bijapur Karnataka',
-      company: 'Nashik Agriculture Cooperative',
+      role: 'Bijapur, Karnataka',
       image: 'https://images.pexels.com/photos/7580764/pexels-photo-7580764.jpeg'
     },
     {
       quote: "Kothari Group’s Kosons Submersible Cables & Wires are excellent and specially designed Products. The finishing of the Submersible Cables is excellent.",
       author: 'Nitin Omprakash Mundada',
-      role: ' Beed(MH)',
-      company: 'Smart Infra Consultants',
+      role: 'Beed (MH)',
       image: 'https://images.pexels.com/photos/35964702/pexels-photo-35964702.jpeg'
     },
-      {
-      quote: "Kothari Group’s Kosons Submersible Cables & Wires are excellent and specially designed Products. The finishing of the Submersible Cables is excellent.",
-      author: 'Nitin Omprakash Mundada',
-      role: ' Beed(MH)',
-      company: 'Smart Infra Consultants',
-      image: 'https://images.pexels.com/photos/35964702/pexels-photo-35964702.jpeg'
-    },
-  ]; 
+  ];
+
+  const testimonials = testimonialsProp ?? FALLBACK_TESTIMONIALS;
 
   const FALLBACK_BLOGS: DivisionNewsCard[] = [
     {
@@ -629,7 +624,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                     className={`h-1 transition-all duration-500 ${
                       idx === testimonialsSafePage
                         ? isGreen
-                          ? `w-12 bg-[#1E8E3E]`
+                          ? `w-12 bg-[#1575B3]`
                           : `w-12 bg-[#1575B3]`
                         : 'w-4 bg-slate-300 hover:bg-slate-400'
                     }`}
