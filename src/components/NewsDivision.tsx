@@ -526,6 +526,52 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
     </Link>
   );
 
+  const TestimonialCard: React.FC<{ item: DivisionTestimonial }> = ({ item }) => (
+    <div
+      className={`bg-white border border-slate-200 flex flex-col relative ${accentHoverBorder} hover:shadow-xl transition-all duration-300 group overflow-hidden h-full`}
+    >
+      {/* Profile Image */}
+      <div className="relative w-full h-56 sm:h-60 shrink-0 bg-slate-100 overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.author}
+          draggable={false}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = testimonialAvatarUrl(item.author);
+          }}
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent pointer-events-none" />
+      </div>
+
+      {/* Quote + Author */}
+      <div className="relative p-6 sm:p-7 flex-1 flex flex-col gap-5">
+        <Quote className={`w-8 h-8 absolute top-4 right-5 text-[#1575B3]/15`} />
+
+        <div className="flex items-center gap-1">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className={`w-4 h-4 fill-[#1575B3] text-[#1575B3]`} />
+          ))}
+        </div>
+
+        <p className="text-sm sm:text-base text-slate-700 font-serif italic leading-relaxed flex-1">
+          &ldquo;{item.quote}&rdquo;
+        </p>
+
+        <div className="pt-5 border-t border-slate-200">
+          <h4 className={`text-base font-semibold text-slate-900 ${accentGroupHoverText} transition-colors duration-300`}>
+            {item.author}
+          </h4>
+          <p className="text-xs font-mono text-slate-500 mt-1 uppercase tracking-wider">
+            {item.role}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="w-full text-slate-900">
 
@@ -568,69 +614,33 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
                         onMouseLeave={() => setTestimonialsPaused(false)}
                         className="h-full"
                       >
-                        <div className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group overflow-hidden h-[500px]`}>
-                          <Quote className={`w-8 h-8 ${isGreen ? 'text-[#1575B3]/20' : 'text-[#1575B3]/20'} absolute top-6 right-6`} />
-
-                          <div className="space-y-6 relative z-10">
-                            <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-white shadow-md">
-                              <img
-                                src={item.image}
-                                alt={item.author}
-                                draggable={false}
-                                onError={(e) => {
-                                  const target = e.target as HTMLImageElement;
-                                  target.onerror = null;
-                                  target.src = testimonialAvatarUrl(item.author);
-                                }}
-                                className="w-full h-full object-cover pointer-events-none"
-                              />
-                            </div>
-
-                            <div className="flex items-center gap-1">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={`w-4 h-4 ${isGreen ? 'fill-[#1575B3] text-[#1575B3]' : 'fill-[#1575B3] text-[#1575B3]'}`} />
-                              ))}
-                            </div>
-
-                            <p className="text-sm sm:text-base text-slate-700 font-serif italic leading-relaxed">
-                              &ldquo;{item.quote}&rdquo;
-                            </p>
-                          </div>
-
-                          <div className="pt-6 mt-6 border-t border-slate-200 relative z-10">
-                            <h4 className={`text-base font-medium text-slate-900 ${accentGroupHoverText} transition-colors duration-300`}>
-                              {item.author}
-                            </h4>
-                            <p className="text-xs font-mono text-slate-500 mt-1 uppercase tracking-wider">
-                              {item.role}
-                            </p>
-                          </div>
-                        </div>
+                        <TestimonialCard item={item} />
                       </div>
                     ))}
                   </div>
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dash Indicators */}
-              <div className="flex items-center justify-center gap-3 pt-8">
-                {Array.from({ length: testimonialsTotalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setTestimonialsDirection(idx > testimonialsSafePage ? 1 : -1);
-                      setTestimonialsCurrentPage(idx);
-                    }}
-                    className={`h-1 transition-all duration-500 ${
-                      idx === testimonialsSafePage
-                        ? isGreen
-                          ? `w-12 bg-[#1575B3]`
-                          : `w-12 bg-[#1575B3]`
-                        : 'w-4 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center justify-center gap-4 pt-8">
+                <button
+                  onClick={handleTestimonialsPrev}
+                  onMouseEnter={() => setTestimonialsPaused(true)}
+                  onMouseLeave={() => setTestimonialsPaused(false)}
+                  aria-label="Previous testimonials"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95`}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleTestimonialsNext}
+                  onMouseEnter={() => setTestimonialsPaused(true)}
+                  onMouseLeave={() => setTestimonialsPaused(false)}
+                  aria-label="Next testimonials"
+                  className={`w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 ${accentHoverBorder} ${accentHoverText} transition-all duration-300 active:scale-95`}
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           ) : (
@@ -638,46 +648,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {testimonials.map((item, idx) => (
                   <Reveal key={idx} delay={idx * 90} className="h-full">
-                    <div
-                      className={`bg-white border border-slate-200 p-8 flex flex-col justify-between relative ${accentHoverBorder} hover:shadow-lg transition-all duration-300 group overflow-hidden h-[500px]`}
-                    >
-                      <Quote className={`w-8 h-8 ${isGreen ? 'text-[#1E8E3E]/20' : 'text-[#1575B3]/20'} absolute top-6 right-6`} />
-
-                      <div className="space-y-6 relative z-10">
-                        <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-white shadow-md">
-                          <img
-                            src={item.image}
-                            alt={item.author}
-                            draggable={false}
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.onerror = null;
-                              target.src = testimonialAvatarUrl(item.author);
-                            }}
-                            className="w-full h-full object-cover pointer-events-none"
-                          />
-                        </div>
-
-                        <div className="flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={`w-4 h-4 ${isGreen ? 'fill-[#1E8E3E] text-[#1E8E3E]' : 'fill-[#1575B3] text-[#1575B3]'}`} />
-                          ))}
-                        </div>
-
-                        <p className="text-sm sm:text-base text-slate-700 font-serif italic leading-relaxed">
-                          &ldquo;{item.quote}&rdquo;
-                        </p>
-                      </div>
-
-                      <div className="pt-6 mt-6 border-t border-slate-200 relative z-10">
-                        <h4 className={`text-base font-medium text-slate-900 ${accentGroupHoverText} transition-colors duration-300`}>
-                          {item.author}
-                        </h4>
-                        <p className="text-xs font-mono text-slate-500 mt-1 uppercase tracking-wider">
-                          {item.role}
-                        </p>
-                      </div>
-                    </div>
+                    <TestimonialCard item={item} />
                   </Reveal>
                 ))}
               </div>

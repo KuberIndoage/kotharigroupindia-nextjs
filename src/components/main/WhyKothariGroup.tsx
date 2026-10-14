@@ -22,6 +22,7 @@ export const WhyKothariGroup = () => {
       subtitle: 'Durable Products & Materials',
       description: `High-quality pipes, fittings, and irrigation products built to last.`,
       icon: Award,
+      image: '/banners/home/why/Why-kothari-Group-_1.jpg',
     },
     {
       id: '03',
@@ -29,6 +30,7 @@ export const WhyKothariGroup = () => {
       subtitle: 'Precision Water Management',
       description: 'Smart irrigation and piping solutions for efficient water management.',
       icon: Lightbulb,
+      image: '/banners/home/why/Why-kothari-Group-_2.jpg',
     },
     {
       id: '04',
@@ -36,6 +38,7 @@ export const WhyKothariGroup = () => {
       subtitle: 'Extensive Distribution Network',
       description: 'Serving customers across 23+ states through our dealer network.',
       icon: Globe,
+      image: '/banners/home/why/Why-kothari-Group-_3.jpg',
     },
     {
       id: '05',
@@ -43,8 +46,11 @@ export const WhyKothariGroup = () => {
       subtitle: 'Driven by Customer Needs',
       description: 'Reliable products, responsive support, and dependable service.',
       icon: Handshake,
+      image: '/banners/home/why/Why-kothari-Group-_4.jpg',
     },
   ];
+
+  const [activeImage, setActiveImage] = React.useState(featureCards[0].image);
 
   const stats = [
     
@@ -94,10 +100,16 @@ export const WhyKothariGroup = () => {
             
             {/* Background Image Container */}
             <div className="absolute inset-0 z-0">
-              <div 
-                className="w-full h-full bg-cover bg-center mix-blend-overlay"
-                style={{ backgroundImage: `url('/banners/home/Why-kothari-Group-_1.jpg')` }}
-              />
+              {featureCards.map((card) => (
+                <div
+                  key={card.id}
+                  className="absolute inset-0 bg-cover bg-center mix-blend-overlay transition-opacity duration-500 ease-out"
+                  style={{
+                    backgroundImage: `url('${card.image}')`,
+                    opacity: activeImage === card.image ? 1 : 0,
+                  }}
+                />
+              ))}
               {/* Overlay clear in center */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#041E33d9_0%,#062A4A99_48%,#020D18cc_100%)]" />
             </div>
@@ -173,6 +185,8 @@ export const WhyKothariGroup = () => {
               return (
                 <div
                   key={card.id}
+                  onMouseEnter={() => setActiveImage(card.image)}
+                  onMouseLeave={() => setActiveImage(featureCards[0].image)}
                   className="relative bg-white border border-slate-200 p-7 sm:p-8 flex flex-col justify-between h-auto min-h-[250px] transition-all duration-300 group hover:border-[#1575B3] hover:shadow-lg hover:shadow-slate-100 hover:-translate-y-1"
                 >
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-slate-100 group-hover:bg-[#1575B3] transition-colors duration-300" />

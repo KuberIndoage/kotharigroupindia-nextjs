@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Newspaper } from 'lucide-react';
+import { ChevronRight, Newspaper } from 'lucide-react';
 import AppShell from '@/components/AppShell';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogFilter, type DivisionFilter } from '@/components/blog/BlogFilter';
@@ -16,6 +16,7 @@ import {
   fetchWpPostsByCategorySlugs,
   WP_CATEGORIES,
 } from '@/lib/wp-posts';
+import Link from 'next/link';
 
 const POSTS_PER_PAGE = 9;
 
@@ -138,11 +139,17 @@ export const SuccessStoriesListing: React.FC<{
 }) => {
   const pageBasePath = paginationBasePath ?? detailBasePath;
   const chromeDivision = getSuccessStoriesDivision(pageBasePath, division);
+  const isIrrigationDivision = chromeDivision === 'irrigation';
+  const breadcrumbLabel = isIrrigationDivision
+    ? 'Irrigation Success Stories'
+    : chromeDivision === 'pipe'
+    ? 'Pipe Success Stories'
+    : title;
 
   return (
     <AppShell>
       <div className="text-left">
-        <SuccessStoriesHeader division={chromeDivision} />
+        <SuccessStoriesHeader division={chromeDivision} /> 
 
         {/* Hero */}
         <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
@@ -158,6 +165,18 @@ export const SuccessStoriesListing: React.FC<{
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full min-h-[50dvh] pt-28 sm:pt-32 pb-10 flex flex-col justify-between">
+            {/* Breadcrumb */}
+            <nav
+              aria-label="Breadcrumb"
+              className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-white/60 overflow-x-auto whitespace-nowrap shrink-0"
+            >
+              <Link href={`/${chromeDivision}-division`} className="hover:text-white transition-colors">
+                Home
+              </Link>
+              <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+              <span className="text-white">{breadcrumbLabel}</span>
+            </nav>
+
             <div className="flex flex-col gap-5 sm:gap-6 my-auto py-8">
               <span className="inline-block self-start text-[11px] font-mono tracking-[0.25em] uppercase text-white border border-white/25 bg-white/10 backdrop-blur-sm px-3 py-1.5">
                 Kothari Group
