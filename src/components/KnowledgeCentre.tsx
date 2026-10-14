@@ -1,7 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { KnowledgeRequestModal } from '@/components/knowledge/KnowledgeRequestModal';
+import {
+  allKnowledgeItems,
+  irrigationKnowledgeItems,
+  pipeKnowledgeItems,
+} from '@/lib/knowledge-centre';
+import type { KnowledgeItem } from '@/lib/knowledge-centre';
 
 
 
@@ -28,9 +36,20 @@ const defaultItems = [
 
 export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'green' }> = ({ itemData = defaultItems, theme = 'blue' }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [requestItem, setRequestItem] = useState<KnowledgeItem | null>(null);
   const isGreen = theme === 'green';
   const accentBg = isGreen ? 'bg-[#1575B3]' : 'bg-[#1575B3]';
   const accentText = isGreen ? 'text-[#1575B3]' : 'text-[#1575B3]';
+
+  const openRequest = (item: any) => {
+    const title = String(item?.title ?? '').trim().toLowerCase();
+    const pool = isGreen ? irrigationKnowledgeItems : pipeKnowledgeItems;
+    const match =
+      pool.find((k) => k.title.trim().toLowerCase() === title) ??
+      allKnowledgeItems.find((k) => k.title.trim().toLowerCase() === title) ??
+      null;
+    if (match) setRequestItem(match);
+  };
 
   return (
     <section id="knowledge-centre" className="w-full bg-white py-16 sm:py-24 border-b border-slate-300/70 scroll-mt-20">
@@ -81,8 +100,12 @@ export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'gre
                   </div>
 
                   <div>
-                    <a
-                      href={item.link}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openRequest(item);
+                      }}
                       className={`inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase font-semibold transition-all duration-300 ${
                         isActive 
                           ? `${accentText} translate-x-1` 
@@ -91,7 +114,7 @@ export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'gre
                     >
                       <span>LEARN MORE</span>
                       <ArrowUpRight className="w-4 h-4" />
-                    </a>
+                    </button>
                   </div>
                 </div>
               );
@@ -115,7 +138,27 @@ export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'gre
 
         </div>
 
+        {/* View All */}
+        <div className="flex justify-center pt-4">
+          <Link
+            href="/knowledge-section"
+            className={`inline-flex items-center gap-2 px-6 py-3 text-xs font-mono font-semibold tracking-widest uppercase border transition-all duration-300 ${
+              isGreen
+                ? 'border-[#1575B3] text-[#1575B3] hover:bg-[#1575B3] hover:text-white'
+                : 'border-[#1575B3] text-[#1575B3] hover:bg-[#1575B3] hover:text-white'
+            }`}
+          >
+            <span>View All</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </div>
+
       </div>
+
+      <KnowledgeRequestModal
+        item={requestItem}
+        onClose={() => setRequestItem(null)}
+      />
     </section>
   );
 };

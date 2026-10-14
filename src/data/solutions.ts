@@ -1585,7 +1585,7 @@ export const solutionsData: Solution[] = [
           icon: 'Droplets',
           title: 'Precision Drip Irrigation',
           text: 'Driplines, drippers and fittings that deliver water straight to the roots.',
-          image: `https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=600&q=80`,
+          image: `/solutions/irrigation/Precision-Irrigation/Precision-Drip-Irrigation/Precision Drip Irrigation.png`,
           metaTitle: 'Precision Drip Irrigation System | Kothari Group',
           metaDescription:
             'Precision drip irrigation systems with driplines, drippers, polytube and fittings for uniform root-zone watering on fields, slopes and greenhouses.',
@@ -1628,26 +1628,31 @@ export const solutionsData: Solution[] = [
     title: 'Sugarcane & Cotton',
     description:
       'Drip lines for high-water-demand row crops, delivering steady root-zone moisture while cutting evaporation and runoff compared with flood irrigation.',
-  },
+    image: `/solutions/irrigation/Precision-Irrigation/Precision-Drip-Irrigation/Sugarcane Crop.png`,
+    },
   {
     title: 'Vegetables',
     description:
       'Thin wall and non-pressure-compensated driplines suit short-duration vegetable crops, giving reliable season-length watering at a lower cost.',
+    image: `/solutions/irrigation/Precision-Irrigation/Precision-Drip-Irrigation/Vegetables.png`,
   },
   {
     title: 'Banana & Pomegranate',
     description:
       'Uniform emitter output gives each plant an equal share of water, helping fruit crops like banana and pomegranate get consistent moisture.',
-  },
+ image: `/solutions/irrigation/Precision-Irrigation/Precision-Drip-Irrigation/Banana.png`,
+    },
   {
     title: 'Orchards & Vineyards',
     description:
       'Pressure-compensated drippers hold steady flow on slopes and long runs, keeping tree and vine rows evenly watered across uneven land.',
+       image: `/solutions/irrigation/Precision-Irrigation/Precision-Drip-Irrigation/Orchards and vineyards.png`,
   },
   {
     title: 'Greenhouses & Nurseries',
     description:
       'Anti-siphon and no-drain dripper designs for greenhouse and subsurface use, keeping watering precise in protected cultivation and nursery beds.',
+       image: `/solutions/irrigation/Precision-Irrigation/Precision-Drip-Irrigation/Green House.png`,
   },
 ],
           relatedProducts: [
@@ -1713,7 +1718,7 @@ export const solutionsData: Solution[] = [
           icon: 'CloudRainWind',
           title: 'Precision Sprinkler Irrigation',
           text: 'Sprinklers, rainguns and quick-coupling pipes for even overhead coverage.',
-          image: `https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80`,
+          image: `/solutions/irrigation/Precision-Irrigation/Precision-Sprinkler-Irrigation/Precision Sprinkler Irrigation.png`,
           metaTitle: 'Precision Sprinkler Irrigation System | Kothari Group',
           metaDescription:
             'Precision sprinkler irrigation systems with metal sprinklers, rainguns, HDPE sprinkler pipes and micro sprinklers for uniform crop coverage.',
@@ -1757,27 +1762,32 @@ export const solutionsData: Solution[] = [
     title: 'Field Crops',
     description:
       'Sprinklers and quick-coupling HDPE pipes apply water like gentle rainfall, covering closely spaced field crops evenly with fast, portable setup.',
-  },
+     image: `/solutions/irrigation/Precision-Irrigation/Precision-Sprinkler-Irrigation/Field Crop.png`,
+    },
   {
     title: 'Plantations',
     description:
       'Rainguns and metal sprinklers cover wide plantation areas with strong, even spray, with portable pipe layouts that are easy to lay and shift.',
-  },
+   image: `/solutions/irrigation/Precision-Irrigation/Precision-Sprinkler-Irrigation/Plantation.png`,
+    },
   {
     title: 'Orchards & Nurseries',
     description:
       'Micro and mini sprinklers give flexible, uniform coverage for orchards and nurseries, with adjustable spray patterns suited to young plants.',
+       image: `/solutions/irrigation/Precision-Irrigation/Precision-Sprinkler-Irrigation/Orchards and Nurseries.png`,
   },
   {
     title: 'Fodder & Lawns',
     description:
       'Pop-up heads and rotors give even coverage for fodder fields, lawns and turf, covering closely spaced growth that drip lines handle poorly.',
-  },
-  {
-    title: 'Greenhouses',
-    description:
-      'Fine-mist sprayers cool the air and keep humidity right inside greenhouses, while also supporting crop protection in extreme heat or cold.',
-  },
+  image: `/solutions/irrigation/Precision-Irrigation/Precision-Sprinkler-Irrigation/Fodder and Lawns.png`,
+    },
+  // {
+  //   title: 'Greenhouses',
+  //   description:
+  //     'Fine-mist sprayers cool the air and keep humidity right inside greenhouses, while also supporting crop protection in extreme heat or cold.',
+  //  image: `/solutions/irrigation/Precision-Irrigation/Precision-Sprinkler-Irrigation/Greenhouse.png`,
+  //   },
 ],
           relatedProducts: [
             {
@@ -1842,7 +1852,7 @@ export const solutionsData: Solution[] = [
           icon: 'Filter',
           title: 'Water-Saving Irrigation',
           text: 'Filters, pressure valves, meters and controllers that protect every drop.',
-          image: `https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80`,
+           image: `/solutions/irrigation/Precision-Irrigation/Water-saving-irrigation/Borewale & Water.png`,
           metaTitle: 'Water-Saving Irrigation Systems for Farms | Kothari Group',
           metaDescription:
             'Water-saving irrigation with filters, pressure valves, water meters and controllers that cut clogging, waste and pipeline damage.',
@@ -1886,27 +1896,32 @@ export const solutionsData: Solution[] = [
     title: 'Well & Borewell Water',
     description:
       'Hydrocyclone and sand filters remove sand and debris from groundwater before it reaches the emitters, preventing clogging and uneven watering.',
-  },
+      image: `/solutions/irrigation/Precision-Irrigation/Water-saving-irrigation/Borewale & Water.png`,
+    },
   {
     title: 'River & Pond Water',
     description:
       'Screen and disc filters with auto-backwash options clean silt and organic matter from open water sources, with less manual cleaning.',
-  },
+ 
+     image: `/solutions/irrigation/Precision-Irrigation/Water-saving-irrigation/River and Pond.png`,   },
   {
     title: 'Large Drip Systems',
     description:
       'Filters, pressure valves and air release valves protect big drip networks from clogging, surges and bursts, keeping every line running smoothly.',
-  },
+  image: `/solutions/irrigation/Precision-Irrigation/Water-saving-irrigation/Large Drip System.png`,
+    },
   {
     title: 'Sloped Farms',
     description:
       'Pressure reducing and sustaining valves regulate flow on uneven land, protecting pipelines from surges and water hammer across elevation changes.',
+      image: `/solutions/irrigation/Precision-Irrigation/Water-saving-irrigation/Slopped farms.png`,
   },
   {
     title: 'Commercial Farms',
     description:
       'Water meters and controllers track and schedule irrigation by time or volume, so large farms use water in measured amounts rather than guesswork.',
-  },
+ image: `/solutions/irrigation/Precision-Irrigation/Water-saving-irrigation/Commercial Farms.png`,
+    },
 ],
           relatedProducts: [
             {
@@ -1970,7 +1985,7 @@ export const solutionsData: Solution[] = [
           icon: 'FlaskConical',
           title: 'Automated Fertigation',
           text: 'Injectors, dosing pumps and controllers for precise nutrient delivery.',
-          image: `https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80`,
+                  image: `/solutions/irrigation/Precision-Irrigation/Automated-fertigation/Automated Fertigation.png`,
           metaTitle: 'Automated Fertigation Systems for Drip Irrigation | Kothari Group',
           metaDescription:
             'Automated fertigation systems with Venturi injectors, dosing pumps and IoT machines for precise nutrient delivery through drip irrigation.',
