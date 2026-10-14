@@ -33,6 +33,7 @@ import {
   aboutWhyKothari,
   aboutPurposePrinciple,
   capGrowth,
+  aboutWhy,
 } from '@/data/about';
 
 /* ── 1. HERO ─────────────────────────────────────────── */
@@ -198,6 +199,29 @@ export const AboutGrowth: React.FC = () => {
             {aboutGrowth.intro}
           </p>
           {aboutGrowth.paragraphs.map((para, idx) => (
+            <p key={idx} className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+              {para}
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const AboutWhy: React.FC = () => {
+  return (
+    <section className="w-full bg-[#F5F6F8] py-16 sm:py-24 border-b border-slate-300/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+        <SectionHeader
+          title={aboutWhy.heading}
+          // description="Four decades of building India's water future."
+        />
+        <div className="max-w-7xl space-y-4">
+          <p className="text-base sm:text-xl font-semibold text-slate-900 leading-snug">
+            {aboutWhy.intro}
+          </p>
+          {aboutWhy.paragraphs.map((para, idx) => (
             <p key={idx} className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
               {para}
             </p>

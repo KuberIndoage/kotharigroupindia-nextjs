@@ -586,7 +586,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
 
                             <div className="flex items-center gap-1">
                               {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={`w-4 h-4 ${isGreen ? 'fill-[#1E8E3E] text-[#1E8E3E]' : 'fill-[#1575B3] text-[#1575B3]'}`} />
+                                <Star key={i} className={`w-4 h-4 ${isGreen ? 'fill-[#1575B3] text-[#1575B3]' : 'fill-[#1575B3] text-[#1575B3]'}`} />
                               ))}
                             </div>
 

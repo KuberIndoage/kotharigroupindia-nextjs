@@ -112,10 +112,10 @@ export const Hero = () => {
         </div>
         
         {/* Base Dark Overlay */}
-        {/* <div className="absolute inset-0 bg-black/25 pointer-events-none" /> */}
+        <div className="absolute inset-0 bg-black/25 pointer-events-none" />
         
         {/* Top-Heavy Gradient Overlay for increased top contrast and navbar contrast */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/50 pointer-events-none" /> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/50 pointer-events-none" />
       </div>
 
       {/* Main Container - Full Height Layout */}

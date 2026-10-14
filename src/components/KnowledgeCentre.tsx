@@ -99,7 +99,7 @@ export const KnowledgeCentre: React.FC<{ itemData?: any[]; theme?: 'blue' | 'gre
           </div>
 
           {/* Right Column: Clean Image Panel */}
-          <div className="lg:col-span-6 min-h-[380px] lg:min-h-full bg-slate-100 relative overflow-hidden">
+          <div className="lg:col-span-6 min-h-[380px] lg:min-h-full  relative overflow-hidden">
             {itemData?.map((item:any, idx:any) => (
               <img
                 key={idx}
