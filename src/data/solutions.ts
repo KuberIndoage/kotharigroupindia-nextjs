@@ -2029,27 +2029,32 @@ export const solutionsData: Solution[] = [
     title: 'Vegetables',
     description:
       'Venturi injectors or dosing pumps feed measured nutrients with every irrigation cycle, supporting fast-growing vegetables with less fertilizer waste.',
-  },
+       image: `/solutions/irrigation/Precision-Irrigation/Automated-fertigation/Vegetables.png`,
+    },
   {
     title: 'Orchards',
     description:
       'Dosing pumps deliver nutrients to the root zone of tree crops with each watering, giving consistent feeding without manual fertilizer application.',
-  },
+       image: `/solutions/irrigation/Precision-Irrigation/Automated-fertigation/Orchards.jpg`,
+    },
   {
     title: 'Vineyards',
     description:
       'Automated dosing by time or quantity gives vines steady, controlled nutrition, with fertilizer delivered exactly where the roots feed.',
+       image: `/solutions/irrigation/Precision-Irrigation/Automated-fertigation/Viniyards.jpg`,
   },
   {
     title: 'Nurseries',
     description:
       'Precise, regular nutrient dosing for young plants and saplings, with Venturi injectors suiting smaller setups and clean fertigation layouts.',
+       image: `/solutions/irrigation/Precision-Irrigation/Automated-fertigation/Nuresries.jpg`,
   },
   {
     title: 'Greenhouses',
     description:
       'Nutrijet IoT machines give real-time EC and pH control with remote monitoring, supporting consistent nutrition in protected cultivation.',
-  },
+       image: `/solutions/irrigation/Precision-Irrigation/Automated-fertigation/Greenhouse.jpg`,
+    },
 ],
           relatedProducts: [
             {
@@ -2199,7 +2204,7 @@ export const solutionsData: Solution[] = [
     slug: 'polyhouse-greenhouse-irrigation',
     division: 'irrigation',
     eyebrow: 'Irrigation Division',
-    heroImage: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2000&q=80',
+    heroImage: '/solutions/irrigation/Polyhouse-(Green house)-Irrigation/exotic crop farming.jpg',
     metaTitle: 'Polyhouse  Irrigation Solutions | Kothari Group',
     metaDescription:
       'Kothari Group polyhouse irrigation solutions use micro sprinklers and misters to deliver precise, controlled watering for greenhouse and nursery crops',
@@ -2243,26 +2248,31 @@ export const solutionsData: Solution[] = [
     title: 'Floriculture',
     description:
       'Micro sprinklers, misters and fine-tuned driplines maintain the humidity and moisture flowers need, lowering the risk of overwatering and disease.',
-  },
+  image: '/solutions/irrigation/Polyhouse-(Green house)-Irrigation/Floriculture.jpg',
+    },
   {
     title: 'Nurseries',
     description:
       'Gentle misting and micro sprinklers keep saplings and young plants evenly moist, with automatic filters for clean, low-maintenance operation.',
+      image: '/solutions/irrigation/Polyhouse-(Green house)-Irrigation/Nurseries.jpg',
   },
   {
     title: 'Protected Vegetable Cultivation',
     description:
       'Controlled watering for vegetables grown under cover, keeping moisture precise in tightly spaced beds and cutting disease from uneven watering.',
-  },
+  image: '/solutions/irrigation/Polyhouse-(Green house)-Irrigation/protected vegetable cultivation.jpg',
+    },
   {
     title: 'Exotic Crop Farming',
     description:
       'Precise, climate-matched irrigation for high-value exotic crops, with misting and fogging options to hold humidity at the level each crop needs.',
-  },
+  image: '/solutions/irrigation/Polyhouse-(Green house)-Irrigation/exotic crop farming.jpg',
+    },
   {
     title: 'Seedling Propagation',
     description:
       'Fine misting keeps seedling trays evenly moist without overwatering, helping young plants establish well in enclosed, controlled conditions.',
+    image: '/solutions/irrigation/Polyhouse-(Green house)-Irrigation/seedling propagtion.jpg',
   },
 ],
     relatedProducts: [
@@ -2314,7 +2324,7 @@ export const solutionsData: Solution[] = [
     slug: 'agricultural-field-irrigation',
     division: 'irrigation',
     eyebrow: 'Irrigation Division',
-    heroImage: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80',
+   heroImage: '/solutions/irrigation/Agriculltural-filed-Irrigation/Large Commericial Famrland.jpg',
     metaTitle: 'Agricultural Field Irrigation Solutions | Kothari Group',
     metaDescription:
       ` Kothari Group's agricultural field irrigation solutions combine sprinkler systems and durable irrigation pipes for uniform coverage across large farmland. `,
@@ -2358,26 +2368,31 @@ export const solutionsData: Solution[] = [
     title: 'Cereal & Grain Crops',
     description:
       'Sprinkler and raingun systems give broad, uniform coverage across grain crops grown over wide areas, reducing dry patches from field edge to edge.',
-  },
+    image: '/solutions/irrigation/Agriculltural-filed-Irrigation/Cereal and Grain crops.jpg',
+    },
   {
     title: 'Sugarcane',
     description:
       'Rainguns and HDPE sprinkler pipes cover large cane fields with high-volume, wide-radius watering, cutting the manual labour of flood or furrow irrigation.',
+      image: '/solutions/irrigation/Agriculltural-filed-Irrigation/Sugarcane.jpg',
   },
   {
     title: 'Cotton',
     description:
       'Uniform sprinkler coverage across open cotton fields, using UV-resistant pipes and durable sprinklers built to handle outdoor conditions season after season.',
+      image: '/solutions/irrigation/Agriculltural-filed-Irrigation/Cotton.jpg',
   },
   {
     title: 'Pulses',
     description:
       'Metal and plastic sprinkler options suit closely spaced pulse crops, matching budget and field size while spreading water evenly with fewer dry patches.',
+    image: '/solutions/irrigation/Agriculltural-filed-Irrigation/Pulses.jpg',
   },
   {
     title: 'Large Commercial Farmland',
     description:
       'Quick-connect HDPE pipe layouts and rainguns cover large landholdings efficiently, field-tested across diverse Indian soil and climate conditions.',
+      image: '/solutions/irrigation/Agriculltural-filed-Irrigation/Large Commericial Famrland.jpg',
   },
 ],
     relatedProducts: [
@@ -2429,7 +2444,7 @@ export const solutionsData: Solution[] = [
     slug: 'water-management',
     division: 'irrigation',
     eyebrow: 'Irrigation Division',
-    heroImage: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=2000&q=80',
+    heroImage: '/solutions/irrigation/Water-Management/Coopretative farms.jpg',
     metaTitle: ' Irrigation System & Water Management Solutions | Kothari Group',
     metaDescription:
       ' Kothari Group offers complete irrigation system solutions from filtration to automation helping farms manage water efficiently at every stage.',
@@ -2474,21 +2489,25 @@ export const solutionsData: Solution[] = [
     title: 'Large Agricultural Estates',
     description:
       'Complete irrigation systems that connect sourcing, filtration, automation and fertigation, helping big estates manage water efficiently at every stage.',
-  },
+  image: '/solutions/irrigation/Water-Management/Large Agricultural Estate.jpg',
+    },
   {
     title: 'Cooperative Farms',
     description:
       'Shared irrigation setups with automatic filters and controllers for scheduled, controlled watering, reducing downtime and manual oversight across member farms.',
-  },
+  image: '/solutions/irrigation/Water-Management/Coopretative farms.jpg',
+    },  
   {
     title: 'Government & Institutional Irrigation Projects',
     description:
       'Turnkey irrigation design and installation for public and institutional projects, covering borewell access, filtration, automation and fertigation as one system.',
+        image: '/solutions/irrigation/Water-Management/government and institutional irrigation project.jpg',
   },
   {
     title: 'Multi-Crop Operations',
     description:
       'One automated system that handles varied crop needs, with controllers for scheduled, remote or sensor-triggered watering and precise fertigation alongside.',
+      image: '/solutions/irrigation/Water-Management/Multi Crop opertation.jpg',
   },
 ],
     relatedProducts: [
