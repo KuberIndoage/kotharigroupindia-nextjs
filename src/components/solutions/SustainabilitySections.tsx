@@ -23,21 +23,21 @@ const PILLARS = [
     num: '01',
     icon: Sun,
     title: '100% Green Energy Powered',
-    text: 'We power all our production processes through rooftop solar panels, making our manufacturing fully solar-powered. This ensures eco-friendly production and a minimal carbon footprint across our facilities.',
+    text: 'We use solar energy in our production facilities to produce sustainable products.',
     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80',
   },
   {
     num: '02',
     icon: Leaf,
     title: 'Sustainable Product Portfolio',
-    text: 'Our entire product range from piping systems to irrigation solutions is designed around durability and responsible resource use. Across both divisions, our focus stays the same: reduce waste, reduce water loss, and build infrastructure that lasts.',
+    text: 'Our pipes and irrigation systems will serve for a long time and do not lead to wastage of water. Thus, we create durable products with low water loss making use of water supply efficiently for agriculture and infrastructure purposes.',
     image: 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=800&q=80',
   },
   {
     num: '03',
     icon: Users,
     title: 'Enabling Small-Scale Farmers',
-    text: 'Sustainability extends beyond manufacturing into the communities we serve. We empower key stakeholders farmers and dealers through educational programs and knowledge-sharing meetups that promote innovation and better water practices on the ground.',
+    text: 'We support farmers and dealers to learn about improved approaches to irrigation and water management through educational and outreach initiatives.',
     image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80',
   },
 ];
@@ -48,7 +48,7 @@ export const SustainPillars: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <SectionHeader
           title="Our Sustainability Pillars"
-          description="Three commitments that shape every product we make and every community we serve."
+          description="Our sustainable practices rely on three key commitments that we adhere to in sustainable manufacturing, responsible management of water, and community development. "
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {PILLARS.map((pillar, idx) => {
@@ -103,7 +103,7 @@ export const SustainPillars: React.FC = () => {
 };
 
 export const SUSTAINABILITY_INTRO =
-  `As one of India's leading pipe and irrigation manufacturers, we understand the true value of every natural resource, especially water. Sustainability isn't a separate initiative for us; it's built into how we manufacture, across both our Pipe Division and our Irrigation Division, and how we support the farming and building communities who depend on us. This commitment extends to every aspect of our operations.`;
+  `Kothari Group stands for sustainability in pipe production and irrigation practices. We aim for responsible and efficient use of energy and water in our production processes, and to produce durable products to decrease water loss and wastage.`;
 
 export const SustainHero: React.FC = () => {
   return (
@@ -211,14 +211,14 @@ export const SustainByDesign: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <SectionHeader
           title="Sustainability, By Design"
-          description="Not a checklist — a property of the products themselves."
+          description="The Principles of Our Work Incorporated into All Our Supplies. "
         />
         <div className="max-w-4xl space-y-4">
-          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+          {/* <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
             We don&apos;t treat sustainability as a separate checklist; it&apos;s built into the products themselves.
-          </p>
+          </p> */}
           <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-            Across our Irrigation Division, every solution is engineered to help farmers use water more precisely from root-zone drip systems to automated field irrigation that minimizes runoff. Across our Pipe Division, our focus is on durability and leak-free performance, because piping that lasts longer and wastes less water is, in its own way, a sustainability tool too.
+         The methods of irrigation that we provide allows farmers to save water by using drip irrigation methods and automated systems reducing water loss. Our long-lasting pipes which are resistant to leakages, play a vital role in ensuring less water waste in agriculture and infrastructure.
           </p>
           <div className="flex flex-wrap gap-3 pt-4">
             <Link

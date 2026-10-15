@@ -15,7 +15,7 @@ export const QualityDocument: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <SectionHeader
           title="Quality Document"
-          description="Certified quality standards that define every Kothari product."
+          description="Represents the standards that Kothari Group’s manufacturing process and product performance are based on. "
         />
         <Reveal>
           <button

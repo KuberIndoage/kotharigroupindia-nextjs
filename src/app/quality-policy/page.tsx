@@ -33,55 +33,55 @@ const HERO_STATS = [
 
 const PRINCIPLES = [
   {
-    title: 'Quality Excellence',
-    description: 'Meeting and exceeding global standards.',
+    title: 'Quality Assurance',
+    description: 'Ensuring high quality of pipes, fittings and irrigation systems.',
     icon: BadgeCheck,
   },
   {
-    title: 'Process Innovation',
-    description: 'Embracing digital transformation and automation.',
+    title: 'Technological Innovation',
+    description: 'Improving production processes with the help of modern technologies.',
     icon: Lightbulb,
   },
   {
-    title: 'Sustainable Growth',
-    description: 'Minimizing environmental impact through responsible sourcing and production.',
+    title: 'Sustainability',
+    description: 'Minimizing waste through smart sourcing and effective production.',
     icon: Leaf,
   },
   {
-    title: 'Risk-Based Thinking',
-    description: 'Proactively identifying and mitigating quality-related risks.',
+    title: 'Risk Management',
+    description: 'Finding quality issues in advance.',
     icon: ShieldCheck,
   },
   {
-    title: 'Employee Development',
-    description: 'Empowering our workforce with the latest industry skills.',
+    title: 'Staff Development',
+    description: 'Enhancing employee competencies through continuous training and knowledge transfer. ',
     icon: Users,
   },
 ];
 
 const OBJECTIVES = [
   {
-    text: 'Achieve zero major quality defects through continuous monitoring and preventive actions.',
+    text: 'Avoid Defects: Take steps to get rid of quality defects through compliance with inspections and consistent monitoring.',
     icon: ShieldCheck,
   },
   {
-    text: 'Enhance supplier quality performance to improve overall product standards.',
+    text: 'Enhance Supplier Quality: Collaborate with suppliers to maintain high-quality products.',
     icon: PackageCheck,
   },
   {
-    text: 'Achieve a 10% annual reduction in resource wastage (materials, water, and energy).',
+    text: 'Decrease Waste of Resources: Our goal is to achieve 10% annual decrease in waste of raw materials, water, and energy.',
     icon: Recycle,
   },
   {
-    text: 'Implement real-time quality monitoring using IoT and automation for predictive maintenance.',
+    text: 'Enhance Quality Monitoring: Implement automation in the operations and make use of IoT technologies wherever possible.',
     icon: Cpu,
   },
   {
-    text: 'Establish a customer feedback-driven improvement process to enhance satisfaction.',
+    text: 'Use Customers’ Opinions: Regularly gather customer feedback and make changes based on it.',
     icon: MessageSquare,
   },
   {
-    text: 'Maintain a strong focus on workplace safety and regulatory compliance.',
+    text: 'Ensure Safety and Compliance: Follow safety rules and comply with legal requirements. ',
     icon: HardHat,
   },
 ];
@@ -137,20 +137,16 @@ export default function QualityPolicyPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
             <SectionHeader
               title="Overview"
-              description="Who we are and what drives our quality promise."
+              description="Introduction to Who We Are and What Our Quality Commitment is All About."
             />
             <Reveal>
               <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-7xl">
-                The Kothari Group is a leading Indian manufacturer of irrigation and plumbing solutions,
-                delivering reliable, certified products for more than three decades. Every material, process and
-                finished product is governed by a single, uncompromising standard of quality.
-              </p>
-            </Reveal>
+               At Kothari Group, quality has always played an integral role in the manufacturing process of pipes, fittings and irrigation products. For many years we have been working on supplying products that can be relied upon to meet customer expectations and manage water properly in agriculture, plumbing or infrastructure.
+              </p> 
+            </Reveal> 
             <Reveal delay={90}>
               <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-7xl">
-                This Quality Policy outlines the principles and objectives that guide our teams, our suppliers and
-                our partners. It is reviewed continuously so our products keep meeting global standards while
-                respecting people and the planet.
+      Through the Quality Policy we ensure that every step of production, from choosing suitable materials to manufacturing and service is in accordance with quality standards. Continuous improvement and responsible attitude to work is our key to constantly providing excellent and reliable products to our customers. 
               </p>
             </Reveal>
           </div>
@@ -161,7 +157,7 @@ export default function QualityPolicyPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
             <SectionHeader
               title="Our Key Principles"
-              description="Five quality commitments that are non-negotiable."
+              description="Here are five commitments we follow in our quality management approach."
             />
             <div className="flex flex-col divide-y divide-slate-200 border-y border-slate-200 bg-white">
               {PRINCIPLES.map((item, i) => {
@@ -197,7 +193,7 @@ export default function QualityPolicyPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
             <SectionHeader
               title="Quality Objectives"
-              description="Six measurable goals that keep our quality promise sharp."
+              description="Here are six key points that help keep our quality objectives on course."
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {OBJECTIVES.map((objective, i) => {
