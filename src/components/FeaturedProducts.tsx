@@ -93,7 +93,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
       if (!stage) return;
       const w = stage.clientWidth;
       const cardW = Math.min(Math.max(w * 0.58, 260), 560);
-      const cardH = Math.min(Math.max(cardW * 1.05, 300), 460);
+      const cardH = Math.min(Math.max(cardW * 1.12, 340), 540);
       const sideShift = cardW / 2 + Math.min(Math.max(w * 0.11, 56), 300);
       setStageLayout({ cardW, cardH, sideShift });
     };
@@ -199,14 +199,16 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
                 transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
                 className={`absolute overflow-hidden bg-white shadow-[0_30px_60px_rgba(2,30,53,0.35)] ${isCenter ? 'ring-1 ring-white/60' : ''}`}
               >
-                <Link href={product.link} className="group relative block h-full w-full cursor-pointer">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    draggable={false}
-                    className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-105 pointer-events-none"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-white py-3.5 sm:py-4 px-4">
+                <Link href={product.link} className="group relative flex flex-col h-full w-full cursor-pointer">
+                  <div className="relative flex-1 min-h-0 overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      draggable={false}
+                      className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-105 pointer-events-none"
+                    />
+                  </div>
+                  <div className="shrink-0 bg-white  py-3.5 sm:py-4 px-4">
                     <h3 className="text-sm sm:text-base font-bold text-black leading-snug line-clamp-2 text-center">
                       {product.title}
                     </h3>

@@ -54,7 +54,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Precision water delivery direct to the root zone, minimizing waste while maximizing yield. Drip irrigation is the foundation of efficient water use across crops, orchards, and plantations, reducing runoff and evaporation compared to conventional methods.',
           detailSlug: 'drip-irrigation-system',
-          image: 'https://picsum.photos/seed/kothari-drip-irrigation/800/600',
+          image: '/applications/irrigation/section1/Drip Irrigation System.png',
           products: [
             { name: 'Dripline K-Lin PCAS', url: '/drip-line/dripline-k-lin-pcas' },
             { name: 'Dripline K-Gol NPC', url: '/drip-line/dripline-k-gol-npc' },
@@ -67,7 +67,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Uniform overhead coverage designed for larger, open field areas. Sprinkler irrigation is ideal where crop density and field layout make drip less practical, delivering even water distribution across wide areas.',
           detailSlug: 'sprinkler-irrigation-system',
-          image: 'https://picsum.photos/seed/kothari-sprinkler-irrigation/800/600',
+          image: '/applications/irrigation/section1/Sprinkler Irrigation System.png',
           products: [
             { name: 'Metal Sprinkler', url: '/metal-sprinkler/metal-sprinkler' },
             { name: 'Mini Sprinkler', url: '/mini-sprinklers-and-assemblies/mini-sprinkler-rotating-mini-sprinkler-system-for-field-crops-kothari' },
@@ -87,7 +87,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             "High-volume, consistent water delivery suited to sugarcane's long growing cycle, supported by our K-Lin dripline range.",
            detailSlug: 'drip-irrigation-for-sugarcane',
-          image: 'https://picsum.photos/seed/kothari-sugarcane/800/600',
+          image: '/applications/irrigation/section2/Sugarcane Crops.png',
           products: [
             { name: 'Dripline K-Lin PCAS', url: '/drip-line/dripline-k-lin-pcas' },
             { name: 'Dripline K-Lin NPC', url: '/drip-line/dripline-k-lin-npc' },
@@ -98,7 +98,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Precise, gentle irrigation suited to onion, tomato, chilli, and other short-duration vegetable crops.',
           detailSlug: 'vegetable-irrigation-systems',
-          image: 'https://picsum.photos/seed/kothari-vegetables/800/600',
+          image: '/applications/irrigation/section2/Vegetable Crops.png',
           products: [
             { name: 'Thin Wall Dripline K-Slim', url: '/thinwall-drip-line/thin-wall-dripline-k-slim' },
             { name: 'Thinwall Dripline K-Slim Ultra', url: '/thinwall-drip-line/thinwall-dripline-k-slim-ultra' },
@@ -109,7 +109,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Reliable drip and micro sprinkler solutions for banana plantations, supporting consistent yield.',
            detailSlug: 'banana-irrigation-systems',
-          image: 'https://picsum.photos/seed/kothari-banana/800/600',
+          image: '/applications/irrigation/section2/Banana Crop.png',
           products: [
             { name: 'Dripline K-Lin PCND', url: '/drip-line/dripline-k-lin-pcnd' },
             { name: 'K-Mic Micro Sprinkler', url: '/micro-sprinklers-and-assemblies/k-mic-micro-sprinkler' },
@@ -120,7 +120,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Flexible irrigation solutions adaptable to pulses, oilseeds, fodder, and other field crops.',
           detailSlug: 'irrigation-for-field-crops',
-          image: 'https://picsum.photos/seed/kothari-field-crops/800/600',
+          image: '/applications/irrigation/section2/Other crops.png',
           products: [
             { name: 'LD Krishi Pipe (Lay Flat Tubes)', url: '/pe-pipes-and-fittings/ld-krishi-pipe-lay-flat-tubes' },
             { name: 'Polytube', url: '/drip-tubes-polytube/polytube' },
@@ -138,7 +138,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Overhead and drip irrigation solutions for fruit orchards, including frost protection micro sprinklers.',
           detailSlug: 'orchard-irrigation-systems',
-          image: 'https://picsum.photos/seed/kothari-orchard/800/600',
+          image: '/applications/irrigation/section3/orchard irrigation system.png',
           products: [
             { name: 'K-Mist', url: '/misters-and-assemblies/k-mist' },
             { name: 'K-Fogger', url: '/foggers-and-assemblies/k-fogger' },
@@ -150,7 +150,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Gentle, insect-proof micro sprinklers designed specifically for delicate nursery plants.',
            detailSlug: 'nursery-irrigation-systems',
-          image: 'https://picsum.photos/seed/kothari-nursery/800/600',
+          image: '/applications/irrigation/section3/Nursery irrigation.png',
           products: [
             { name: 'K-Fogger', url: '/foggers-and-assemblies/k-fogger' },
             { name: 'Micro Sprayer', url: '/micro-jets-and-assemblies/micro-sprayer' },
@@ -161,7 +161,7 @@ export const irrigationApplications: DivisionApplications = {
           description:
             'Pop-up sprinklers, rotors, and turf irrigation systems for parks, gardens, and public landscaped areas.',
            detailSlug: 'landscaping-turf-irrigation',
-          image: 'https://picsum.photos/seed/kothari-landscaping/800/600',
+          image: '/applications/irrigation/section3/Turf Irrigation.png',
           products: [
             { name: 'Pop-up Spray Heads and Rotors', url: '/garden-and-landscape-sprinklers/pop-up-spray-heads-rotors-landscape-turf-sprinklers-kothari-group' },
             { name: 'Swing Joint', url: '/garden-and-landscape-sprinklers/swing-joint-flexible-connector-for-pop-up-sprinklers-kothari-group' },
@@ -440,7 +440,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Drip Irrigation System',
     tagline:
       'A controlled water distribution approach that delivers irrigation close to the crop through a planned network of pipes, driplines and fittings.',
-    image: '/heronew.jpg',
+    image: '/applications/irrigation/section1/Drip Irrigation System.png',
     bannerImage: '/drip.png',
     overview: {
       heading: 'Understanding Drip Irrigation Systems',
@@ -932,7 +932,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Sprinkler Irrigation System',
     tagline:
       'A field irrigation method that distributes water over the crop area through sprinklers connected to a planned pipeline network.',
-    image: '/heronew.jpg',
+    image: '/applications/irrigation/section1/Sprinkler Irrigation System.png',
     bannerImage: '/drip.png',
     overview: {
       heading: 'Sprinkler Irrigation System Overview',
@@ -1532,7 +1532,7 @@ export const applicationDetails: ApplicationDetail[] = [
   tagline:
     'Plan irrigation around crop rows, field layout and water availability with a drip-based system suited to vegetable cultivation.',
 
-  image: '/heronew.jpg',
+  image: '/applications/irrigation/section2/Vegetable Crops.png',
 
   bannerImage: '/drip.png',
 
@@ -2535,7 +2535,7 @@ export const applicationDetails: ApplicationDetail[] = [
   metaDescription:
     'Explore banana irrigation systems using dripline and micro sprinklers for planned plantation water distribution with Kothari irrigation products.',
   heroEyebrow: 'Irrigation Applications',
-  image: '/heronew.jpg',
+  image: '/applications/irrigation/section2/Banana Crop.png',
   bannerImage: '/drip.png',
   h1: 'Banana Irrigation Systems',
   tagline:
@@ -2746,7 +2746,7 @@ export const applicationDetails: ApplicationDetail[] = [
   metaTitle: 'Field Crop Irrigation Systems | Kothari Irrigation',
   metaDescription: 'Explore irrigation piping for field crops, including LD Krishi Pipe and Polytube for water conveyance and field-level irrigation distribution.',
   heroEyebrow: 'Irrigation Applications',
-  image: '/heronew.jpg',
+  image: '/applications/irrigation/section2/Other crops.png',
   bannerImage: '/drip.png',
 
   h1: 'Irrigation for Other Field Crops',
@@ -2948,7 +2948,7 @@ export const applicationDetails: ApplicationDetail[] = [
   metaTitle: 'Orchard Irrigation Systems | Kothari Irrigation',
   metaDescription: 'Explore orchard irrigation systems using K-Mist, K-Fogger and K-Tuff Micro Sprinkler for planned field-level water application.',
   heroEyebrow: 'Irrigation Applications',
-  image: '/heronew.jpg',
+  image: '/applications/irrigation/section3/orchard irrigation system.png',
   bannerImage: '/drip.png',
 
   h1: 'Orchard Irrigation Systems',
@@ -3158,7 +3158,7 @@ export const applicationDetails: ApplicationDetail[] = [
   metaTitle: 'Nursery Irrigation Systems | Kothari Irrigation',
   metaDescription: 'Explore nursery irrigation systems using K-Fogger and Micro Sprayer for planned water distribution across plant and seedling growing areas',
   heroEyebrow: 'Irrigation Applications',
-  image: '/heronew.jpg',
+  image: '/applications/irrigation/section3/Nursery irrigation.png',
   bannerImage: '/drip.png',
 
   h1: 'Nursery Irrigation Systems',
@@ -3361,7 +3361,7 @@ export const applicationDetails: ApplicationDetail[] = [
   metaTitle: 'Landscaping & Turf Irrigation | Kothari Irrigation',
   metaDescription: 'Plan landscaping and turf irrigation with pop-up spray heads, rotors and Swing Join for lawns, sports grounds and landscaped areas.',
   heroEyebrow: 'Irrigation Applications',
-  image: '/heronew.jpg',
+  image: '/applications/irrigation/section3/Turf Irrigation.png',
   bannerImage: '/drip.png',
 
   h1: 'Landscaping & Turf Irrigation',
@@ -3582,7 +3582,7 @@ export const applicationDetails: ApplicationDetail[] = [
     h1: 'Drip Irrigation for Sugarcane',
     tagline:
       'A planned drip irrigation system helps distribute water along sugarcane rows while keeping field layout, water supply and irrigation control in view.',
-    image: '/heronew.jpg',
+    image: '/applications/irrigation/section2/Sugarcane Crops.png',
     bannerImage: '/drip.png',
     overview: {
       heading: 'Understanding Drip Irrigation for Sugarcane',
