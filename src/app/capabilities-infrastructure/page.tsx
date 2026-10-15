@@ -213,7 +213,7 @@ export default function CapabilitiesInfrastructurePage() {
                Designed to Manage Water Better.
               </h2>
               <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-6 m-0 max-w-xl">
-              Kothari Group is a supplier of high-quality pipes and irrigation solutions for agriculture, plumbing, and infrastructure. Utilizing advanced technology in production, Kothari Group products enable effective water management, be it about using groundwater or directing the wastewater.
+           Kothari Group is a manufacturer of high-quality pipes and irrigation solutions for agriculture, plumbing, and infrastructure. Utilizing advanced technology in production, Kothari Group products enable effective water management, be it about using groundwater or directing the wastewater.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link

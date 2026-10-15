@@ -156,7 +156,7 @@ const MemberCard: React.FC<{ member: BoardMember }> = ({ member }) => {
           </div>
         )}
 
-        <button
+        {/* <button
           onClick={() => setExpanded(!expanded)}
           className="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-semibold tracking-wider text-slate-800 uppercase hover:text-[#1575B3] transition-colors w-full"
         >
@@ -166,7 +166,7 @@ const MemberCard: React.FC<{ member: BoardMember }> = ({ member }) => {
           ) : (
             <ChevronDown className="w-4 h-4" />
           )}
-        </button>
+        </button> */}
       </div>
     </article>
   );
@@ -198,7 +198,7 @@ export const BoardDirectors: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
         <SectionHeader
           title="Board of Directors"
-          description="The founders and stewards guiding Kothari Group's vision and growth."
+          description="Kothari Group is a company evolving upon the visionaries of the industry. "
         />
 
         <div className="grid lg:grid-cols-12 gap-4 lg:gap-5">
