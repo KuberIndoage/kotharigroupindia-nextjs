@@ -22,7 +22,7 @@ export const WhyKothariGroup = () => {
       subtitle: 'Durable Products & Materials',
       description: `High-quality pipes, fittings, and irrigation products built to last.`,
       icon: Award,
-      image: '/banners/home/why/Why-kothari-Group-_1.jpg',
+      image: '/banners/home/why/Quality Contol.png',
     },
     {
       id: '03',
@@ -30,7 +30,7 @@ export const WhyKothariGroup = () => {
       subtitle: 'Precision Water Management',
       description: 'Smart irrigation and piping solutions for efficient water management.',
       icon: Lightbulb,
-      image: '/banners/home/why/Why-kothari-Group-_2.jpg',
+      image: '/banners/home/why/Why-kothari-Group-_1.jpg',
     },
     {
       id: '04',
@@ -38,7 +38,7 @@ export const WhyKothariGroup = () => {
       subtitle: 'Extensive Distribution Network',
       description: 'Serving customers across 23+ states through our dealer network.',
       icon: Globe,
-      image: '/banners/home/why/Why-kothari-Group-_3.jpg',
+      image: '/banners/home/why/Pan India Network.png',
     },
     {
       id: '05',

@@ -67,7 +67,7 @@ export const BoardHero: React.FC = () => {
 <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/heronew.jpg"
+              src="/banners/our-board/AboutUs_OurBoard_Banner.png"
               alt="News & press releases"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"

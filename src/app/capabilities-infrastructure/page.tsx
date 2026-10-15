@@ -29,24 +29,24 @@ const YouTubeIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const technologyCards = [
   {
-    image: '/plant_extrusion_line_1784719717817.jpg',
+    image: '/banners/capability/Capabilities_Advance-Technology.png',
     eyebrow: 'Technology & Equipment',
     heading: 'Advanced Technology',
     description:
-      "Kothari's fast, reliable, high-quality, yet cost-effective manufacturing process is fueled by ultra-modern manufacturing facilities, European, and Israeli technology and equipment.",
+      "Our pipe and irrigation product manufacturing process is powered by modern facilities equipped with high-quality European and Israeli devices that allow us to manufacture cost-effective products in an efficient manner. Combining advanced manufacturing processes with profound production experience helps us provide efficient management solutions for water.",
   },
   {
-    image: '/plant_quality_lab_1784719742717.jpg',
+  image: '/banners/capability/Capabilities_Automation.png',
     eyebrow: 'Technology & Equipment',
     heading: '100% Automation',
     description:
-      'By utilizing advanced technology, we have automated our manufacturing process to deliver the best and consistent products quality.',
+      'Automation is extremely important for our production process as it helps us to improve production efficiency, product consistency, customer satisfaction and product quality. ',
   },
 ];
 
 const CAPABILITIES_INTRO = [ 
-  `At Kothari Group, with decades of expertise, we have developed a deep understanding of the needs of the agricultural and construction industry. That's why, we only manufacture quality and cost-effective irrigation solutions and pipes according to the customer's needs.`,
-  `We have 8 strategically located manufacturing units across the country, which helps to meet the requirements of various geographies and markets.`,
+  `Kothari Group has spent many years in manufacturing water management solutions for agriculture, construction, and infrastructure sectors. We are happy to deliver high-quality pipes, fittings, and different irrigation products that meet diverse demands of users while achieving the balance between high performance, durability, and cost.`,
+  `Our eight well-placed manufacturing units make it possible for us to efficiently serve various markets operational in all parts of India.`,
 ];
 
 export default function CapabilitiesInfrastructurePage() {
@@ -156,7 +156,7 @@ export default function CapabilitiesInfrastructurePage() {
                 Technology &amp; Equipment
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-                Ultra-modern facilities powered by world-class European and Israeli technology.
+              Advanced, modern facilities deliver high-quality pipes and irrigation products thanks to utilizing advanced technology.
               </p>
             </div>
 
@@ -198,7 +198,7 @@ export default function CapabilitiesInfrastructurePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
             <div className="relative min-h-[320px] overflow-hidden">
               <img
-                src="/plant_warehouse_storage_1784719730647.jpg"
+                src="/banners/capability/About_Capabilities_Get-in-touch.png"
                 alt="Kothari Group production facility"
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover object-center"
@@ -210,13 +210,10 @@ export default function CapabilitiesInfrastructurePage() {
                 Built to last · Made to perform
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight uppercase font-serif text-slate-900 m-0 leading-tight">
-                Every product we create is designed for sustainable farming &amp; water plumbing.
+               Designed to Manage Water Better.
               </h2>
               <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-6 m-0 max-w-xl">
-                We provide smart water management solutions, tailored to meet our customer&apos;s
-                needs. From extracting underground water for farming and drinking to disposing of
-                sewage water, we have earned recognition because of our world-class technology and
-                flawless production processes.
+              Kothari Group is a supplier of high-quality pipes and irrigation solutions for agriculture, plumbing, and infrastructure. Utilizing advanced technology in production, Kothari Group products enable effective water management, be it about using groundwater or directing the wastewater.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link

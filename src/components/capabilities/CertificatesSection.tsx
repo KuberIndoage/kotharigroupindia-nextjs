@@ -55,7 +55,8 @@ export const CertificatesSection: React.FC = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-600 max-w-md font-normal leading-relaxed">
-            Among {CERT_COUNT}+ industry and quality certifications held by Kothari Group.
+
+          The more than {CERT_COUNT} certifications show the company's determination to commit to quality pipes, fittings, and irrigation solutions. 
           </p>
         </div>
       </div>
