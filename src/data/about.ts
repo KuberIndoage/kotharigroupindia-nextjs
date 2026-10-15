@@ -52,9 +52,10 @@ export const aboutGrowth = {
     'The philosophy we follow can be described in three words: identify needs, improve water distribution, and create reliable products. From drip and micro-irrigation systems to robust pipes, Kothari Group continues to develop products and manufacturing practices that will help farms, homes, and communities of India.',
   ],
   stats: [
-    { value: '7500+', label: 'Channel Partners' },
-    { value: '2000+', label: 'Associates' },
-    { value: '14+', label: 'Warehouses' },
+     { value: '35+', label: 'Years of excellence' },
+  { value: '9', label: 'Factories' },
+  { value: '11', label: 'Warehouses' },
+  { value: '10', label: `Countries products exported` },
   ] as AboutStat[],
 };
 

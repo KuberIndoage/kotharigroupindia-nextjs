@@ -80,7 +80,7 @@ export const AboutHero: React.FC = () => {
         {/* Mobile aspect spacer: keeps headline at top and stats at bottom */}
         <div aria-hidden="true" className="w-full shrink-0 aspect-video sm:hidden" />
 
-        <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full border-t border-white/20 pt-6 mt-auto max-w-2xl">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-10 w-full border-t border-white/20 pt-6 mt-auto max-w-4xl">
           {aboutGrowth.stats.map((stat) => (
             <div key={stat.label} className="flex flex-col">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">
@@ -133,11 +133,13 @@ export const AboutHero2: React.FC = () => {
 
         <div className="flex flex-col-reverse lg:flex-row justify-between items-stretch lg:items-end gap-6 sm:gap-8 lg:gap-12 w-full mt-auto">
                 
-                     <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full lg:w-auto border-t border-white/20 pt-6">
+                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-10 w-full lg:w-auto border-t border-white/20 pt-6">
                        {[
-                         { value: '8', label: 'Manufacturing units across India' },
-                         { value: '100%', label: 'Automated production' },
-                         { value: '24+', label: 'Facilities nationwide' },
+                       { value: '35+', label: 'Years of excellence' },
+  { value: '9', label: 'Factories' },
+  { value: '11', label: 'Warehouses' },
+  { value: '10', label: `Countries products exported` },
+
                        ].map((stat, idx) => (
                          <div key={idx} className="flex flex-col">
                            <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">

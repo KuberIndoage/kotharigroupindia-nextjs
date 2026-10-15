@@ -230,7 +230,7 @@ export const ProductDetailPage: React.FC<{
             <nav className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-slate-500 overflow-x-auto whitespace-nowrap py-4">
               <Link href={isIrrigation ? '/irrigation-division' : '/pipe-division'} className={`${tHoverText} transition-colors`}>Home</Link>
               <ChevronRight className="w-3 h-3 text-slate-400 shrink-0" />
-              <Link href={`/products?division=${wp?.divisionSlug || 'pipe-division'}`} className={`${tHoverText} transition-colors`}>
+              <Link href={isIrrigation ? '/irrigation-products' : '/pipe-products'} className={`${tHoverText} transition-colors`}>
                 {wp?.divisionName || 'Division'}
               </Link>
               <ChevronRight className="w-3 h-3 text-slate-400 shrink-0" />

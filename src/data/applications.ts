@@ -42,7 +42,7 @@ export const irrigationApplications: DivisionApplications = {
   h1: 'Irrigation Applications',
   intro:
     'From individual crops to full-scale water management, our irrigation systems are engineered for the specific demands of Indian farming. Explore our full range of solutions below, organized by the application that matters most to you.',
-  heroImage: '/heronew.jpg',
+  heroImage: '/banners/applications/Irrigation-Application-Hero banner.png',
   groups: [
     {
       title: 'Water Management Applications',
@@ -186,7 +186,7 @@ export const pipeApplications: DivisionApplications = {
   h1: 'Pipe Applications',
   intro:
     'From residential plumbing to large-scale municipal infrastructure, our pipes and fittings are built for the specific demands of every application. Explore our full range of solutions below, organized by use case.',
-  heroImage: '/heronew.jpg',
+  heroImage: '/banners/applications/Pipe-Application-Hero Banner.png',
   groups: [
     {
       title: 'Agriculture & Borewell Applications',

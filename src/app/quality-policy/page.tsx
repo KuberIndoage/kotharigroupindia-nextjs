@@ -26,9 +26,11 @@ export const generateMetadata = wpPageMetadataFor('quality-policy', {
 });
 
 const HERO_STATS = [
-  { value: '35+', label: 'Years of Excellence' },
-  { value: '7500+', label: 'Channel Partners' },
-  { value: 'ISO 9001', label: 'Certified Quality' },
+    { value: '35+', label: 'Years of excellence' },
+  { value: '9', label: 'Factories' },
+  { value: '11', label: 'Warehouses' },
+  { value: '10', label: `Countries products exported` },
+
 ];
 
 const PRINCIPLES = [
@@ -95,7 +97,7 @@ export default function QualityPolicyPage() {
         <div className="relative w-full min-h-[40dvh] sm:min-h-[100dvh] bg-black text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/plant_quality_lab_1784719742717.jpg"
+              src="/banners/resource/Resources_Quality-Policy.png"
               alt="Quality Policy"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"
@@ -117,7 +119,7 @@ export default function QualityPolicyPage() {
               </p> */}
             </div>
 
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full border-t border-white/20 pt-6 mt-auto max-w-2xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-10 w-full border-t border-white/20 pt-6 mt-auto max-w-4xl">
               {HERO_STATS.map((stat) => (
                 <div key={stat.label} className="flex flex-col">
                   <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">

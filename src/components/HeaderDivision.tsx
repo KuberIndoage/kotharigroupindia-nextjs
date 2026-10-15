@@ -23,17 +23,17 @@ const aboutMegaMenu = {
     {
       title: 'About Us',
       url: '/about-us',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/about/About-us-Banner.jpg",
     },
     {
       title: 'Our Board',
       url: '/our-management',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/our-board/AboutUs_OurBoard_Banner.png",
     },
     {
       title: 'Capabilities & More',
       url: '/capabilities-infrastructure',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/capability/Capabilities-&-Infrastructure_banner.jpg",
     },
     // {
     //   title: 'Sustainability',
@@ -190,33 +190,33 @@ const resourcesMegaMenu = {
     {
       title: 'Awards',
       url: '/awards',
-      image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/resource/Resources_Awards.png",
     },
     {
       title: 'Blogs',
       url: '/blogs',
-      image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/resource/Resources_Blogs.png",
     },
     {
       title: 'News',
       url: '/press-release',
-      image: 'https://images.pexels.com/photos/23833967/pexels-photo-23833967.jpeg',
+      image:"/banners/resource/Resources_News.png",
     },
   
     {
       title: 'Videos',
       url: '/KothariTV',
-      image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/resource/Resources_Video.png",
     },
     {
       title: 'Quality Policy',
       url: '/quality-policy',
-      image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=600&q=80',
+      image: "/banners/resource/Resources_Quality-Policy.png",
     },
     {
       title: 'Knowledge Centre',
       url: '/knowledge-section',
-      image: 'https://images.pexels.com/photos/6806672/pexels-photo-6806672.jpeg',
+      image: "/banners/resource/Resources_knowladge-Center.png",
     }
   ],
 };

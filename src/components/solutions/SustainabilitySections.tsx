@@ -151,11 +151,13 @@ export const SustainHero: React.FC = () => {
         <div className="flex flex-col-reverse lg:flex-row justify-between items-stretch lg:items-end gap-6 sm:gap-8 lg:gap-12 w-full mt-auto">
 
           {/* Left Side: Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10 w-full lg:w-auto border-t border-white/20 pt-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-10 w-full lg:w-auto border-t border-white/20 pt-6">
             {[
-              { value: '100%', label: 'Solar-powered manufacturing' },
-              { value: '2', label: 'Divisions built around durability' },
-              { value: '35+', label: 'Years serving farm communities' },
+              { value: '35+', label: 'Years of excellence' },
+  { value: '9', label: 'Factories' },
+  { value: '11', label: 'Warehouses' },
+  { value: '10', label: `Countries products exported` },
+
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col">
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white drop-shadow-md">
