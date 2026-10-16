@@ -3,19 +3,42 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { KnowledgeGrid } from '@/components/knowledge/KnowledgeGrid';
+import { resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const metadata = {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift.
+const SEO_FALLBACK = {
   title: 'Knowledge Section on Pipes & Irrigation - Kothari Group',
   description:
     'Explore Kothari Group India’s Knowledge Section for expert insights on plumbing pipes, agri‐fittings & micro-irrigation systems. Learn best practices & product tech.',
 };
 
+export const metadata = {
+  title: SEO_FALLBACK.title,
+  description: SEO_FALLBACK.description,
+};
+
 // fully static server component
 export const revalidate = 86400;
 
-export default function KnowledgeCentrePage() {
+export default async function KnowledgeCentrePage() {
+  const seo = await resolveSeoText(undefined, SEO_FALLBACK);
+
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/knowledge-section',
+          pageName: 'Knowledge Centre',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -59,5 +82,6 @@ export default function KnowledgeCentrePage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

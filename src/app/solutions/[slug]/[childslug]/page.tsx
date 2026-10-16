@@ -9,6 +9,12 @@ import {
   IrrigationfooterData,
 } from '@/components/ProductPageLayout';
 import { IrrigationproductsMegaMenu, irrigationSolutionsMegaMenu, PipeproductsMegaMenu, pipeSolutionsMegaMenu } from '@/data/products';
+import { JsonLd } from '@/components/JsonLd';
+import {
+  IRRIGATION_DIVISION_ID,
+  PIPE_DIVISION_ID,
+  childPageGraph,
+} from '@/lib/schema';
 
 type Params = { slug: string; childslug: string };
 
@@ -42,6 +48,19 @@ export default async function SolutionChildPage({ params }: { params: Params | P
   const isPipe = solution.division === 'pipe';
 
   return (
+    <>
+      {/* Schema.txt Template 3: Home > {solution.h1} > {child.h1} */}
+      <JsonLd
+        data={childPageGraph({
+          path: `/solutions/${slug}/${childslug}`,
+          pageName: child.h1,
+          title: child.metaTitle,
+          description: child.metaDescription,
+          parentName: solution.h1,
+          parentPath: `/solutions/${slug}`,
+          aboutId: isPipe ? PIPE_DIVISION_ID : IRRIGATION_DIVISION_ID,
+        })}
+      />
     <AppShell>
       <HeaderDivison
         productsMegaMenu={isPipe ? PipeproductsMegaMenu : IrrigationproductsMegaMenu}
@@ -50,5 +69,6 @@ export default async function SolutionChildPage({ params }: { params: Params | P
       <SolutionChildPageTemplate solution={solution} child={child} theme={isPipe ? 'blue' : 'blue'} />
       <Footer footerData={isPipe ? PipefooterData : IrrigationfooterData} />
     </AppShell>
+    </>
   );
 }

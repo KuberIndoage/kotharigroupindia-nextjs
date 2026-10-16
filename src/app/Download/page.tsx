@@ -4,18 +4,40 @@ import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { DownloadGallery } from '@/components/download/DownloadGallery';
 import { downloadsData } from '@/lib/download';
+import { resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const metadata = {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift.
+const SEO_FALLBACK = {
   title: 'Downloads & Brochures | Kothari Group',
   description:
     'Access downloadable resources from Kothari Group company profile, system brochures, agriculture guides and more to support smart irrigation and farming solutions.',
 };
 
+export const metadata = {
+  title: SEO_FALLBACK.title,
+  description: SEO_FALLBACK.description,
+};
+
 export default async function DownloadsPage() {
   const { downloads, categories } = downloadsData;
+  const seo = await resolveSeoText(undefined, SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/Download',
+          pageName: 'Download',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -72,5 +94,6 @@ export default async function DownloadsPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

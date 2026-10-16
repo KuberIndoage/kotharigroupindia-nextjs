@@ -3,19 +3,37 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { termsData } from '@/lib/term';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('terms-and-conditions', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Terms & Conditions | Kothari Group',
   description:
     'Read the Kothari Group Terms & Conditions covering usage, licenses, payments, restrictions and liability for our website and services.',
-});
+};
 
-export default function TermsConditionsPage() {
+export const generateMetadata = wpPageMetadataFor('terms-and-conditions', SEO_FALLBACK);
+
+export default async function TermsConditionsPage() {
   const { title, updatedDate, contents, sections } = termsData;
+  const seo = await resolveSeoText('terms-and-conditions', SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/terms-and-conditions',
+          pageName: 'Terms & Conditions',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -160,5 +178,6 @@ export default function TermsConditionsPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

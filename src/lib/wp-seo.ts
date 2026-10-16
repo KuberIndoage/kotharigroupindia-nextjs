@@ -1,4 +1,5 @@
 // src/lib/wp-seo.ts
+import { cache } from 'react';
 import type { Metadata } from 'next';
 
 const WP_API =
@@ -29,28 +30,32 @@ function decodeEntities(s: string): string {
 // breaks if the WP API is slow or down). Uses ISR revalidation so Yoast edits
 // made in WordPress admin appear within 10 minutes without a redeploy, while
 // pages still serve from cache between refreshes.
-export async function fetchWpSeoBySlug(slug: string): Promise<WpSeoData | null> {
-  try {
-    const res = await fetch(
-      `${WP_API}/wp/v2/pages?slug=${encodeURIComponent(slug)}&_fields=yoast_head_json`,
-      {
-        headers: { 'User-Agent': 'Mozilla/5.0' },
-        next: { revalidate: SEO_REVALIDATE_SECONDS },
-      }
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    const seo = Array.isArray(data) && data[0] ? data[0].yoast_head_json : null;
-    if (!seo) return null;
-    const title = decodeEntities(String(seo.title ?? '')).trim();
-    const description = decodeEntities(String(seo.description ?? '')).trim();
-    if (!title && !description) return null;
-    return { title, description };
-  } catch (error) {
-    console.error(`[wp-seo] fetch failed for "${slug}":`, error);
-    return null;
+// Wrapped in React `cache()` so generateMetadata and the page body (which both
+// need the resolved title/description for JSON-LD) share a single request.
+export const fetchWpSeoBySlug = cache(
+  async (slug: string): Promise<WpSeoData | null> => {
+    try {
+      const res = await fetch(
+        `${WP_API}/wp/v2/pages?slug=${encodeURIComponent(slug)}&_fields=yoast_head_json`,
+        {
+          headers: { 'User-Agent': 'Mozilla/5.0' },
+          next: { revalidate: SEO_REVALIDATE_SECONDS },
+        }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      const seo = Array.isArray(data) && data[0] ? data[0].yoast_head_json : null;
+      if (!seo) return null;
+      const title = decodeEntities(String(seo.title ?? '')).trim();
+      const description = decodeEntities(String(seo.description ?? '')).trim();
+      if (!title && !description) return null;
+      return { title, description };
+    } catch (error) {
+      console.error(`[wp-seo] fetch failed for "${slug}":`, error);
+      return null;
+    }
   }
-}
+);
 
 function overlayWpSeo(seo: WpSeoData | null, fallback: Metadata): Metadata {
   if (!seo) return fallback;
@@ -75,4 +80,30 @@ export async function wpPageMetadata(slug: string, fallback: Metadata): Promise<
 //   export const generateMetadata = wpPageMetadataFor('about-us', { title: '...', description: '...' });
 export function wpPageMetadataFor(slug: string, fallback: Metadata): () => Promise<Metadata> {
   return () => wpPageMetadata(slug, fallback);
+}
+
+export interface SeoText {
+  title: string;
+  description: string;
+}
+
+/**
+ * Resolves the same title/description a page's `generateMetadata` will serve, as
+ * plain strings. JSON-LD requires {{PAGE_TITLE}} and {{META_DESCRIPTION}} to
+ * match the page's own title tag and meta description (Schema.txt section 3.3),
+ * so pages reuse this instead of restating their fallback strings.
+ *
+ * Mirrors `overlayWpSeo`: Yoast wins when non-empty, otherwise the static
+ * fallback is used.
+ */
+export async function resolveSeoText(
+  slug: string | undefined,
+  fallback: SeoText
+): Promise<SeoText> {
+  if (!slug) return fallback;
+  const seo = await fetchWpSeoBySlug(slug);
+  return {
+    title: seo?.title || fallback.title,
+    description: seo?.description || fallback.description,
+  };
 }

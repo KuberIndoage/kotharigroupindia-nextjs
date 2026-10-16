@@ -3,20 +3,38 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { policyData } from '@/lib/policy';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('privacy-policy', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Privacy Policy | Kothari Group',
   description:
     'Read the Kothari Group Privacy Policy to understand what information we collect, how we use it, and how it may be disclosed to third parties.',
-});
+};
 
-export default function PrivacyPolicyPage() {
+export const generateMetadata = wpPageMetadataFor('privacy-policy', SEO_FALLBACK);
+
+export default async function PrivacyPolicyPage() {
   const { title, effectiveDate, introHeadline, introParagraphs, address, contents, sections } =
     policyData;
+  const seo = await resolveSeoText('privacy-policy', SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/privacy-policy',
+          pageName: 'Privacy Policy',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -153,5 +171,6 @@ export default function PrivacyPolicyPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

@@ -4,19 +4,37 @@ import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { CareersGallery } from '@/components/career/CareersGallery';
 import { careerData } from '@/lib/career';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('career', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Join Our Team - Kothari Group',
   description:
     'Discover career opportunities with Kothari Group India. Join us in delivering plumbing, irrigation & infrastructure solutions across India in a dynamic environment.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('career', SEO_FALLBACK);
 
 export default async function CareersPage() {
   const { jobs, locations } = careerData;
+  const seo = await resolveSeoText('career', SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/career',
+          pageName: 'Career',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -73,5 +91,6 @@ export default async function CareersPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

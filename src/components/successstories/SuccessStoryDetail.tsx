@@ -10,6 +10,29 @@ import {
   SuccessStoriesFooter,
 } from '@/components/successstories/DivisionChrome';
 import { fetchWpBlogPostBySlug } from '@/lib/wp-posts';
+import { JsonLd } from '@/components/JsonLd';
+import {
+  IRRIGATION_DIVISION_ID,
+  ORG_ID,
+  PIPE_DIVISION_ID,
+  abs,
+  articleGraph,
+} from '@/lib/schema';
+
+// The three success-story listings share this detail component; `backPath`
+// identifies which listing we came from, and with it the breadcrumb parent and
+// the division the story is about.
+const STORY_PARENT: Record<string, { name: string; aboutId: string }> = {
+  '/successstories': { name: 'Success Stories', aboutId: ORG_ID },
+  '/pipe-successstories': {
+    name: 'Pipe Success Stories',
+    aboutId: PIPE_DIVISION_ID,
+  },
+  '/irrigation-successstories': {
+    name: 'Irrigation Success Stories',
+    aboutId: IRRIGATION_DIVISION_ID,
+  },
+};
 
 export async function successStoryDetailMetadata(slug: string): Promise<Metadata> {
   const post = await fetchWpBlogPostBySlug(slug).catch(() => null);
@@ -25,8 +48,27 @@ async function Article({ slug, backPath }: { slug: string; backPath: string }) {
   const post = await fetchWpBlogPostBySlug(slug);
   if (!post) redirect('/');
 
+  const parent = STORY_PARENT[backPath] ?? {
+    name: 'Success Stories',
+    aboutId: ORG_ID,
+  };
+
   return (
     <>
+      <JsonLd
+        data={articleGraph({
+          path: `${backPath}/${post.slug}`,
+          pageName: post.title,
+          title: `${post.title} | Kothari Group`,
+          description: post.excerpt.slice(0, 160),
+          imageUrl: post.featuredImage || abs('/heronew.jpg'),
+          datePublished: post.date,
+          articleType: 'Article',
+          aboutId: parent.aboutId,
+          parentName: parent.name,
+          parentPath: backPath,
+        })}
+      />
       {/* Hero: original story image with glassy date card */}
       <div className="w-full bg-[#F5F6F8] pt-20 sm:pt-22">
         <div className="relative">

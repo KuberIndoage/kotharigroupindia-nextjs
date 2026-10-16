@@ -6,6 +6,8 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { getNewsBySlug } from '@/lib/news';
+import { JsonLd } from '@/components/JsonLd';
+import { abs, articleGraph } from '@/lib/schema';
 import {
   fetchWpBlogPostBySlug,
   NEWS_CATEGORY_SLUGS,
@@ -101,6 +103,19 @@ async function Article({ slug }: { slug: string }) {
 
   return (
     <>
+      <JsonLd
+        data={articleGraph({
+          path: `/press-release/${slug}`,
+          pageName: article.title,
+          title: `${article.title} | Kothari Group`,
+          description: article.description,
+          imageUrl: article.image || abs('/heronew.jpg'),
+          datePublished: article.date,
+          articleType: 'NewsArticle',
+          parentName: 'News & Articles',
+          parentPath: '/press-release',
+        })}
+      />
       {/* Hero: original news image with glassy byline card */}
       <div className="w-full bg-[#F5F6F8] pt-20 sm:pt-22">
         <div className="relative">

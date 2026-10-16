@@ -14,6 +14,8 @@ import {
   PipeproductsMegaMenu,
   pipeSolutionsMegaMenu,
 } from '@/data/products';
+import { JsonLd } from '@/components/JsonLd';
+import { PIPE_DIVISION_ID, childPageGraph } from '@/lib/schema';
 
 type Params = { slug: string };
 
@@ -44,6 +46,19 @@ export default async function PipeApplicationDetailPage({ params }: { params: Pa
   if (!detail) notFound();
 
   return (
+    <>
+      {/* Schema.txt Template 3: Home > {detail.parentLabel} > {detail.h1} */}
+      <JsonLd
+        data={childPageGraph({
+          path: `${detail.parentHref}/${slug}`,
+          pageName: detail.h1,
+          title: detail.metaTitle,
+          description: detail.metaDescription,
+          parentName: detail.parentLabel,
+          parentPath: detail.parentHref,
+          aboutId: PIPE_DIVISION_ID,
+        })}
+      />
     <AppShell>
       <HeaderDivison
         productsMegaMenu={IS_PIPE ? PipeproductsMegaMenu : IrrigationproductsMegaMenu}
@@ -52,5 +67,6 @@ export default async function PipeApplicationDetailPage({ params }: { params: Pa
       <ApplicationDetailPageTemplate detail={detail} />
       <Footer footerData={IS_PIPE ? PipefooterData : IrrigationfooterData} />
     </AppShell>
+    </>
   );
 }

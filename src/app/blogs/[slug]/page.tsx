@@ -6,6 +6,8 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { fetchWpBlogPostBySlug } from '@/lib/wp-posts';
+import { JsonLd } from '@/components/JsonLd';
+import { articleGraph, abs } from '@/lib/schema';
 
 export const revalidate = 600;
 
@@ -35,6 +37,19 @@ async function Article({ slug }: { slug: string }) {
 
   return (
     <>
+      <JsonLd
+        data={articleGraph({
+          path: `/blogs/${post.slug}`,
+          pageName: post.title,
+          title: `${post.title} | Kothari Group`,
+          description: post.excerpt.slice(0, 160),
+          imageUrl: post.featuredImage || abs('/heronew.jpg'),
+          datePublished: post.date,
+          articleType: 'BlogPosting',
+          parentName: 'Blogs',
+          parentPath: '/blogs',
+        })}
+      />
       {/* Hero: original blog image with glassy byline card */}
       <div className="w-full bg-[#F5F6F8] pt-20 sm:pt-22">
         <div className="relative">

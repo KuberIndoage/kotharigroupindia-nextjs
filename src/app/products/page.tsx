@@ -2,13 +2,19 @@ import { Suspense } from 'react';
 import { ProductsBrowser } from '@/components/products/ProductsBrowser';
 import { ProductsPageLayout } from '@/components/products/ProductsPageLayout';
 import { fetchWpProductCards } from '@/lib/wp-products';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('products', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Products | Pipes, Fittings & Irrigation Systems | Kothari Group',
   description:
     'Browse the complete range of Kothari Group products — plumbing pipes and fittings, agricultural pipes, sewerage and drainage systems, borewell solutions and precision irrigation systems.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('products', SEO_FALLBACK);
 
 interface SearchParams {
   division?: string;
@@ -65,8 +71,21 @@ export default async function ProductsPage({
       ? `Explore our complete ${divisionLabel.toLowerCase()} catalogue — engineered for performance and reliability.`
       : 'Explore our complete catalogue — engineered piping systems, agricultural pipes, drainage and borewell solutions, and precision irrigation systems.';
 
+  const seo = await resolveSeoText('products', SEO_FALLBACK);
+
   return (
-    <ProductsPageLayout divisionSlug={activeDivisionSlug}>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/products',
+          pageName: 'Products',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <ProductsPageLayout divisionSlug={activeDivisionSlug}>
       {/* Page hero */}
       <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
         <div className="absolute inset-0 z-0">
@@ -120,5 +139,6 @@ export default async function ProductsPage({
         </div>
       </div>
     </ProductsPageLayout>
+    </>
   );
 }

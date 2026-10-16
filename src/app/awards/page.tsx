@@ -4,19 +4,37 @@ import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { AwardsGallery } from '@/components/award/AwardsGallery';
 import { awardsData } from '@/lib/awards';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('awards', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Awards & Industry Recognition | Kothari Group',
   description:
     'See how Kothari Group India has been recognised across plumbing, agriculture and micro-irrigation sectors with awards honouring innovation, quality and sustainability.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('awards', SEO_FALLBACK);
 
 export default async function AwardsPage() {
   const { awards, categories } = awardsData;
+  const seo = await resolveSeoText('awards', SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/awards',
+          pageName: 'Awards',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -71,5 +89,6 @@ export default async function AwardsPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

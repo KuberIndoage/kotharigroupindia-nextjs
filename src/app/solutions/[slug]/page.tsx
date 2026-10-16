@@ -10,6 +10,12 @@ import {
 
 } from '@/components/ProductPageLayout';
 import { IrrigationproductsMegaMenu, irrigationSolutionsMegaMenu, PipeproductsMegaMenu, pipeSolutionsMegaMenu } from '@/data/products';
+import { JsonLd } from '@/components/JsonLd';
+import {
+  IRRIGATION_DIVISION_ID,
+  PIPE_DIVISION_ID,
+  standardPageGraph,
+} from '@/lib/schema';
 
 type Params = { slug: string };
 
@@ -39,6 +45,18 @@ export default async function SolutionPage({ params }: { params: Params | Promis
   const isPipe = solution.division === 'pipe';
 
   return (
+    <>
+      {/* Schema.txt Template 2: solution pages are WebPages about their division. */}
+      <JsonLd
+        data={standardPageGraph({
+          path: `/solutions/${slug}`,
+          pageName: solution.h1,
+          title: solution.metaTitle,
+          description: solution.metaDescription,
+          pageType: 'WebPage',
+          aboutId: isPipe ? PIPE_DIVISION_ID : IRRIGATION_DIVISION_ID,
+        })}
+      />
     <AppShell>
       <HeaderDivison
         
@@ -48,5 +66,6 @@ export default async function SolutionPage({ params }: { params: Params | Promis
       <SolutionPageTemplate solution={solution} theme={isPipe ? 'blue' : 'blue'} />
       <Footer footerData={isPipe ? PipefooterData : IrrigationfooterData} />
     </AppShell>
+    </>
   );
 }

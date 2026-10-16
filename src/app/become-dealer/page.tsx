@@ -5,13 +5,19 @@ import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { DealerApplyButton } from '@/components/dealer/DealerApplyModal';
 import { dealerData } from '@/lib/dealer';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('become-dealer', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Become a Dealer with Kothari Group | Kothari Group',
   description:
     'Join Kothari Group as a dealer and tap into exclusive product ranges, support services and growth opportunities in the irrigation & agriculture sector.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('become-dealer', SEO_FALLBACK);
 
 const benefitIcons = [Package, BadgePercent, SlidersHorizontal, ShieldCheck, GraduationCap, Headset];
 
@@ -23,9 +29,21 @@ const stepMeta = [
 
 export default async function BecomeDealerPage() {
   const { steps, benefits, applyLink } = dealerData;
+  const seo = await resolveSeoText('become-dealer', SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/become-dealer',
+          pageName: 'Become Dealer',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -176,5 +194,6 @@ export default async function BecomeDealerPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

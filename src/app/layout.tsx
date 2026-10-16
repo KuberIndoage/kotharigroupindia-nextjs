@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, globalGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title:
     "Water Management Solution Provider in India | Kothari Group",
   description:
@@ -33,6 +36,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* Schema.txt Template 1: Organization + 2 divisions + WebSite, on every page. */}
+        <JsonLd data={globalGraph()} />
         {children}
       </body>
     </html>

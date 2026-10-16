@@ -4,19 +4,37 @@ import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { VideoGallery } from '@/components/video/VideoGallery';
 import { kothariTVData } from '@/lib/video';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('kotharitv', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'KothariTV: Videos & Insights | Kothari Group',
   description:
     'Watch videos showcasing our solutions, product demos, tutorials, and success stories from Kothari Group.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('kotharitv', SEO_FALLBACK);
 
 export default async function VideosPage() {
   const { videos, categories } = kothariTVData;
+  const seo = await resolveSeoText('kotharitv', SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/KothariTV',
+          pageName: 'Videos',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -71,5 +89,6 @@ export default async function VideosPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

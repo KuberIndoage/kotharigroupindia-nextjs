@@ -69,6 +69,14 @@ const nextConfig: NextConfig = {
         destination: '/Download/:path*',
         permanent: true,
       },
+      // Schema.txt section 6, item 3: the live product slug is misspelled
+      // ("dozing" instead of "dosing"). Keep the URL as-is for now and redirect
+      // the misspelled path to the correct one so existing links survive.
+      {
+        source: '/dosing-pumps-and-fertilizer-injectors/dozing-pump',
+        destination: '/dosing-pumps-and-fertilizer-injectors/dosing-pump',
+        permanent: true,
+      },
     ];
   },
 };

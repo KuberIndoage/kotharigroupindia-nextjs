@@ -12,11 +12,21 @@ import {
   fetchWpPostsByCategorySlugs,
   WP_CATEGORIES,
 } from '@/lib/wp-posts';
+import { resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const metadata = {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift.
+const SEO_FALLBACK = {
   title: 'Insightful Blogs - Kothari Group',
   description:
-    'Explore expert Blog articles from Kothari Group India on plumbing, irrigation systems &amp; agri-pipes. Stay informed on best practices, innovations and market trends.',
+    'Explore expert Blog articles from Kothari Group India on plumbing, irrigation systems & agri-pipes. Stay informed on best practices, innovations and market trends.',
+};
+
+export const metadata = {
+  title: SEO_FALLBACK.title,
+  description: SEO_FALLBACK.description,
 };
 
 export const revalidate = 600;
@@ -97,9 +107,21 @@ export default async function BlogsPage({
     params.division === 'pipe' || params.division === 'irrigation'
       ? params.division
       : null;
+  const seo = await resolveSeoText(undefined, SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/blogs',
+          pageName: 'Blogs',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -190,5 +212,6 @@ export default async function BlogsPage({
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

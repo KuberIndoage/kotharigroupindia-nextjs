@@ -228,9 +228,12 @@ export const ProductDetailPage: React.FC<{
         <div className="w-full border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <nav className="flex items-center gap-1.5 text-[11px] font-mono tracking-widest uppercase text-slate-500 overflow-x-auto whitespace-nowrap py-4">
-              <Link href={isIrrigation ? '/irrigation-division' : '/pipe-division'} className={`${tHoverText} transition-colors`}>Home</Link>
+              {/* Matches Schema.txt Template 6: Home > Division > Product name.
+                  "Home" points at "/" and the division crumb points at the
+                  division landing page, not the products listing. */}
+              <Link href="/" className={`${tHoverText} transition-colors`}>Home</Link>
               <ChevronRight className="w-3 h-3 text-slate-400 shrink-0" />
-              <Link href={isIrrigation ? '/irrigation-products' : '/pipe-products'} className={`${tHoverText} transition-colors`}>
+              <Link href={isIrrigation ? '/irrigation-division' : '/pipe-division'} className={`${tHoverText} transition-colors`}>
                 {wp?.divisionName || 'Division'}
               </Link>
               <ChevronRight className="w-3 h-3 text-slate-400 shrink-0" />

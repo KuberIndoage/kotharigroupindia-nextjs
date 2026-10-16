@@ -6,13 +6,19 @@ import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { ContactUsForm } from '@/components/contact/ContactUsForm';
 import { FacilityMap } from '@/components/contact/FacilityMap';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { contactPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('contact-us', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Contact Us | Pipes, Fittings & Irrigation Systems | Kothari Group',
   description:
     'Get in touch with Kothari Group — registered office in Solapur, corporate office in Pune. Email, call or WhatsApp our sales teams for plumbing, agri pipes & irrigation enquiries.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('contact-us', SEO_FALLBACK);
 
 type ContactRow = { label?: string; value: string };
 
@@ -55,9 +61,18 @@ const contactCards: {
   },
 ];
 
-export default function ContactUsPage() {
+export default async function ContactUsPage() {
+  const seo = await resolveSeoText('contact-us', SEO_FALLBACK);
+
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={contactPageGraph({
+          title: seo.title,
+          description: seo.description,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -210,5 +225,6 @@ export default function ContactUsPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

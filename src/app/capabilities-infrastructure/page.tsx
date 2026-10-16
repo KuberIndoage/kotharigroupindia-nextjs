@@ -7,14 +7,23 @@ import { Home2Footer } from '@/components/Home2Footer';
 import { FacilityMap } from '@/components/contact/FacilityMap';
 import { SolutionOverview } from '@/components/solutions/SolutionOverview';
 import { CertificatesSection } from '@/components/capabilities/CertificatesSection';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
 import { AboutHero2 } from '@/components/about/AboutSections';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('capabilities-infrastructure', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Capabilities & Infrastructure | Kothari Group India',
   description:
     '8 strategically located manufacturing units across India — advanced technology, 100% automation and quality certification driving Kothari Group\'s pipe and irrigation solutions.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor(
+  'capabilities-infrastructure',
+  SEO_FALLBACK
+);
 
 const YouTubeIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
@@ -49,9 +58,22 @@ const CAPABILITIES_INTRO = [
   `Our eight well-placed manufacturing units make it possible for us to efficiently serve various markets operational in all parts of India.`,
 ];
 
-export default function CapabilitiesInfrastructurePage() {
+export default async function CapabilitiesInfrastructurePage() {
+  const seo = await resolveSeoText('capabilities-infrastructure', SEO_FALLBACK);
+
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/capabilities-infrastructure',
+          pageName: 'Capabilities & More',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -236,5 +258,6 @@ export default function CapabilitiesInfrastructurePage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

@@ -9,11 +9,21 @@ import {
   NEWS_CATEGORY_SLUGS,
   NEWS_CATEGORY_LABELS,
 } from '@/lib/wp-posts';
+import { resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const metadata = {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift.
+const SEO_FALLBACK = {
   title: 'Press Releases – Kothari Group',
   description:
     'Stay updated with the latest press releases from Kothari Group, covering our awards, launches and major announcements in the agricultural sector.',
+};
+
+export const metadata = {
+  title: SEO_FALLBACK.title,
+  description: SEO_FALLBACK.description,
 };
 
 export const revalidate = 600;
@@ -80,9 +90,21 @@ async function NewsContent() {
 }
 
 export default async function NewsPage() {
+  const seo = await resolveSeoText(undefined, SEO_FALLBACK);
 
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/press-release',
+          pageName: 'News & Articles',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -142,5 +164,6 @@ export default async function NewsPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

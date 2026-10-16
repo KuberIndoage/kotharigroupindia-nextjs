@@ -3,13 +3,19 @@ import AppShell from '@/components/AppShell';
 import { Home2Header } from '@/components/Home2Header';
 import { Home2Footer } from '@/components/Home2Footer';
 import { SectionHeader } from '@/components/solutions/SectionHeader';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('gst', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'GST Information for Kothari Group | Kothari Group',
   description:
     'View GST-related information for Kothari Group’s irrigation and agricultural solutions — tax registration details, compliance practices and invoice guidelines.',
-});
+};
+
+export const generateMetadata = wpPageMetadataFor('gst', SEO_FALLBACK);
 
 const GST_ENTRIES = [
   { no: 1, gstin: '37AADCK8017H2ZG', status: 'Active', state: 'Andhra Pradesh' },
@@ -30,9 +36,22 @@ const GST_ENTRIES = [
   { no: 16, gstin: '27AADCK8017H3ZG', status: 'Active', state: 'ISD' },
 ];
 
-export default function GSTPage() {
+export default async function GSTPage() {
+  const seo = await resolveSeoText('gst', SEO_FALLBACK);
+
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/GST',
+          pageName: 'GST Details',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -131,5 +150,6 @@ export default function GSTPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }

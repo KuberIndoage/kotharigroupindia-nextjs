@@ -5,23 +5,33 @@ import { ProductsBrowser } from '@/components/products/ProductsBrowser';
 import { ProductsPageLayout } from '@/components/products/ProductsPageLayout';
 import { SegmentOverview, SegmentFaqs } from '@/components/products/SegmentSections';
 import { fetchWpProductCards } from '@/lib/wp-products';
-import { wpPageMetadata } from '@/lib/wp-seo';
+import { wpPageMetadata, resolveSeoText } from '@/lib/wp-seo';
 import { segmentPageContent } from '@/data/segment-pages';
+import { JsonLd } from '@/components/JsonLd';
+import {
+  IRRIGATION_DIVISION_ID,
+  ORG_ID,
+  PIPE_DIVISION_ID,
+  standardPageGraph,
+} from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ segment: string }>;
 }
 
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+function segmentFallback(segmentSlug: string) {
+  return {
+    title: `${slugToReadable(segmentSlug)} | Products | Kothari Group`,
+    description: `Browse the full range of ${slugToReadable(segmentSlug).toLowerCase()} from Kothari Group — engineered for performance and reliability.`,
+  };
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { segment } = await Promise.resolve(params);
   const segmentSlug = decodeURIComponent(segment);
-  return wpPageMetadata(
-    segmentSlug,
-    {
-      title: `${slugToReadable(segmentSlug)} | Products | Kothari Group`,
-      description: `Browse the full range of ${slugToReadable(segmentSlug).toLowerCase()} from Kothari Group — engineered for performance and reliability.`,
-    }
-  );
+  return wpPageMetadata(segmentSlug, segmentFallback(segmentSlug));
 }
 
 function slugToReadable(slug: string): string {
@@ -57,7 +67,28 @@ export default async function SegmentProductsPage({ params }: PageProps) {
       ? '/irrigation-division'
       : '/';
 
+  const seo = await resolveSeoText(segmentSlug, segmentFallback(segmentSlug));
+
+  const aboutId =
+    activeDivisionSlug === 'pipe-division'
+      ? PIPE_DIVISION_ID
+      : activeDivisionSlug === 'irrigation-division'
+      ? IRRIGATION_DIVISION_ID
+      : ORG_ID;
+
   return (
+    <>
+      {/* Schema.txt Template 2: segment pages are CollectionPages about their division. */}
+      <JsonLd
+        data={standardPageGraph({
+          path: `/products/${segmentSlug}`,
+          pageName: segmentLabel,
+          title: seo.title,
+          description: seo.description,
+          pageType: 'CollectionPage',
+          aboutId,
+        })}
+      />
     <ProductsPageLayout divisionSlug={activeDivisionSlug}>
       {/* Page hero */}
       <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
@@ -130,5 +161,6 @@ export default async function SegmentProductsPage({ params }: PageProps) {
       {/* Segment FAQs */}
       {content && <SegmentFaqs content={content} />}
     </ProductsPageLayout>
+    </>
   );
 }

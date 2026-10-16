@@ -17,13 +17,19 @@ import { Home2Footer } from '@/components/Home2Footer';
 import { Reveal } from '@/components/main/Reveal';
 import { SectionHeader } from '@/components/solutions/SectionHeader';
 import { QualityDocument } from '@/components/quality-policy/QualityDocument';
-import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { wpPageMetadataFor, resolveSeoText } from '@/lib/wp-seo';
+import { JsonLd } from '@/components/JsonLd';
+import { ORG_ID, standardPageGraph } from '@/lib/schema';
 
-export const generateMetadata = wpPageMetadataFor('quality-policy', {
+// Single source of truth for both the title tag and the JSON-LD {{PAGE_TITLE}},
+// so the two can never drift. Yoast overrides this at runtime when set.
+const SEO_FALLBACK = {
   title: 'Quality Policy | Kothari Group',
   description:
-    'Discover the Kothari Group\u2019s commitment to quality \u2014 our standards for materials, manufacturing, inspection and service in irrigation and agricultural solutions.',
-});
+    'Discover the Kothari Group’s commitment to quality — our standards for materials, manufacturing, inspection and service in irrigation and agricultural solutions.',
+};
+
+export const generateMetadata = wpPageMetadataFor('quality-policy', SEO_FALLBACK);
 
 const HERO_STATS = [
     { value: '35+', label: 'Years of excellence' },
@@ -88,9 +94,22 @@ const OBJECTIVES = [
   },
 ];
 
-export default function QualityPolicyPage() {
+export default async function QualityPolicyPage() {
+  const seo = await resolveSeoText('quality-policy', SEO_FALLBACK);
+
   return (
-    <AppShell>
+    <>
+      <JsonLd
+        data={standardPageGraph({
+          path: '/quality-policy',
+          pageName: 'Quality Policy',
+          title: seo.title,
+          description: seo.description,
+          pageType: 'WebPage',
+          aboutId: ORG_ID,
+        })}
+      />
+      <AppShell>
       <div className="text-left">
         <Home2Header />
 
@@ -229,5 +248,6 @@ export default function QualityPolicyPage() {
         <Home2Footer />
       </div>
     </AppShell>
+    </>
   );
 }
