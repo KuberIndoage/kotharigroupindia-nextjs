@@ -52,6 +52,7 @@ type Category = 'All' | 'MANUFACTURING PLANT' | 'OFFICES' | 'WAREHOUSE';
 interface Facility {
   name: string;
   address: string;
+  link?: string;
   lat: number;
   lng: number;
   category: Exclude<Category, 'All'>;
@@ -67,13 +68,15 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
-  },
+    link: 'https://maps.app.goo.gl/1nhfwGhbLw86oP3h6',
+  }, 
   {
     name: 'Hose Pipes',
     address: '167-169, Chandramauli Industrial Co-Operative Estate, Mohol, Solapur - 413 213, Maharashtra',
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
+     link: 'https://share.google/cq2JmvcIpuuBhS46e',
   },
   {
     name: 'HDPE Pipes & Fittings',
@@ -81,6 +84,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
+    link: 'https://share.google/1EGwP4slbHTR27vll',
   },
   {
     name: 'Irrigation Systems',
@@ -88,6 +92,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
+     link: 'https://share.google/4TaK1Eh4xToRwwFOc',
   },
   {
     name: 'Registered Office',
@@ -95,6 +100,7 @@ const facilities: Facility[] = [
     lat: 17.6752,
     lng: 75.898,
     category: 'OFFICES',
+    link: 'https://share.google/LTyjlwQvITRmtpgpA',
   },
   {
     name: 'Corporate Office',
@@ -102,6 +108,7 @@ const facilities: Facility[] = [
     lat: 18.5301,
     lng: 73.8489,
     category: 'OFFICES',
+    link: 'https://share.google/uu2DO5le5qcGGPM7c',
   },
   {
     name: 'Regional Office (Ahmedabad)',
@@ -109,6 +116,7 @@ const facilities: Facility[] = [
     lat: 23.029,
     lng: 72.533,
     category: 'OFFICES',
+    link: 'https://share.google/fA9SBtb9CstnKQBAo',
   },
   {
     name: 'Regional Office (Hyderabad)',
@@ -116,6 +124,7 @@ const facilities: Facility[] = [
     lat: 17.385,
     lng: 78.4867,
     category: 'OFFICES',
+    link: 'https://share.google/X9HCHoc7vxw6aQp76',
   },
   {
     name: 'Regional Office (Indore)',
@@ -123,6 +132,7 @@ const facilities: Facility[] = [
     lat: 22.7196,
     lng: 75.8577,
     category: 'OFFICES',
+    link: 'https://share.google/5YfuwfSCX25edD94Z',
   },
   {
     name: 'Submersible Cables & Wires',
@@ -130,6 +140,7 @@ const facilities: Facility[] = [
     lat: 17.6711,
     lng: 75.8937,
     category: 'MANUFACTURING PLANT',
+    link: 'https://share.google/9OhADVj7h8hvbnZbe',
   },
   {
     name: 'PVC Pipes & Irrigation Systems',
@@ -137,6 +148,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
+    link: 'https://share.google/yn6AyPhtKhZUGCibd',
   },
   {
     name: 'PVC & HDPE (Pithampur)',
@@ -144,6 +156,7 @@ const facilities: Facility[] = [
     lat: 22.601,
     lng: 75.69,
     category: 'MANUFACTURING PLANT',
+    link: 'https://share.google/d4Lthls5h1L1bjRoE',
   },
   {
     name: 'Plumbing Pipes & Fittings',
@@ -151,6 +164,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
+    link: 'https://share.google/Gw755vkpwDkzp4ng0',
   },
   {
     name: 'Warehouse Pune',
@@ -158,6 +172,7 @@ const facilities: Facility[] = [
     lat: 18.5204,
     lng: 73.8567,
     category: 'WAREHOUSE',
+    link: 'https://share.google/YvXDOQgC5S1Vu7T2n',
   },
   {
     name: 'Warehouse Sambhajinagar',
@@ -165,6 +180,7 @@ const facilities: Facility[] = [
     lat: 19.8762,
     lng: 75.3433,
     category: 'WAREHOUSE',
+    link: 'https://share.google/Rmh6KXEBBoeNTCJs4',
   },
   {
     name: 'Warehouse Akola',
@@ -172,6 +188,7 @@ const facilities: Facility[] = [
     lat: 20.7031,
     lng: 77.0,
     category: 'WAREHOUSE',
+    link: 'https://share.google/N1PrqT4bbD0RimDZ2',
   },
   {
     name: 'Warehouse Hubli',
@@ -179,6 +196,7 @@ const facilities: Facility[] = [
     lat: 15.3647,
     lng: 75.124,
     category: 'WAREHOUSE',
+    link: 'https://share.google/evDCOMwEdHt5X8RQV',
   },
   {
     name: 'Warehouse Anantpur',
@@ -186,13 +204,15 @@ const facilities: Facility[] = [
     lat: 14.6819,
     lng: 77.6006,
     category: 'WAREHOUSE',
-  },
+    link: 'https://share.google/CJnX2t4xzoarIpS1R',
+  }, 
   {
     name: 'Warehouse Hyderabad',
     address: 'Warehouse, Hyderabad, Telangana',
     lat: 17.385,
     lng: 78.4867,
     category: 'WAREHOUSE',
+    link: 'https://share.google/NvS93jGcSMRy0vmKl',
   },
   {
     name: 'Warehouse Salem',
@@ -200,6 +220,7 @@ const facilities: Facility[] = [
     lat: 11.6643,
     lng: 78.146,
     category: 'WAREHOUSE',
+    link: 'https://share.google/Hz6mkVYSqHz8k6OqF',
   },
   {
     name: 'Warehouse Indore',
@@ -207,6 +228,7 @@ const facilities: Facility[] = [
     lat: 22.7196,
     lng: 75.8577,
     category: 'WAREHOUSE',
+    link: 'https://share.google/Qk1sCJL3rDkUvDzwW',
   },
   {
     name: 'Warehouse Raipur',
@@ -214,6 +236,7 @@ const facilities: Facility[] = [
     lat: 21.2514,
     lng: 81.6296,
     category: 'WAREHOUSE',
+    link: 'https://share.google/44wpkxO7AGZX1c0qz',
   },
   {
     name: 'Warehouse Ambala',
@@ -228,6 +251,7 @@ const facilities: Facility[] = [
     lat: 26.8467,
     lng: 80.9462,
     category: 'WAREHOUSE',
+    link: 'https://share.google/Vu2GFVKWA2woGt0bP',
   },
 ];
 
@@ -458,7 +482,7 @@ export const FacilityMap: React.FC<{ bgColor?: string }> = ({ bgColor = 'white' 
             </div>
             {selected && (
               <a
-                href={`https://www.google.com/maps?q=${selected.lat},${selected.lng}`}
+                href={ selected.link ? selected.link : `https://www.google.com/maps?q=${selected.lat},${selected.lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-[11px] font-mono tracking-[0.12em] uppercase text-[#1575B3] hover:text-[#0E588A] shrink-0"
