@@ -76,7 +76,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
-     link: 'https://share.google/cq2JmvcIpuuBhS46e',
+     link: 'https://maps.app.goo.gl/PMiytGmHBQAoTK6P9',
   },
   {
     name: 'HDPE Pipes & Fittings',
@@ -84,7 +84,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
-    link: 'https://share.google/1EGwP4slbHTR27vll',
+    link: 'https://maps.app.goo.gl/GMpfrPqsf73pKYLf8',
   },
   {
     name: 'Irrigation Systems',
@@ -92,7 +92,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
-     link: 'https://share.google/4TaK1Eh4xToRwwFOc',
+     link: 'https://maps.app.goo.gl/nqhQtU6N8HWj6WjE9',
   },
   {
     name: 'Registered Office',
@@ -100,7 +100,7 @@ const facilities: Facility[] = [
     lat: 17.6752,
     lng: 75.898,
     category: 'OFFICES',
-    link: 'https://share.google/LTyjlwQvITRmtpgpA',
+    link: 'https://maps.app.goo.gl/bKVc8KxUJAU2wgmr6',
   },
   {
     name: 'Corporate Office',
@@ -108,15 +108,15 @@ const facilities: Facility[] = [
     lat: 18.5301,
     lng: 73.8489,
     category: 'OFFICES',
-    link: 'https://share.google/uu2DO5le5qcGGPM7c',
-  },
+    link: 'https://maps.app.goo.gl/thzhEeJxRW6sXQyP6',
+  }, 
   {
     name: 'Regional Office (Ahmedabad)',
     address: '905, Shivalik Abbey, Opp. Shell Petrol Pump, Anandnagar Cross Road, Pralhad Nagar, Ahmedabad - 380 015, Gujarat',
     lat: 23.029,
     lng: 72.533,
     category: 'OFFICES',
-    link: 'https://share.google/fA9SBtb9CstnKQBAo',
+    link: 'https://maps.app.goo.gl/PyGn2Y4c1f2p3snz8',
   },
   {
     name: 'Regional Office (Hyderabad)',
@@ -124,7 +124,7 @@ const facilities: Facility[] = [
     lat: 17.385,
     lng: 78.4867,
     category: 'OFFICES',
-    link: 'https://share.google/X9HCHoc7vxw6aQp76',
+    link: 'https://maps.app.goo.gl/VEvGfZ1Fo9uPNBYN9',
   },
   {
     name: 'Regional Office (Indore)',
@@ -132,7 +132,7 @@ const facilities: Facility[] = [
     lat: 22.7196,
     lng: 75.8577,
     category: 'OFFICES',
-    link: 'https://share.google/5YfuwfSCX25edD94Z',
+    link: 'https://maps.app.goo.gl/aHdXCKr5pQxcD7yT6',
   },
   {
     name: 'Submersible Cables & Wires',
@@ -140,7 +140,7 @@ const facilities: Facility[] = [
     lat: 17.6711,
     lng: 75.8937,
     category: 'MANUFACTURING PLANT',
-    link: 'https://share.google/9OhADVj7h8hvbnZbe',
+    link: 'https://maps.app.goo.gl/VwzWpTeFpFfVZ49H8',
   },
   {
     name: 'PVC Pipes & Irrigation Systems',
@@ -148,7 +148,7 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
-    link: 'https://share.google/yn6AyPhtKhZUGCibd',
+    link: 'https://maps.app.goo.gl/RYunYf34BHpbupBp7',
   },
   {
     name: 'PVC & HDPE (Pithampur)',
@@ -156,7 +156,7 @@ const facilities: Facility[] = [
     lat: 22.601,
     lng: 75.69,
     category: 'MANUFACTURING PLANT',
-    link: 'https://share.google/d4Lthls5h1L1bjRoE',
+    link: 'https://maps.app.goo.gl/By6AugAAB6C6GMaw7',
   },
   {
     name: 'Plumbing Pipes & Fittings',
@@ -164,15 +164,15 @@ const facilities: Facility[] = [
     lat: 17.8459,
     lng: 75.653,
     category: 'MANUFACTURING PLANT',
-    link: 'https://share.google/Gw755vkpwDkzp4ng0',
-  },
+    link: 'https://maps.app.goo.gl/hwiJZTtgWkQyX5nD8',
+  }, 
   {
     name: 'Warehouse Pune',
     address: 'Warehouse, Pune, Maharashtra',
     lat: 18.5204,
     lng: 73.8567,
     category: 'WAREHOUSE',
-    link: 'https://share.google/YvXDOQgC5S1Vu7T2n',
+    link: 'https://maps.app.goo.gl/QgAtaMj7nQGtUocj6',
   },
   {
     name: 'Warehouse Sambhajinagar',
@@ -180,7 +180,7 @@ const facilities: Facility[] = [
     lat: 19.8762,
     lng: 75.3433,
     category: 'WAREHOUSE',
-    link: 'https://share.google/Rmh6KXEBBoeNTCJs4',
+    link: 'https://maps.app.goo.gl/D3L8ckyhithR6ChXA',
   },
   {
     name: 'Warehouse Akola',
@@ -188,7 +188,7 @@ const facilities: Facility[] = [
     lat: 20.7031,
     lng: 77.0,
     category: 'WAREHOUSE',
-    link: 'https://share.google/N1PrqT4bbD0RimDZ2',
+    link: 'https://maps.app.goo.gl/wyTAJVc8aLNL1ALi8',
   },
   {
     name: 'Warehouse Hubli',
@@ -196,7 +196,7 @@ const facilities: Facility[] = [
     lat: 15.3647,
     lng: 75.124,
     category: 'WAREHOUSE',
-    link: 'https://share.google/evDCOMwEdHt5X8RQV',
+    link: 'https://maps.app.goo.gl/5jx22Bau5ybggaPRA',
   },
   {
     name: 'Warehouse Anantpur',
@@ -204,7 +204,7 @@ const facilities: Facility[] = [
     lat: 14.6819,
     lng: 77.6006,
     category: 'WAREHOUSE',
-    link: 'https://share.google/CJnX2t4xzoarIpS1R',
+    link: 'https://maps.app.goo.gl/HR23VxoJs7xL2YV86',
   }, 
   {
     name: 'Warehouse Hyderabad',
@@ -212,7 +212,7 @@ const facilities: Facility[] = [
     lat: 17.385,
     lng: 78.4867,
     category: 'WAREHOUSE',
-    link: 'https://share.google/NvS93jGcSMRy0vmKl',
+    link: 'https://maps.app.goo.gl/GrdGwELbycR8E5Lv5',
   },
   {
     name: 'Warehouse Salem',
@@ -220,7 +220,7 @@ const facilities: Facility[] = [
     lat: 11.6643,
     lng: 78.146,
     category: 'WAREHOUSE',
-    link: 'https://share.google/Hz6mkVYSqHz8k6OqF',
+    link: 'https://maps.app.goo.gl/XewEBhfr1RtXDaWN8',
   },
   {
     name: 'Warehouse Indore',
@@ -228,15 +228,15 @@ const facilities: Facility[] = [
     lat: 22.7196,
     lng: 75.8577,
     category: 'WAREHOUSE',
-    link: 'https://share.google/Qk1sCJL3rDkUvDzwW',
-  },
+    link: 'https://maps.app.goo.gl/YbRM6hyj7LMifawz9',
+  }, 
   {
     name: 'Warehouse Raipur',
     address: 'Warehouse, Raipur, Chhattisgarh',
     lat: 21.2514,
     lng: 81.6296,
     category: 'WAREHOUSE',
-    link: 'https://share.google/44wpkxO7AGZX1c0qz',
+    link: 'https://maps.app.goo.gl/8KaGVaYQZ1HYK8M67',
   },
   {
     name: 'Warehouse Ambala',
@@ -251,7 +251,7 @@ const facilities: Facility[] = [
     lat: 26.8467,
     lng: 80.9462,
     category: 'WAREHOUSE',
-    link: 'https://share.google/Vu2GFVKWA2woGt0bP',
+    link: 'https://maps.app.goo.gl/GxcBKYtYP8vrzxSAA',
   },
 ];
 
