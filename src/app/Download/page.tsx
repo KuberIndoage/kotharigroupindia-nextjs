@@ -23,7 +23,7 @@ export default async function DownloadsPage() {
         <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/heronew.jpg"
+              src="https://images.pexels.com/photos/159682/spring-notebook-book-perspective-159682.jpeg"
               alt="Downloads & brochures"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"

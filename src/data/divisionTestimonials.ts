@@ -121,4 +121,11 @@ export const irrigationTestimonials: DivisionTestimonial[] = [
     role: 'Farmer, Mankeshwar, Jintur, Parbhani',
     image: '/testimonials/irrigation/Narayan Bajirao Andhale.jpg',
   },
-];
+   {
+    quote:
+      'I am an authorised Kothari Irrigation dealer, and Kothari Irrigation gives farmers a complete range of filters, laterals, drippers and mulching, along with drip technology service. The company gives us good support as dealers; farmers are happy, and I am happy to work with Kothari Irrigation.',
+    author: 'Santosh Barbole',
+    role: 'Authorised Dealer, Tuljai Agro Agency, Maharashtra',
+    image: '/testimonials/irrigation/Santhosh Barbole.png',
+  },
+]; 

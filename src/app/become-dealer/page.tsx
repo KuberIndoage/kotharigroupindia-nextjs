@@ -33,7 +33,7 @@ export default async function BecomeDealerPage() {
         <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/heronew.jpg"
+              src="https://images.pexels.com/photos/9870223/pexels-photo-9870223.jpeg"
               alt="Become a dealer"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"

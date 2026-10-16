@@ -35,7 +35,7 @@ const slides = [
     subtext: 'Building heavy-duty agricultural piping systems that optimize every drop, protecting crops and maximizing harvest yields nationwide.',
     ctaText: 'Discover Agri Solutions',
     cardTitle: 'Efficient Water Management for a Stronger, More Sustainable India. ',
-    cardDescription: 'Efficient Water Management for a Stronger, More Sustainable India. ',
+    cardDescription: 'Quality-engineered pipes Manufactured for every water management.',
   },
   {
     bgImage:'/banners/home/Home-banner-3.jpg',
@@ -45,7 +45,7 @@ const slides = [
     subtext: 'Empowering millions of farmers with intelligent micro-irrigation systems designed for peak crop vitality and water conservation.',
     ctaText: 'View Micro Irrigation',
     cardTitle: 'Quality-engineered pipes Manufactured for every water management.',
-    cardDescription: 'Quality-engineered pipes Manufactured for every water management.',
+    cardDescription: 'Efficient Water Management for a Stronger, More Sustainable India. ',
   },
 ];
 
