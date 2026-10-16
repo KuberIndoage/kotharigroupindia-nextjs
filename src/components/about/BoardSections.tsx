@@ -230,7 +230,13 @@ export const BoardDirectors: React.FC = () => {
                         isActive ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-100'
                       }`}
                     />
-                    <span className="flex items-center gap-4 sm:gap-5">
+                    {/* w-full is required: this row is a flex item of the
+                        column-flex <button> and relied on cross-axis stretch to
+                        fill it. Safari does not stretch flex items inside a
+                        <button>, which collapsed the row to its content width
+                        and pulled the chevron in next to the designation.
+                        ml-auto on the chevron is a second guarantee. */}
+                    <span className="flex w-full min-w-0 items-center gap-4 sm:gap-5">
                       <span
                         className={`flex items-center justify-center w-9 h-9 shrink-0 border font-mono text-xs transition-all duration-300 ${
                           isActive
@@ -253,7 +259,7 @@ export const BoardDirectors: React.FC = () => {
                         </span>
                       </span>
                       <ChevronRight
-                        className={`w-4 h-4 shrink-0 transition-all duration-300 ${
+                        className={`w-4 h-4 shrink-0 ml-auto transition-all duration-300 ${
                           isActive
                             ? `translate-x-0 opacity-100 text-[#1575B3] ${isBodyOpen ? 'rotate-90' : ''}`
                             : '-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'
