@@ -8,6 +8,10 @@ import {
   parseUnitName,
   type ManufacturingUnit,
 } from '@/data/units';
+import { Reveal } from '../main/Reveal';
+import { AwardCard } from '../award/AwardCard';
+import { Award } from '@/lib/awards';
+import { SectionHeader } from '../solutions/SectionHeader';
 
 function UnitCard({ unit }: { unit: ManufacturingUnit }) {
   const { product, year, location } = parseUnitName(unit.name);
@@ -193,6 +197,144 @@ export const ManufacturingUnits: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Prev / Next Arrows */}
+        <div className="flex items-center justify-center gap-4 pt-2">
+          <button
+            onClick={handlePrev}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+            aria-label="Previous manufacturing units"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={handleNext}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="w-11 h-11 flex items-center justify-center border border-slate-300 bg-white text-slate-700 hover:border-[#1575B3] hover:text-[#1575B3] transition-all duration-300 active:scale-95"
+            aria-label="Next manufacturing units"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+export const Awards: React.FC<{awards: Award[]}> = ({awards}) => {
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = Math.max(1, Math.ceil(awards.length / itemsPerPage));
+  const safePage = currentPage % totalPages;
+
+  const handleNext = useCallback(() => {
+    setDirection(1);
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  }, [totalPages]);
+
+  const handlePrev = useCallback(() => {
+    setDirection(-1);
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  }, [totalPages]);
+
+  const handlePanEnd = (_: unknown, info: PanInfo) => {
+    const swipeThreshold = 40;
+    const velocityThreshold = 200;
+    if (
+      info.offset.x < -swipeThreshold ||
+      info.velocity.x < -velocityThreshold
+    ) {
+      handleNext();
+    } else if (
+      info.offset.x > swipeThreshold ||
+      info.velocity.x > velocityThreshold
+    ) {
+      handlePrev();
+    }
+  };
+
+  useEffect(() => {
+    if (isPaused || totalPages <= 1) return;
+    const timer = setInterval(handleNext, 4000);
+    return () => clearInterval(timer);
+  }, [isPaused, totalPages, handleNext]);
+
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+    center: {
+      x: '0%',
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir < 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+  };
+
+  if (!awards.length) return null;
+
+  return (
+    <section className="w-full bg-white py-16 sm:py-24 border-b border-slate-300/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+       <SectionHeader
+                 title="Awards & Recognition"
+                 description="Recognised across the industry for quality, innovation, and sustainable water management."
+               />
+
+        {/* Slides */}
+        <div className="relative min-h-[420px] w-full py-6 px-1 touch-pan-y overflow-hidden">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            <motion.div
+              key={safePage}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+              onPanEnd={handlePanEnd}
+              className="w-full cursor-grab active:cursor-grabbing touch-pan-y"
+            >
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        {awards
+                          .slice(
+                            safePage * itemsPerPage,
+                            safePage * itemsPerPage + itemsPerPage
+                          )
+                          .map((award, i) => (
+                            <Reveal key={award.id} delay={(i % 3) * 90} className="h-full">
+                              <AwardCard award={award} />
+                            </Reveal>
+                          ))}
+                      </div>
             </motion.div>
           </AnimatePresence>
         </div>

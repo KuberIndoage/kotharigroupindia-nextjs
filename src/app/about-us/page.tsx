@@ -12,8 +12,9 @@ import {
   AboutVisionMission2,
   AboutWhy,
 } from '@/components/about/AboutSections';
-import { ManufacturingUnits } from '@/components/about/ManufacturingUnits';
+import { Awards, ManufacturingUnits } from '@/components/about/ManufacturingUnits';
 import { wpPageMetadataFor } from '@/lib/wp-seo';
+import { awardsData } from '@/lib/awards';
 
 export const generateMetadata = wpPageMetadataFor('about-us', {
   title: 'About Us | Kothari Group — Nurturing Lands, Building Dreams',
@@ -22,6 +23,8 @@ export const generateMetadata = wpPageMetadataFor('about-us', {
 });
 
 export default function AboutPage() {
+const { awards, categories } = awardsData;
+
   return (
     <AppShell>
       <div className="text-left">
@@ -39,7 +42,7 @@ export default function AboutPage() {
          <AboutVisionMission2 />
         {/* <AboutApproach /> */}
        
-       
+       <Awards awards={awards}/>
        
         {/* <AboutCoreValues /> */}
       
