@@ -381,9 +381,9 @@ export const Home2Header: React.FC<{ solid?: boolean }> = ({ solid = false }) =>
               {visibleSections.map((item) => (
                 <Link
                   key={item.id}
-                  href={item.id}
+                  href={`/${item.id}`}
                   className={`px-3.5 py-2 text-[17px] font-medium transition-all duration-200 ${
-                    active === item.id
+                    active === item.id || pathname === `/${item.id}`
                       ? 'text-[#1575B3]'
                       : solidHeader ? 'text-[#5F6B7A] hover:text-[#1575B3] hover:bg-[#F5FAFF]/60'
                       : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -524,13 +524,18 @@ className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-me
 
               {/* Mobile Sections */}
               {visibleSections.map((item) => (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => handleNav(item.id)}
-                  className="w-full text-left px-4 py-3.5 text-base font-medium text-[#111111] hover:bg-[#F5FAFF] hover:text-[#1575B3] border border-transparent hover:border-[#DCEAF5] transition"
+                  href={`/${item.id}`}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setDivOpen(false);
+                    setAboutOpen(false);
+                  }}
+                  className="w-full block text-left px-4 py-3.5 text-base font-medium text-[#111111] hover:bg-[#F5FAFF] hover:text-[#1575B3] border border-transparent hover:border-[#DCEAF5] transition"
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
 
               {/* Mobile Divisions Submenu */}

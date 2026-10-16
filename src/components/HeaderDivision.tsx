@@ -644,7 +644,7 @@ const handleSolutionBack = () => {
     solutionChildrenBySlug.get(solutionSlugOf(activeSolutionMenuItem?.url || '')) || [];
 
   const isSolid = solid || isScrolled || mobileOpen;
-  const navItemStyle = `px-3 py-2 text-[16px] font-medium transition-all duration-200 flex items-center gap-1 ${
+  const navItemStyle = `px-3 py-2 text-[12px] font-medium transition-all duration-200 flex items-center gap-1 ${
     isSolid
       ? `text-[#5F6B7A] ${isIrrigation ? 'hover:text-[#1E8E3E]' : 'hover:text-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#EAF6EE]/60' : 'hover:bg-[#F5FAFF]/60'}`
       : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -1317,7 +1317,7 @@ const handleSolutionBack = () => {
 
             <button
               onClick={handleOpenGetInTouch}
-              className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium transition-all ${
+              className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm sm:text-[12px] font-medium transition-all ${
                 isSolid || activeDropdown
                   // ? `${isIrrigation ? 'bg-[#1E8E3E]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#145E2A]' : 'hover:bg-[#0E588A]'} text-white shadow-md ${isIrrigation ? 'shadow-[#1E8E3E]/15' : 'shadow-[#1575B3]/15'}`
                   ? `${isIrrigation ? 'bg-[#1575B3]' : 'bg-[#1575B3]'} ${isIrrigation ? 'hover:bg-[#0E588A]' : 'hover:bg-[#0E588A]'} text-white shadow-md ${isIrrigation ? 'shadow-[#1575B3]/15' : 'shadow-[#1575B3]/15'}`

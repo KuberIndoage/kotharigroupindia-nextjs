@@ -314,7 +314,7 @@ export const ProductDetailPage: React.FC<{
                   <button
                     key={t.key}
                     onClick={() => setHeroTab(t.key)}
-                    className={`flex-1 flex items-center justify-center gap-2 whitespace-nowrap px-2 sm:px-4 py-3.5 text-sm sm:text-base font-medium tracking-wide uppercase border-b-2 -mb-px transition-all duration-200 ${
+                    className={`flex-1 flex items-center justify-center gap-2 whitespace-nowrap px-2 sm:px-4 py-3.5 text-sm font-medium tracking-wide uppercase border-b-2 -mb-px transition-all duration-200 ${
                       heroTab === t.key
                         ? `bg-white ${tText} border-white shadow-sm`
                         : 'bg-transparent text-white/85 border-transparent hover:bg-white/10 hover:text-white hover:border-white/30'
