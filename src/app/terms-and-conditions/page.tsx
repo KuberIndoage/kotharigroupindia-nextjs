@@ -23,7 +23,7 @@ export default function TermsConditionsPage() {
         <div className="relative w-full min-h-[40dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/heronew.jpg"
+              src="https://images.pexels.com/photos/4968557/pexels-photo-4968557.jpeg"
               alt="Terms & Conditions"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"

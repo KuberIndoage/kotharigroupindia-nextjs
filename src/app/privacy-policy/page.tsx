@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
         <div className="relative w-full min-h-[40dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/heronew.jpg"
+              src="https://images.pexels.com/photos/4973899/pexels-photo-4973899.jpeg"
               alt="Privacy Policy"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"

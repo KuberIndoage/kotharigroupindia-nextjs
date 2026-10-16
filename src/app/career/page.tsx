@@ -24,7 +24,7 @@ export default async function CareersPage() {
         <div className="relative w-full min-h-[50dvh] bg-[#061E33] text-white font-sans overflow-hidden flex flex-col justify-between">
           <div className="absolute inset-0 z-0">
             <img
-              src="/heronew.jpg"
+              src="https://images.pexels.com/photos/6340698/pexels-photo-6340698.jpeg"
               alt="Careers at Kothari Group"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"
