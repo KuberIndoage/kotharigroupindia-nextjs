@@ -2,9 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Clock, Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, Clock, Star, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ImQuotesLeft } from 'react-icons/im';
+import { RiChatQuoteFill } from 'react-icons/ri';
 import { Reveal } from './main/Reveal';
 import type { DivisionTestimonial } from '@/data/divisionTestimonials';
 
@@ -527,13 +529,11 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
   );
 
   const TestimonialCard: React.FC<{ item: DivisionTestimonial }> = ({ item }) => (
-    <div
-      className={`bg-white border border-slate-200 flex flex-col relative ${accentHoverBorder} hover:shadow-xl transition-all duration-300 group overflow-hidden h-full`}
-    >
-      {/* Profile Image */}
-      <div className="relative w-full h-56 sm:h-60 shrink-0 bg-slate-100 overflow-hidden">
+    <div className="relative bg-white border border-slate-100 shadow-[0_12px_40px_rgba(2,30,53,0.10)] hover:shadow-[0_20px_55px_rgba(2,30,53,0.16)] transition-all duration-300 flex flex-col h-full px-6 sm:px-7 pt-5 pb-6 sm:pb-7">
+      {/* Top-Left Overlapping Avatar */}
+      <div className="absolute top-10 left-0 sm:-left-6 -translate-y-3/4 w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-[#1575B3] shadow-md bg-white p-1">
         <img
-          src={item.image}
+          src={item.image} 
           alt={item.author}
           draggable={false}
           onError={(e) => {
@@ -541,32 +541,39 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
             target.onerror = null;
             target.src = testimonialAvatarUrl(item.author);
           }}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
+          className="w-full h-full object-cover object-top pointer-events-none rounded-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent pointer-events-none" />
       </div>
 
-      {/* Quote + Author */}
-      <div className="relative p-6 sm:p-7 flex-1 flex flex-col gap-5">
-        <Quote className={`w-8 h-8 absolute top-4 right-5 text-[#1575B3]/15`} />
+      {/* Top-Right Decorative Quote Badge */}
+      <RiChatQuoteFill
+        aria-hidden="true"
+        className="absolute -top-6 right-5 select-none pointer-events-none text-[#1575B3] text-[64px] sm:text-[80px]"
+      />
 
-        <div className="flex items-center gap-1">
+      <div className="flex flex-col flex-1">
+        {/* Rating */}
+        {/* <div className="flex items-center justify-center gap-1">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className={`w-4 h-4 fill-[#1575B3] text-[#1575B3]`} />
+            <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />
           ))}
-        </div>
+        </div> */}
 
-        <p className="text-sm sm:text-base text-slate-700 font-serif italic leading-relaxed flex-1">
+        {/* Quote */}
+        <p className="mt-16 text-sm sm:text-base text-[#0E2A47] font-medium leading-relaxed flex-1">
           &ldquo;{item.quote}&rdquo;
         </p>
 
-        <div className="pt-5 border-t border-slate-200">
-          <h4 className={`text-base font-semibold text-slate-900 ${accentGroupHoverText} transition-colors duration-300`}>
-            {item.author}
-          </h4>
-          <p className="text-xs font-mono text-slate-500 mt-1 uppercase tracking-wider">
-            {item.role}
-          </p>
+        {/* Footer */}
+        <div className="mt-6 pt-5 border-t border-slate-100">
+          <h4 className="text-base font-bold text-[#0E2A47]">{item.author}</h4>
+          <p className="text-[11px] font-mono tracking-widest uppercase text-slate-500 mt-1">{item.role}</p>
+          {item.location && (
+            <p className="flex items-center gap-1.5 text-xs text-slate-500 mt-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#1575B3]" />
+              <span>{item.location}</span>
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -593,7 +600,7 @@ export const NewsDivision: React.FC<{ theme?: 'blue' | 'green'; newsItems?: Divi
 
           {/* Testimonial Cards */}
           {testimonials.length > testimonialsItemsPerPage ? (
-            <div className="relative w-full py-6 px-1 touch-pan-y overflow-hidden" onClick={testimonialsSwipe.onStageClick}>
+            <div className="relative pt-28 pb-6 px-1 sm:-mx-8 sm:px-8 touch-pan-y overflow-hidden" onClick={testimonialsSwipe.onStageClick}>
               <AnimatePresence initial={false} custom={testimonialsDirection} mode="wait">
                 <motion.div
                   key={testimonialsSafePage}
