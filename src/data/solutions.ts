@@ -2645,6 +2645,12 @@ export const solutionsData: Solution[] = [
         categorySlug: 'upvc',
         image: `${ADMIN}/2025/04/UPVC-PIPES-FITTINGS.webp`,
         shortDescription: 'Our UPVC Pipes & Fittings are built to handle cold water plumbing that stands the test of time. ',
+      }, {
+        name: 'SWR (Soil, Waste & Rainwater) Piping System',
+        slug: 'swr-pipes-and-fittings-for-drainage-systems',
+        categorySlug: 'soil-waste-and-rainwater-pipes-and-fittings',
+        image: `${ADMIN}/2025/10/SWR-Pipes-and-Fitting.webp`,
+        shortDescription: 'Our SWR (Soil, Waste & Rainwater) Piping System handles wastewater and rainwater for homes, businesses, and industrial buildings.',
       },
       // {
       //   name: 'CPVC Solvent Cement',
