@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
 
+import legacyRedirects from "./redirects.json";
+
+const legacy = (legacyRedirects as { source: string; destination: string }[]).map(
+  (r) => ({ source: r.source, destination: r.destination, permanent: true })
+);
+
 // Catch stray unhandled rejections (e.g. from slow WP fetches) so they
 // log instead of crashing the Next.js server process.
 process.on('unhandledRejection', (reason) => {
@@ -77,6 +83,7 @@ const nextConfig: NextConfig = {
         destination: '/dosing-pumps-and-fertilizer-injectors/dosing-pump',
         permanent: true,
       },
+        ...legacy,
     ];
   },
 };

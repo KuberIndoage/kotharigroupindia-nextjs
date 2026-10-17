@@ -1,0 +1,610 @@
+[
+  {
+    "source": "/products-and-services/17465",
+    "destination": "/cpvc/cpvc-hot-and-cold-water-piping-system"
+  },
+  {
+    "source": "/products-and-services/18080",
+    "destination": "/cpvc/cpvc-solvent-cement"
+  },
+  {
+    "source": "/products-and-services/17498",
+    "destination": "/upvc/upvc-astm-plumbing-piping-system"
+  },
+  {
+    "source": "/products-and-services/18093",
+    "destination": "/upvc/upvc-solvent-system"
+  },
+  {
+    "source": "/products-and-services/17477",
+    "destination": "/soil-waste-and-rainwater-pipes-and-fittings/swr-soil-waste-and-rainwater-piping-system"
+  },
+  {
+    "source": "/products-and-services/18920",
+    "destination": "/soil-waste-and-rainwater-pipes-and-fittings/pp-low-noise-drainage-system"
+  },
+  {
+    "source": "/products-and-services/18927",
+    "destination": "/underground-pipe-and-fittings/upvc-underground-drainage-piping-system "
+  },
+  {
+    "source": "/products-and-services/18926",
+    "destination": "/underground-pipe-and-fittings/foamcore-underground-drainage-piping-system"
+  },
+  {
+    "source": "/products-and-services/18925",
+    "destination": "/underground-pipe-and-fittings/underground-double-wall-corrugated-pipes"
+  },
+  {
+    "source": "/products-and-services/18924",
+    "destination": "/underground-pipe-and-fittings/hdpe"
+  },
+  {
+    "source": "/products-and-services/18923",
+    "destination": "/underground-pipe-and-fittings/sub-surface-drainage-system"
+  },
+  {
+    "source": "/CableProtection",
+    "destination": "/cable-protection"
+  },
+  {
+    "source": "/products-and-services/18941",
+    "destination": "/cable-protection/dwc-pipe-for-cable-protection"
+  },
+  {
+    "source": "/products-and-services/18940",
+    "destination": "/cable-protection/electric-conduit-pipes-and-fittings"
+  },
+  {
+    "source": "/products-and-services/17060",
+    "destination": "/upvc-pressure-pipes-and-fittings/self-fit-pvc-pipe"
+  },
+  {
+    "source": "/products-and-services/17071",
+    "destination": "/upvc-pressure-pipes-and-fittings/ring-fit-pvc-pipe"
+  },
+  {
+    "source": "/products-and-services/18703",
+    "destination": "/upvc-pressure-pipes-and-fittings/agri-pvc-moulded-fittings"
+  },
+  {
+    "source": "/products-and-services/18719",
+    "destination": "/upvc-pressure-pipes-and-fittings/fabricated-fittings-and-repair-coupler"
+  },
+  {
+    "source": "/products-and-services/18732",
+    "destination": "/upvc-pressure-pipes-and-fittings/pvc-solvent-cement"
+  },
+  {
+    "source": "/PEPipesFittings",
+    "destination": "/pe-pipes-and-fittings"
+  },
+  {
+    "source": "/products-and-services/17093",
+    "destination": "/pe-pipes-and-fittings/hdpe-piping"
+  },
+  {
+    "source": "/products-and-services/17106",
+    "destination": "/pe-pipes-and-fittings/hdpe-coils"
+  },
+  {
+    "source": "/products-and-services/17118",
+    "destination": "/pe-pipes-and-fittings/hdpe-fittings"
+  },
+  {
+    "source": "/products-and-services/18832",
+    "destination": "/pe-pipes-and-fittings/mdpe-pipes"
+  },
+  {
+    "source": "/products-and-services/18690",
+    "destination": "/pe-pipes-and-fittings/compression-fittings"
+  },
+  {
+    "source": "/products-and-services/18665",
+    "destination": "/pe-pipes-and-fittings/pe-power-spray-hose-pipe"
+  },
+  {
+    "source": "/products-and-services/17900",
+    "destination": "/pe-pipes-and-fittings/ld-krishi-pipe-lay-flat-tubes"
+  },
+  {
+    "source": "/products-and-services/17130",
+    "destination": "/valves/single-and-double-union-pvc-ball-valve"
+  },
+  {
+    "source": "/products-and-services/17140",
+    "destination": "/valves/double-union-pp-ball-valve"
+  },
+  {
+    "source": "/products-and-services/19051",
+    "destination": "/valves/plain-white-blue-ball-valve"
+  },
+  {
+    "source": "/products-and-services/19039",
+    "destination": "/valves/butterfly-valve"
+  },
+  {
+    "source": "/products-and-services/19036",
+    "destination": "/valves/air-cum-vacuum-relief-valve"
+  },
+  {
+    "source": "/products-and-services/19025",
+    "destination": "/valves/flush-valve"
+  },
+  {
+    "source": "/products-and-services/17248",
+    "destination": "/column-pipes/column-pipes-with-ss"
+  },
+  {
+    "source": "/products-and-services/18934",
+    "destination": "/column-pipes/pe-column-pipes-for-submersible-pumps"
+  },
+  {
+    "source": "/products-and-services/17082",
+    "destination": "/casing-pipes/casing-pipes-fittings"
+  },
+  {
+    "source": "/products-and-services/18935",
+    "destination": "/casing-pipes/ribbed-casing-pipe"
+  },
+  {
+    "source": "/products-and-services/18933",
+    "destination": "/casing-pipes/screen-pipe-slotted-pipe"
+  },
+  {
+    "source": "/products-and-services/18922",
+    "destination": "/casing-pipes/casing-sdr-agriculture-pipe"
+  },
+  {
+    "source": "/products-and-services/17422",
+    "destination": "/pvc-suction-hose-pipes/suction-hose-pipes"
+  },
+  {
+    "source": "/products-and-services/17934",
+    "destination": "/pvc-tubing-garden-pipes/kothari-special"
+  },
+  {
+    "source": "/products-and-services/17947",
+    "destination": "/pvc-tubing-garden-pipes/mossfree"
+  },
+  {
+    "source": "/products-and-services/17964",
+    "destination": "/pvc-tubing-garden-pipes/zebra"
+  },
+  {
+    "source": "/products-and-services/17976",
+    "destination": "/pvc-tubing-garden-pipes/omd"
+  },
+  {
+    "source": "/products-and-services/17988",
+    "destination": "/pvc-tubing-garden-pipes/kothari-garden-pipe"
+  },
+  {
+    "source": "/products-and-services/18000",
+    "destination": "/pvc-tubing-garden-pipes/milky"
+  },
+  {
+    "source": "/products-and-services/18026",
+    "destination": "/pvc-tubing-garden-pipes/halwa"
+  },
+  {
+    "source": "/products-and-services/18016",
+    "destination": "/pvc-tubing-garden-pipes/ctp"
+  },
+  {
+    "source": "/products-and-services/18037",
+    "destination": "/pvc-tubing-garden-pipes/black-zebra"
+  },
+  {
+    "source": "/products-and-services/17439",
+    "destination": "/pvc-braided-hose-pipe/braided-hose-pipe"
+  },
+  {
+    "source": "/products-and-services/17452",
+    "destination": "/pvc-braided-hose-pipe/industrial-braided-hose-pipe-three-layer"
+  },
+  {
+    "source": "/products-and-services/18052",
+    "destination": "/pvc-braided-hose-pipe/construction-hose-pipe-three-layer"
+  },
+  {
+    "source": "/products-and-services/18678",
+    "destination": "/pvc-braided-hose-pipe/high-pressure-power-spray-hose-pipe"
+  },
+  {
+    "source": "/products-and-services/16780",
+    "destination": "/dripline/dripline-k-gol-npc"
+  },
+  {
+    "source": "/products-and-services/16794",
+    "destination": "/dripline/dripline-k-gol-pc"
+  },
+  {
+    "source": "/products-and-services/16807",
+    "destination": "/dripline/dripline-k-lin-npc"
+  },
+  {
+    "source": "/products-and-services/16917",
+    "destination": "/dripline/dripline-k-lin-pcas"
+  },
+  {
+    "source": "/products-and-services/16905",
+    "destination": "/dripline/dripline-k-lin-pcnd"
+  },
+  {
+    "source": "/products-and-services/16998",
+    "destination": "/polyfittings-and-accessories/drip-poly-fittings"
+  },
+  {
+    "source": "/products-and-services/18563",
+    "destination": "/polyfittings-and-accessories/drip-winder"
+  },
+  {
+    "source": "/products-and-services/16621",
+    "destination": "/drip-tubes-polytube/polytube"
+  },
+  {
+    "source": "/products-and-services/16978",
+    "destination": "/emitters-drippers/turbo-dripper"
+  },
+  {
+    "source": "/products-and-services/16988",
+    "destination": "/emitters-drippers/pc-dripper"
+  },
+  {
+    "source": "/products-and-services/16965",
+    "destination": "/thinwall-drip-line/thin-wall-dripline-k-super"
+  },
+  {
+    "source": "/products-and-services/19063",
+    "destination": "/thinwall-drip-line/thin-wall-dripline-k-smart"
+  },
+  {
+    "source": "/products-and-services/19075",
+    "destination": "/thinwall-drip-line/thin-wall-dripline-k-slim"
+  },
+  {
+    "source": "/products-and-services/19087",
+    "destination": "/thinwall-drip-line/thinwall-dripline-k-slim-ultra"
+  },
+  {
+    "source": "/products-and-services/18581",
+    "destination": "/thinwall-drip-line/k-smart-screen-filter"
+  },
+  {
+    "source": "/products-and-services/18817",
+    "destination": "/thinwall-drip-line/thinwall-drip-poly-fittings"
+  },
+  {
+    "source": "/products-and-services/17130",
+    "destination": "/valves/single-and-double-union-pvc-ball-valve"
+  },
+  {
+    "source": "/products-and-services/17140",
+    "destination": "/valves/double-union-pp-ball-valve"
+  },
+  {
+    "source": "/products-and-services/19051",
+    "destination": "/valves/plain-white-blue-ball-valve"
+  },
+  {
+    "source": "/products-and-services/19039",
+    "destination": "/valves/butterfly-valve"
+  },
+  {
+    "source": "/products-and-services/19220",
+    "destination": "/valves/throttle-valve"
+  },
+  {
+    "source": "/products-and-services/19036",
+    "destination": "/valves/air-cum-vacuum-relief-valve"
+  },
+  {
+    "source": "/products-and-services/19025",
+    "destination": "/valves/flush-valve"
+  },
+  {
+    "source": "/products-and-services/19232",
+    "destination": "/valves/check-valve-non-return-valve"
+  },
+  {
+    "source": "/products-and-services/18847",
+    "destination": "/drip-agri-pvc-pipes/upvc-pipes"
+  },
+  {
+    "source": "/products-and-services/17267",
+    "destination": "/drip-gravity-kits/gravity-drip-kit"
+  },
+  {
+    "source": "/products-and-services/17796",
+    "destination": "/mulching/mulch-films"
+  },
+  {
+    "source": "/products-and-services/17348",
+    "destination": "/filters/hydrocyclone-filter"
+  },
+  {
+    "source": "/products-and-services/17338",
+    "destination": "/filters/sand-filter"
+  },
+  {
+    "source": "/products-and-services/17308",
+    "destination": "/filters/screen-filter"
+  },
+  {
+    "source": "/products-and-services/17318",
+    "destination": "/filters/twin-screen-filter"
+  },
+  {
+    "source": "/products-and-services/17328",
+    "destination": "/filters/semi-automatic-screen-filter"
+  },
+  {
+    "source": "/products-and-services/17358",
+    "destination": "/filters/disc-filter-and-twin-disc-filter"
+  },
+  {
+    "source": "/products-and-services/17368",
+    "destination": "/filters/mini-sigma-filter"
+  },
+  {
+    "source": "/products-and-services/17378",
+    "destination": "/filters/filtomat-filter"
+  },
+  {
+    "source": "/dosing-pumps-fertilizer-injectors",
+    "destination": "/dosing-pumps-and-fertilizer-injectors"
+  },
+  {
+    "source": "/products-and-services/17548",
+    "destination": "/dosing-pumps-and-fertilizer-injectors/hdpe-header-manifold"
+  },
+  {
+    "source": "/products-and-services/17538",
+    "destination": "/dosing-pumps-and-fertilizer-injectors/pp-header-assembly"
+  },
+  {
+    "source": "/products-and-services/17518",
+    "destination": "/dosing-pumps-and-fertilizer-injectors/venturi-injector"
+  },
+  {
+    "source": "/products-and-services/19098",
+    "destination": "/dosing-pumps-and-fertilizer-injectors/dozing-pump"
+  },
+  {
+    "source": "/products-and-services/17671",
+    "destination": "/fertigation-machines/nutrijet-fertigation-machines"
+  },
+  {
+    "source": "/products-and-services/17574",
+    "destination": "/controllers/irribeat-controllers"
+  },
+  {
+    "source": "/products-and-services/17601",
+    "destination": "/controllers/gsi-galcon-smart-irrigation-controller"
+  },
+  {
+    "source": "/products-and-services/17585",
+    "destination": "/controllers/galpro-controller-ac-dc"
+  },
+  {
+    "source": "/automatic-filters-accessories",
+    "destination": "/automatic-filters-and-accessories"
+  },
+  {
+    "source": "/products-and-services/17368",
+    "destination": "/automatic-filters-and-accessories/mini-sigma-filter"
+  },
+  {
+    "source": "/products-and-services/17378",
+    "destination": "/automatic-filters-and-accessories/filtomat-filter"
+  },
+  {
+    "source": "/products-and-services/17611",
+    "destination": "/automatic-filters-and-accessories/solenoid-control-valve"
+  },
+  {
+    "source": "/products-and-services/19110",
+    "destination": "/automatic-filters-and-accessories/pressure-reducing-valve"
+  },
+  {
+    "source": "/products-and-services/19122",
+    "destination": "/automatic-filters-and-accessories/pressure-sustaining-valve"
+  },
+  {
+    "source": "/products-and-services/19144",
+    "destination": "/automatic-filters-and-accessories/quick-pressure-relief-valve"
+  },
+  {
+    "source": "/products-and-services/19155",
+    "destination": "/automatic-filters-and-accessories/filter-auto-backwash-valve"
+  },
+  {
+    "source": "/products-and-services/19133",
+    "destination": "/automatic-filters-and-accessories/water-meter"
+  },
+  {
+    "source": "/micro-sprinklers-assemblies",
+    "destination": "/micro-sprinklers-and-assemblies"
+  },
+  {
+    "source": "/products-and-services/17713",
+    "destination": "/micro-sprinklers-and-assemblies/k-mic-excel"
+  },
+  {
+    "source": "/products-and-services/17703",
+    "destination": "/micro-sprinklers-and-assemblies/k-mic-micro-sprinkler"
+  },
+  {
+    "source": "/products-and-services/17691",
+    "destination": "/micro-sprinklers-and-assemblies/k-tuff-micro-sprinkler"
+  },
+  {
+    "source": "/mini-sprinklers-assemblies",
+    "destination": "/mini-sprinklers-and-assemblies"
+  },
+  {
+    "source": "/products-and-services/19178",
+    "destination": "/mini-sprinklers-and-assemblies/mini-sprinkler"
+  },
+  {
+    "source": "/micro-jets-assemblies",
+    "destination": "/micro-jets-and-assemblies"
+  },
+  {
+    "source": "/products-and-services/17785",
+    "destination": "/micro-jets-and-assemblies/micro-sprayer"
+  },
+  {
+    "source": "/misters-assemblies",
+    "destination": "/misters-and-assemblies"
+  },
+  {
+    "source": "/products-and-services/17757",
+    "destination": "/misters-and-assemblies/k-mist"
+  },
+  {
+    "source": "/foggers-assemblies",
+    "destination": "/foggers-and-assemblies"
+  },
+  {
+    "source": "/products-and-services/17771",
+    "destination": "/foggers-and-assemblies/k-fogger"
+  },
+  {
+    "source": "/products-and-services/18108",
+    "destination": "/metal-sprinklers/metal-sprinkler"
+  },
+  {
+    "source": "/products-and-services/19178",
+    "destination": "/plastic-sprinklers/mini-sprinkler"
+  },
+  {
+    "source": "/hdpe-sprinklers-pipes-qcpe",
+    "destination": "/hdpe-sprinkler-pipes-qcpe"
+  },
+  {
+    "source": "/products-and-services/18504",
+    "destination": "/hdpe-sprinkler-pipes-qcpe/sprinklers-pipes-qcpe"
+  },
+  {
+    "source": "/sprinkler-connectors-accessories",
+    "destination": "/sprinkler-connectors-and-accessories"
+  },
+  {
+    "source": "/products-and-services/17723",
+    "destination": "/sprinkler-connectors-and-accessories/hdpe-pipe-sprinkler-set"
+  },
+  {
+    "source": "/raingun-accessories",
+    "destination": "/raingun-and-accessories"
+  },
+  {
+    "source": "/products-and-services/19182",
+    "destination": "/raingun-and-accessories/raingun"
+  },
+  {
+    "source": "/garden-landscape-sprinklers",
+    "destination": "/garden-and-landscape-sprinklers"
+  },
+  {
+    "source": "/products-and-services/19184",
+    "destination": "/garden-and-landscape-sprinklers/pop-up-spray-heads-and-rotors"
+  },
+  {
+    "source": "/products-and-services/19195",
+    "destination": "/garden-and-landscape-sprinklers/swing-joint"
+  },
+  {
+    "source": "/products-and-services/19207",
+    "destination": "/garden-and-landscape-sprinklers/quick-coupling-valve"
+  },
+  {
+    "source": "/k-eco-rain-pipes-k-flex-submain-pipes",
+    "destination": "/k-eco-rain-pipes-and-k-flex-submain-pipes"
+  },
+  {
+    "source": "/products-and-services/17038",
+    "destination": "/k-eco-rain-pipes-and-k-flex-submain-pipes/k-eco-sprinkler"
+  },
+  {
+    "source": "/products-and-services/19167",
+    "destination": "/k-eco-rain-pipes-and-k-flex-submain-pipes/k-flex-submain-pipes"
+  },
+  {
+    "source": "/products-and-services/18959",
+    "destination": "/TurnkeyPDN"
+  },
+  {
+    "source": "/products-and-services/18957",
+    "destination": "/turnkey-projects"
+  },
+  {
+    "source": "/ContactUs",
+    "destination": "/contact-us"
+  },
+  {
+    "source": "/PVCPipes",
+    "destination": "/pvc-pipes"
+  },
+  {
+    "source": "/SprinklerIrrigationSystem",
+    "destination": "/sprinkler-irrigation-system"
+  },
+  {
+    "source": "/products-and-services/irrigation/sprinkler-irrigation-system-manufacturers-suppliers-in-india.php",
+    "destination": "/sprinkler-irrigation-system"
+  },
+  {
+    "source": "/about-us/our-team.php",
+    "destination": "/about-us"
+  },
+  {
+    "source": "/contact-us.php",
+    "destination": "/contact-us"
+  },
+  {
+    "source": "/products-and-services/irrigation/automation-system/galcon-ac-6s-ac-12s-ac-24s.php",
+    "destination": "/controllers/galpro-controller-ac-dc"
+  },
+  {
+    "source": "/products-and-services/irrigation/drip-irrigation-system-manufacturers-suppliers-in-india.php",
+    "destination": "/drip-irrigation"
+  },
+  {
+    "source": "/future-plan",
+    "destination": "/"
+  },
+  {
+    "source": "/products-and-services/irrigation/mulching-film-manufacturers-suppliers-in-india.php",
+    "destination": "/mulching/mulch-films"
+  },
+  {
+    "source": "/products-and-services/pipes/suction-hose-pipes-manufacturers-suppliers-in-india.php",
+    "destination": "/pvc-suction-hose-pipes/suction-hose-pipes"
+  },
+  { 
+    "source": "/products-and-services/pipes/swr-pipes-fittings-manufacturers-suppliers-in-india.php",
+    "destination": "/soil-waste-and-rainwater-pipes-and-fittings/swr-soil-waste-and-rainwater-piping-system"
+  },
+  {
+    "source": "/new-and-event/news-details.php",
+    "destination": "/"
+  },
+  {
+    "source": "/polyfittings-accessories",
+    "destination": "/polyfittings-and-accessories"
+  },
+  {
+    "source": "/blogs/best-plumbing-pipes-for-residential-and-commercial-buildings-in-india",
+    "destination": "/blogs/plumbing-pipes-for-residential-commercial-buildings"
+  },
+  {
+    "source": "/UndergroundDrainage",
+    "destination": "/underground-drainage"
+  },
+  {
+    "source": "/blogs/comparing-drip-vs-sprinkler-irrigation-pros-and-cons",
+    "destination": "/blogs/drip-vs-sprinkler-irrigation-pros-cons"
+  }
+]
