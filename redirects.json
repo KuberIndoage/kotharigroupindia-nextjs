@@ -537,7 +537,11 @@
   },
   {
     "source": "/products-and-services/18957",
-    "destination": "/turnkey-projects"
+    "destination": "/turnkey-projects/pdn-ci"
+  },
+   {
+    "source": "/turnkey-projects",
+    "destination": "/turnkey-projects/pdn-ci"
   },
   {
     "source": "/ContactUs",
